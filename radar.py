@@ -352,6 +352,37 @@ def keep_url(url: str, src: dict, site_host: str) -> bool:
     return True
 
 
+def site_host(s: dict, f: Fetcher) -> str:
+    """The site's real host, after redirects (e.g. numeralhq.com -> numeral.com)."""
+    try:
+        return urlparse(f.get(s["site"]).url).netloc.lower().removeprefix("www.")
+    except Exception:  # noqa: BLE001
+        return urlparse(s["site"]).netloc.lower().removeprefix("www.")
+
+
+LOCALE = re.compile(r"^[a-z]{2}(-[a-z]{2})?$", re.I)
+EDITORIAL = {"blog", "blogs", "resources", "resource", "resource-center", "learn", "insights", "articles",
+             "news", "posts", "library", "academy", "hub", "knowledge", "content", "stories", "customers",
+             "case-studies", "compare", "vs", "alternatives", "glossary"}
+
+
+def section_of(url: str) -> str:
+    """First meaningful path segment, skipping locale prefixes like /us/en/."""
+    parts = [x for x in urlparse(url).path.split("/") if x]
+    while parts and LOCALE.match(parts[0]) and len(parts) > 1:
+        parts = parts[1:]
+    return parts[0].lower() if parts else ""
+
+
+def programmatic_sections(urls: list[str], min_pages: int) -> dict[str, int]:
+    """Big templated sections (calculators, rate lookups, location pages): count them, don't classify each."""
+    counts: dict[str, int] = {}
+    for u in urls:
+        sec = section_of(u)
+        counts[sec] = counts.get(sec, 0) + 1
+    return {k: v for k, v in counts.items() if v >= min_pages and k and k not in EDITORIAL}
+
+
 # ---------------------------------------------------------------- reading + classifying
 
 def read_page(url: str, f: Fetcher) -> dict:
@@ -470,7 +501,8 @@ def analyse(stats: list[dict], cfg: dict) -> dict:
         titles = "\n".join(f"    - [{p['type']}] {p['title']}" for p in s["sample"])
         blocks.append(f"## {s['name']}{' (THE READER)' if s['you'] else ''}\n"
                       f"Pages in last {cfg['window_days']} days: {s['n']} (previous {cfg['window_days']} days: {s['n_prev']}). Updated old pages: {s['refreshed']}\n"
-                      f"Mix: {mix or 'none'}\nWho it's for: {stages or 'n/a'}\nTop topics: {', '.join(s['topics']) or 'n/a'}\nPages:\n{titles or '    (none)'}")
+                      + (f"Templated/programmatic sections (not in the counts above): " + ", ".join(f"/{x['section']}/ ({x['pages']} pages)" for x in s.get('programmatic', [])) + "\n" if s.get("programmatic") else "")
+                      + f"Mix: {mix or 'none'}\nWho it's for: {stages or 'n/a'}\nTop topics: {', '.join(s['topics']) or 'n/a'}\nPages:\n{titles or '    (none)'}")
     reader = (f"The reader is {you}. Compare competitors against them; gaps are openings for {you}."
               if you else "The reader is a company in this market.")
     system = ANALYSIS_SYSTEM_BASE + "\n- " + reader
@@ -566,7 +598,7 @@ def load_config() -> dict:
 def check_sites(cfg: dict) -> None:
     f = Fetcher(cfg["user_agent"])
     for s in cfg["sites"]:
-        host = urlparse(s["site"]).netloc.lower().removeprefix("www.")
+        host = site_host(s, f)
         try:
             method, used, items = discover(s, f)
             kept = [i for i in items if keep_url(i["url"], s, host)]
@@ -591,12 +623,12 @@ def run(cfg: dict) -> dict:
     if repo:
         state["repo"] = repo
     pages, errors, health = state["pages"], [], {}
-    first_sites, prefetched = [], {}
+    first_sites, prefetched, sections = [], {}, {}
 
     # 1. Discover every site's pages
     log("== Discover")
     for s in cfg["sites"]:
-        name, host = s["name"], urlparse(s["site"]).netloc.lower().removeprefix("www.")
+        name, host = s["name"], site_host(s, f)
         first = not state["sites"].get(name, {}).get("initialized")
         try:
             method, used, items = discover(s, f)
@@ -605,6 +637,9 @@ def run(cfg: dict) -> dict:
             log(f"  FAIL {name}: {health[name]['error']}")
             continue
         items = [i for i in items if keep_url(i["url"], s, host)]
+        prog = programmatic_sections([i["url"] for i in items], int(s.get("programmatic_min", cfg.get("programmatic_min", 100))))
+        if prog:
+            log(f"  {name}: templated sections counted, not classified: {prog}")
         # Some sites stamp every page with the deploy date. If most pages share a
         # very recent lastmod, those dates say nothing about when pages were published.
         recent = sum(1 for i in items if i["published"] and i["published"] >= now - timedelta(days=2))
@@ -622,13 +657,15 @@ def run(cfg: dict) -> dict:
                 # A page's date is its sitemap/feed date when there is one, else the day we first saw it.
                 date = lastmod if lastmod and lastmod <= now else (None if first else now)
                 pages[k] = {"site": name, "url": it["url"], "title": it["title"], "date": iso(date),
-                            "lastmod": iso(lastmod), "first_seen": iso(now), "cls": None}
+                            "lastmod": iso(lastmod), "first_seen": iso(now), "cls": None, "baseline": first}
                 new += 1
             else:
                 if lastmod and rec.get("lastmod") and lastmod > parse_iso(rec["lastmod"]) + timedelta(hours=1):
                     rec["refreshed"] = iso(now)
                     refreshed += 1
                 rec["lastmod"] = iso(lastmod) if lastmod else rec.get("lastmod")
+            sec = section_of(it["url"])
+            pages[k]["prog"] = sec if sec in prog else None
         undated = sum(1 for i in items if not i["published"])
         if first:
             first_sites.append(name)
@@ -646,13 +683,14 @@ def run(cfg: dict) -> dict:
                     if rec and info["published"] and not rec.get("date"):
                         rec["date"] = iso(min(info["published"], now))
                     time.sleep(0.3)
+        sections[name] = prog
         health[name] = {"ok": True, "error": None, "method": method, "url": used, "pages": len(items),
                         "undated": undated, "new": 0 if first else new}
         state["sites"][name] = {"initialized": True}
         log(f"  OK   {name}: {method}, {len(items)} pages, {new} new, {refreshed} updated")
 
     # 2. Classify recent pages that haven't been classified yet (newest first, capped)
-    todo = [p for p in pages.values() if p["cls"] is None and p.get("date") and parse_iso(p["date"]) >= horizon
+    todo = [p for p in pages.values() if p["cls"] is None and not p.get("prog") and p.get("date") and parse_iso(p["date"]) >= horizon
             and health.get(p["site"], {}).get("ok")]
     todo.sort(key=lambda p: p["date"], reverse=True)
     per_site, queue = {}, []
@@ -682,7 +720,12 @@ def run(cfg: dict) -> dict:
     stats = []
     for s in cfg["sites"]:
         name = s["name"]
-        mine = [p for p in pages.values() if p["site"] == name and p.get("date")]
+        allmine = [p for p in pages.values() if p["site"] == name]
+        mine = [p for p in allmine if p.get("date") and not p.get("prog")]
+        prog_info = [{"section": sec, "pages": n,
+                      "new": sum(1 for p in allmine if p.get("prog") == sec and not p.get("baseline", True)
+                                 and parse_iso(p["first_seen"]) >= now - window)}
+                     for sec, n in sorted(sections.get(name, {}).items(), key=lambda x: -x[1])]
         cur = [p for p in mine if parse_iso(p["date"]) >= now - window]
         prev = [p for p in mine if now - 2 * window <= parse_iso(p["date"]) < now - window
                 and (not p.get("cls") or p["cls"]["is_content"])]
@@ -698,6 +741,7 @@ def run(cfg: dict) -> dict:
             "n_prev": len(prev), "refreshed": refreshed, "mix": mix, "stages": stages,
             "topics": [t for t, _ in sorted(topics.items(), key=lambda x: -x[1])[:5]],
             "unclassified": sum(1 for p in cur if not p.get("cls")),
+            "programmatic": prog_info,
             "sample": [{"type": p["cls"]["type"], "title": p["title"]} for p in sorted(content, key=lambda p: p["date"], reverse=True)[:40]],
             **{k: v for k, v in health.get(name, {"ok": False, "error": "not checked"}).items()},
         })

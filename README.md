@@ -72,6 +72,7 @@ FAIL Rival Two       no sitemap or feed found. Add a sitemap: or feed: line for 
 | `sitemap` / `feed` | Use this sitemap or feed instead of auto-detecting. |
 | `include_pattern` | Only count URLs matching this regex (e.g. `/blog/\|/resources/`). |
 | `exclude_pattern` | Ignore URLs matching this regex (e.g. `/docs/`). |
+| `programmatic_min` | A section with this many pages (default 100), like `/sales-tax-calculator/`, is treated as templated. It's reported as "Also runs templated pages" instead of being classified page by page. |
 | `default_excludes: false` | Keep tag, category, login, legal and translated pages, which are skipped by default. |
 
 ## Cost
