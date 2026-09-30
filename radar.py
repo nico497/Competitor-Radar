@@ -632,7 +632,14 @@ def analyse(stats: list[dict], cfg: dict) -> dict:
               if you else "The reader is a company in this market.")
     system = ANALYSIS_SYSTEM_BASE + "\n- " + reader
     user = f"Market: {cfg['niche']}\nReader: {cfg['audience']}\n\n" + "\n\n".join(blocks)
-    out = call_claude(cfg["models"]["analyse"], system, user, ANALYSIS_TOOL, 2500)
+    out = {}
+    for attempt in range(2):
+        out = call_claude(cfg["models"]["analyse"], system, user, ANALYSIS_TOOL, 4000)
+        if _clean(out.get("summary")):
+            break
+        log(f"  analysis came back without a summary (keys: {list(out)[:8]}), retrying")
+    if not _clean(out.get("summary")):
+        raise RuntimeError(f"analysis returned no summary; keys={list(out)[:8]} preview={json.dumps(out)[:300]}")
     names = [s["name"] for s in stats]
 
     def as_list(v):
