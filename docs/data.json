@@ -2,13 +2,13 @@
  "meta": {
   "title": "Competitor Radar",
   "niche": "US sales tax compliance software for mid-market ecommerce and SaaS brands",
-  "updated": "2026-09-30T05:38:16+00:00",
+  "updated": "2026-09-30T06:08:34+00:00",
   "window_days": 30,
-  "repo": null,
+  "repo": "nico497/Competitor-Radar",
   "first_run": false,
   "errors": [],
-  "pending": 325,
-  "analysis_stale": true,
+  "pending": 255,
+  "analysis_stale": false,
   "per_run": 200,
   "tracking_since": "2026-09-30T04:27:42+00:00",
   "tracking_days": 0
@@ -48,34 +48,65 @@
   ]
  ],
  "analysis": {
-  "summary": "Rivals are scaling up fast. Zamp, Numeral and Kintsugi now publish far more than TaxCloud, and Zamp and Kintsugi chase the same switchers with comparison pages.",
+  "summary": "TaxCloud is the only one leaning hard on switcher content: 32 comparison pages and 17 case studies, mostly refreshed. Rivals mass-publish state guides, and Anrok and Kintsugi are pushing California SaaS tax.",
   "points": [
    {
-    "text": "Zamp (119 comparison pages) and Kintsugi (22, with an Avalara alternatives page) now fight TaxCloud's 24 comparison pages for switchers.",
+    "text": "TaxCloud's 82 updates and 6 new pages show a refresh push on Avalara-switcher content, while Kintsugi added 170 new pages in 30 days.",
     "names": [
      "TaxCloud",
-     "Zamp",
      "Kintsugi"
     ]
    },
    {
-    "text": "Numeral went from 6 to 268 pages in 30 days. It has 161 how-tos and 23 short case studies of ecommerce brands.",
+    "text": "Zamp has 119 comparison pages plus buyout and switch pages, so it competes directly for the same switchers.",
     "names": [
-     "Numeral"
+     "TaxCloud",
+     "Zamp"
     ]
    },
    {
-    "text": "Avalara and TaxJar mostly write for learners: 30 of 84 pages and 58 of 77. They leave switchers to others.",
+    "text": "Anrok and Numeral both cover California SaaS tax changes, and Anrok has 43 new pages. TaxCloud has only SaaS by-state and app-review pages.",
     "names": [
-     "Avalara",
-     "TaxJar"
+     "TaxCloud",
+     "Anrok",
+     "Numeral"
     ]
    }
   ],
+  "plays": {
+   "TaxCloud": {
+    "play": "Avalara-focused comparisons, switch guides and 17 customer stories, mostly refreshed old pages.",
+    "aimed": "Mid-market sellers leaving Avalara"
+   },
+   "Avalara": {
+    "play": "Webinars, state nexus guides and a Forrester ROI study. Few comparison pages.",
+    "aimed": "Learners and enterprise buyers"
+   },
+   "TaxJar": {
+    "play": "Refreshes hundreds of state tax explainers: shipping, marketplace laws, due dates.",
+    "aimed": "Small sellers researching rules"
+   },
+   "Anrok": {
+    "play": "New SaaS guides on California tax, VAT and e-invoicing, plus 33 case studies.",
+    "aimed": "SaaS finance leaders"
+   },
+   "Numeral": {
+    "play": "Mass refresh of how-to-file state guides and about 20 ecommerce customer stories.",
+    "aimed": "Ecommerce brands, DTC founders"
+   },
+   "Zamp": {
+    "play": "Huge comparison library, switch and buyout pages, and 3,932 calculator pages.",
+    "aimed": "Sellers comparing or leaving providers"
+   },
+   "Kintsugi": {
+    "play": "170 new pages: state guides, filing how-tos and 'alternatives' pages for rivals.",
+    "aimed": "Sellers searching by state or rival"
+   }
+  },
   "shared": [
    {
     "title": "State-by-state guides",
-    "text": "Avalara (nexus), TaxJar (shipping), Numeral (filing) and Kintsugi (SaaS, filing) publish page after page by state. It's a search net for learners. TaxCloud's 105 state pages compete here.",
+    "text": "Most rivals publish state pages on filing, nexus or SaaS tax. This wins early-stage searches and feeds the top of the funnel. TaxCloud has 105 /sales-tax/ pages.",
     "names": [
      "Avalara",
      "TaxJar",
@@ -84,35 +115,35 @@
     ]
    },
    {
-    "title": "Rival comparison pages",
-    "text": "Zamp prices out Avalara and TaxJar. Kintsugi lists alternatives to Avalara, Anrok, Numeral, Vertex and Zamp. Numeral has 27 comparison pages. Buyers weighing a switch see many rivals' pitches.",
+    "title": "Rival-alternative pages",
+    "text": "Kintsugi and Zamp write pages on Avalara and TaxJar pricing and alternatives. They target TaxCloud's switchers, so TaxCloud must keep its comparisons fresh.",
     "names": [
-     "Numeral",
      "Zamp",
      "Kintsugi"
     ]
    },
    {
-    "title": "Customer stories at scale",
-    "text": "Numeral (23) and Zamp (20) publish many short brand stories, mostly ecommerce. TaxCloud has 17 with stronger numbers, such as 70% less time. Proof is now standard.",
+    "title": "California SaaS tax coverage",
+    "text": "Anrok, Numeral and Kintsugi all explain California's SaaS tax change. They aim at SaaS teams before the new rules start.",
     "names": [
+     "Anrok",
      "Numeral",
-     "Zamp"
+     "Kintsugi"
     ]
    }
   ],
   "gaps": [
    {
-    "title": "Switching from other rivals",
-    "text": "TaxCloud has an AvaTax migration guide. In these pages, no one covers leaving TaxJar, Zamp, Numeral or Anrok. Only Anrok has one general switching page."
+    "title": "Mid-market migration playbook",
+    "text": "TaxCloud has one AvaTax migration page. No rival shows a full switch plan with steps, data moves, and filing-history handoff for mid-market brands."
    },
    {
-    "title": "Webinars and live events",
-    "text": "Avalara runs many webinar pages, from Shopify sellers to the Streamlined program (SST). No other rival, TaxCloud included, does. Mid-market teams may want live Q&A before switching."
+    "title": "Avalara news reaction hub",
+    "text": "Only TaxCloud covers the Avalara IPO and the RSB shutdown. Building a live page on Avalara changes could catch worried customers."
    },
    {
-    "title": "Mid-market proof",
-    "text": "No company's titles name mid-market brands. Anrok targets startups and enterprise, and Numeral and Zamp show small brands. Stories with revenue size, and audit and multi-state migration detail, are open."
+    "title": "Ecommerce and SaaS hybrid guidance",
+    "text": "Rivals split into ecommerce (Numeral, Zamp) or SaaS (Anrok). Few write for brands that sell both goods and software."
    }
   ]
  },
@@ -163,15 +194,16 @@
    "url": "https://taxcloud.com/sitemap_index.xml",
    "pages": 447,
    "undated": 0,
-   "play": "Wins Avalara users with comparisons, migration guides and 17 customer stories.",
-   "aimed": "Avalara users ready to switch"
+   "new_urls": 0,
+   "play": "Avalara-focused comparisons, switch guides and 17 customer stories, mostly refreshed old pages.",
+   "aimed": "Mid-market sellers leaving Avalara"
   },
   {
    "name": "Avalara",
    "site": "https://www.avalara.com",
    "you": false,
    "n": 82,
-   "n_prev": 32,
+   "n_prev": 31,
    "refreshed": 9,
    "mix": {
     "compare": 0,
@@ -206,8 +238,9 @@
    "url": "https://www.avalara.com/us/en/sitemap.xml",
    "pages": 702,
    "undated": 0,
-   "play": "Teaches with state nexus pages and webinars. Almost no rival talk.",
-   "aimed": "Learners and enterprise finance teams"
+   "new_urls": 0,
+   "play": "Webinars, state nexus guides and a Forrester ROI study. Few comparison pages.",
+   "aimed": "Learners and enterprise buyers"
   },
   {
    "name": "TaxJar",
@@ -249,28 +282,29 @@
    "url": "https://www.taxjar.com/sitemap_index.xml",
    "pages": 868,
    "undated": 0,
-   "play": "Mass-produces state tax explainers and due-date lists. 54 of 77 pages are how-tos.",
-   "aimed": "Small sellers researching tax rules"
+   "new_urls": 0,
+   "play": "Refreshes hundreds of state tax explainers: shipping, marketplace laws, due dates.",
+   "aimed": "Small sellers researching rules"
   },
   {
    "name": "Anrok",
    "site": "https://www.anrok.com",
    "you": false,
-   "n": 116,
+   "n": 122,
    "n_prev": 428,
    "refreshed": 36,
    "mix": {
     "compare": 3,
-    "howto": 36,
+    "howto": 38,
     "list": 10,
-    "research": 8,
-    "case": 32,
+    "research": 10,
+    "case": 33,
     "opinion": 4,
     "news": 7,
-    "landing": 16
+    "landing": 17
    },
    "stages": {
-    "learning": 60,
+    "learning": 66,
     "comparing": 10,
     "buying": 34,
     "customers": 12
@@ -283,7 +317,7 @@
     "e-invoicing compliance software"
    ],
    "unclassified": 0,
-   "new": 37,
+   "new": 43,
    "updated": 35,
    "programmatic": [
     {
@@ -298,8 +332,9 @@
    "url": "https://www.anrok.com/sitemap.xml",
    "pages": 665,
    "undated": 0,
-   "play": "Sells global tax, VAT and e-invoicing. 113 templated VAT pages. Landing pages lead.",
-   "aimed": "SaaS startups and enterprise finance"
+   "new_urls": 0,
+   "play": "New SaaS guides on California tax, VAT and e-invoicing, plus 33 case studies.",
+   "aimed": "SaaS finance leaders"
   },
   {
    "name": "Numeral",
@@ -341,8 +376,9 @@
    "url": "https://www.numeral.com/sitemap.xml",
    "pages": 399,
    "undated": 0,
-   "play": "Sudden 268-page push: state filing guides, 23 case studies, 27 comparisons.",
-   "aimed": "Ecommerce and DTC brands"
+   "new_urls": 0,
+   "play": "Mass refresh of how-to-file state guides and about 20 ecommerce customer stories.",
+   "aimed": "Ecommerce brands, DTC founders"
   },
   {
    "name": "Zamp",
@@ -390,8 +426,9 @@
    "url": "https://zamp.com/sitemap.xml",
    "pages": 4438,
    "undated": 0,
-   "play": "Volume play: 119 comparisons, 20 case studies, switch and buyout pages, 3932 calculator pages.",
-   "aimed": "Ecommerce brands comparing providers"
+   "new_urls": 0,
+   "play": "Huge comparison library, switch and buyout pages, and 3,932 calculator pages.",
+   "aimed": "Sellers comparing or leaving providers"
   },
   {
    "name": "Kintsugi",
@@ -439,11 +476,96 @@
    "url": "https://trykintsugi.com/sitemap.xml",
    "pages": 1034,
    "undated": 209,
-   "play": "Scales state guides (193 how-tos) and publishes alternatives pages for five rival tools.",
-   "aimed": "Ecommerce and SaaS sellers comparing tools"
+   "new_urls": 0,
+   "play": "170 new pages: state guides, filing how-tos and 'alternatives' pages for rivals.",
+   "aimed": "Sellers searching by state or rival"
   }
  ],
  "pages": [
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/anrok-x-bennett-thrasher-where-is-saas-taxable-in-2023",
+   "title": "Where is SaaS taxable? A 2023 guide for finance leaders",
+   "date": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "published": "2027-01-01T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "research",
+   "stage": "learning",
+   "topic": "SaaS sales tax taxability 2023",
+   "search": "where is SaaS taxable 2023",
+   "why": "Educates finance leaders on evolving SaaS tax rules to establish authority."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/complimentary-nexus-template-to-assess-exposure",
+   "title": "Free tool: Estimate your sales tax nexus exposure",
+   "date": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "published": "2027-01-01T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "landing",
+   "stage": "learning",
+   "topic": "Sales tax nexus exposure assessment",
+   "search": "sales tax nexus exposure template",
+   "why": "Captures early-stage ecommerce/SaaS sellers learning about tax compliance complexity."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/designing-billing-and-tax-for-modern-saas-how-finance-teams-scale-without-compliance-drag",
+   "title": "Designing billing and tax for modern SaaS: How finance teams scale without compliance drag",
+   "date": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "published": "2027-01-01T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "SaaS billing and tax design",
+   "search": "how to design billing and tax SaaS",
+   "why": "Educates finance teams on integrating tax into billing architecture to reduce compliance burden."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/end-of-year-sales-tax-and-vat-report-2025",
+   "title": "End-of-year sales tax and VAT report: 2025",
+   "date": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "published": "2027-01-01T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "research",
+   "stage": "learning",
+   "topic": "US sales tax VAT updates 2025",
+   "search": "2025 sales tax VAT rate changes",
+   "why": "Establishes Anrok as tax expert authority during compliance decision research phase."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/from-exposure-to-automation-how-finance-teams-clean-up-sales-tax-and-build-scalable-billing-operations",
+   "title": "From exposure to automation: How to scale compliantly",
+   "date": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "published": "2027-01-01T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "learning",
+   "topic": "Sales tax compliance and billing automation",
+   "search": "scale sales tax compliance finance teams",
+   "why": "Educates finance teams on tax exposure and VDA resolution to build trust early."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/how-to-fix-your-customer-address-data-quality-problem",
+   "title": "How to fix your customer address data-quality problem",
+   "date": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "published": "2027-01-01T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Customer address data quality",
+   "search": "fix customer address data quality",
+   "why": "Educates buyers on tax compliance risks from bad data to build awareness."
+  },
   {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/webinars.html",
@@ -21359,90 +21481,6 @@
    "topic": "TaxJar vs Avalara vs Stripe",
    "search": "taxjar vs avalara vs stripe",
    "why": "Targets buyers evaluating competing sales tax solutions."
-  },
-  {
-   "site": "Avalara",
-   "url": "https://www.avalara.com/us/en/learn/whitepapers/sales-tax-on-software.html",
-   "title": "Managing sales tax for Software as a Service (SaaS) Companies - Avalara",
-   "date": "2026-08-12T07:24:00+00:00",
-   "kind": "unknown",
-   "published": null,
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Sales tax requirements for SaaS companies",
-   "search": "how to manage sales tax SaaS companies",
-   "why": "Attracts SaaS founders learning tax compliance basics and nexus triggers."
-  },
-  {
-   "site": "Zamp",
-   "url": "https://zamp.com/blog/taxcloud-api-vs-taxjar-api",
-   "title": "TaxCloud API vs TaxJar API: Which Is Cheaper for High-Volume?",
-   "date": "2026-08-12T07:02:45+00:00",
-   "kind": "updated",
-   "published": "2026-06-30T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "compare",
-   "stage": "buying",
-   "topic": "Sales tax API pricing comparison",
-   "search": "TaxCloud API vs TaxJar API pricing",
-   "why": "Captures high-volume buyers evaluating alternatives before choosing their sales tax solution."
-  },
-  {
-   "site": "Zamp",
-   "url": "https://zamp.com/blog/colorado-taxes-saas-differently-by-city",
-   "title": "Colorado Taxes SaaS Differently by City. Here's What That Means for Your Business",
-   "date": "2026-08-12T04:13:00+00:00",
-   "kind": "updated",
-   "published": "2025-04-17T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Colorado SaaS sales tax compliance",
-   "search": "Colorado SaaS sales tax exemption home rule",
-   "why": "Educates SaaS founders on complex local tax obligations they likely misunderstand."
-  },
-  {
-   "site": "Zamp",
-   "url": "https://zamp.com/blog/8-costly-ecommerce-mistakes",
-   "title": "8 Costly E-Commerce Mistakes That Stop Stores From Scaling",
-   "date": "2026-08-12T01:33:41+00:00",
-   "kind": "updated",
-   "published": "2026-01-09T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "list",
-   "stage": "learning",
-   "topic": "E-commerce mistakes and scaling",
-   "search": "ecommerce mistakes that hurt sales",
-   "why": "Establishes Zamp as expert in ecommerce, sneaks in sales tax compliance issue."
-  },
-  {
-   "site": "Zamp",
-   "url": "https://zamp.com/blog/how-to-boost-conversions-on-shopify",
-   "title": "Boost conversion on Shopify: 20 optimization techniques that work",
-   "date": "2026-08-12T01:33:41+00:00",
-   "kind": "updated",
-   "published": "2025-11-01T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Shopify conversion rate optimization",
-   "search": "how to boost conversions on Shopify",
-   "why": "Attracts ecommerce merchants researching optimization before considering compliance tools."
-  },
-  {
-   "site": "Zamp",
-   "url": "https://zamp.com/blog/the-data-problem-hiding-inside-your-tax-process",
-   "title": "The data problem hiding inside your tax process.",
-   "date": "2026-08-12T01:32:37+00:00",
-   "kind": "updated",
-   "published": "2026-05-06T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "opinion",
-   "stage": "learning",
-   "topic": "data management in tax compliance",
-   "search": "sales tax compliance data problems",
-   "why": "Educates prospects on hidden tax process inefficiencies to establish thought leadership."
   }
  ]
 }

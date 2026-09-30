@@ -1037,13 +1037,26 @@
   "taxcloud.com/blog/does-shopify-file-sales-tax": {
    "site": "TaxCloud",
    "url": "https://taxcloud.com/blog/does-shopify-file-sales-tax/",
-   "title": "Does shopify file sales tax",
+   "title": "Shopify Tax Automated Filing: Does Shopify File & Handle Sales Tax?",
    "date": "2026-08-01T16:33:01+00:00",
    "lastmod": "2026-08-01T16:33:01+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "compare",
+    "stage": "buying",
+    "topic": "Shopify sales tax filing",
+    "search": "does Shopify file sales tax returns",
+    "why": "Positions TaxCloud as solution for Shopify sellers Shopify Tax can't fully serve."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2026-01-10T13:47:26+00:00",
+   "mod": "2026-06-08T19:55:05+00:00",
+   "fp": "d6128e6ec5fa3599",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-01T16:33:01+00:00"
   },
   "taxcloud.com/blog/how-to-set-up-sales-tax-in-quickbooks-online": {
    "site": "TaxCloud",
@@ -5305,13 +5318,26 @@
   "taxcloud.com/integrations/quickbooks-online": {
    "site": "TaxCloud",
    "url": "https://taxcloud.com/integrations/quickbooks-online/",
-   "title": "Quickbooks online",
+   "title": "Real-Time Sales Tax Calculation Designed for QuickBooks Online",
    "date": "2026-08-05T15:38:35+00:00",
    "lastmod": "2026-08-05T15:38:35+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "landing",
+    "stage": "buying",
+    "topic": "QuickBooks Online sales tax integration",
+    "search": "QuickBooks Online sales tax integration",
+    "why": "Converts QuickBooks users ready to automate sales tax compliance into TaxCloud customers."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2023-11-09T00:44:09+00:00",
+   "mod": "2026-08-05T15:38:35+00:00",
+   "fp": "99c52b873a042b1f",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-05T15:38:35+00:00"
   },
   "taxcloud.com/integrations/quickbooks-desktop": {
    "site": "TaxCloud",
@@ -8199,13 +8225,26 @@
   "avalara.com/us/en/community/customers/newsletter.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/community/customers/newsletter.html",
-   "title": "Newsletter",
+   "title": "Newsletter - Avalara",
    "date": "2026-08-03T05:02:14+00:00",
    "lastmod": "2026-08-03T05:02:14+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": false,
+    "type": "news",
+    "stage": "customers",
+    "topic": "Newsletter signup customer engagement",
+    "search": "",
+    "why": "Keeps existing customers engaged with product features, events, and industry updates."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "1d741783c82c5f3e",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T05:02:14+00:00"
   },
   "avalara.com/us/en/learn.html": {
    "site": "Avalara",
@@ -12176,13 +12215,26 @@
   "avalara.com/us/en/learn/nexus.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/nexus.html",
-   "title": "Nexus",
+   "title": "What is economic Nexus? Guide to Sales Tax Nexus Rules - Avalara",
    "date": "2026-08-03T10:29:57+00:00",
    "lastmod": "2026-08-03T10:29:57+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "sales tax nexus rules",
+    "search": "what is sales tax nexus",
+    "why": "Educates early-stage researchers on nexus rules to build credibility."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "54c1ba3aada28477",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T10:29:57+00:00"
   },
   "avalara.com/us/en/learn/nexus/state/alabama.html": {
    "site": "Avalara",
@@ -13279,13 +13331,26 @@
   "avalara.com/us/en/learn/nexus/sales-tax-risk-assessment.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/nexus/sales-tax-risk-assessment.html",
-   "title": "Sales tax risk assessment",
+   "title": "Sales tax risk assessment - Avalara",
    "date": "2026-08-03T17:21:13+00:00",
    "lastmod": "2026-08-03T17:21:13+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Sales tax nexus assessment tool",
+    "search": "sales tax nexus threshold by state",
+    "why": "Educates sellers on sales tax obligations across states to build trust before considering solutions."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2018-10-01T00:00:00+00:00",
+   "mod": null,
+   "fp": "6e2cfe8cba98f7b7",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-03T17:21:13+00:00"
   },
   "avalara.com/us/en/learn/nexus/nexus-risk-assessment.html": {
    "site": "Avalara",
@@ -13378,24 +13443,50 @@
   "avalara.com/us/en/learn/whitepapers/multichannel-guide.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/whitepapers/multichannel-guide.html",
-   "title": "Multichannel guide",
+   "title": "Multichannel Selling Guide for Businesses - Avalara",
    "date": "2026-08-03T06:42:48+00:00",
    "lastmod": "2026-08-03T06:42:48+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "multichannel selling sales tax",
+    "search": "multichannel selling sales tax obligations",
+    "why": "Educates merchants on tax implications of selling across channels to establish Avalara as trusted advisor."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "47a6751c35866fa4",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T06:42:48+00:00"
   },
   "avalara.com/us/en/learn/whitepapers/5-steps-to-managing-sales-tax-for-software-companies.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/whitepapers/5-steps-to-managing-sales-tax-for-software-companies.html",
-   "title": "5 steps to managing sales tax for software companies",
+   "title": "5 Steps to Managing Sales Tax for Software Companies - Avalara",
    "date": "2026-08-03T06:29:40+00:00",
    "lastmod": "2026-08-03T06:29:40+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Sales tax compliance for software",
+    "search": "how to manage sales tax software companies",
+    "why": "Establishes authority with SaaS founders researching tax obligations early."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "08c5090c22095acc",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T06:29:40+00:00"
   },
   "avalara.com/us/en/learn/whitepapers/keeping-tax-exempt-customers-happy.html": {
    "site": "Avalara",
@@ -13558,13 +13649,26 @@
   "avalara.com/us/en/learn/whitepapers/turn-less-into-more-by-automating-hs-code-classification.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/whitepapers/turn-less-into-more-by-automating-hs-code-classification.html",
-   "title": "Turn less into more by automating hs code classification",
+   "title": "Turn less into more by automating HS code classification",
    "date": "2026-08-03T06:49:22+00:00",
    "lastmod": "2026-08-03T06:49:22+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "HS code classification automation benefits",
+    "search": "automate HS code classification efficiency",
+    "why": "Educates prospects on automation ROI for reducing manual work and errors."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "d1dfe2b71d457847",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T06:49:22+00:00"
   },
   "avalara.com/us/en/learn/whitepapers/consumer-use-tax-a-bane-for-businesses.html": {
    "site": "Avalara",
@@ -13615,13 +13719,26 @@
   "avalara.com/us/en/learn/whitepapers/fuel-tax-compliance-best-practices.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/whitepapers/fuel-tax-compliance-best-practices.html",
-   "title": "Fuel tax compliance best practices",
+   "title": "Fuel tax compliance best practices - Avalara",
    "date": "2026-08-03T06:39:45+00:00",
    "lastmod": "2026-08-03T06:39:45+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Fuel tax compliance best practices",
+    "search": "fuel tax compliance best practices",
+    "why": "Educates fuel suppliers on automation benefits for tax accuracy and audit readiness."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "7415e582ab6e36dd",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T06:39:45+00:00"
   },
   "avalara.com/us/en/learn/whitepapers/getting-it-right-the-4-steps-to-age-verification-for-direct-shippers.html": {
    "site": "Avalara",
@@ -13681,24 +13798,50 @@
   "avalara.com/us/en/learn/whitepapers/6-common-sales-tax-registration-filing-errors.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/whitepapers/6-common-sales-tax-registration-filing-errors.html",
-   "title": "6 common sales tax registration filing errors",
+   "title": "6 Common Sales Tax Registration & Filing Errors - Avalara",
    "date": "2026-08-03T06:31:32+00:00",
    "lastmod": "2026-08-03T06:31:32+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "sales tax registration filing errors",
+    "search": "common sales tax registration filing errors",
+    "why": "Educate early-stage prospects on compliance challenges to establish expertise."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "218f9d2ad828f814",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T06:31:32+00:00"
   },
   "avalara.com/us/en/learn/whitepapers/10-import-tax-and-duty-mistakes-you-cant-afford-to-make.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/whitepapers/10-import-tax-and-duty-mistakes-you-cant-afford-to-make.html",
-   "title": "10 import tax and duty mistakes you cant afford to make",
+   "title": "10 import tax and duty mistakes you can't afford to make - Avalara",
    "date": "2026-08-03T06:24:45+00:00",
    "lastmod": "2026-08-03T06:24:45+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "list",
+    "stage": "learning",
+    "topic": "Import tax and duty mistakes",
+    "search": "import tax duty mistakes international shipping",
+    "why": "Educates prospects on international compliance risks before they're ready to evaluate solutions."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "aecd1fa92c77fc7e",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T06:24:45+00:00"
   },
   "avalara.com/us/en/learn/whitepapers/10-sales-tax-tips.html": {
    "site": "Avalara",
@@ -13791,24 +13934,50 @@
   "avalara.com/us/en/learn/whitepapers/challenges-use-tax-compliance.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/whitepapers/challenges-use-tax-compliance.html",
-   "title": "Challenges use tax compliance",
+   "title": "The Challenges of Use Tax Compliance - Avalara",
    "date": "2026-08-03T06:32:33+00:00",
    "lastmod": "2026-08-03T06:32:33+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "research",
+    "stage": "learning",
+    "topic": "use tax compliance challenges",
+    "search": "use tax compliance requirements",
+    "why": "Builds authority on use tax issues to position Avalara as trusted advisor."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "f21b22491f291ae4",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T06:32:33+00:00"
   },
   "avalara.com/us/en/learn/whitepapers/sales-tax-affects-business.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/whitepapers/sales-tax-affects-business.html",
-   "title": "Sales tax affects business",
+   "title": "How Sales and Use Tax Affects Your Business - Avalara",
    "date": "2026-08-03T06:43:44+00:00",
    "lastmod": "2026-08-03T06:43:44+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "How sales tax affects businesses",
+    "search": "sales and use tax compliance",
+    "why": "Educates early-stage prospects unfamiliar with sales tax complexity and liability."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "c4d811b1d73dbf7d",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T06:43:44+00:00"
   },
   "avalara.com/us/en/learn/whitepapers/solving-five-pains-sales-tax-filing-remittance.html": {
    "site": "Avalara",
@@ -13923,24 +14092,50 @@
   "avalara.com/us/en/learn/whitepapers/sales-tax-compliance-oil-gas-industry.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/whitepapers/sales-tax-compliance-oil-gas-industry.html",
-   "title": "Sales tax compliance oil gas industry",
+   "title": "Sales Tax Compliance in the Oil and Gas Industry - Avalara",
    "date": "2026-08-03T06:44:38+00:00",
    "lastmod": "2026-08-03T06:44:38+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "research",
+    "stage": "learning",
+    "topic": "Sales tax compliance oil gas",
+    "search": "sales tax compliance oil gas industry",
+    "why": "Educates oil and gas executives about sales tax complexity and positions Avalara as expert solution."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "3db77eb346b158d6",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T06:44:38+00:00"
   },
   "avalara.com/us/en/learn/whitepapers/hidden-costs-compliance.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/whitepapers/hidden-costs-compliance.html",
-   "title": "Hidden costs compliance",
+   "title": "The Hidden Costs of Sales and Use Tax Compliance - Avalara",
    "date": "2026-08-03T06:41:36+00:00",
    "lastmod": "2026-08-03T06:41:36+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "research",
+    "stage": "learning",
+    "topic": "Hidden costs of tax compliance",
+    "search": "sales tax compliance costs chargebacks",
+    "why": "Educates prospects on compliance risks before they consider solutions."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "c70fd33aab0c0709",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T06:41:36+00:00"
   },
   "avalara.com/us/en/learn/whitepapers/food-tax-compliance-may-be-too-much-for-sellers-to-swallow.html": {
    "site": "Avalara",
@@ -13967,24 +14162,50 @@
   "avalara.com/us/en/learn/whitepapers/craft-fairs-and-sales-tax-a-state-by-state-guide.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/whitepapers/craft-fairs-and-sales-tax-a-state-by-state-guide.html",
-   "title": "Craft fairs and sales tax a state by state guide",
+   "title": "Craft Fairs and Sales Tax: A State-by-State Guide - Avalara",
    "date": "2026-08-03T06:33:50+00:00",
    "lastmod": "2026-08-03T06:33:50+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "research",
+    "stage": "learning",
+    "topic": "Craft fair sales tax rules",
+    "search": "craft fair sales tax by state",
+    "why": "Establishes expertise in niche market segment; attracts solo sellers researching tax requirements."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "00f008ab8ac0989a",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T06:33:50+00:00"
   },
   "avalara.com/us/en/learn/whitepapers/small-business-sellers-need-know-landed-cost.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/whitepapers/small-business-sellers-need-know-landed-cost.html",
-   "title": "Small business sellers need know landed cost",
+   "title": "What Small Business Owners Need to Know About Landed Cost - Avalara",
    "date": "2026-08-03T06:47:13+00:00",
    "lastmod": "2026-08-03T06:47:13+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "landed cost for international sales",
+    "search": "what is landed cost small business",
+    "why": "Educates small business sellers on international shipping complexity to build authority in cross-border commerce."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "ee8a6cde2a9cba71",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T06:47:13+00:00"
   },
   "avalara.com/us/en/learn/whitepapers/sales-tax-on-software.html": {
    "site": "Avalara",
@@ -14613,13 +14834,26 @@
   "avalara.com/us/en/learn/guides/state-by-state-non-collecting-seller-use-tax-guide.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/guides/state-by-state-non-collecting-seller-use-tax-guide.html",
-   "title": "State by state non collecting seller use tax guide",
+   "title": "State-by-state guide to non-collecting seller use tax - Avalara",
    "date": "2026-08-03T05:39:29+00:00",
    "lastmod": "2026-08-03T05:39:29+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "landing",
+    "stage": "learning",
+    "topic": "Non-collecting seller use tax by state",
+    "search": "non-collecting seller use tax requirements states",
+    "why": "Educates prospects on complex state tax rules and reporting obligations they must follow."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2021-03-24T00:00:00+00:00",
+   "mod": null,
+   "fp": "d25a53796eaf8e7a",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-03T05:39:29+00:00"
   },
   "avalara.com/us/en/learn/guides/state-by-state-guide-economic-nexus-laws.html": {
    "site": "Avalara",
@@ -14635,13 +14869,26 @@
   "avalara.com/us/en/learn/guides/sales-tax-nexus-laws-by-state.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/guides/sales-tax-nexus-laws-by-state.html",
-   "title": "Sales tax nexus laws by state",
+   "title": "Sales Tax Nexus Laws - Free State-by-State Guide - Avalara",
    "date": "2026-08-05T08:39:05+00:00",
    "lastmod": "2026-08-05T08:39:05+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Sales tax nexus laws by state",
+    "search": "sales tax nexus laws by state",
+    "why": "Helps ecommerce founders understand tax obligations across states early in research."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "d94cdd0b16609f92",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-05T08:39:05+00:00"
   },
   "avalara.com/us/en/learn/guides/state-by-state-click-through-nexus-guide.html": {
    "site": "Avalara",
@@ -14657,13 +14904,26 @@
   "avalara.com/us/en/learn/guides/marketplace-sellers-thought-leadership-guide.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/guides/marketplace-sellers-thought-leadership-guide.html",
-   "title": "Marketplace sellers thought leadership guide",
+   "title": "Sales tax requirements for marketplace sellers",
    "date": "2026-08-03T05:10:03+00:00",
    "lastmod": "2026-08-03T05:10:03+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Sales tax requirements marketplace sellers",
+    "search": "sales tax requirements marketplace sellers",
+    "why": "Educates early-stage ecommerce sellers on navigating complex multistate tax compliance rules."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "7906d7864bd4cea1",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T05:10:03+00:00"
   },
   "avalara.com/us/en/learn/guides/state-by-state-physical-presence-nexus-guide.html": {
    "site": "Avalara",
@@ -14679,24 +14939,50 @@
   "avalara.com/us/en/learn/guides/frequently-asked-questions-for-getting-started-with-sales-tax-compliance.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/guides/frequently-asked-questions-for-getting-started-with-sales-tax-compliance.html",
-   "title": "Frequently asked questions for getting started with sales tax compliance",
+   "title": "Frequently asked questions for getting started with sales tax compliance - Avalara",
    "date": "2026-08-03T05:05:15+00:00",
    "lastmod": "2026-08-03T05:05:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Sales tax compliance basics",
+    "search": "sales tax compliance getting started",
+    "why": "Educates early-stage ecommerce businesses on tax obligations and builds trust through expertise."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "30ec85021c9fe416",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T05:05:15+00:00"
   },
   "avalara.com/us/en/learn/guides/state-by-state-registration-requirements-for-marketplace-sellers.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/guides/state-by-state-registration-requirements-for-marketplace-sellers.html",
-   "title": "State by state registration requirements for marketplace sellers",
+   "title": "State By State Registration Requirements For Marketplace Sellers - Avalara",
    "date": "2026-08-03T05:41:16+00:00",
    "lastmod": "2026-08-03T05:41:16+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "state sales tax registration requirements",
+    "search": "marketplace seller state registration requirements",
+    "why": "Educates sellers on tax compliance rules across states to establish expertise."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2018-06-21T00:00:00+00:00",
+   "mod": null,
+   "fp": "3b9bef43c5b60860",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-03T05:41:16+00:00"
   },
   "avalara.com/us/en/learn/guides/sales-tax-101/the-basics.html": {
    "site": "Avalara",
@@ -14734,13 +15020,26 @@
   "avalara.com/us/en/learn/guides/small-business-faq/tax-compliance-management-101.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/guides/small-business-faq/tax-compliance-management-101.html",
-   "title": "Tax compliance management 101",
+   "title": "Tax Compliance Management & Audit FAQ - Avalara",
    "date": "2026-08-03T05:36:54+00:00",
    "lastmod": "2026-08-03T05:36:54+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Sales tax audits and compliance",
+    "search": "sales tax audit FAQ what to expect",
+    "why": "Educates early-stage research buyers about tax compliance basics and audit processes."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "410a125dc9892829",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T05:36:54+00:00"
   },
   "avalara.com/us/en/learn/guides/small-business-faq/sales-tax-returns-101.html": {
    "site": "Avalara",
@@ -14811,13 +15110,26 @@
   "avalara.com/us/en/learn/guides/small-business-faq/pos-system-sales-tax-faq.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/guides/small-business-faq/pos-system-sales-tax-faq.html",
-   "title": "Pos system sales tax faq",
+   "title": "POS system sales tax FAQ and guide - Avalara",
    "date": "2026-08-03T05:17:54+00:00",
    "lastmod": "2026-08-03T05:17:54+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "POS system sales tax guide",
+    "search": "POS system sales tax FAQ",
+    "why": "Educates early-stage businesses on POS systems and sales tax basics to build trust."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "5de5645311039f72",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T05:17:54+00:00"
   },
   "avalara.com/us/en/learn/guides/5-steps-to-managing-sales-tax-compliance.html": {
    "site": "Avalara",
@@ -15050,13 +15362,26 @@
   "avalara.com/us/en/learn/communications-tax.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/communications-tax.html",
-   "title": "Communications tax",
+   "title": "Communications Tax Resource Center - Avalara",
    "date": "2026-08-03T10:24:32+00:00",
    "lastmod": "2026-08-03T10:24:32+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Communications tax compliance for telecom",
+    "search": "communications tax compliance for wireless providers",
+    "why": "Educates telecom and tech companies on complex tax obligations in emerging services like 5G."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "0714fa2567bc021e",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-03T10:24:32+00:00"
   },
   "avalara.com/us/en/learn/licenses.html": {
    "site": "Avalara",
@@ -16171,13 +16496,26 @@
   "avalara.com/us/en/research/avalara-commerce-monitor.html": {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/research/avalara-commerce-monitor.html",
-   "title": "Avalara commerce monitor",
+   "title": "Avalara Commerce Monitor - Avalara",
    "date": "2026-08-03T06:51:56+00:00",
    "lastmod": "2026-08-03T06:51:56+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "research",
+    "stage": "learning",
+    "topic": "COVID-19 ecommerce trends analysis",
+    "search": "ecommerce growth COVID-19 pandemic impact",
+    "why": "Establishes thought leadership through proprietary transaction data tracking ecommerce acceleration."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2020-03-13T00:00:00+00:00",
+   "mod": null,
+   "fp": "860182f86e65f64c",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-03T06:51:56+00:00"
   },
   "avalara.com/us/en/research/idc-2021.html": {
    "site": "Avalara",
@@ -29732,13 +30070,26 @@
   "anrok.com/resources/2021-sales-tax-year-in-review": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/2021-sales-tax-year-in-review",
-   "title": "2021 sales tax year in review",
+   "title": "Year-end SaaS sales tax review: 2021",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "research",
+    "stage": "learning",
+    "topic": "2021 SaaS sales tax developments",
+    "search": "SaaS sales tax changes 2021",
+    "why": "Establishes authority on sales tax trends; attracts early-stage research from target audience."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2022-01-30T00:00:00+00:00",
+   "mod": null,
+   "fp": "8380ba4d3e21181b",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/3-questions-to-ask-when-integrating-sales-tax": {
    "site": "Anrok",
@@ -29767,24 +30118,50 @@
   "anrok.com/resources/6-questions-to-figure-out-if-you-should-start-collecting-sales-tax": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/6-questions-to-figure-out-if-you-should-start-collecting-sales-tax",
-   "title": "6 questions to figure out if you should start collecting sales tax",
+   "title": "Do you need to start collecting sales tax? Answer these 4 questions to find out",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Sales tax compliance checklist",
+    "search": "when should you collect sales tax",
+    "why": "Educates early-stage businesses about sales tax obligations to build authority and nurture leads."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "0c99881dd4e93e98",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/7-game-changing-tech-trends": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/7-game-changing-tech-trends",
-   "title": "7 game changing tech trends",
+   "title": "Anrok | Tech trends CFOs can't ignore",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "opinion",
+    "stage": "learning",
+    "topic": "Tech trends for CFOs",
+    "search": "tech trends CFOs 2025 2026",
+    "why": "Establishes thought leadership on finance tech trends to build CFO audience trust."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "ba1aa0018e68663d",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/8-most-common-sales-tax-mistakes": {
    "site": "Anrok",
@@ -29861,35 +30238,74 @@
   "anrok.com/resources/ai-in-finance-hex": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/ai-in-finance-hex",
-   "title": "Ai in finance hex",
+   "title": "AI in Finance: Hex",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "case",
+    "stage": "learning",
+    "topic": "How Hex uses AI in finance",
+    "search": "how to use AI in finance team",
+    "why": "Shows how customers leverage AI to improve finance operations and decision-making."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "6f1dccbb372f535f",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/ai-in-finance-zapier": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/ai-in-finance-zapier",
-   "title": "Ai in finance zapier",
+   "title": "AI in Finance: Zapier",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "case",
+    "stage": "learning",
+    "topic": "Zapier finance automation",
+    "search": "how Zapier uses Zapier finance",
+    "why": "Builds trust by showing real company using product to save time."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "80036e5da70865c0",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/ai-is-now-a-tax-question-and-states-are-answering-it-without-you": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/ai-is-now-a-tax-question-and-states-are-answering-it-without-you",
-   "title": "Ai is now a tax question and states are answering it without you",
+   "title": "AI is now a tax question, and states are answering it without you",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "research",
+    "stage": "learning",
+    "topic": "AI taxation state-by-state rules",
+    "search": "how are AI tools taxed by state",
+    "why": "Educates prospects on emerging AI tax complexity, positioning Anrok's expertise."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "dc64d84965b791e8",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/ai-powered-risk-management": {
    "site": "Anrok",
@@ -29966,13 +30382,26 @@
   "anrok.com/resources/announcing-series-c": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/announcing-series-c",
-   "title": "Announcing series c",
+   "title": "Anrok raises $55M Series C to scale global tax compliance infrastructure",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "news",
+    "stage": "customers",
+    "topic": "Series C funding announcement",
+    "search": "Anrok raises Series C funding",
+    "why": "Builds credibility with customers and prospects through major funding milestone."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2025-10-20T00:00:00+00:00",
+   "mod": null,
+   "fp": "3ba2ce872ff3195b",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/annual-financial-planning": {
    "site": "Anrok",
@@ -30025,13 +30454,26 @@
   "anrok.com/resources/anrok-partners-with-tabs-to-unify-revenue-recognition-and-tax-compliance": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/anrok-partners-with-tabs-to-unify-revenue-recognition-and-tax-compliance",
-   "title": "Anrok partners with tabs to unify revenue recognition and tax compliance",
+   "title": "Anrok partners with Tabs to unify revenue recognition and tax compliance",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "news",
+    "stage": "customers",
+    "topic": "Anrok partnership with Tabs revenue",
+    "search": "Anrok Tabs integration partnership",
+    "why": "Announces product integration to existing users and market."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2025-04-15T00:00:00+00:00",
+   "mod": null,
+   "fp": "52205c12416bfeae",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/anrok-vs-vertex-a-comprehensive-comparison-guide-for-modern-businesses": {
    "site": "Anrok",
@@ -30084,13 +30526,26 @@
   "anrok.com/resources/anrok-x-bennett-thrasher-where-is-saas-taxable-in-2023": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/anrok-x-bennett-thrasher-where-is-saas-taxable-in-2023",
-   "title": "Anrok x bennett thrasher where is saas taxable in 2023",
+   "title": "Where is SaaS taxable? A 2023 guide for finance leaders",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "research",
+    "stage": "learning",
+    "topic": "SaaS sales tax taxability 2023",
+    "search": "where is SaaS taxable 2023",
+    "why": "Educates finance leaders on evolving SaaS tax rules to establish authority."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2027-01-01T00:00:00+00:00",
+   "mod": null,
+   "fp": "8c6591079541a405",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "event": "2026-09-30T06:08:34+00:00"
   },
   "anrok.com/resources/behind-the-scenes-a-conversation-with-a-controller": {
    "site": "Anrok",
@@ -30143,13 +30598,26 @@
   "anrok.com/resources/best-sales-tax-automation-software-for-ai-businesses": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/best-sales-tax-automation-software-for-ai-businesses",
-   "title": "Best sales tax automation software for ai businesses",
+   "title": "7 best sales tax automation software for AI businesses",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "compare",
+    "stage": "comparing",
+    "topic": "Sales tax automation for AI businesses",
+    "search": "best sales tax automation software AI",
+    "why": "Positions Anrok as market leader while comparing against 6 competitors to capture high-intent buyers."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2025-12-07T00:00:00+00:00",
+   "mod": null,
+   "fp": "1904bf574e8c54bf",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/best-sales-tax-automation-software-for-ecommerce": {
    "site": "Anrok",
@@ -30250,13 +30718,26 @@
   "anrok.com/resources/building-your-2025-tax-strategy-a-practical-guide-for-modern-finance-teams": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/building-your-2025-tax-strategy-a-practical-guide-for-modern-finance-teams",
-   "title": "Building your 2025 tax strategy a practical guide for modern finance teams",
+   "title": "Building your 2025 tax strategy: A practical guide for modern finance teams",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "opinion",
+    "stage": "learning",
+    "topic": "Building 2025 tax strategy",
+    "search": "2025 tax strategy for software companies",
+    "why": "Establishes thought leadership on evolving digital tax landscape for finance leaders."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "f2f1be1f7fc85069",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/built-for-whats-next": {
    "site": "Anrok",
@@ -30405,13 +30886,26 @@
   "anrok.com/resources/complimentary-nexus-template-to-assess-exposure": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/complimentary-nexus-template-to-assess-exposure",
-   "title": "Complimentary nexus template to assess exposure",
+   "title": "Free tool: Estimate your sales tax nexus exposure",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "landing",
+    "stage": "learning",
+    "topic": "Sales tax nexus exposure assessment",
+    "search": "sales tax nexus exposure template",
+    "why": "Captures early-stage ecommerce/SaaS sellers learning about tax compliance complexity."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2027-01-01T00:00:00+00:00",
+   "mod": null,
+   "fp": "1a67d9677ce7a0b7",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "event": "2026-09-30T06:08:34+00:00"
   },
   "anrok.com/resources/customer-case-study-aerospace-startup": {
    "site": "Anrok",
@@ -30920,24 +31414,50 @@
   "anrok.com/resources/designing-billing-and-tax-for-modern-saas-how-finance-teams-scale-without-compliance-drag": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/designing-billing-and-tax-for-modern-saas-how-finance-teams-scale-without-compliance-drag",
-   "title": "Designing billing and tax for modern saas how finance teams scale without compliance drag",
+   "title": "Designing billing and tax for modern SaaS: How finance teams scale without compliance drag",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "SaaS billing and tax design",
+    "search": "how to design billing and tax SaaS",
+    "why": "Educates finance teams on integrating tax into billing architecture to reduce compliance burden."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2027-01-01T00:00:00+00:00",
+   "mod": null,
+   "fp": "868d694e2824d5fe",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "event": "2026-09-30T06:08:34+00:00"
   },
   "anrok.com/resources/download-three-year-financial-projection-template": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/download-three-year-financial-projection-template",
-   "title": "Download three year financial projection template",
+   "title": "Three-year financial projection template",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "landing",
+    "stage": "learning",
+    "topic": "financial projection template for ecommerce",
+    "search": "three year financial projection template",
+    "why": "Attracts finance leaders researching planning tools and building credibility with useful resources."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "1436d1aad5462608",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/e-invoicing-in-2026-models-mandates-and-what-every-seller-needs-to-do-next": {
    "site": "Anrok",
@@ -30990,13 +31510,26 @@
   "anrok.com/resources/end-of-year-sales-tax-and-vat-report-2025": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/end-of-year-sales-tax-and-vat-report-2025",
-   "title": "End of year sales tax and vat report 2025",
+   "title": "End-of-year sales tax and VAT report: 2025",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "research",
+    "stage": "learning",
+    "topic": "US sales tax VAT updates 2025",
+    "search": "2025 sales tax VAT rate changes",
+    "why": "Establishes Anrok as tax expert authority during compliance decision research phase."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2027-01-01T00:00:00+00:00",
+   "mod": null,
+   "fp": "f5002c5d36b7f81f",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "event": "2026-09-30T06:08:34+00:00"
   },
   "anrok.com/resources/engineering-case-native-automatic-tax-stripe": {
    "site": "Anrok",
@@ -31145,13 +31678,26 @@
   "anrok.com/resources/financial-controls": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/financial-controls",
-   "title": "Financial controls",
+   "title": "Financial controls 101: Establishing a foundation to fuel growth",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Financial controls for scaling businesses",
+    "search": "financial controls for growing businesses",
+    "why": "Educates scaling businesses on risk management fundamentals they need before buying compliance software."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2025-06-05T00:00:00+00:00",
+   "mod": null,
+   "fp": "46c3fa8e8eb3fb03",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/financial-projection-template": {
    "site": "Anrok",
@@ -31180,46 +31726,98 @@
   "anrok.com/resources/five-financial-mistakes-that-slowly-erode-your-profits": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/five-financial-mistakes-that-slowly-erode-your-profits",
-   "title": "Five financial mistakes that slowly erode your profits",
+   "title": "5 financial mistakes that silently erode your profits",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "list",
+    "stage": "learning",
+    "topic": "Financial mistakes eroding profits",
+    "search": "financial mistakes that erode business profits",
+    "why": "Builds authority on finance/tax topics to attract early-stage founders researching compliance."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "a2278cd2960a2230",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/from-exposure-to-automation-how-finance-teams-clean-up-sales-tax-and-build-scalable-billing-operations": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/from-exposure-to-automation-how-finance-teams-clean-up-sales-tax-and-build-scalable-billing-operations",
-   "title": "From exposure to automation how finance teams clean up sales tax and build scalable billing operations",
+   "title": "From exposure to automation: How to scale compliantly",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "case",
+    "stage": "learning",
+    "topic": "Sales tax compliance and billing automation",
+    "search": "scale sales tax compliance finance teams",
+    "why": "Educates finance teams on tax exposure and VDA resolution to build trust early."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2027-01-01T00:00:00+00:00",
+   "mod": null,
+   "fp": "c7003cbf7fe20747",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "event": "2026-09-30T06:08:34+00:00"
   },
   "anrok.com/resources/full-time-employee-vs-independent-contractor-whats-the-difference": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/full-time-employee-vs-independent-contractor-whats-the-difference",
-   "title": "Full time employee vs independent contractor whats the difference",
+   "title": "Full-time employee vs. independent contractor: What are the tax implications?",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Employee vs independent contractor tax",
+    "search": "employee vs independent contractor tax implications",
+    "why": "Builds authority on tax compliance for HR audiences researching classification rules."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "58d9a798cd1e3ac5",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/g2-best-software-2025": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/g2-best-software-2025",
-   "title": "G2 best software 2025",
+   "title": "Anrok is one of G2’s fastest-growing products for 2025",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "news",
+    "stage": "comparing",
+    "topic": "Sales tax compliance software G2 award",
+    "search": "fastest growing sales tax software 2025",
+    "why": "Builds credibility with third-party validation and positions Anrok as leader in category."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2025-02-18T00:00:00+00:00",
+   "mod": null,
+   "fp": "d7c2b70622a01301",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/getting-ready-to-charge-sales-tax": {
    "site": "Anrok",
@@ -31248,13 +31846,26 @@
   "anrok.com/resources/global-sales-tax-benchmark-report": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/global-sales-tax-benchmark-report",
-   "title": "Global sales tax benchmark report",
+   "title": "Anrok | 2025 Global sales tax benchmark report",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "research",
+    "stage": "learning",
+    "topic": "Global sales tax automation tipping points",
+    "search": "when to automate sales tax compliance",
+    "why": "Demonstrates thought leadership through data analysis showing automation inflection points at scale."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "f42699ede08d56eb",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/global-sales-tax-compliance-guide": {
    "site": "Anrok",
@@ -31331,24 +31942,50 @@
   "anrok.com/resources/hiring-remotely-use-this-framework-to-stay-compliant": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/hiring-remotely-use-this-framework-to-stay-compliant",
-   "title": "Hiring remotely use this framework to stay compliant",
+   "title": "Hiring remotely? Use this framework to stay sales tax compliant",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "remote hiring sales tax compliance",
+    "search": "hiring remote employees sales tax",
+    "why": "Educates early-stage founders about tax obligations when scaling remote teams."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "131989f676e95d8f",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/how-ai-is-reshaping-finance-a-conversation-with-sowmya-ranganathan-former-openai-controller": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/how-ai-is-reshaping-finance-a-conversation-with-sowmya-ranganathan-former-openai-controller",
-   "title": "How ai is reshaping finance a conversation with sowmya ranganathan former openai controller",
+   "title": "How AI is reshaping finance: A conversation with Sowmya Ranganathan, former OpenAI controller",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "opinion",
+    "stage": "learning",
+    "topic": "AI reshaping finance operations",
+    "search": "AI implementation strategies finance teams",
+    "why": "Establishes thought leadership with executive interview on emerging finance trend."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "a45a7320dc641a67",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/how-big-is-my-sales-tax-exposure": {
    "site": "Anrok",
@@ -31449,46 +32086,98 @@
   "anrok.com/resources/how-sales-tax-complexity-drains-saas-margins": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/how-sales-tax-complexity-drains-saas-margins",
-   "title": "How sales tax complexity drains saas margins",
+   "title": "The $400K compliance cost: How sales tax complexity drains SaaS margins",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Sales tax cost impact SaaS",
+    "search": "sales tax compliance SaaS companies cost",
+    "why": "Educates SaaS buyers on hidden compliance costs to establish category need."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2026-01-29T00:00:00+00:00",
+   "mod": null,
+   "fp": "22a9ce47746523b3",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/how-tax-rules-apply-to-your-software": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/how-tax-rules-apply-to-your-software",
-   "title": "How tax rules apply to your software",
+   "title": "How sales tax rules apply to software and other digital products",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Sales tax rules for digital products",
+    "search": "how is software taxed sales tax",
+    "why": "Educates prospects on software taxability before they know they need compliance tools."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2023-10-08T00:00:00+00:00",
+   "mod": null,
+   "fp": "a31683f4f8ec70bb",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/how-to-assess-nexus-exposure-free-nexus-template": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/how-to-assess-nexus-exposure-free-nexus-template",
-   "title": "How to assess nexus exposure free nexus template",
+   "title": "Where do I have nexus? How to assess your sales tax exposure",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Sales tax nexus assessment guide",
+    "search": "how to assess sales tax nexus exposure",
+    "why": "Educates early-stage sellers on nexus requirements, positioning Anrok as trusted guide."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "26d13b3214dc8a4b",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/how-to-build-a-scalable-finance-tech-stack": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/how-to-build-a-scalable-finance-tech-stack",
-   "title": "How to build a scalable finance tech stack",
+   "title": "How to a scalable finance tech stack in 2026",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Scalable finance tech stack",
+    "search": "how to build finance tech stack",
+    "why": "Educates CFOs on modernizing finance workflows and positions tax compliance as a critical capability."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "a61985d950c46b3c",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/how-to-build-scalable-financial-controls": {
    "site": "Anrok",
@@ -31517,24 +32206,50 @@
   "anrok.com/resources/how-to-fix-your-customer-address-data-quality-problem": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/how-to-fix-your-customer-address-data-quality-problem",
-   "title": "How to fix your customer address data quality problem",
+   "title": "How to fix your customer address data-quality problem",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Customer address data quality",
+    "search": "fix customer address data quality",
+    "why": "Educates buyers on tax compliance risks from bad data to build awareness."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2027-01-01T00:00:00+00:00",
+   "mod": null,
+   "fp": "31befa1d35b5fb2d",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "event": "2026-09-30T06:08:34+00:00"
   },
   "anrok.com/resources/how-to-reduce-your-exposure-in-a-sales-tax-audit": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/how-to-reduce-your-exposure-in-a-sales-tax-audit",
-   "title": "How to reduce your exposure in a sales tax audit",
+   "title": "What happens to outstanding sales tax during an audit?",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Reduce exposure sales tax audit",
+    "search": "how to prepare for sales tax audit",
+    "why": "Educates prospects on audit risks and preparation, building trust and establishing expertise."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "0a03cab3f9c395c9",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/how-to-tell-customers-youre-charging-california-sales-tax": {
    "site": "Anrok",
@@ -31563,13 +32278,26 @@
   "anrok.com/resources/how-trailing-nexus-impacts-your-saas-business": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/how-trailing-nexus-impacts-your-saas-business",
-   "title": "How trailing nexus impacts your saas business",
+   "title": "How trailing nexus impacts your SaaS business",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "trailing nexus sales tax",
+    "search": "trailing nexus SaaS sales tax",
+    "why": "Educates prospects on complex compliance issue affecting SaaS businesses."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "2703e4a9fcb889f2",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/how-webflow-went-from-paying-out-of-pocket-to-proving-pass-through": {
    "site": "Anrok",
@@ -31694,57 +32422,122 @@
   "anrok.com/resources/introducing-anrok-stripe-app": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/introducing-anrok-stripe-app",
-   "title": "Introducing anrok stripe app",
+   "title": "Introducing Anrok’s Stripe app",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "news",
+    "stage": "buying",
+    "topic": "Anrok Stripe app tax compliance integration",
+    "search": "Anrok Stripe app tax compliance integration",
+    "why": "Announces new Stripe integration to attract buyers evaluating tax compliance solutions."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2025-05-06T00:00:00+00:00",
+   "mod": null,
+   "fp": "68fbdcf521a365bb",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/introducing-campfire-integration": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/introducing-campfire-integration",
-   "title": "Introducing campfire integration",
+   "title": "Campfire and Anrok partner to simplify sales tax automation for modern companies",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "news",
+    "stage": "customers",
+    "topic": "Campfire Anrok integration partnership",
+    "search": "Anrok Campfire integration sales tax",
+    "why": "Announces new integration to existing users and prospects interested in connected accounting workflows."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2025-11-12T00:00:00+00:00",
+   "mod": null,
+   "fp": "d44b2e1410cfff26",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/introducing-global-compliance": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/introducing-global-compliance",
-   "title": "Introducing global compliance",
+   "title": "Anrok's end-to-end global compliance: The simplified approach to VAT and GST",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "news",
+    "stage": "learning",
+    "topic": "Global VAT GST compliance automation",
+    "search": "VAT GST compliance software automation",
+    "why": "Announces global expansion of compliance platform to establish market leadership position."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2025-10-12T00:00:00+00:00",
+   "mod": null,
+   "fp": "1efe0ed71cc1587e",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/introducing-hyperline-integration": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/introducing-hyperline-integration",
-   "title": "Introducing hyperline integration",
+   "title": "Introducing Anrok’s Hyperline integration",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "news",
+    "stage": "customers",
+    "topic": "Anrok Hyperline integration announcement",
+    "search": "Anrok Hyperline integration tax compliance",
+    "why": "Showcases new product partnership to existing and potential customers, demonstrates integrated compliance solution."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2025-05-07T00:00:00+00:00",
+   "mod": null,
+   "fp": "2002e145591196df",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/introducing-new-standard-for-full-global-compliance": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/introducing-new-standard-for-full-global-compliance",
-   "title": "Introducing new standard for full global compliance",
+   "title": "A new standard for global compliance: Tax infrastructure that scales with you",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "news",
+    "stage": "learning",
+    "topic": "Global tax compliance platform launch",
+    "search": "global sales tax compliance software",
+    "why": "Announces new global compliance features and integrations to establish market authority."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2026-02-09T00:00:00+00:00",
+   "mod": null,
+   "fp": "391a6b1223838cc7",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/introducing-shopify-integration": {
    "site": "Anrok",
@@ -31797,46 +32590,98 @@
   "anrok.com/resources/investor-grade-financials-checklist-2026": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/investor-grade-financials-checklist-2026",
-   "title": "Investor grade financials checklist 2026",
+   "title": "Investor-ready financials in 2026",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "buying",
+    "topic": "investor-grade financial readiness checklist",
+    "search": "how to prepare financials for investors",
+    "why": "Positions Anrok as advisor to founders raising capital, showing compliance expertise matters early."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2025-10-26T00:00:00+00:00",
+   "mod": null,
+   "fp": "152f24506306d9eb",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/investor-grade-financials-for-2026": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/investor-grade-financials-for-2026",
-   "title": "Investor grade financials for 2026",
+   "title": "Investor-grade financials for 2026",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "landing",
+    "stage": "buying",
+    "topic": "Investor-grade financials for 2026",
+    "search": "prepare investor grade financials diligence",
+    "why": "Attracts finance leaders preparing for fundraising and M&A due diligence."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "de9b7e126355e151",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/investor-ready-financials-what-vcs-look-for-in-scaling-companies": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/investor-ready-financials-what-vcs-look-for-in-scaling-companies",
-   "title": "Investor ready financials what vcs look for in scaling companies",
+   "title": "Investor-ready financials: What VCs look for in scaling companies",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "opinion",
+    "stage": "learning",
+    "topic": "Investor-ready financials for scaling companies",
+    "search": "what do VCs look for in financials",
+    "why": "Establishes Anrok as advisor to scaling companies managing investor expectations."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "489fe7ab252d8954",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/invoice-setup-guide": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/invoice-setup-guide",
-   "title": "Invoice setup guide",
+   "title": "Invoice Setup Guide: Future-Proofing Your Billing Systems",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Invoice setup for sales tax compliance",
+    "search": "how to set up invoices for sales tax",
+    "why": "Educates prospects on billing best practices while positioning early tax compliance as essential."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "aaacfa9beaa8ee78",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/is-a-vda-right-for-my-business": {
    "site": "Anrok",
@@ -31865,13 +32710,26 @@
   "anrok.com/resources/is-saas-taxable": {
    "site": "Anrok",
    "url": "https://www.anrok.com/resources/is-saas-taxable",
-   "title": "Is saas taxable",
+   "title": "Is SaaS taxable?",
    "date": "2026-08-04T20:46:15+00:00",
    "lastmod": "2026-08-04T20:46:15+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Is SaaS taxable",
+    "search": "is saas software taxable",
+    "why": "Educates early-stage SaaS sellers on tax obligations and state variations."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": null,
+   "mod": null,
+   "fp": "c41ace95572ff762",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "unknown",
+   "event": "2026-08-04T20:46:15+00:00"
   },
   "anrok.com/resources/is-saas-taxable-in-colorado": {
    "site": "Anrok",
@@ -95732,13 +96590,26 @@
   "trykintsugi.com/blog/how-to-file-north-dakota-sales-tax-online": {
    "site": "Kintsugi",
    "url": "https://trykintsugi.com/blog/how-to-file-north-dakota-sales-tax-online",
-   "title": "How to file north dakota sales tax online",
+   "title": "How to File North Dakota Sales Tax Online (2026) | Kintsugi",
    "date": "2026-08-05T00:00:00+00:00",
    "lastmod": "2026-08-05T00:00:00+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "North Dakota sales tax filing",
+    "search": "how to file North Dakota sales tax",
+    "why": "Captures sellers learning ND compliance requirements during onboarding research."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2026-08-05T00:00:00+00:00",
+   "mod": "2026-08-05T00:00:00+00:00",
+   "fp": "4a79bb7570d94cc5",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "event": "2026-08-05T00:00:00+00:00"
   },
   "trykintsugi.com/blog/sales-tax-advisory-for-firms": {
    "site": "Kintsugi",
@@ -95767,24 +96638,50 @@
   "trykintsugi.com/blog/how-to-file-south-dakota-sales-tax-online": {
    "site": "Kintsugi",
    "url": "https://trykintsugi.com/blog/how-to-file-south-dakota-sales-tax-online",
-   "title": "How to file south dakota sales tax online",
+   "title": "How to File South Dakota Sales Tax Online (2026) | Kintsugi",
    "date": "2026-08-04T00:00:00+00:00",
    "lastmod": "2026-08-04T00:00:00+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "How to file South Dakota sales tax",
+    "search": "how to file South Dakota sales tax online",
+    "why": "Builds trust with beginners by explaining state filing procedures step-by-step."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2026-08-04T00:00:00+00:00",
+   "mod": "2026-08-04T00:00:00+00:00",
+   "fp": "59c93fd2f6dab050",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "event": "2026-08-04T00:00:00+00:00"
   },
   "trykintsugi.com/blog/how-to-file-west-virginia-sales-tax-online": {
    "site": "Kintsugi",
    "url": "https://trykintsugi.com/blog/how-to-file-west-virginia-sales-tax-online",
-   "title": "How to file west virginia sales tax online",
+   "title": "How to File West Virginia Sales Tax Online (2026) | Kintsugi",
    "date": "2026-08-03T00:00:00+00:00",
    "lastmod": "2026-08-03T00:00:00+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "West Virginia sales tax filing",
+    "search": "how to file West Virginia sales tax",
+    "why": "Educates ecommerce sellers on state tax compliance, establishes authority in tax filing guides."
+   },
    "prog": null,
-   "baseline": true
+   "baseline": true,
+   "pub": "2026-08-03T00:00:00+00:00",
+   "mod": "2026-08-03T00:00:00+00:00",
+   "fp": "741c3f6efaa32c7d",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "new",
+   "event": "2026-08-03T00:00:00+00:00"
   },
   "trykintsugi.com/blog/kintsugi-ai-security": {
    "site": "Kintsugi",
@@ -111512,13 +112409,26 @@
   "numeral.com/blog/rhode-island-sales-tax": {
    "site": "Numeral",
    "url": "https://www.numeral.com/blog/rhode-island-sales-tax",
-   "title": "Rhode island sales tax",
+   "title": "Rhode Island Sales Tax Rates, Rules, & Compliance (2026)",
    "date": "2026-08-04T04:13:46+00:00",
    "lastmod": "2026-08-04T04:13:46+00:00",
    "first_seen": "2026-09-30T04:11:41+00:00",
-   "cls": null,
+   "cls": {
+    "is_content": true,
+    "type": "howto",
+    "stage": "learning",
+    "topic": "Rhode Island sales tax rules",
+    "search": "Rhode Island sales tax rates",
+    "why": "Establishes authority on state-specific tax compliance for early-stage research."
+   },
    "baseline": true,
-   "prog": null
+   "prog": null,
+   "pub": "2026-04-23T00:00:00+00:00",
+   "mod": null,
+   "fp": "d05f9b94d8e0f70b",
+   "dates_checked": "2026-09-30T06:08:34+00:00",
+   "kind": "updated",
+   "event": "2026-08-04T04:13:46+00:00"
   },
   "numeral.com/blog/ruby-card": {
    "site": "Numeral",
