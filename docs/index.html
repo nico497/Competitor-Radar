@@ -168,7 +168,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
     if (!m.repo || !host.endsWith(".github.io")) return true;
     const owner = host.replace(/\.github\.io$/, "");
     const first = location.pathname.split("/").filter(Boolean)[0] || "";
-    return (first ? `${owner}/${first}` : `${owner}/${owner}.github.io`) === m.repo.toLowerCase();
+    return (first ? `${owner}/${first}` : `${owner}/${owner}.github.io`).toLowerCase() === m.repo.toLowerCase();
   }
 
   function renderNotices() {
