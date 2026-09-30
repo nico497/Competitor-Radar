@@ -2,12 +2,12 @@
  "meta": {
   "title": "Competitor Radar",
   "niche": "US sales tax compliance software for mid-market ecommerce and SaaS brands",
-  "updated": "2026-09-30T04:00:32+00:00",
+  "updated": "2026-09-30T04:11:41+00:00",
   "window_days": 30,
   "repo": "nico497/Competitor-Radar",
-  "first_run": true,
+  "first_run": false,
   "errors": [],
-  "pending": 5710
+  "pending": 1575
  },
  "types": [
   [
@@ -44,49 +44,53 @@
   ]
  ],
  "analysis": {
-  "summary": "TaxCloud leads on switching content: 14 comparison pages and 16 case studies. Rivals mostly publish learning content, like state guides, webinars and city rate pages.",
+  "summary": "TaxCloud goes after switchers harder than anyone: 24 comparison pages and 17 case studies. Rivals mostly publish state guides and webinars, and Numeral and Zamp lean on customer stories.",
   "points": [
    {
-    "text": "TaxCloud's 14 comparison pages and 16 case studies target people ready to switch, and no rival matches that mix.",
+    "text": "TaxCloud runs 24 comparison pages, many aimed at Avalara users, and 33 pages written for buyers. That is the clearest switcher focus in the set.",
     "names": [
      "TaxCloud"
     ]
    },
    {
-    "text": "Avalara's 84 pages are mostly webinars and product news, with only 3 aimed at buyers. It is not defending against switchers here.",
+    "text": "Kintsugi has 17 comparison pages, covering Avalara, TaxJar, Anrok, Numeral, Zamp and Vertex. It is now fighting for the same switchers.",
     "names": [
-     "Avalara"
+     "Kintsugi"
     ]
    },
    {
-    "text": "TaxJar (77 pages) and Kintsugi (461) publish mostly state-by-state how-tos, aimed at people learning. Kintsugi also has 5 comparison pages, some aimed at Avalara users.",
+    "text": "Numeral has 23 case studies and Zamp has 19, mostly ecommerce brands. TaxCloud has 17, so proof-by-customer is a crowded lane.",
     "names": [
-     "TaxJar"
+     "Numeral"
     ]
    }
   ],
   "shared": [
    {
-    "title": "State-by-state tax guides",
-    "text": "TaxJar and Kintsugi mass-produce state and topic guides, such as shipping tax and rates and rules. They catch early researchers. TaxCloud has few of these.",
+    "title": "Customer story libraries",
+    "text": "Numeral (23), Zamp (19) and TaxCloud (17) publish many customer stories. Proof is table stakes now, so TaxCloud needs sharper results and mid-market names to stand out.",
     "names": [
+     "TaxCloud",
+     "Numeral",
+     "Zamp"
+    ]
+   },
+   {
+    "title": "State-by-state guides",
+    "text": "Avalara, TaxJar, Numeral and Kintsugi publish state pages on nexus, shipping tax and filing. They own early-stage searches, so TaxCloud's 105 state pages face heavy competition.",
+    "names": [
+     "Avalara",
      "TaxJar",
+     "Numeral",
      "Kintsugi"
     ]
    },
    {
-    "title": "Rival-pricing and alternatives pages",
-    "text": "Zamp and Kintsugi write pages on Avalara and TaxJar pricing and alternatives. They are going after TaxCloud's switcher audience.",
+    "title": "Rival alternatives pages",
+    "text": "TaxCloud, Kintsugi and Zamp write about Avalara pricing or alternatives. Switchers will see rivals' framing of Avalara, so TaxCloud must keep its own pages current.",
     "names": [
+     "TaxCloud",
      "Zamp",
-     "Kintsugi"
-    ]
-   },
-   {
-    "title": "SaaS tax content",
-    "text": "Anrok and Kintsugi both publish SaaS taxability guides, including California's new SaaS tax. TaxCloud has one SaaS guide and a SaaS software roundup.",
-    "names": [
-     "Anrok",
      "Kintsugi"
     ]
    }
@@ -94,15 +98,15 @@
   "gaps": [
    {
     "title": "Switching playbook hub",
-    "text": "Only Anrok has a switching-platform guide, and TaxCloud has two how-tos. A full hub with checklists, timelines and migration stories could own this."
+    "text": "Only TaxCloud and Anrok have a switching guide, each with one page. TaxCloud could build a full kit covering data export, timelines, filing handover and checklists."
    },
    {
-    "title": "State taxability guides for ecommerce",
-    "text": "TaxJar and Kintsugi cover states one page at a time. TaxCloud could add mid-market guides that end in a migration offer."
+    "title": "Avalara IPO and customer risk",
+    "text": "TaxCloud has one page on the Avalara IPO. Nobody else covers what it means for pricing and support. A series could catch worried customers."
    },
    {
-    "title": "Tariff and trade tax for ecommerce",
-    "text": "Only Avalara covers tariffs, and it does so through webinars. TaxCloud could publish written explainers for ecommerce sellers."
+    "title": "Ecommerce migration case studies",
+    "text": "Numeral and Zamp show brands but not the switch itself. TaxCloud could publish before-and-after stories, with costs and effort, from mid-market brands leaving a named provider."
    }
   ]
  },
@@ -115,29 +119,36 @@
    "n_prev": 96,
    "refreshed": 0,
    "mix": {
-    "compare": 14,
-    "howto": 6,
-    "list": 0,
+    "compare": 24,
+    "howto": 16,
+    "list": 4,
     "research": 0,
-    "case": 16,
+    "case": 17,
     "opinion": 3,
     "news": 1,
     "landing": 0
    },
    "stages": {
-    "learning": 6,
-    "comparing": 11,
-    "buying": 22,
+    "learning": 16,
+    "comparing": 15,
+    "buying": 33,
     "customers": 1
    },
    "topics": [
-    "ecommerce sales tax explained",
-    "marketplace facilitator laws sales tax",
-    "multi-state sales tax registration",
-    "sales tax compliance software comparison",
-    "best sales tax software options"
+    "how to calculate ecommerce sales tax",
+    "sales tax nexus triggers",
+    "ecommerce accounting tech stack",
+    "avalara alternatives for sales tax",
+    "avalara pricing and costs comparison"
    ],
-   "unclassified": 50,
+   "unclassified": 25,
+   "programmatic": [
+    {
+     "section": "sales-tax",
+     "pages": 105,
+     "new": 0
+    }
+   ],
    "ok": true,
    "error": null,
    "method": "sitemap",
@@ -145,8 +156,8 @@
    "pages": 447,
    "undated": 0,
    "new": 0,
-   "play": "Avalara-focused comparison pages and customer stories to win switchers, plus guides on multi-state registration and marketplace laws",
-   "aimed": "Mid-market sellers considering a switch"
+   "play": "Avalara-focused comparisons, migration guides and 17 customer stories to pull switchers over.",
+   "aimed": "Mid-market sellers leaving Avalara"
   },
   {
    "name": "Avalara",
@@ -157,18 +168,18 @@
    "refreshed": 0,
    "mix": {
     "compare": 0,
-    "howto": 1,
+    "howto": 22,
     "list": 0,
     "research": 1,
     "case": 1,
     "opinion": 0,
     "news": 7,
-    "landing": 5
+    "landing": 6
    },
    "stages": {
-    "learning": 9,
+    "learning": 30,
     "comparing": 3,
-    "buying": 3,
+    "buying": 4,
     "customers": 0
    },
    "topics": [
@@ -178,7 +189,8 @@
     "trade policy tariffs ecommerce compliance",
     "sap compliance demo webinar"
    ],
-   "unclassified": 69,
+   "unclassified": 47,
+   "programmatic": [],
    "ok": true,
    "error": null,
    "method": "sitemap",
@@ -186,8 +198,8 @@
    "pages": 702,
    "undated": 0,
    "new": 0,
-   "play": "Webinars, trade and tariff events, and product news. Little switching or comparison content.",
-   "aimed": "Existing customers and enterprise finance teams"
+   "play": "Webinars and state nexus (where you must collect tax) pages, mostly teaching. Only 3 comparing pages.",
+   "aimed": "Existing and future large customers"
   },
   {
    "name": "TaxJar",
@@ -197,29 +209,30 @@
    "n_prev": 17,
    "refreshed": 0,
    "mix": {
-    "compare": 0,
-    "howto": 31,
-    "list": 7,
+    "compare": 1,
+    "howto": 54,
+    "list": 10,
     "research": 1,
     "case": 0,
     "opinion": 0,
-    "news": 0,
+    "news": 1,
     "landing": 0
    },
    "stages": {
-    "learning": 34,
-    "comparing": 1,
-    "buying": 2,
-    "customers": 2
+    "learning": 58,
+    "comparing": 2,
+    "buying": 4,
+    "customers": 3
    },
    "topics": [
-    "iowa shipping sales tax rules",
-    "nevada resale certificate how-to",
-    "puerto rico sales tax permit registration",
-    "california schedule b tax return filing",
-    "hawaii marketplace facilitator law"
+    "textbooks sales tax by state",
+    "taxjar vs anrok sales tax",
+    "sales tax nexus and filing obligations",
+    "file past due sales tax returns",
+    "sales tax technology black friday readiness"
    ],
-   "unclassified": 38,
+   "unclassified": 10,
+   "programmatic": [],
    "ok": true,
    "error": null,
    "method": "sitemap",
@@ -227,28 +240,28 @@
    "pages": 868,
    "undated": 0,
    "new": 0,
-   "play": "State-by-state how-tos on shipping tax, marketplace laws and due dates. Almost nothing for buyers.",
-   "aimed": "Small sellers researching tax rules"
+   "play": "Mass-produced state explainers, like 'Is shipping taxable in...' and monthly due-date lists.",
+   "aimed": "Sellers researching tax rules"
   },
   {
    "name": "Anrok",
    "site": "https://www.anrok.com",
    "you": false,
-   "n": 97,
-   "n_prev": 561,
+   "n": 95,
+   "n_prev": 448,
    "refreshed": 0,
    "mix": {
     "compare": 0,
     "howto": 9,
-    "list": 0,
+    "list": 2,
     "research": 3,
     "case": 1,
-    "opinion": 0,
+    "opinion": 1,
     "news": 2,
     "landing": 13
    },
    "stages": {
-    "learning": 12,
+    "learning": 15,
     "comparing": 7,
     "buying": 7,
     "customers": 2
@@ -260,7 +273,14 @@
     "global sales tax compliance platform",
     "global sales tax and vat compliance"
    ],
-   "unclassified": 69,
+   "unclassified": 64,
+   "programmatic": [
+    {
+     "section": "vat-software-digital-services",
+     "pages": 113,
+     "new": 0
+    }
+   ],
    "ok": true,
    "error": null,
    "method": "sitemap",
@@ -268,75 +288,89 @@
    "pages": 665,
    "undated": 0,
    "new": 0,
-   "play": "Product landing pages, e-invoicing and SaaS tax guides, and one guide on switching platforms.",
-   "aimed": "SaaS finance teams, startups, ecommerce brands"
+   "play": "Landing pages plus e-invoicing, VAT and AI content. Also has a switching-platforms guide.",
+   "aimed": "SaaS and global finance teams"
   },
   {
    "name": "Numeral",
    "site": "https://www.numeralhq.com",
    "you": false,
-   "n": 0,
-   "n_prev": 0,
+   "n": 273,
+   "n_prev": 6,
    "refreshed": 0,
    "mix": {
     "compare": 0,
-    "howto": 0,
+    "howto": 14,
     "list": 0,
     "research": 0,
-    "case": 0,
+    "case": 23,
     "opinion": 0,
-    "news": 0,
-    "landing": 0
+    "news": 1,
+    "landing": 1
    },
    "stages": {
-    "learning": 0,
-    "comparing": 0,
-    "buying": 0,
-    "customers": 0
+    "learning": 15,
+    "comparing": 1,
+    "buying": 15,
+    "customers": 8
    },
-   "topics": [],
-   "unclassified": 0,
+   "topics": [
+    "sales tax compliance for ecommerce",
+    "sales tax compliance case study",
+    "sales tax compliance software funding",
+    "sales tax compliance software reviews",
+    "sales tax compliance case studies"
+   ],
+   "unclassified": 234,
+   "programmatic": [],
    "ok": true,
    "error": null,
    "method": "sitemap",
    "url": "https://www.numeral.com/sitemap.xml",
-   "pages": 0,
+   "pages": 399,
    "undated": 0,
-   "new": 0,
-   "play": "No pages published in the last 30 days.",
-   "aimed": "No visible audience"
+   "new": 399,
+   "play": "Publishes many short customer case studies, plus state 'How to file' guides.",
+   "aimed": "Ecommerce brands ready to buy"
   },
   {
    "name": "Zamp",
    "site": "https://zamp.com",
    "you": false,
-   "n": 4287,
+   "n": 345,
    "n_prev": 56,
    "refreshed": 0,
    "mix": {
-    "compare": 3,
-    "howto": 10,
-    "list": 1,
+    "compare": 5,
+    "howto": 1,
+    "list": 3,
     "research": 0,
-    "case": 0,
+    "case": 19,
     "opinion": 0,
-    "news": 0,
-    "landing": 15
+    "news": 2,
+    "landing": 6
    },
    "stages": {
-    "learning": 25,
+    "learning": 6,
     "comparing": 1,
-    "buying": 3,
-    "customers": 0
+    "buying": 17,
+    "customers": 12
    },
    "topics": [
-    "sales tax compliance software company",
-    "switch to zamp sales tax software",
-    "best ai tools for saas startups",
-    "ecommerce sales tax software comparison",
-    "sales tax calculator abbeville georgia"
+    "sales tax compliance case study",
+    "sales tax compliance ecommerce",
+    "sales tax compliance for ecommerce",
+    "sales tax compliance automation",
+    "white-label sales tax service"
    ],
-   "unclassified": 4258,
+   "unclassified": 309,
+   "programmatic": [
+    {
+     "section": "sales-tax-calculator",
+     "pages": 3932,
+     "new": 0
+    }
+   ],
    "ok": true,
    "error": null,
    "method": "sitemap",
@@ -344,30 +378,30 @@
    "pages": 4438,
    "undated": 0,
    "new": 0,
-   "play": "Thousands of city tax-rate pages, plus Avalara and TaxJar pricing comparisons and a switch page.",
-   "aimed": "Searchers looking up local tax rates"
+   "play": "Customer stories, Avalara and TaxJar pricing pages, a buyout offer and a white-label service.",
+   "aimed": "Ecommerce brands and partners switching providers"
   },
   {
    "name": "Kintsugi",
    "site": "https://www.trykintsugi.com",
    "you": false,
-   "n": 461,
+   "n": 249,
    "n_prev": 41,
    "refreshed": 0,
    "mix": {
-    "compare": 5,
-    "howto": 29,
-    "list": 2,
+    "compare": 17,
+    "howto": 31,
+    "list": 5,
     "research": 3,
-    "case": 1,
-    "opinion": 0,
+    "case": 2,
+    "opinion": 3,
     "news": 0,
     "landing": 0
    },
    "stages": {
-    "learning": 34,
-    "comparing": 0,
-    "buying": 6,
+    "learning": 38,
+    "comparing": 9,
+    "buying": 14,
     "customers": 0
    },
    "topics": [
@@ -377,7 +411,14 @@
     "how to file sales tax online",
     "sales tax penalties and filing discounts"
    ],
-   "unclassified": 421,
+   "unclassified": 188,
+   "programmatic": [
+    {
+     "section": "sales-tax-guides",
+     "pages": 281,
+     "new": 0
+    }
+   ],
    "ok": true,
    "error": null,
    "method": "sitemap",
@@ -385,8 +426,8 @@
    "pages": 1034,
    "undated": 209,
    "new": 0,
-   "play": "State tax guides, filing how-tos, and Avalara or TaxJar alternative pages.",
-   "aimed": "Sellers learning state rules, Avalara users"
+   "play": "Alternatives pages for six rivals, plus SaaS and filing guides by state.",
+   "aimed": "Buyers comparing tools and researching rules"
   }
  ],
  "pages": [
@@ -413,6 +454,18 @@
    "topic": "Streamlined Sales Tax compliance program",
    "search": "streamlined sales tax SST compliance",
    "why": "Educates qualified sellers on state-funded compliance option and SST pricing to drive conversions."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/reviews",
+   "title": "Numeral Sales Tax Reviews | Their Words, Not Ours",
+   "date": "2026-09-29T21:55:14+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax compliance software reviews",
+   "search": "best sales tax compliance software",
+   "why": "Builds trust with prospective buyers through customer testimonials and social proof."
   },
   {
    "site": "Avalara",
@@ -1063,6 +1116,498 @@
    "why": "Attracts sellers researching state-specific tax rules before they decide on a solution."
   },
   {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/08-21-is-shipping-in-nevada-taxable",
+   "title": "Is shipping in Nevada taxable? - TaxJar",
+   "date": "2026-09-28T19:24:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Nevada shipping sales tax rules",
+   "search": "is shipping taxable in Nevada",
+   "why": "Educates sellers on state-specific shipping tax rules to build trust and authority."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/08-021-is-shipping-taxable-in-north-dakota",
+   "title": "Is shipping taxable in North Dakota? - TaxJar",
+   "date": "2026-09-28T19:11:38+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "North Dakota shipping tax rules",
+   "search": "is shipping taxable in North Dakota",
+   "why": "Attracts sellers learning state-specific tax rules to drive product adoption."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/07-21-what-digital-content-creators-need-to-know-about-sales-tax",
+   "title": "What digital content creators need to know about sales tax - TaxJar",
+   "date": "2026-09-28T19:10:36+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Sales tax for digital content creators",
+   "search": "sales tax digital content creators",
+   "why": "Educates creators on unfamiliar tax rules, positions TaxJar as expert guide."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/07-21-sales-tax-guide-for-book-sellers",
+   "title": "Sales tax guide for book sellers - TaxJar",
+   "date": "2026-09-28T19:10:18+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Sales tax guide for book sellers",
+   "search": "sales tax requirements for book sellers",
+   "why": "Educates potential buyers on tax compliance pain points they face."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/07-21-rhode-island-marketplace-facilitator-sales-tax-law",
+   "title": "Rhode Island's marketplace facilitator law, explained - TaxJar",
+   "date": "2026-09-28T19:09:54+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Rhode Island marketplace facilitator tax law",
+   "search": "Rhode Island marketplace facilitator sales tax",
+   "why": "Educates sellers about state tax obligations to attract compliance-seeking customers."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/07-21-missouri-final-state-to-enact-wayfair-sales-tax-laws",
+   "title": "Missouri’s marketplace facilitator law, explained - TaxJar",
+   "date": "2026-09-28T18:43:11+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Missouri marketplace facilitator sales tax law",
+   "search": "Missouri marketplace facilitator sales tax law",
+   "why": "Educates sellers on new Missouri tax obligations and marketplace responsibilities."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/07-21-louisiana-set-to-end-pink-tax",
+   "title": "Louisiana ends “Pink Tax” - TaxJar",
+   "date": "2026-09-28T18:42:55+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Louisiana pink tax exemption",
+   "search": "Louisiana pink tax sales tax exemption",
+   "why": "Educates sellers on new state tax rules affecting their compliance obligations."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/07-21-idaho-marketplace-facilitator-law",
+   "title": "Idaho's marketplace facilitator law, explained - TaxJar",
+   "date": "2026-09-28T18:42:29+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Idaho marketplace facilitator law",
+   "search": "Idaho marketplace facilitator law sales tax",
+   "why": "Educates sellers on state-specific tax obligations to reduce compliance confusion."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/07-21-are-online-classes",
+   "title": "Are online classes taxable? - TaxJar",
+   "date": "2026-09-28T18:42:18+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Online class sales tax rules",
+   "search": "are online classes taxable",
+   "why": "Attracts educators researching sales tax obligations on online course sales."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/06-2024-july-2024-sales-tax-due-dates",
+   "title": "July 2024 sales tax due dates - TaxJar",
+   "date": "2026-09-28T18:41:50+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "customers",
+   "topic": "Sales tax due dates July 2024",
+   "search": "July 2024 sales tax due dates",
+   "why": "Helps existing users meet filing deadlines and promotes AutoFile automation feature."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/06-21-pennsylvania-marketplace-facilitator-sales-tax",
+   "title": "Pennsylvania's marketplace facilitator law, explained - TaxJar",
+   "date": "2026-09-28T18:40:09+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Pennsylvania marketplace facilitator sales tax",
+   "search": "Pennsylvania marketplace facilitator sales tax",
+   "why": "Educates sellers on Pennsylvania sales tax rules for major marketplaces."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/06-21-maine-marketplace-facilitator-sales-tax-law",
+   "title": "Maine's marketplace facilitator law, explained - TaxJar",
+   "date": "2026-09-28T18:39:47+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Maine marketplace facilitator sales tax law",
+   "search": "Maine marketplace facilitator sales tax",
+   "why": "Educates sellers on state-specific tax obligations to build authority and trust."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/06-21-are-meal-subscription-boxes-taxable",
+   "title": "Are meal subscription boxes taxable? - TaxJar",
+   "date": "2026-09-28T18:39:17+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "meal subscription box sales tax",
+   "search": "are meal subscription boxes taxable",
+   "why": "Attracts subscription box sellers researching tax obligations for their products."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/06-21-5-things-you-might-not-know-about-enrolling-in-taxjar-autofile",
+   "title": "Five things you might not know about AutoFile - TaxJar",
+   "date": "2026-09-28T18:38:49+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "TaxJar AutoFile enrollment tips",
+   "search": "how to enroll in TaxJar AutoFile",
+   "why": "Educates prospects on AutoFile features and enrollment process to overcome knowledge gaps."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/05-21-new-mexico-marketplace-facilitator-sales-tax-law",
+   "title": "New Mexico's marketplace facilitator sales tax law - TaxJar",
+   "date": "2026-09-28T18:36:32+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "New Mexico marketplace facilitator sales tax",
+   "search": "New Mexico marketplace facilitator sales tax law",
+   "why": "Educates sellers on state-specific compliance requirements and marketplace obligations."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/05-21-kansas-marketplace-facilitator-sales-tax-law",
+   "title": "Kansas marketplace facilitator sales tax law, explained - TaxJar",
+   "date": "2026-09-28T18:35:57+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Kansas marketplace facilitator sales tax",
+   "search": "Kansas marketplace facilitator sales tax law",
+   "why": "Educates sellers on state tax obligations to establish TaxJar as trusted compliance guide."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/05-21-florida-marketplace-facilitator-law",
+   "title": "Florida’s marketplace facilitator sales tax law, explained | TaxJar",
+   "date": "2026-09-28T18:35:26+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Florida marketplace facilitator sales tax law",
+   "search": "Florida marketplace facilitator sales tax law",
+   "why": "Educates sellers on Florida's marketplace facilitator tax requirements and thresholds."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/05-2024-june-2024-sales-tax-due-dates",
+   "title": "June 2024 sales tax due dates - TaxJar",
+   "date": "2026-09-28T18:33:36+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "learning",
+   "topic": "Sales tax due dates by state",
+   "search": "June 2024 sales tax due dates",
+   "why": "Attracts businesses searching for compliance deadlines, promoting AutoFile feature."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/05-2024-does-arkansas-charge-sales-tax-on-services",
+   "title": "Does Arkansas charge sales tax on services? - TaxJar",
+   "date": "2026-09-28T18:33:11+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Arkansas sales tax on services",
+   "search": "does Arkansas charge sales tax services",
+   "why": "Captures merchants researching state-specific tax rules early in compliance journey."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/4frnt",
+   "title": "4FRNT",
+   "date": "2026-09-28T17:56:21+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax compliance for ecommerce",
+   "search": "sales tax compliance software ecommerce",
+   "why": "Demonstrates how growing ecommerce brand solved complex multi-state and international tax compliance."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/kitsch",
+   "title": "Kitsch",
+   "date": "2026-09-28T17:56:19+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "sales tax automation for ecommerce",
+   "search": "sales tax compliance software ecommerce",
+   "why": "Shows how Kitsch solved multi-channel tax complexity with Numeral's platform."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/immi",
+   "title": "immi",
+   "date": "2026-09-28T17:56:16+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "sales tax compliance case study",
+   "search": "sales tax compliance software case study",
+   "why": "Demonstrates Numeral's value through a real customer success story to convince buyers."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/nomad-goods",
+   "title": "Nomad Goods",
+   "date": "2026-09-28T17:56:13+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "sales tax compliance case study",
+   "search": "sales tax compliance software for ecommerce",
+   "why": "Demonstrates ROI and competitive advantage vs TaxJar to convince mid-market buyers."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/culprit-underwear",
+   "title": "Culprit Underwear",
+   "date": "2026-09-28T17:56:11+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "sales tax compliance ecommerce",
+   "search": "sales tax compliance fashion brand",
+   "why": "Demonstrates how Numeral helped a viral fashion brand scale tax operations efficiently."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/bro-glo",
+   "title": "Bro Glo",
+   "date": "2026-09-28T17:56:08+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance for ecommerce",
+   "search": "sales tax compliance software",
+   "why": "Shows how a real customer solved sales tax complexity with Numeral at scale."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/boomboom",
+   "title": "BoomBoom",
+   "date": "2026-09-28T17:56:04+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax compliance case study",
+   "search": "sales tax compliance software ecommerce",
+   "why": "Demonstrates real customer success migrating from competitors to build buyer confidence."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/rejuvia",
+   "title": "Rejuvia",
+   "date": "2026-09-28T17:56:00+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax automation case study",
+   "search": "sales tax compliance for ecommerce",
+   "why": "Shows existing customer success to build credibility and social proof with prospects."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/luma-nutrition",
+   "title": "Luma Nutrition",
+   "date": "2026-09-28T17:55:53+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance for ecommerce",
+   "search": "sales tax compliance ecommerce",
+   "why": "Demonstrates product value through real customer success story with quantified results."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/doe-beauty",
+   "title": "Doe Beauty",
+   "date": "2026-09-28T17:55:50+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance ecommerce growth",
+   "search": "sales tax software for ecommerce",
+   "why": "Demonstrates customer success to build trust and validate product value for prospects."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/explorer",
+   "title": "Explorer Cold Brew",
+   "date": "2026-09-28T17:55:47+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax compliance case study",
+   "search": "sales tax compliance software",
+   "why": "Demonstrates Numeral's capability solving real customer's multi-state tax complexity problem."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/the-woobles",
+   "title": "The Woobles",
+   "date": "2026-09-28T17:55:44+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "sales tax compliance case study",
+   "search": "sales tax software for ecommerce",
+   "why": "Shows how similar ecommerce brands solved tax complexity with Numeral to build trust with buyers."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/amberjack",
+   "title": "Amberjack",
+   "date": "2026-09-28T17:55:41+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "sales tax automation Avalara alternative",
+   "search": "sales tax compliance software Avalara alternative",
+   "why": "Shows fast-growing ecommerce brand switching from Avalara to Numeral, quantifying time and penalty savings."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/fresh-sends",
+   "title": "Fresh Sends",
+   "date": "2026-09-28T17:55:39+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax compliance for ecommerce",
+   "search": "sales tax compliance software ecommerce",
+   "why": "Showcases concrete results to convince ecommerce brands considering Numeral over competitors like TaxJar."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/obvi",
+   "title": "Read Customer Case Studies from Numeral",
+   "date": "2026-09-28T17:55:18+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax compliance customer stories",
+   "search": "sales tax compliance software case studies",
+   "why": "Builds trust and social proof with prospective buyers evaluating sales tax solutions."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/brex",
+   "title": "Brex",
+   "date": "2026-09-28T17:36:01+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Global sales tax compliance automation",
+   "search": "sales tax compliance software SaaS",
+   "why": "Shows how enterprise SaaS customer solved tax compliance with Numeral."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/bytem",
+   "title": "Byte’m",
+   "date": "2026-09-28T17:36:01+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance for ecommerce growth",
+   "search": "sales tax compliance ecommerce software",
+   "why": "Shows how existing customer solved tax compliance at scale, builds trust with growth-stage founders."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/character-ai",
+   "title": "Character.AI",
+   "date": "2026-09-28T17:36:01+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance for SaaS",
+   "search": "sales tax compliance SaaS companies",
+   "why": "Demonstrates how Numeral solved real tax challenges for a notable SaaS customer."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/fishwife",
+   "title": "Fishwife",
+   "date": "2026-09-28T17:36:01+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax compliance for ecommerce",
+   "search": "how Fishwife scaled with sales tax compliance",
+   "why": "Shows real ecommerce brand solving sales tax chaos with Numeral."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/spacepanda",
+   "title": "SPACEPANDA",
+   "date": "2026-09-28T17:36:01+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Global sales tax compliance consolidation",
+   "search": "sales tax compliance global ecommerce",
+   "why": "Demonstrates how existing customer solved global tax filing complexity with Numeral."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/terminal49",
+   "title": "Terminal49",
+   "date": "2026-09-28T17:36:01+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "SaaS sales tax compliance",
+   "search": "sales tax compliance SaaS Avalara alternative",
+   "why": "Demonstrates how Numeral solved complex tax compliance for SaaS company upgrading from competitor."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/case-studies",
+   "title": "Read Customer Case Studies from Numeral",
+   "date": "2026-09-28T16:58:17+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax compliance case studies",
+   "search": "sales tax compliance software case studies",
+   "why": "Showcases real customer wins to convince prospects to choose Numeral."
+  },
+  {
    "site": "TaxCloud",
    "url": "https://taxcloud.com/blog/avalara-vs-vertex-comparison/",
    "title": "Avalara vs. Vertex: Key Differences, Features & Pricing [2026]",
@@ -1591,6 +2136,486 @@
    "why": "Builds trust by providing comprehensive compliance guidance for ecommerce/SaaS businesses."
   },
   {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/how-to-file-kentucky-sales-tax-online",
+   "title": "How to File Kentucky Sales Tax Online (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Kentucky sales tax filing online",
+   "search": "how to file Kentucky sales tax online",
+   "why": "Educates sellers on Kentucky tax rules and positions Kintsugi's compliance solution early in research."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/how-to-file-new-jersey-sales-tax-online",
+   "title": "How to File New Jersey Sales Tax Online (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "How to file New Jersey sales tax",
+   "search": "how to file New Jersey sales tax online",
+   "why": "Educates prospects on state compliance requirements and establishes authority in tax filing."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/how-to-file-new-york-sales-tax-online",
+   "title": "How to File New York Sales Tax Online (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "New York sales tax filing online",
+   "search": "how to file New York sales tax online",
+   "why": "Captures ecommerce sellers researching their tax filing obligations for New York."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/how-to-file-pennsylvania-sales-tax-online",
+   "title": "How to File Pennsylvania Sales Tax Online (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Pennsylvania sales tax filing",
+   "search": "how to file Pennsylvania sales tax online",
+   "why": "Attracts mid-market ecommerce and SaaS brands researching state-specific tax compliance procedures."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/how-to-file-texas-sales-tax-online",
+   "title": "How to File Texas Sales Tax Online (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "How to file Texas sales tax online",
+   "search": "how to file Texas sales tax online",
+   "why": "Educates ecommerce sellers on Texas filing requirements and process steps."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/marketplace-facilitator-laws-by-state",
+   "title": "Marketplace Facilitator Laws by State (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "learning",
+   "topic": "Marketplace facilitator laws by state",
+   "search": "marketplace facilitator laws by state",
+   "why": "Educates ecommerce sellers on state-level tax collection rules they must understand."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/massachusetts-saas-sales-tax",
+   "title": "Massachusetts SaaS Sales Tax: 2026 Guide | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Massachusetts SaaS sales tax",
+   "search": "Massachusetts SaaS sales tax rate",
+   "why": "Establishes authority in SaaS tax compliance for one key state."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/michigan-saas-sales-tax",
+   "title": "Michigan SaaS Sales Tax: 2026 Guide | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Michigan SaaS sales tax rules",
+   "search": "Michigan SaaS sales tax compliance",
+   "why": "Educate mid-market SaaS sellers on Michigan's tax requirements and build trust as authority."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/new-jersey-saas-sales-tax",
+   "title": "New Jersey SaaS Sales Tax: 2026 Guide | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "New Jersey SaaS sales tax rules",
+   "search": "New Jersey SaaS sales tax",
+   "why": "Establishes authority on state-specific tax compliance for core audience learning rules."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/numeral-alternatives",
+   "title": "Numeral Alternatives: 6 Options Compared (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Numeral sales tax alternatives",
+   "search": "Numeral alternatives sales tax",
+   "why": "Captures buyers actively switching from Numeral by comparing features and pricing."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/ohio-saas-sales-tax",
+   "title": "Ohio SaaS Sales Tax: 2026 Guide | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Ohio SaaS sales tax rules",
+   "search": "Ohio SaaS sales tax 2026",
+   "why": "Establishes authority on state-specific compliance rules for organic search."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/pennsylvania-saas-sales-tax",
+   "title": "Pennsylvania SaaS Sales Tax: 2026 Guide | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Pennsylvania SaaS sales tax rules",
+   "search": "Pennsylvania SaaS sales tax",
+   "why": "Educates ecommerce and SaaS brands on state tax obligations to build authority."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/sales-tax-holidays-by-state",
+   "title": "Sales Tax Holidays by State: 2026 Dates and Rules | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "learning",
+   "topic": "Sales tax holidays by state 2026",
+   "search": "sales tax holidays 2026 by state",
+   "why": "Establishes expertise in tax compliance; attracts sellers needing to manage holiday exemptions."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/shipping-taxability-by-state",
+   "title": "Sales Tax on Shipping by State (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "learning",
+   "topic": "Sales tax on shipping by state",
+   "search": "is shipping taxable by state",
+   "why": "Establishes authority on a core compliance question ecommerce brands need answered."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/vertex-alternatives",
+   "title": "Vertex Alternatives: 6 Options Compared (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Vertex alternatives sales tax software",
+   "search": "Vertex alternatives sales tax software",
+   "why": "Captures buyers actively comparing Vertex with cheaper mid-market alternatives."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/washington-saas-sales-tax",
+   "title": "Washington SaaS Sales Tax: 2026 Guide | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Washington SaaS sales tax compliance",
+   "search": "Washington SaaS sales tax 2026",
+   "why": "Establishes expertise in state-specific SaaS tax rules for educational prospects."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/what-is-use-tax",
+   "title": "What Is Use Tax? How It Works for Businesses | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Use tax for businesses",
+   "search": "what is use tax how does it work",
+   "why": "Builds authority educating buyers on sales tax basics they need."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/what-is-vat",
+   "title": "What Is VAT? Value-Added Tax Explained | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "What is VAT value-added tax",
+   "search": "what is VAT value added tax",
+   "why": "Educates early-stage researchers on VAT fundamentals to position Kintsugi as trusted expert."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/zamp-alternatives",
+   "title": "Zamp Alternatives: 6 Options Compared (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Zamp alternatives sales tax software",
+   "search": "Zamp alternatives sales tax compliance",
+   "why": "Captures buyers evaluating Zamp competitors with detailed comparison to win switching customers."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/vat-gst-id",
+   "title": "What Is a VAT Number? VAT ID Formats by Country | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "VAT numbers and ID formats",
+   "search": "what is a VAT number VAT ID formats",
+   "why": "Educates ecommerce sellers on international tax compliance basics before they need to register."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/sales-tax-advisory-for-firms",
+   "title": "Sales Tax as Year-Round Advisory for CPA Firms | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "comparing",
+   "topic": "Sales tax advisory for CPA firms",
+   "search": "sales tax advisory CPA firms recurring revenue",
+   "why": "Positions Kintsugi as enabler of year-round advisory services that firms can profitably offer clients."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/kintsugi-ai-security",
+   "title": "AI Adoption Is Outrunning Security in Accounting | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "opinion",
+   "stage": "comparing",
+   "topic": "AI security in tax compliance",
+   "search": "AI security accounting sales tax",
+   "why": "Positions Kintsugi's security approach as superior to competitors lacking clear data protection guidelines."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/general-ai-wasn-t-built-for-sales-tax-compliance",
+   "title": "General AI Wasn't Built for Sales Tax Compliance | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "opinion",
+   "stage": "learning",
+   "topic": "purpose-built AI vs general AI for sales tax",
+   "search": "general AI sales tax compliance",
+   "why": "Positions Kintsugi's purpose-built approach against generic AI tools in emerging market conversation."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/kintsugi-automates-sales-tax-compliance-for-checkout-champ-merchants",
+   "title": "Kintsugi + Checkout Champ | Automated DTC Sales Tax",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "comparing",
+   "topic": "Sales tax automation for ecommerce",
+   "search": "Checkout Champ sales tax automation integration",
+   "why": "Shows how Kintsugi solves tax compliance for Checkout Champ users specifically."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/how-kintsugi-works",
+   "title": "How Kintsugi Works: Sales Tax Compliance, Explained",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "How sales tax compliance software works",
+   "search": "how does sales tax compliance software work",
+   "why": "Educates prospects unfamiliar with their solution during initial research phase."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/illinois-sales-tax-exemption",
+   "title": "Illinois Sales Tax Exemptions for Business (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Illinois sales tax exemptions",
+   "search": "Illinois sales tax exemptions 2026",
+   "why": "Establishes expertise on state tax rules to attract early-stage research prospects."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/ecm-bulk-exemption-certificate-upload",
+   "title": "Exemption Certificate Management | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "comparing",
+   "topic": "Exemption certificate management bulk upload",
+   "search": "exemption certificate management software",
+   "why": "Demonstrates product capability to attract buyers evaluating ECM solutions and automation features."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-shopify-sales-tax-software-multi-state",
+   "title": "Best Shopify Sales Tax Software (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Shopify sales tax software comparison",
+   "search": "best Shopify sales tax software multi-state",
+   "why": "Positions Kintsugi against competing solutions for merchants evaluating tax compliance tools."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/what-is-physical-nexus",
+   "title": "What is Physical Nexus? | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Physical nexus sales tax",
+   "search": "what is physical nexus sales tax",
+   "why": "Educates potential customers on tax concepts early in research phase."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/is-taxjar-still-right-for-you-in-2026-what-the-stripe-acquisition-changed",
+   "title": "Is TaxJar Still Right for You in 2026? | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "TaxJar pricing changes and Kintsugi alternative",
+   "search": "is TaxJar still worth it 2026",
+   "why": "Converts TaxJar customers frustrated by price increases and reduced features post-acquisition."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-sales-tax-software-for-saas-companies-2026-guide",
+   "title": "Best Sales Tax Software for SaaS (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Best sales tax software for SaaS",
+   "search": "best sales tax software for SaaS companies",
+   "why": "Captures SaaS buyers actively comparing solutions before purchase decision."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/top-7-vat-compliance-solutions-for-global-expansion-in-2026",
+   "title": "Top 7 VAT Compliance Solutions for 2026 | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "comparing",
+   "topic": "VAT compliance solutions for global expansion",
+   "search": "best VAT compliance software 2026",
+   "why": "Positions Kintsugi as top choice among seven competing VAT platforms."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/leading-ai-tax-automation-companies",
+   "title": "Leading AI Tax Automation Companies in 2026 | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "comparing",
+   "topic": "AI tax automation platforms comparison",
+   "search": "AI tax automation companies comparison",
+   "why": "Positions Kintsugi as the superior choice against Avalara, Vertex, and Sovos."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-sales-tax-software",
+   "title": "Best Sales Tax Software 2026: 11 Tools Compared | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "comparing",
+   "topic": "Sales tax software comparison",
+   "search": "best sales tax software 2026",
+   "why": "Positions Kintsugi favorably against 10 competitors to catch buyers evaluating options."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/what-avalaras-ipo-means-for-legacy-tax-software-and-why-switch-to-kintsugi",
+   "title": "What Avalara's IPO Means for Legacy Tax Software | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "opinion",
+   "stage": "comparing",
+   "topic": "Avalara IPO legacy tax software",
+   "search": "Avalara IPO tax software alternatives",
+   "why": "Positions Kintsugi as modern alternative to legacy systems for evaluating customers."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/sphere-alternatives-sales-tax-automation",
+   "title": "10 Best Sphere Alternatives in 2026 | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "comparing",
+   "topic": "Sphere sales tax automation alternatives",
+   "search": "best Sphere alternatives sales tax",
+   "why": "Positions Kintsugi against Sphere for buyers evaluating sales tax solutions."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/top-10-taxcloud-alternatives",
+   "title": "TaxCloud Alternatives: 7 Options Compared (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "TaxCloud alternatives compared",
+   "search": "TaxCloud alternatives",
+   "why": "Captures buyers actively evaluating TaxCloud competitors and ready to switch."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/top-10-taxjar-alternatives",
+   "title": "TaxJar Alternatives: 7 Options Compared (2026) | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "TaxJar alternatives sales tax",
+   "search": "TaxJar alternatives",
+   "why": "Catches buyers comparing them with TaxJar at purchase decision stage."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/out-of-state-resale-certificates",
+   "title": "Out-of-State Resale Certificates Explained | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Out-of-state resale certificates",
+   "search": "out of state resale certificates explained",
+   "why": "Educates early-stage researchers on sales tax compliance topic relevant to ecommerce operators."
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/new-york-food-tax",
+   "title": "New York Food Tax 2026: What's Taxable & Exempt | Kintsugi",
+   "date": "2026-09-26T00:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "New York food tax rules and exemptions",
+   "search": "New York food tax what's taxable exempt 2026",
+   "why": "Builds authority on tax rules to attract ecommerce/SaaS sellers needing compliance guidance."
+  },
+  {
    "site": "Anrok",
    "url": "https://www.anrok.com/solutions/startups",
    "title": "Anrok for Startups | Sales Tax & VAT Compliance from Day One",
@@ -1615,6 +2640,30 @@
    "why": "Converts ecommerce brands ready to solve tax compliance with integrated solution."
   },
   {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/indiana-sales-tax-guide",
+   "title": "Indiana Sales Tax Guide: Rates, Compliance, & Regulations",
+   "date": "2026-09-25T20:59:31+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Indiana sales tax compliance guide",
+   "search": "Indiana sales tax rates compliance",
+   "why": "Educates mid-market ecommerce/SaaS on Indiana tax rules to establish expertise and trust."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/about",
+   "title": "Learn More About Us | Numeral",
+   "date": "2026-09-25T20:48:12+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "news",
+   "stage": "learning",
+   "topic": "sales tax compliance software funding",
+   "search": "Numeral Series C funding announcement",
+   "why": "Announces major funding round and company credibility to attract buyer awareness and trust."
+  },
+  {
    "site": "Anrok",
    "url": "https://www.anrok.com/faq",
    "title": "Anrok FAQ | Sales Tax & VAT Compliance Questions Answered",
@@ -1625,6 +2674,186 @@
    "topic": "Sales tax compliance software FAQs",
    "search": "how does sales tax compliance software work",
    "why": "Educates prospects on Anrok's capabilities and differentiators during early research phase."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/solutions/global",
+   "title": "One solution for global tax compliance",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "landing",
+   "stage": "comparing",
+   "topic": "Global tax compliance solution",
+   "search": "global sales tax VAT GST compliance software",
+   "why": "Positions Numeral as end-to-end solution versus fragmented regional providers."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/file-sales-tax-in-maryland",
+   "title": "How to File Sales Tax in Maryland?",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "How to file sales tax Maryland",
+   "search": "how to file sales tax Maryland",
+   "why": "Attracts ecommerce sellers researching Maryland tax filing requirements and processes."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/georgia-sales-tax-guide",
+   "title": "Georgia Sales Tax Guide: Rates & Compliance",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Georgia sales tax rates compliance",
+   "search": "Georgia sales tax rates 2024",
+   "why": "Educates sellers on state-specific tax rules and nexus thresholds to drive awareness."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/how-to-file-alabama-sales-tax-online",
+   "title": "How to File Alabama Sales Tax Online",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "How to file Alabama sales tax",
+   "search": "how to file alabama sales tax online",
+   "why": "Attracts sellers researching state compliance requirements and filing procedures."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/how-to-file-arkansas-sales-tax-online",
+   "title": "How to File Arkansas Sales Tax Online",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "How to file Arkansas sales tax",
+   "search": "how to file Arkansas sales tax online",
+   "why": "Ranks for compliance how-tos, positions as helpful alternative to DIY filing."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/how-to-file-colorado-sales-tax-online",
+   "title": "How to File Colorado Sales Tax Online",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "File Colorado sales tax online",
+   "search": "how to file Colorado sales tax online",
+   "why": "Establishes expertise in sales tax compliance for states where customers operate."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/how-to-file-hawaii-sales-tax-online",
+   "title": "How to File Hawaii Sales Tax Online",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "How to file Hawaii sales tax",
+   "search": "how to file Hawaii sales tax online",
+   "why": "Attracts early-stage research from Hawaii businesses unfamiliar with GET filing requirements."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/how-to-file-indiana-sales-tax-online",
+   "title": "How to File Indiana Sales Tax Online",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "How to file Indiana sales tax",
+   "search": "how to file Indiana sales tax online",
+   "why": "Educates early-stage researchers about Indiana sales tax filing process."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/how-to-file-minnesota-sales-tax-online",
+   "title": "How to File Minnesota Sales Tax Online",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "How to file Minnesota sales tax",
+   "search": "how to file Minnesota sales tax online",
+   "why": "Attracts business owners researching state-specific compliance processes early in their research journey."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/how-to-file-mississippi-sales-tax-online",
+   "title": "How to File Mississippi Sales Tax Online",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "File Mississippi sales tax online",
+   "search": "how to file mississippi sales tax",
+   "why": "Captures searchers learning compliance steps for a specific state jurisdiction."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/how-to-file-missouri-sales-tax-online",
+   "title": "How to File Missouri Sales Tax Online",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "How to file Missouri sales tax",
+   "search": "how to file Missouri sales tax online",
+   "why": "Educates early-stage sellers on state compliance, building trust and authority."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/how-to-file-ohio-sales-tax-online",
+   "title": "How to File Ohio Sales Tax Online",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "How to file Ohio sales tax",
+   "search": "how to file sales tax Ohio online",
+   "why": "Educates early-stage researchers on Ohio sales tax filing process with step-by-step instructions."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/how-to-file-oklahoma-sales-tax-online",
+   "title": "How to File Oklahoma Sales Tax Online",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "File Oklahoma sales tax online",
+   "search": "how to file Oklahoma sales tax online",
+   "why": "Attracts businesses needing state-specific tax filing guidance before considering compliance solutions."
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/how-to-file-south-dakota-sales-tax-online",
+   "title": "How to File South Dakota Sales Tax Online",
+   "date": "2026-09-25T19:47:43+00:00",
+   "first_seen": "2026-09-30T04:11:41+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "File South Dakota sales tax online",
+   "search": "how to file sales tax South Dakota online",
+   "why": "Attracts ecommerce/SaaS owners learning sales tax compliance basics by state."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/sales-tax/on-demand-webinar-you-ask-we-answer",
+   "title": "Online event: Sales tax office hours - TaxJar",
+   "date": "2026-09-25T18:44:30+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "news",
+   "stage": "learning",
+   "topic": "sales tax Q&A webinar",
+   "search": "sales tax office hours webinar",
+   "why": "Promotes live Q&A event to educate prospects on sales tax compliance."
   },
   {
    "site": "TaxCloud",
@@ -1841,6 +3070,18 @@
    "topic": "Best sales tax software for ecommerce",
    "search": "best sales tax software ecommerce",
    "why": "Catches ecommerce buyers comparing TaxCloud against 10 direct competitors side-by-side."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/the-hidden-sales-tax-risks-in-food-and-beverage",
+   "title": "The hidden sales tax risks in food and beverage - TaxJar",
+   "date": "2026-09-24T12:00:00+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Food and beverage sales tax compliance",
+   "search": "food and beverage sales tax rules",
+   "why": "Educates ecommerce sellers on F&B tax complexities to establish expertise and capture early research."
   },
   {
    "site": "Avalara",
@@ -2083,6 +3324,102 @@
    "why": "Establishes TaxCloud as the authority on sales tax workflows for online sellers."
   },
   {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/multichannel-selling-risks/",
+   "title": "Multichannel Selling: 6 Hidden Risks No One Tells You About",
+   "date": "2026-09-22T13:07:14+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "learning",
+   "topic": "Multichannel selling risks",
+   "search": "multichannel ecommerce risks challenges",
+   "why": "Attracts merchants scaling to multiple channels before they discover integration needs."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/how-to-set-up-tax-in-stripe/",
+   "title": "Stripe Sales Tax Setup: A Step-by-Step Guide 2026",
+   "date": "2026-09-22T12:30:28+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "buying",
+   "topic": "Stripe sales tax setup guide",
+   "search": "how to set up tax in Stripe",
+   "why": "Captures Stripe Tax users evaluating TaxCloud as a complementary compliance solution."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/sales-tax-nexus-by-state/",
+   "title": "Sales Tax Nexus by State Chart 2026: Rules & Thresholds (Guide)",
+   "date": "2026-09-22T12:05:37+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Economic nexus thresholds by state",
+   "search": "sales tax nexus by state chart",
+   "why": "Educates ecommerce sellers on when they must register for sales tax across states."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/best-software-for-economic-nexus-tracking/",
+   "title": "6 Best Software Solutions for Tracking Economic Nexus in 2026",
+   "date": "2026-09-22T10:32:52+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Economic nexus tracking software comparison",
+   "search": "best software economic nexus tracking",
+   "why": "Positions TaxCloud as top choice when buyers compare multi-channel nexus tracking solutions."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/economic-nexus-and-your-business/",
+   "title": "Economic Nexus Explained: How to Manage Nexus as You Scale",
+   "date": "2026-09-22T10:19:08+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Economic nexus sales tax compliance",
+   "search": "economic nexus explained sales tax",
+   "why": "Educates growing sellers on nexus thresholds and state-by-state compliance requirements."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/sales-tax-software-for-accountants-and-cpas/",
+   "title": "Sales Tax Software for Accountants: 9 Best Tools Reviewed [2026]",
+   "date": "2026-09-22T10:00:42+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Sales tax software for accountants",
+   "search": "best sales tax software accountants",
+   "why": "Positions TaxCloud favorably against 8 competitors when accountants evaluate tax platforms."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/sales-tax-radar/cost-of-incorrect-shopify-sales-tax-setup/",
+   "title": "Shopify Seller Missed U.S. Sales Tax in 15 States",
+   "date": "2026-09-22T09:58:55+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "learning",
+   "topic": "Shopify sales tax setup compliance",
+   "search": "Shopify sales tax setup mistakes",
+   "why": "Educates Shopify sellers on tax compliance risks; positions TaxCloud as trusted guide for complex rules."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/the-ultimate-shopify-sales-tax-guide/",
+   "title": "Shopify Sales Tax Setup Guide for Ecommerce Sellers (2026)",
+   "date": "2026-09-22T09:51:10+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "comparing",
+   "topic": "Shopify sales tax setup guide",
+   "search": "how to set up sales tax Shopify",
+   "why": "Shows what Shopify Tax can't do to position TaxCloud for growing sellers."
+  },
+  {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/webinars/trade-tax-and-tariff-talk-tuesdays.html",
    "title": "Trade Tax and Tariff Talk Tuesdays - Webinar | Avalara",
@@ -2191,6 +3528,30 @@
    "why": "Captures buyers comparing Avalara against Zamp with detailed cost breakdown and terms."
   },
   {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/quickbooks-sales-tax-management/",
+   "title": "QuickBooks Sales Tax Management: Full 2026 Guide",
+   "date": "2026-09-21T15:51:36+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "QuickBooks sales tax management",
+   "search": "QuickBooks sales tax management guide",
+   "why": "Positions TaxCloud as the solution QuickBooks lacks for multi-state sellers."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/what-is-a-streamlined-sales-tax-certified-service-provider/",
+   "title": "Streamlined Sales Tax (SST) Program Explained - What is SST?",
+   "date": "2026-09-21T12:47:35+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Streamlined Sales Tax program explained",
+   "search": "what is streamlined sales tax",
+   "why": "Educates buyers on SST compliance benefits and positions TaxCloud as a trusted CSP solution."
+  },
+  {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/webinars/power-half-hour-demystifying-streamlined-sales-tax.html",
    "title": "Power Half Hour: Demystifying Streamlined Sales Tax and Modern Tax Solutions | Avalara",
@@ -2275,6 +3636,18 @@
    "why": "Educates growth-stage ecommerce companies on Anrok's integrated tax compliance capabilities."
   },
   {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/retail/sales-tax-shipping-california",
+   "title": "Is shipping in California taxable? - TaxJar",
+   "date": "2026-09-18T17:29:12+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "California sales tax shipping rules",
+   "search": "is shipping taxable California sales tax",
+   "why": "Educates ecommerce sellers on complex state tax rules they must follow."
+  },
+  {
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/webinars/roi-vat-reporting-webinar.html",
    "title": "VAT reporting ROI webinar | Avalara",
@@ -2285,6 +3658,18 @@
    "topic": "VAT reporting ROI automation",
    "search": "VAT reporting ROI time cost reduction",
    "why": "Demonstrates quantified ROI (466%, 3.3-month payback) to convince buyers of modernizing VAT compliance."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/find-amazon-fba-sales-tax-nexus",
+   "title": "Where does Amazon FBA give me sales tax nexus? - TaxJar",
+   "date": "2026-09-17T20:01:47+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Amazon FBA sales tax nexus",
+   "search": "Amazon FBA sales tax nexus states",
+   "why": "Educates FBA sellers on nexus rules before they're ready to buy compliance solutions."
   },
   {
    "site": "Anrok",
@@ -2345,6 +3730,66 @@
    "topic": "US sales tax automation software",
    "search": "US sales tax compliance software",
    "why": "Showcases core product capabilities to buyers evaluating tax compliance solutions."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/2021-09-4-questions-to-ask-your-sales-tax-technology-partner-before-black-friday",
+   "title": "Is your sales tax technology ready for Black Friday/Cyber Monday? - TaxJar",
+   "date": "2026-09-17T19:06:20+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "buying",
+   "topic": "Sales tax technology Black Friday readiness",
+   "search": "sales tax API performance Black Friday",
+   "why": "Helps buyers evaluate sales tax partners on reliability during peak traffic periods."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/file/file-past-due-sales-tax-returns-using-taxjar",
+   "title": "How to file past due sales tax returns using TaxJar reports - TaxJar",
+   "date": "2026-09-17T18:52:18+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "buying",
+   "topic": "File past due sales tax returns",
+   "search": "how to file past due sales tax returns",
+   "why": "Shows buyers TaxJar solves compliance pain points they face immediately."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/2022-03-once-ive-met-nexus-in-a-state-will-i-always-have-to-file",
+   "title": "Once I've met nexus in a state, will I always have to file? - TaxJar",
+   "date": "2026-09-17T18:51:21+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Sales tax nexus and filing obligations",
+   "search": "do I have to file sales tax returns zero sales",
+   "why": "Educates sellers on sales tax compliance requirements and nexus rules."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/taxjar-vs-anrok",
+   "title": "TaxJar vs Anrok: Which sales tax platform is right for you? - TaxJar",
+   "date": "2026-09-17T18:49:54+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "comparing",
+   "topic": "TaxJar vs Anrok sales tax",
+   "search": "TaxJar vs Anrok comparison",
+   "why": "Captures buyers actively comparing TaxJar with direct competitor Anrok."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/taxjar-alternatives/",
+   "title": "Top TaxJar Alternatives 2026: ‌Pricing, Features, Reviews",
+   "date": "2026-09-17T17:28:49+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "comparing",
+   "topic": "TaxJar alternatives sales tax software",
+   "search": "TaxJar alternatives 2026",
+   "why": "Positions TaxCloud against TaxJar to capture customers evaluating alternatives."
   },
   {
    "site": "Anrok",
@@ -2681,6 +4126,846 @@
    "topic": "sales tax calculator Agency Missouri",
    "search": "sales tax calculator Agency Missouri",
    "why": "Educates buyers on local tax rates while capturing geographic search traffic."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/buyout-form",
+   "title": "Buyout Form | Zamp",
+   "date": "2026-09-16T15:43:36+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "landing",
+   "stage": "buying",
+   "topic": "Contract buyout program",
+   "search": "sales tax compliance software buyout",
+   "why": "Removes switching friction by covering competitor contract costs to convert buying prospects."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/white-label-service",
+   "title": "White-Label Sales Tax Service | Zamp",
+   "date": "2026-09-16T15:41:25+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "landing",
+   "stage": "buying",
+   "topic": "White-label sales tax service",
+   "search": "white label sales tax service partner",
+   "why": "Converts accounting firms into sales tax service providers using Zamp's platform."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/guides",
+   "title": "Sales Tax Guides | Zamp",
+   "date": "2026-09-16T15:36:49+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "learning",
+   "topic": "Sales tax compliance guides and research",
+   "search": "sales tax guide ecommerce saas",
+   "why": "Educates prospects on sales tax requirements while showcasing migration guides to convert Avalara and TaxJar users."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers",
+   "title": "Customers Stories | Zamp",
+   "date": "2026-09-16T15:35:36+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax automation case studies",
+   "search": "sales tax software for ecommerce",
+   "why": "Builds trust with prospects by showcasing real customer wins and time savings."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/zamp-commitment",
+   "title": "The Zamp Commitment",
+   "date": "2026-09-16T15:23:31+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "landing",
+   "stage": "buying",
+   "topic": "Sales tax accuracy guarantee",
+   "search": "sales tax compliance guarantee",
+   "why": "Reassures buyers that Zamp covers costs if they cause audit penalties."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/alternatives-comparison",
+   "title": "Alternatives & Comparison | Zamp",
+   "date": "2026-09-16T15:18:29+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "sales tax software alternatives comparison",
+   "search": "best sales tax software 2026",
+   "why": "Captures buyers actively comparing Zamp against Avalara, TaxJar, Kintsugi and other competitors."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/buyout",
+   "title": "Buyout | Zamp",
+   "date": "2026-09-16T15:14:37+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Sales tax compliance Avalara alternative",
+   "search": "Avalara alternative sales tax compliance",
+   "why": "Converts Avalara customers ready to switch by eliminating switching costs."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/state-sales-tax-calculators",
+   "title": "State and City Sales Tax Calculators | Zamp",
+   "date": "2026-09-16T15:14:26+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "landing",
+   "stage": "learning",
+   "topic": "Sales tax calculator by state",
+   "search": "sales tax calculator by state",
+   "why": "Captures searchers researching tax rates before they consider Zamp's solution."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/annmarie-skin-care",
+   "title": "Annmarie Skin Care Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance case study",
+   "search": "Zamp sales tax Shopify ecommerce",
+   "why": "Showcases real customer success to build trust with prospects considering Zamp."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/beeya",
+   "title": "Beeya Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax automation reduces monthly workload",
+   "search": "sales tax compliance software case study",
+   "why": "Builds trust by showing real e-commerce customer achieving five-minute monthly tax workflows."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/david",
+   "title": "David Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax management across states",
+   "search": "how to manage sales tax Shopify",
+   "why": "Showcases customer success to build trust and retention with existing users."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/foodsocial",
+   "title": "FoodSocial Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "FoodSocial scales with sales tax",
+   "search": "sales tax compliance for marketplaces",
+   "why": "Builds credibility showing how Zamp helps existing customers manage rapid growth."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/glamnetic-inh-hair",
+   "title": "Glamnetic Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "sales tax compliance multi-channel retail",
+   "search": "sales tax software ecommerce brands",
+   "why": "Demonstrates real results for fast-growing beauty brands handling multi-state tax complexity."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/gravity-grabber",
+   "title": "Gravity Grabber Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax compliance automation results",
+   "search": "sales tax compliance software for ecommerce",
+   "why": "Shows real customer saving 10+ hours monthly, builds trust with buying-stage prospects."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/handwrytten",
+   "title": "Handwrytten Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "sales tax compliance high-volume transactions",
+   "search": "sales tax compliance software ecommerce",
+   "why": "Proves Zamp handles complex transaction-volume nexus, building trust with similar mid-market prospects."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/hay-chix",
+   "title": "Hay Chix Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance case study",
+   "search": "sales tax compliance software ecommerce",
+   "why": "Shows existing customer success to build trust and retention with current users."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/kaf-home",
+   "title": "KAF Home Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax compliance customer success",
+   "search": "sales tax compliance software for ecommerce",
+   "why": "Demonstrates real results for similar mid-market ecommerce brands evaluating solutions."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/left-on-friday",
+   "title": "Left On Friday Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance ecommerce",
+   "search": "sales tax management for ecommerce",
+   "why": "Showcases real customer results to build trust with existing and prospective users."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/little-hunter",
+   "title": "Little Hunter Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax compliance for ecommerce",
+   "search": "sales tax automation for ecommerce",
+   "why": "Shows how Zamp solved sales tax for growing ecommerce brand; builds trust with similar mid-market buyers."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/moonbrew",
+   "title": "MoonBrew Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance automation",
+   "search": "sales tax compliance software",
+   "why": "Builds credibility and trust with prospects by showing real ecommerce customer results."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/puzzle",
+   "title": "Puzzle Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "Sales tax compliance automation",
+   "search": "sales tax software case study",
+   "why": "Shows how a high-profile SaaS startup solved sales tax using Zamp to influence similar buyers."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/solace-bands",
+   "title": "Solace Bands Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance for ecommerce",
+   "search": "sales tax compliance software ecommerce",
+   "why": "Demonstrates real customer success to build trust with prospects in same industry."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/teal",
+   "title": "Teal Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance SaaS software",
+   "search": "sales tax compliance software SaaS",
+   "why": "Showcases successful customer using Zamp to manage multi-state sales tax compliance."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/the-hedgehog-company",
+   "title": "The Hedgehog Company Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "buying",
+   "topic": "sales tax compliance software",
+   "search": "sales tax compliance software for ecommerce",
+   "why": "Builds buyer confidence by showcasing real results from a similar mid-market ecommerce company."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/tushy",
+   "title": "Tushy Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance case study",
+   "search": "how to manage sales tax compliance",
+   "why": "Demonstrates product value to existing customers and builds social proof with prospects."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/yumwoof",
+   "title": "Yumwoof Customer Story | Zamp",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "case",
+   "stage": "customers",
+   "topic": "Sales tax compliance ecommerce",
+   "search": "sales tax compliance software ecommerce",
+   "why": "Demonstrates impact for existing customers and prospects evaluating Zamp's reliability."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/all-aboard-at-integration-station-our-new-integration-and-api-developer-vlog",
+   "title": "All aboard at Integration Station: Our new integration and API developer vlog.",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "news",
+   "stage": "customers",
+   "topic": "Sales tax integrations developer content series",
+   "search": "sales tax integrations API documentation",
+   "why": "Launches new video series to deepen customer technical knowledge and platform engagement."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-checkout-champ-accurate-sales-tax-built-into-your-checkout",
+   "title": "Zamp + Checkout Champ: Accurate sales tax, built into your checkout.",
+   "date": "2026-09-16T14:48:45+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "news",
+   "stage": "buying",
+   "topic": "Sales tax Checkout Champ integration",
+   "search": "Checkout Champ sales tax integration",
+   "why": "Announces new integration to attract DTC brands using Checkout Champ needing tax compliance."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/how-to-switch-from-numeral-sales-tax/",
+   "title": "How to Switch from Numeral Sales Tax (2026 Migration Guide)",
+   "date": "2026-09-16T13:58:11+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "buying",
+   "topic": "How to switch from Numeral sales tax",
+   "search": "how to switch from Numeral sales tax",
+   "why": "Targets Numeral users actively considering competitors like TaxCloud."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/taxjar-pricing-how-much-does-taxjar-cost/",
+   "title": "TaxJar ‌Pricing: How Much Does TaxJar Cost? (2026 Review)",
+   "date": "2026-09-16T13:57:21+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "TaxJar pricing and alternatives",
+   "search": "TaxJar pricing cost 2026",
+   "why": "Catches buyers reconsidering TaxJar after price increases, positions TaxCloud as better alternative."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/numeral-sales-tax-alternatives/",
+   "title": "Numeral Alternatives: Best Sales Tax Software in 2026",
+   "date": "2026-09-16T13:33:27+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Sales tax software alternatives",
+   "search": "best Numeral alternatives sales tax",
+   "why": "Captures buyers evaluating Numeral by showcasing TaxCloud as the top alternative."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/how-to-switch-from-kintsugi/",
+   "title": "How to Switch from Kintsugi Sales Tax (2026 Migration Guide)",
+   "date": "2026-09-16T13:25:41+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Switch from Kintsugi sales tax",
+   "search": "how to switch from Kintsugi sales tax",
+   "why": "Captures Kintsugi users actively evaluating alternatives with detailed migration playbook."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/",
+   "title": "TaxCloud Sales Tax Blog: Sales Tax Resources & Insights",
+   "date": "2026-09-16T11:11:29+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "learning",
+   "topic": "Sales tax compliance resources guides",
+   "search": "sales tax compliance ecommerce",
+   "why": "Establishes thought leadership and captures early-stage research demand."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/how-to-handle-sales-tax-questions-accounting-firms/",
+   "title": "How to Handle Sales Tax Questions Without Added Risk",
+   "date": "2026-09-16T10:21:30+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "sales tax handling for accounting firms",
+   "search": "how to handle sales tax questions accounting",
+   "why": "Builds trust with accounting firms seeking to expand service offerings safely."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/sales-tax-red-flags-for-accountants/",
+   "title": "13 Sales Tax Red Flags for Accountants to Catch Early",
+   "date": "2026-09-16T10:19:46+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "comparing",
+   "topic": "Sales tax red flags for accountants",
+   "search": "sales tax red flags accountants",
+   "why": "Positions TaxCloud as expert guide for accountants managing client compliance risks."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/evaluate-sales-tax-software-ecommerce-clients/",
+   "title": "How to Evaluate Sales Tax Software: Guide for Accountants & CPAs",
+   "date": "2026-09-16T10:18:35+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "comparing",
+   "topic": "evaluate sales tax software",
+   "search": "how to evaluate sales tax software",
+   "why": "Helps accountants evaluate software choices by comparing features and fit systematically."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/2026-west-virginia-sales-tax-guide",
+   "title": "2026 West Virginia Sales Tax Guide",
+   "date": "2026-09-16T01:37:33+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "West Virginia sales tax compliance guide",
+   "search": "West Virginia sales tax rate 2026",
+   "why": "Attracts mid-market sellers researching state-specific tax rules and obligations."
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/7-common-bookkeeping-mistakes-that-e-commerce-businesses-make",
+   "title": "7 Bookkeeping Mistakes E-Commerce Businesses Must Avoid",
+   "date": "2026-09-16T01:37:33+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "learning",
+   "topic": "E-commerce bookkeeping mistakes",
+   "search": "bookkeeping mistakes ecommerce businesses",
+   "why": "Attracts early-stage ecommerce owners researching financial management best practices."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/avalara-pricing/",
+   "title": "Avalara Pricing: How Much Does Avalara Cost in 2026?",
+   "date": "2026-09-15T17:31:51+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Avalara pricing and costs comparison",
+   "search": "Avalara pricing cost 2026",
+   "why": "Captures buyers comparing TaxCloud with Avalara, highlighting cheaper alternatives and pricing gaps."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/international-tax-rule-changes-hitting-enterprise-finance-teams",
+   "title": "7 international tax rule changes hitting enterprise finance teams in 2026",
+   "date": "2026-09-15T17:25:30+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "learning",
+   "topic": "International tax rule changes 2026",
+   "search": "international tax compliance 2026 changes",
+   "why": "Educates finance teams on upcoming global tax changes they must prepare for."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/vat-exposure-blind-spots-international-expansion-for-enterprise",
+   "title": "Why US enterprise companies routinely underestimate their first year of VAT exposure | Anrok",
+   "date": "2026-09-15T17:25:30+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "opinion",
+   "stage": "learning",
+   "topic": "VAT blind spots international expansion",
+   "search": "VAT exposure when expanding internationally",
+   "why": "Establishes Anrok as VAT expert for enterprise expansion planning."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/topics/ecommerce",
+   "title": "Anrok | Resources: eCommerce",
+   "date": "2026-09-15T17:25:30+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "learning",
+   "topic": "eCommerce sales tax compliance",
+   "search": "sales tax compliance ecommerce",
+   "why": "Educates ecommerce brands on tax challenges to establish authority and drive organic search traffic."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/avalara-alternatives/",
+   "title": "11 Best Avalara (Avatax) Alternatives & Competitors in 2026",
+   "date": "2026-09-15T16:39:24+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Avalara alternatives for sales tax",
+   "search": "best Avalara alternatives",
+   "why": "Catches buyers actively comparing Avalara with competitors at decision stage."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/whitepapers/sales-tax-survival-guide.html",
+   "title": "Sales and Use Tax Survival Guide - Avalara",
+   "date": "2026-09-15T04:37:38+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Sales tax compliance challenges and tips",
+   "search": "sales and use tax compliance guide",
+   "why": "Educates prospects early about sales tax complexity to position their solution."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/webinars/software-ai-compliance-gap-webinar.html",
+   "title": "Software tax compliance on-demand webinar | Avalara",
+   "date": "2026-09-14T20:30:51+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "SaaS and AI tax compliance",
+   "search": "SaaS tax compliance requirements",
+   "why": "Educates software companies on complex tax obligations as they scale and grow."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/webinars/discover-avalara-microsoft-prospect-product-tour.html",
+   "title": "Discover Avalara: Microsoft prospect product tour | Avalara",
+   "date": "2026-09-14T20:20:53+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "landing",
+   "stage": "buying",
+   "topic": "Avalara Microsoft integration product tour",
+   "search": "Avalara Dynamics 365 Business Central tax",
+   "why": "Targets Microsoft ERP users evaluating native tax automation without custom integration."
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/retail/textbooks-tax-exempt-sales-tax",
+   "title": "Sales tax by state: In which states are textbooks taxable? - TaxJar",
+   "date": "2026-09-14T16:31:12+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "learning",
+   "topic": "textbooks sales tax by state",
+   "search": "which states textbooks taxable sales tax",
+   "why": "Attracts ecommerce sellers learning state-specific tax rules for compliance."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/",
+   "title": "TaxCloud Alternatives & Competitors: Compare Sales Tax Providers",
+   "date": "2026-09-14T16:29:22+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "compare",
+   "stage": "buying",
+   "topic": "Sales tax software comparison",
+   "search": "sales tax software alternatives",
+   "why": "Converts prospects comparing competitors by showing TaxCloud advantages over 10+ alternatives."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/ecommerce-accounting-tech-stack-your-company-needs-to-grow/",
+   "title": "Ecommerce Accounting Tech Stack for Founders, Owners, CPAs",
+   "date": "2026-09-14T14:54:22+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "ecommerce accounting tech stack",
+   "search": "ecommerce accounting software tech stack",
+   "why": "Educates early-stage ecommerce founders on essential accounting tools and workflows."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/stay-protected-5-unexpected-sales-tax-nexus-triggers/",
+   "title": "5 unexpected sales tax nexus triggers",
+   "date": "2026-09-14T11:31:51+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "list",
+   "stage": "learning",
+   "topic": "Sales tax nexus triggers",
+   "search": "sales tax nexus triggers",
+   "why": "Educates early-stage buyers on hidden nexus risks to build trust and authority."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/tennessee.html",
+   "title": "Tennessee Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T11:08:40+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Tennessee sales tax nexus rules",
+   "search": "Tennessee sales tax nexus requirements",
+   "why": "Helps ecommerce businesses understand when they owe sales tax in Tennessee."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/new-mexico.html",
+   "title": "New Mexico Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T10:59:35+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "New Mexico sales tax nexus rules",
+   "search": "New Mexico sales tax nexus requirements",
+   "why": "Educates ecommerce sellers on state tax obligations to build trust and reduce compliance risk."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/colorado.html",
+   "title": "Colorado Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T10:41:19+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Colorado sales tax nexus rules",
+   "search": "Colorado sales tax nexus requirements",
+   "why": "Educates remote sellers on tax obligations to build compliance awareness and trust."
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/how-to-calculate-sales-tax-ecommerce-edition/",
+   "title": "Ecommerce & Taxes 101: Calculate Ecommerce Sales Taxes",
+   "date": "2026-09-14T10:35:26+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "how to calculate ecommerce sales tax",
+   "search": "how to calculate sales tax ecommerce",
+   "why": "Educates early-stage online sellers on sales tax obligations and nexus rules."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/wyoming.html",
+   "title": "Wyoming Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T10:03:05+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Wyoming sales tax nexus rules",
+   "search": "Wyoming sales tax nexus requirements",
+   "why": "Educates businesses on state tax obligations to build trust before they buy."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/wisconsin.html",
+   "title": "Wisconsin Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T10:02:51+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Wisconsin sales tax nexus rules",
+   "search": "Wisconsin sales tax nexus requirements",
+   "why": "Helps businesses understand tax obligations in a specific state jurisdiction."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/west-virginia.html",
+   "title": "West Virginia Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T10:02:38+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "West Virginia sales tax nexus",
+   "search": "West Virginia sales tax nexus requirements",
+   "why": "Educates out-of-state sellers on tax obligations to establish trust and authority."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/washington.html",
+   "title": "Washington Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T10:01:51+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Washington sales tax nexus",
+   "search": "Washington sales tax nexus requirements",
+   "why": "Educates remote sellers on tax obligations in Washington state to build compliance awareness."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/virginia.html",
+   "title": "Virginia Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T10:01:38+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Virginia sales tax nexus rules",
+   "search": "Virginia sales tax nexus requirements",
+   "why": "Educates ecommerce sellers on tax obligations to build trust and establish authority."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/vermont.html",
+   "title": "Vermont Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T10:00:15+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Vermont sales tax nexus rules",
+   "search": "Vermont sales tax nexus requirements",
+   "why": "Educates sellers on tax obligations to establish authority as compliance expert."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/utah.html",
+   "title": "Utah Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T10:00:03+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Utah sales tax nexus rules",
+   "search": "Utah sales tax nexus requirements",
+   "why": "Educates out-of-state sellers on Utah tax obligations to establish authority and trust."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/texas.html",
+   "title": "Texas Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T09:59:52+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Texas sales tax nexus rules",
+   "search": "texas sales tax nexus requirements",
+   "why": "Educates early-stage sellers on tax obligations before they build nexus exposure."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/south-dakota.html",
+   "title": "South Dakota Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T09:59:39+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "South Dakota sales tax nexus rules",
+   "search": "South Dakota sales tax nexus requirements",
+   "why": "Helps ecommerce sellers understand when they owe tax in South Dakota."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/south-carolina.html",
+   "title": "South Carolina Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T09:59:28+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "South Carolina sales tax nexus",
+   "search": "South Carolina sales tax nexus requirements",
+   "why": "Educates out-of-state sellers on when they owe South Carolina sales tax."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/rhode-island.html",
+   "title": "Rhode Island Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T09:57:12+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Rhode Island sales tax nexus",
+   "search": "Rhode Island sales tax nexus",
+   "why": "Educates remote sellers on tax obligations to establish authority and build trust."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/pennsylvania.html",
+   "title": "Pennsylvania Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T09:52:50+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Pennsylvania sales tax nexus",
+   "search": "Pennsylvania sales tax nexus requirements",
+   "why": "Educates ecommerce businesses on Pennsylvania nexus rules to drive compliance awareness."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/oregon.html",
+   "title": "Oregon Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T09:52:30+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Oregon sales tax nexus rules",
+   "search": "Oregon sales tax nexus requirements",
+   "why": "Educates early-stage sellers on Oregon tax obligations to establish authority."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/oklahoma.html",
+   "title": "Oklahoma Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T09:50:26+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Oklahoma sales tax nexus rules",
+   "search": "Oklahoma sales tax nexus out of state",
+   "why": "Educates online sellers on Oklahoma nexus rules to build trust as compliance authority."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/ohio.html",
+   "title": "Ohio Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T09:50:15+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Ohio sales tax nexus rules",
+   "search": "Ohio sales tax nexus requirements",
+   "why": "Helps ecommerce businesses understand when they owe Ohio sales tax."
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/learn/nexus/state/north-dakota.html",
+   "title": "North Dakota Sales Tax Nexus - Avalara",
+   "date": "2026-09-14T09:48:36+00:00",
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "North Dakota sales tax nexus",
+   "search": "North Dakota sales tax nexus requirements",
+   "why": "Educates online sellers about tax obligations and exposure in a specific state."
   }
  ]
 }
