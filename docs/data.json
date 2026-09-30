@@ -2,12 +2,12 @@
  "meta": {
   "title": "Competitor Radar",
   "niche": "US sales tax compliance software for mid-market ecommerce and SaaS brands",
-  "updated": "2026-09-30T07:11:36+00:00",
+  "updated": "2026-09-30T07:23:19+00:00",
   "window_days": 30,
   "repo": "nico497/Competitor-Radar",
   "first_run": false,
   "errors": [],
-  "pending": 105,
+  "pending": 0,
   "analysis_stale": false,
   "per_run": 150,
   "tracking_since": "2026-09-30T04:27:42+00:00",
@@ -48,27 +48,25 @@
   ]
  ],
  "analysis": {
-  "summary": "Rivals are going after switchers. Numeral, Zamp and Kintsugi publish rival-comparison pages, while Avalara and TaxJar mostly teach. TaxCloud has a solid comparison base but far less volume.",
+  "summary": "Rivals chase switchers with alternative pages and case studies. Avalara and TaxJar mostly teach, while Zamp and Kintsugi flood state pages. TaxCloud mixes comparison and proof, aimed at buyers.",
   "points": [
    {
-    "text": "Numeral has a 'TaxCloud Alternative' page, one of 12 pages naming rivals, and 61 of its pages target buyers.",
+    "text": "Numeral has a 'TaxCloud Alternative' page, one of 12 pages aimed at people leaving a provider. Expect it to target your customers.",
     "names": [
      "TaxCloud",
      "Numeral"
     ]
    },
    {
-    "text": "Zamp (297 pages) and Kintsugi (249, with 49 new) publish far more than TaxCloud, whose 58 pages are mostly refreshed old ones.",
+    "text": "Kintsugi (249 pages) and Zamp (297 pages) publish at huge scale, mostly through bulk launches and edits, not individual articles.",
     "names": [
-     "TaxCloud",
      "Zamp",
      "Kintsugi"
     ]
    },
    {
-    "text": "Avalara and TaxJar mostly teach, and TaxJar has just 1 comparison page. TaxCloud has 19 comparison pages for people ready to switch.",
+    "text": "Avalara (60 of 74 pages) and TaxJar (67 of 77) mostly teach, so they say little to people ready to switch.",
     "names": [
-     "TaxCloud",
      "Avalara",
      "TaxJar"
     ]
@@ -76,38 +74,38 @@
   ],
   "plays": {
    "TaxCloud": {
-    "play": "Refreshes 50 old pages. Pushes comparisons and case studies, often against Avalara and TaxJar.",
-    "aimed": "Sellers comparing or leaving providers"
+    "play": "Switcher content: 19 comparison pages, 16 case studies, Avalara news, and 50 refreshed pages.",
+    "aimed": "Sellers leaving Avalara or TaxJar"
    },
    "Avalara": {
-    "play": "Teaches at scale with state nexus pages and webinars. Only 1 case study.",
-    "aimed": "Learners, partners, larger firms"
+    "play": "Teaching at scale: 44 how-to pages, state nexus guides and webinars; only 1 case study.",
+    "aimed": "Learners researching tax rules, not switchers"
    },
    "TaxJar": {
-    "play": "State-by-state how-tos and monthly due-date lists. 58 pages edited on 2026-09-28.",
-    "aimed": "Small sellers learning sales tax"
+    "play": "Answer pages: 61 how-to, shipping-by-state, due dates; 58 pages bulk-edited 2026-09-28.",
+    "aimed": "Sellers searching tax rules"
    },
    "Anrok": {
-    "play": "SaaS and global tax (VAT, e-invoicing), backed by 17 case studies and startup pages.",
+    "play": "SaaS focus: 17 case studies, California SaaS tax, e-invoicing and VAT; 113 VAT pages.",
     "aimed": "SaaS finance teams and startups"
    },
    "Numeral": {
-    "play": "Sales-ready pages: 40 landing pages, 23 case studies, 12 'alternative to' pages.",
+    "play": "Buyer pages: 40 landing, 23 case studies, 12 'alternative' pages including one on TaxCloud.",
     "aimed": "Ecommerce brands ready to buy"
    },
    "Zamp": {
-    "play": "Huge volume: 116 comparison pages, 3932 calculator pages, plus switch and buyout pages.",
-    "aimed": "Ecommerce sellers switching providers"
+    "play": "Volume: 116 comparison pages, Avalara and TaxJar pricing pages, a 'Switch to Zamp' page.",
+    "aimed": "Ecommerce sellers comparing or switching"
    },
    "Kintsugi": {
-    "play": "207 how-tos, 281 state guides, and alternatives pages against five rivals.",
-    "aimed": "Sellers searching for state tax answers"
+    "play": "Guide flood: 207 how-to pages, plus alternatives pages for Avalara, Anrok, Numeral, Vertex, Zamp.",
+    "aimed": "Sellers searching state tax how-tos"
    }
   },
   "shared": [
    {
-    "title": "Rival-comparison pages",
-    "text": "Numeral has 12 'alternative' pages, Kintsugi 22 comparison pages, Zamp 116. All catch people searching for a rival by name. TaxCloud's 19 need to stay fresh and specific.",
+    "title": "Alternatives pages",
+    "text": "Numeral has 12 'alternative' pages, including one on TaxCloud. Kintsugi ranks alternatives to five rivals. Zamp breaks down Avalara and TaxJar pricing. All aim at buyers ready to leave a provider.",
     "names": [
      "Numeral",
      "Zamp",
@@ -115,38 +113,38 @@
     ]
    },
    {
-    "title": "State-by-state page sets",
-    "text": "Avalara's nexus pages, TaxJar's shipping pages, Kintsugi's 281 guides and Zamp's 3932 calculators chase state-level searches. TaxCloud's 105 /sales-tax/ pages compete here.",
-    "names": [
-     "Avalara",
-     "TaxJar",
-     "Zamp",
-     "Kintsugi"
-    ]
-   },
-   {
-    "title": "Customer stories",
-    "text": "Numeral (23), Zamp (21), Anrok (17) and TaxCloud (16) all lean on proof. Anrok's Nutiliti story, about replacing Avalara, targets switchers directly.",
+    "title": "Customer story libraries",
+    "text": "Numeral has 23 case studies, Zamp 21, Anrok 17, TaxCloud 16. Proof pages are standard for buyers. Yours must stand out on results and company size.",
     "names": [
      "TaxCloud",
      "Anrok",
      "Numeral",
      "Zamp"
     ]
+   },
+   {
+    "title": "State-by-state page sets",
+    "text": "Kintsugi has 281 guides, TaxCloud 105 state pages, and TaxJar publishes shipping-by-state pages. Avalara has state nexus pages. State search is crowded, so depth and freshness matter.",
+    "names": [
+     "TaxCloud",
+     "Avalara",
+     "TaxJar",
+     "Kintsugi"
+    ]
    }
   ],
   "gaps": [
    {
     "title": "Switching playbook",
-    "text": "Zamp has switch and buyout pages, but no one in the data offers a step-by-step guide to moving providers without filing gaps. TaxCloud could own it."
+    "text": "Rivals publish 'alternative' pages, but none show a step-by-step move from Avalara or TaxJar. Only Zamp has a switch page. Cover data export, filings and timing."
    },
    {
-    "title": "Mid-market audit readiness",
-    "text": "Rivals aim at startups, DTC brands or enterprise. No one covers audits, notices and multi-entity setups for mid-market teams."
+    "title": "Mid-market proof",
+    "text": "Competitor case studies feature startups and small DTC brands. Few show multi-state, multi-channel mid-market results. TaxCloud could publish stories with filing counts, states and team time saved."
    },
    {
-    "title": "Ecommerce plus SaaS sellers",
-    "text": "Anrok covers SaaS and Numeral covers ecommerce. No one speaks to brands that sell both goods and subscriptions. TaxCloud has SaaS and ecommerce content already."
+    "title": "Backfiling and cleanup hub",
+    "text": "Only TaxCloud covers backfiling missed returns. Nobody else targets sellers with past exposure, who often change providers. Build a full guide series around it."
    }
   ]
  },
@@ -182,6 +180,8 @@
     "saas billing payments tax compliance"
    ],
    "unclassified": 0,
+   "removed": 0,
+   "removed_titles": [],
    "new": 6,
    "updated": 50,
    "bulk": [],
@@ -199,8 +199,8 @@
    "pages": 447,
    "undated": 0,
    "new_urls": 0,
-   "play": "Refreshes 50 old pages. Pushes comparisons and case studies, often against Avalara and TaxJar.",
-   "aimed": "Sellers comparing or leaving providers"
+   "play": "Switcher content: 19 comparison pages, 16 case studies, Avalara news, and 50 refreshed pages.",
+   "aimed": "Sellers leaving Avalara or TaxJar"
   },
   {
    "name": "Avalara",
@@ -233,6 +233,8 @@
     "trade tax tariff compliance webinars"
    ],
    "unclassified": 0,
+   "removed": 0,
+   "removed_titles": [],
    "new": 12,
    "updated": 0,
    "bulk": [],
@@ -244,8 +246,8 @@
    "pages": 702,
    "undated": 0,
    "new_urls": 0,
-   "play": "Teaches at scale with state nexus pages and webinars. Only 1 case study.",
-   "aimed": "Learners, partners, larger firms"
+   "play": "Teaching at scale: 44 how-to pages, state nexus guides and webinars; only 1 case study.",
+   "aimed": "Learners researching tax rules, not switchers"
   },
   {
    "name": "TaxJar",
@@ -278,6 +280,8 @@
     "sales tax on clothing by state"
    ],
    "unclassified": 0,
+   "removed": 0,
+   "removed_titles": [],
    "new": 5,
    "updated": 14,
    "bulk": [
@@ -295,8 +299,8 @@
    "pages": 868,
    "undated": 0,
    "new_urls": 0,
-   "play": "State-by-state how-tos and monthly due-date lists. 58 pages edited on 2026-09-28.",
-   "aimed": "Small sellers learning sales tax"
+   "play": "Answer pages: 61 how-to, shipping-by-state, due dates; 58 pages bulk-edited 2026-09-28.",
+   "aimed": "Sellers searching tax rules"
   },
   {
    "name": "Anrok",
@@ -329,6 +333,8 @@
     "sales tax compliance software tour"
    ],
    "unclassified": 0,
+   "removed": 0,
+   "removed_titles": [],
    "new": 11,
    "updated": 0,
    "bulk": [],
@@ -346,7 +352,7 @@
    "pages": 665,
    "undated": 0,
    "new_urls": 0,
-   "play": "SaaS and global tax (VAT, e-invoicing), backed by 17 case studies and startup pages.",
+   "play": "SaaS focus: 17 case studies, California SaaS tax, e-invoicing and VAT; 113 VAT pages.",
    "aimed": "SaaS finance teams and startups"
   },
   {
@@ -380,6 +386,8 @@
     "sales tax compliance software funding"
    ],
    "unclassified": 0,
+   "removed": 0,
+   "removed_titles": [],
    "new": 15,
    "updated": 0,
    "bulk": [],
@@ -391,7 +399,7 @@
    "pages": 399,
    "undated": 0,
    "new_urls": 0,
-   "play": "Sales-ready pages: 40 landing pages, 23 case studies, 12 'alternative to' pages.",
+   "play": "Buyer pages: 40 landing, 23 case studies, 12 'alternative' pages including one on TaxCloud.",
    "aimed": "Ecommerce brands ready to buy"
   },
   {
@@ -425,6 +433,8 @@
     "sales tax compliance software alternatives"
    ],
    "unclassified": 0,
+   "removed": 0,
+   "removed_titles": [],
    "new": 3,
    "updated": 6,
    "bulk": [
@@ -448,8 +458,8 @@
    "pages": 4438,
    "undated": 0,
    "new_urls": 0,
-   "play": "Huge volume: 116 comparison pages, 3932 calculator pages, plus switch and buyout pages.",
-   "aimed": "Ecommerce sellers switching providers"
+   "play": "Volume: 116 comparison pages, Avalara and TaxJar pricing pages, a 'Switch to Zamp' page.",
+   "aimed": "Ecommerce sellers comparing or switching"
   },
   {
    "name": "Kintsugi",
@@ -482,6 +492,8 @@
     "how to file sales tax online"
    ],
    "unclassified": 0,
+   "removed": 0,
+   "removed_titles": [],
    "new": 49,
    "updated": 9,
    "bulk": [
@@ -510,8 +522,8 @@
    "pages": 1034,
    "undated": 209,
    "new_urls": 0,
-   "play": "207 how-tos, 281 state guides, and alternatives pages against five rivals.",
-   "aimed": "Sellers searching for state tax answers"
+   "play": "Guide flood: 207 how-to pages, plus alternatives pages for Avalara, Anrok, Numeral, Vertex, Zamp.",
+   "aimed": "Sellers searching state tax how-tos"
   }
  ],
  "pages": [
@@ -519,7 +531,7 @@
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/webinars.html",
    "title": "Sales & Use Tax Compliance Webinars - Avalara",
-   "date": "2026-09-30T07:11:36+00:00",
+   "date": "2026-09-30T07:23:19+00:00",
    "kind": "new",
    "published": "2026-10-01T00:00:00+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
@@ -533,7 +545,7 @@
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/webinars/the-true-cost-of-cross-border-commerce-webinar.html",
    "title": "Cross-border commerce on-demand webinar | Avalara",
-   "date": "2026-09-30T07:11:36+00:00",
+   "date": "2026-09-30T07:23:19+00:00",
    "kind": "new",
    "published": "2026-10-01T00:00:00+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
@@ -547,7 +559,7 @@
    "site": "Kintsugi",
    "url": "https://trykintsugi.com/sales-tax-rate-changes",
    "title": "Sales Tax Rate Changes by Month | Kintsugi",
-   "date": "2026-09-30T07:11:36+00:00",
+   "date": "2026-09-30T07:23:19+00:00",
    "kind": "new",
    "published": "2026-10-01T00:00:00+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
@@ -561,7 +573,7 @@
    "site": "Kintsugi",
    "url": "https://trykintsugi.com/sales-tax-rate-changes/2026-10",
    "title": "Sales Tax Rate Changes: October 2026 | Kintsugi",
-   "date": "2026-09-30T07:11:36+00:00",
+   "date": "2026-09-30T07:23:19+00:00",
    "kind": "new",
    "published": "2026-10-01T00:00:00+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
@@ -20452,6 +20464,384 @@
    "why": "Attracts early-stage research traffic on GST fundamentals for ecommerce/SaaS teams."
   },
   {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/home-rule-jurisdiction",
+   "title": "Home-rule jurisdiction definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Home-rule jurisdiction sales tax",
+   "search": "home-rule jurisdiction sales tax definition",
+   "why": "Builds authority on niche tax terms; captures researchers learning compliance basics."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/multiple-points-of-use-mpu-exemption",
+   "title": "Multiple points of use mpu exemption",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Multiple points of use exemption",
+   "search": "what is multiple points of use exemption",
+   "why": "Educates prospects on niche sales tax compliance concept early in research."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/nexus",
+   "title": "Nexus definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Sales tax nexus definition",
+   "search": "what is sales tax nexus",
+   "why": "Captures early-stage researchers learning sales tax compliance basics."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/nexus-study",
+   "title": "Nexus study definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "nexus study definition sales tax",
+   "search": "what is a nexus study sales tax",
+   "why": "Builds trust by educating buyers on tax compliance terminology."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/personal-property-lease-transaction-tax",
+   "title": "Personal property lease transaction tax definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Personal property lease transaction tax",
+   "search": "personal property lease transaction tax",
+   "why": "Educates prospects about niche tax rule affecting their Chicago operations."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/physical-goods",
+   "title": "Physical goods definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Physical goods sales tax definition",
+   "search": "physical goods sales tax definition",
+   "why": "Educates SaaS/ecommerce teams on sales tax basics for physical items."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/physical-presence-nexus",
+   "title": "Physical presence nexus definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Physical presence nexus definition",
+   "search": "what is physical presence nexus",
+   "why": "Educates early-stage researchers on sales tax terminology relevant to SaaS companies."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/remote-sellers",
+   "title": "Remote sellers definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "remote sellers sales tax definition",
+   "search": "what are remote sellers sales tax",
+   "why": "Educates ecommerce buyers on tax terminology, builds authority in niche."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/reverse-charge",
+   "title": "Reverse charge definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Reverse charge tax mechanism",
+   "search": "what is reverse charge tax",
+   "why": "Educates buyers on international tax concepts they need to understand for compliance."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/sales-tax",
+   "title": "Sales tax definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Sales tax definition and basics",
+   "search": "what is sales tax",
+   "why": "Captures early-stage researchers learning sales tax fundamentals before evaluating solutions."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/sales-tax-compliance",
+   "title": "Sales tax compliance definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Sales tax compliance definition",
+   "search": "what is sales tax compliance",
+   "why": "Attracts early-stage research from founders unfamiliar with compliance requirements."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/sales-tax-compliance-software",
+   "title": "Sales tax compliance software definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Sales tax compliance software definition",
+   "search": "what is sales tax compliance software",
+   "why": "Educate early-stage researchers about tax compliance solutions and terminology."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/sales-tax-exemption",
+   "title": "Sales tax exemption definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "sales tax exemption definition",
+   "search": "what is sales tax exemption",
+   "why": "Establishes thought leadership in sales tax terminology for finance teams."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/sourcing",
+   "title": "Sourcing definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Sales tax sourcing rules",
+   "search": "what is sales tax sourcing",
+   "why": "Educates buyers on complex tax compliance fundamentals early in their research."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/tax-code",
+   "title": "Tax code definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Tax code definition and compliance",
+   "search": "what is tax code",
+   "why": "Establishes authority teaching ecommerce teams complex tax definitions they need to learn."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/tax-compliant-e-invoicing",
+   "title": "Tax compliant e-invoicing definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "tax compliant e-invoicing definition",
+   "search": "what is tax compliant e-invoicing",
+   "why": "Educates prospects on global e-invoicing requirements relevant to scaling SaaS."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/tax-compliant-invoicing",
+   "title": "Tax compliant invoicing definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Tax compliant invoicing",
+   "search": "tax compliant invoicing requirements",
+   "why": "Establishes expertise in tax compliance terminology for early-stage researchers."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/tax-rate",
+   "title": "Tax rate definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Tax rate definition and components",
+   "search": "what is tax rate",
+   "why": "Educates early-stage researchers on sales tax basics to build credibility."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/tax-registration",
+   "title": "Tax registration definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Tax registration definition",
+   "search": "what is tax registration",
+   "why": "Educates finance teams on tax terms while positioning Anrok as expert guide."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/taxability",
+   "title": "Taxability definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Taxability definition sales tax",
+   "search": "what is taxability sales tax",
+   "why": "Educates early-stage researchers on key compliance concepts for organic search visibility."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/taxable-services",
+   "title": "Taxable services definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Taxable services definition",
+   "search": "what are taxable services sales tax",
+   "why": "Attracts finance teams researching sales tax fundamentals for compliance."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/true-object-test",
+   "title": "True object test definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "True object test sales tax definition",
+   "search": "true object test sales tax",
+   "why": "Educates buyers on tax concepts they need to understand before choosing compliance software."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/use-tax",
+   "title": "Use tax definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "use tax definition",
+   "search": "what is use tax",
+   "why": "Captures early-stage researchers learning sales tax concepts before considering solutions."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/value-added-tax-vat",
+   "title": "Value-added tax (VAT) definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Value-added tax VAT definition",
+   "search": "what is value added tax VAT",
+   "why": "Educates buyers on VAT basics to build authority on global tax compliance."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/vat-identification-number",
+   "title": "VAT identification number definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "VAT identification number definition",
+   "search": "what is VAT identification number",
+   "why": "Educates buyers on VAT compliance terminology to support their global expansion research."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/vat-threshold",
+   "title": "VAT threshold definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "VAT threshold definition and requirements",
+   "search": "VAT threshold minimum annual turnover",
+   "why": "Educates buyers on compliance concepts while building authority in tax compliance space."
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/glossary/voluntary-disclosure-agreement-vda",
+   "title": "Voluntary disclosure agreement (VDA) definition | Anrok",
+   "date": "2026-08-04T20:46:15+00:00",
+   "kind": "unknown",
+   "published": null,
+   "first_seen": "2026-09-30T04:00:32+00:00",
+   "type": "howto",
+   "stage": "learning",
+   "topic": "Voluntary disclosure agreement definition",
+   "search": "what is voluntary disclosure agreement VDA",
+   "why": "Educates buyers on tax compliance concepts while establishing expertise and building trust."
+  },
+  {
    "site": "Kintsugi",
    "url": "https://trykintsugi.com/blog/how-to-file-south-dakota-sales-tax-online",
    "title": "How to File South Dakota Sales Tax Online (2026) | Kintsugi",
@@ -21136,384 +21526,56 @@
    "topic": "Sales tax obligations online sellers",
    "search": "do I need to collect sales tax online",
    "why": "Educates early-stage sellers on tax obligations to build trust and awareness."
-  },
+  }
+ ],
+ "history": [
   {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/ecommerce-accounting",
-   "title": "Ecommerce Accounting: Everything You Need to Know",
-   "date": "2026-07-14T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-14T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Ecommerce accounting guide and checklist",
-   "search": "ecommerce accounting setup guide",
-   "why": "Builds authority in ecommerce finance to attract businesses needing sales tax compliance."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/ecommerce-sales-tax",
-   "title": "Ecommerce Sales Tax 101: An Online Seller’s Guide to 2026",
-   "date": "2026-07-14T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-14T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "ecommerce sales tax compliance guide",
-   "search": "ecommerce sales tax guide 2026",
-   "why": "Establishes authority with comprehensive beginner guide for early-stage ecommerce sellers."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/how-to-determine-nexus-with-every-state",
-   "title": "How to Determine Economic Nexus by State",
-   "date": "2026-07-14T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-14T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "economic nexus thresholds by state",
-   "search": "economic nexus requirements by state",
-   "why": "Helps ecommerce businesses understand when they owe sales tax in each state."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/sales-tax-compliance",
-   "title": "6 Essential Steps for Managing Sales Tax Compliance",
-   "date": "2026-07-14T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-14T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Sales tax compliance steps",
-   "search": "how to manage sales tax compliance",
-   "why": "Educates early-stage buyers on compliance fundamentals to establish expertise."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/sales-tax-for-subscription-businesses",
-   "title": "Sales Tax for Subscription-Based Businesses",
-   "date": "2026-07-14T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-14T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Sales tax for subscription businesses",
-   "search": "sales tax subscription based businesses",
-   "why": "Educates subscription businesses on sales tax compliance rules and best practices."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/sales-tax-on-discounts-coupons-gift-cards",
-   "title": "Sales Tax on Discounts, Coupons, and Gift Cards (2026 Guide)",
-   "date": "2026-07-14T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-14T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Sales tax on discounts and coupons",
-   "search": "sales tax on discounts coupons gift cards",
-   "why": "Establishes authority on complex sales tax rules to attract early-stage research audiences."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/set-up-sales-tax-on-shopify",
-   "title": "How to Set Up Sales Tax on Your Shopify Store",
-   "date": "2026-07-14T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-14T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "sales tax setup Shopify",
-   "search": "how to set up sales tax Shopify",
-   "why": "Educates Shopify sellers on tax compliance basics and positions Numeral as expert helper."
-  },
-  {
-   "site": "TaxCloud",
-   "url": "https://taxcloud.com/blog/sales-tax-vda/",
-   "title": "Sales Tax VDA (Voluntary Disclosure Agreement): Pros & Cons",
-   "date": "2026-07-13T22:27:13+00:00",
-   "kind": "updated",
-   "published": "2025-03-28T15:56:07+00:00",
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Sales tax VDA voluntary disclosure",
-   "search": "sales tax VDA voluntary disclosure agreement",
-   "why": "Educates businesses discovering back tax obligations about VDA options and benefits."
-  },
-  {
-   "site": "TaxCloud",
-   "url": "https://taxcloud.com/blog/how-to-calculate-sales-tax-ecommerce-edition/",
-   "title": "Ecommerce & Taxes 101: Calculate Ecommerce Sales Taxes",
-   "date": "2026-07-13T00:21:12+00:00",
-   "kind": "updated",
-   "published": "2025-04-11T19:05:11+00:00",
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "how to calculate ecommerce sales tax",
-   "search": "how to calculate sales tax ecommerce",
-   "why": "Educates early-stage online sellers on sales tax obligations and nexus rules."
-  },
-  {
-   "site": "Anrok",
-   "url": "https://www.anrok.com/resources/governance-frameworks-for-agentic-ai-in-finance",
-   "title": "The majority of CFOs require human oversight of agentic AI: Here are the 4 governance frameworks finance teams are actually using",
-   "date": "2026-07-08T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-08T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "research",
-   "stage": "learning",
-   "topic": "Governance frameworks for agentic AI",
-   "search": "agentic AI governance frameworks finance",
-   "why": "Positions Anrok as thought leader in AI governance for finance teams."
-  },
-  {
-   "site": "Zamp",
-   "url": "https://zamp.com/blog-category/sales-tax-basics",
-   "title": "Sales tax basics | Zamp",
-   "date": "2026-07-08T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-08T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "list",
-   "stage": "learning",
-   "topic": "Sales tax basics education",
-   "search": "how does sales tax work",
-   "why": "Builds authority with beginners and captures early-stage learning searches about compliance."
-  },
-  {
-   "site": "Anrok",
-   "url": "https://www.anrok.com/resources/introducing-anrok-atlas-your-intelligent-tax-partner",
-   "title": "Introducing Anrok Atlas: your intelligent tax partner",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "news",
-   "stage": "customers",
-   "topic": "Anrok Atlas AI tax partner launch",
-   "search": "Anrok Atlas intelligent tax AI",
-   "why": "Announces new AI-powered feature to existing customers and builds brand authority."
-  },
-  {
-   "site": "Zamp",
-   "url": "https://zamp.com/blog-category/nexus-registrations",
-   "title": "Nexus & registrations | Zamp",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "list",
-   "stage": "learning",
-   "topic": "Sales tax nexus registration guides",
-   "search": "how to register sales tax permit by state",
-   "why": "Captures ecommerce brands researching initial compliance steps across states."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/canada-gst-hst-rates-compliance",
-   "title": "Canada GST/HST Rates & Compliance for 2026",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Canada GST HST PST compliance guide",
-   "search": "Canada GST HST rates 2026",
-   "why": "Educates ecommerce sellers on Canadian tax obligations before expansion."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/economic-nexus",
-   "title": "Economic Nexus: State-by-State Handbook for 2026",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "economic nexus state thresholds",
-   "search": "economic nexus state by state 2026",
-   "why": "Educates early-stage remote sellers on sales tax nexus requirements and thresholds."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/eu-vat-compliance",
-   "title": "EU VAT Compliance for U.S. Sellers (2026 Guide)",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "EU VAT compliance for US sellers",
-   "search": "EU VAT compliance US sellers ecommerce",
-   "why": "Educates US sellers on EU VAT rules before entering the market."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/eu-vat-one-stop-shop-oss",
-   "title": "EU VAT One Stop Shop (OSS): How It Works & When to Use It",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "EU VAT One Stop Shop compliance",
-   "search": "EU VAT OSS how to use",
-   "why": "Educates sellers on EU VAT rules to establish expertise and build trust."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/eu-vat-rates",
-   "title": "EU VAT Rates by Country (2026 Guide)",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "EU VAT rates by country guide",
-   "search": "EU VAT rates by country 2026",
-   "why": "Establishes Numeral expertise in EU tax compliance for sellers researching international requirements."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/global-vat-compliance-for-saas-and-software-companies",
-   "title": "Global VAT Compliance for SaaS & Software Companies",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Global VAT compliance for SaaS",
-   "search": "global VAT compliance SaaS companies",
-   "why": "Educates early-stage researching SaaS founders on VAT obligations across 80+ countries."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/merchant-of-record-saas",
-   "title": "Should SaaS Businesses Use a Merchant of Record?",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Merchant of record for SaaS businesses",
-   "search": "should SaaS use merchant of record",
-   "why": "Educates SaaS founders on payment infrastructure options and tax compliance complexity."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/sales-tax-on-digital-goods",
-   "title": "Sales Tax on Digital Goods: State by State (2026)",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Sales tax on digital goods",
-   "search": "sales tax digital goods state by state",
-   "why": "Attracts ecommerce/SaaS companies researching tax obligations for digital products."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/sales-tax-on-saas",
-   "title": "Sales Tax on SaaS: State-by-State Guide (2026 Update)",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "SaaS sales tax state requirements",
-   "search": "SaaS sales tax by state 2026",
-   "why": "Educates early-stage buyers on SaaS tax complexity and Numeral's software as solution."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/sales-tax-on-services",
-   "title": "Sales Tax on Services: State-by-State Guide for Businesses",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Sales tax on services state guide",
-   "search": "sales tax on services by state",
-   "why": "Attracts businesses trying to understand complex service taxation rules across states."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/sales-tax-vs-vat",
-   "title": "Sales Tax vs. VAT: What Is the Difference?",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Sales tax vs VAT differences",
-   "search": "sales tax vs VAT difference",
-   "why": "Attracts early-stage buyers researching tax obligations for international expansion."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/vat-compliance",
-   "title": "What is VAT Compliance? 8 Must-Know Basics for Businesses",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "VAT compliance basics for businesses",
-   "search": "what is VAT compliance",
-   "why": "Educates early-stage researchers about VAT before they realize they need compliance solutions."
-  },
-  {
-   "site": "Numeral",
-   "url": "https://www.numeral.com/blog/what-happens-if-you-dont-collect-or-remit-sales-tax",
-   "title": "What Happens If You Don't Collect or Remit Sales Tax?",
-   "date": "2026-07-07T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-07-07T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:11:41+00:00",
-   "type": "howto",
-   "stage": "learning",
-   "topic": "Sales tax non-compliance penalties",
-   "search": "what happens if you don't pay sales tax",
-   "why": "Educates ecommerce businesses on sales tax risks to drive awareness of Numeral's software."
-  },
-  {
-   "site": "Zamp",
-   "url": "https://zamp.com/blog-category/filing-compliance",
-   "title": "Filing & compliance | Zamp",
-   "date": "2026-06-30T00:00:00+00:00",
-   "kind": "unknown",
-   "published": "2026-06-30T00:00:00+00:00",
-   "first_seen": "2026-09-30T04:00:32+00:00",
-   "type": "list",
-   "stage": "learning",
-   "topic": "Sales tax filing and compliance",
-   "search": "how to file sales tax compliance",
-   "why": "Establishes authority on sales tax compliance and filing processes for mid-market ecommerce brands."
+   "week": "2026-W40",
+   "date": "2026-09-30T07:23:19+00:00",
+   "sites": {
+    "TaxCloud": {
+     "new": 2,
+     "updated": 20,
+     "removed": 0,
+     "pages": 342
+    },
+    "Avalara": {
+     "new": 5,
+     "updated": 0,
+     "removed": 0,
+     "pages": 702
+    },
+    "TaxJar": {
+     "new": 2,
+     "updated": 1,
+     "removed": 0,
+     "pages": 868
+    },
+    "Anrok": {
+     "new": 1,
+     "updated": 0,
+     "removed": 0,
+     "pages": 552
+    },
+    "Numeral": {
+     "new": 8,
+     "updated": 0,
+     "removed": 0,
+     "pages": 399
+    },
+    "Zamp": {
+     "new": 0,
+     "updated": 1,
+     "removed": 0,
+     "pages": 506
+    },
+    "Kintsugi": {
+     "new": 15,
+     "updated": 3,
+     "removed": 0,
+     "pages": 753
+    }
+   }
   }
  ]
 }

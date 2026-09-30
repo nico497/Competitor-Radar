@@ -1,0 +1,52 @@
+{
+ "weeks": [
+  {
+   "week": "2026-W40",
+   "date": "2026-09-30T07:23:19+00:00",
+   "sites": {
+    "TaxCloud": {
+     "new": 2,
+     "updated": 20,
+     "removed": 0,
+     "pages": 342
+    },
+    "Avalara": {
+     "new": 5,
+     "updated": 0,
+     "removed": 0,
+     "pages": 702
+    },
+    "TaxJar": {
+     "new": 2,
+     "updated": 1,
+     "removed": 0,
+     "pages": 868
+    },
+    "Anrok": {
+     "new": 1,
+     "updated": 0,
+     "removed": 0,
+     "pages": 552
+    },
+    "Numeral": {
+     "new": 8,
+     "updated": 0,
+     "removed": 0,
+     "pages": 399
+    },
+    "Zamp": {
+     "new": 0,
+     "updated": 1,
+     "removed": 0,
+     "pages": 506
+    },
+    "Kintsugi": {
+     "new": 15,
+     "updated": 3,
+     "removed": 0,
+     "pages": 753
+    }
+   }
+  }
+ ]
+}
