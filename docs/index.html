@@ -192,6 +192,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
       const runs = Math.ceil(m.pending / (m.per_run || 200));
       out.push(`${m.pending.toLocaleString()} older pages are still waiting to be classified: about ${runs} more run${runs > 1 ? "s" : ""}. Run the workflow manually to catch up faster.`);
     }
+    if (m.analysis_stale) out.push(`The written summary and "play" lines are from an earlier run and may not match the numbers below. They refresh on the next successful run.`);
     (m.errors || []).forEach((e) => out.push(`Error this run: ${e}`));
     $("#notices").innerHTML = out.map((t) => `<div class="notice">${esc(t)}</div>`).join("");
   }

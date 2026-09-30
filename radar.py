@@ -465,13 +465,27 @@ def date_kind(p: dict, info: dict, now: datetime) -> None:
     p["mod"] = iso(info.get("modified"))
     p["fp"] = info.get("fp")
     p["dates_checked"] = iso(now)
-    if p.get("kind"):
-        return                                  # already decided by tracking (new / real update)
-    pub, mod = info.get("published"), info.get("modified")
-    ref = parse_iso(p.get("date")) or mod
+    decide_kind(p, now)
+
+
+def decide_kind(p: dict, now: datetime) -> None:
+    pub, mod = parse_iso(p.get("pub")), parse_iso(p.get("mod"))
+    first_seen = parse_iso(p.get("first_seen")) or now
+    if (p.get("kind") == "updated" and p.get("fp_verified")) or (p.get("kind") == "new" and p.get("feed_dated")):
+        return                                  # a verified edit, or a feed's own publish date: keep it
     if not p.get("baseline", True):
-        p["kind"], p["event"] = "new", p["first_seen"]
-    elif pub and ref and pub >= ref - timedelta(days=3):
+        # Seen for the first time after tracking began. New, unless the page says it's old
+        # (e.g. an old post that just got added to the sitemap).
+        if pub and pub < first_seen - timedelta(days=14):
+            if mod and mod >= first_seen - timedelta(days=14):
+                p["kind"], p["event"] = "updated", iso(min(mod, now))
+            else:
+                p["kind"], p["event"] = "unknown", iso(pub)
+        else:
+            p["kind"], p["event"] = "new", p["first_seen"]
+        return
+    ref = parse_iso(p.get("date")) or mod
+    if pub and ref and pub >= ref - timedelta(days=3):
         p["kind"], p["event"] = "new", iso(min(pub, now))
     elif pub and ref:
         p["kind"], p["event"] = "updated", iso(min(ref, now))
@@ -680,8 +694,8 @@ def check_sites(cfg: dict) -> None:
             log(f"FAIL {s['name']:<22} {short_error(e)}")
 
 
-def run(cfg: dict) -> dict:
-    if not os.environ.get("ANTHROPIC_API_KEY"):
+def run(cfg: dict, offline: bool = False) -> dict:
+    if not offline and not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("Set ANTHROPIC_API_KEY (GitHub: Settings > Secrets and variables > Actions).")
     f = Fetcher(cfg["user_agent"])
     now = utcnow()
@@ -698,129 +712,142 @@ def run(cfg: dict) -> dict:
     pages, errors, health = state["pages"], [], {}
     first_sites, prefetched, sections, recheck = [], {}, {}, []
 
-    # 1. Discover every site's pages
-    log("== Discover")
-    for s in cfg["sites"]:
-        name, host = s["name"], site_host(s, f)
-        first = not state["sites"].get(name, {}).get("initialized")
-        try:
-            method, used, items = discover(s, f)
-        except Exception as e:  # noqa: BLE001
-            health[name] = {"ok": False, "error": short_error(e), "method": None, "url": s["site"]}
-            log(f"  FAIL {name}: {health[name]['error']}")
-            continue
-        items = [i for i in items if keep_url(i["url"], s, host)]
-        prog = programmatic_sections([i["url"] for i in items], int(s.get("programmatic_min", cfg.get("programmatic_min", 100))))
-        if prog:
-            log(f"  {name}: templated sections counted, not classified: {prog}")
-        # Some sites stamp every page with the deploy date. If most pages share a
-        # very recent lastmod, those dates say nothing about when pages were published.
-        recent = sum(1 for i in items if i["published"] and i["published"] >= now - timedelta(days=2))
-        unreliable = len(items) >= 20 and recent > 0.5 * len(items)
-        if unreliable:
-            log(f"  {name}: sitemap dates look like deploy dates, ignoring them")
-            for i in items:
-                i["published"] = None
-        new = refreshed = 0
-        for it in items:
-            k = url_key(it["url"])
-            lastmod = it["published"]
-            rec = pages.get(k)
-            if rec is None:
-                # A page's date is its sitemap/feed date when there is one, else the day we first saw it.
-                date = lastmod if lastmod and lastmod <= now else (None if first else now)
-                pages[k] = {"site": name, "url": it["url"], "title": it["title"], "date": iso(date),
-                            "lastmod": iso(lastmod), "first_seen": iso(now), "cls": None, "baseline": first}
-                if not first:
-                    pages[k].update(kind="new", event=iso(now))
-                elif method == "feed" and date:
-                    pages[k].update(kind="new", event=iso(date))   # feed dates are publish dates
-                new += 1
-            else:
-                if lastmod and rec.get("lastmod") and lastmod > parse_iso(rec["lastmod"]) + timedelta(hours=1):
-                    recheck.append(rec)          # verified below: real edit or just a date bump?
-                    refreshed += 1
-                rec["lastmod"] = iso(lastmod) if lastmod else rec.get("lastmod")
-            sec = section_of(it["url"])
-            pages[k]["prog"] = sec if sec in prog else None
-        undated = sum(1 for i in items if not i["published"])
-        if first:
-            first_sites.append(name)
-            if undated > len(items) / 2:
-                # No dates in the sitemap: read a sample of pages to find their publish dates.
-                sample = [i for i in items if not i["published"]]
-                sample.sort(key=lambda i: 0 if PREFERRED_CHILD.search(i["url"]) else 1)
-                for it in sample[: int(cfg.get("first_run_sample", 40))]:
-                    try:
-                        info = read_page(it["url"], f)
-                    except Exception:  # noqa: BLE001
-                        continue
-                    prefetched[url_key(it["url"])] = info
-                    rec = pages.get(url_key(it["url"]))
-                    if rec and info["published"] and not rec.get("date"):
-                        rec["date"] = iso(min(info["published"], now))
-                    time.sleep(0.3)
-        sections[name] = prog
-        health[name] = {"ok": True, "error": None, "method": method, "url": used, "pages": len(items),
-                        "undated": undated, "new_urls": 0 if first else new}
-        state["sites"][name] = {"initialized": True}
-        log(f"  OK   {name}: {method}, {len(items)} pages, {new} new, {refreshed} updated")
+    todo, queue = [], []
+    if offline:
+        # Rebuild the dashboard from saved state: no fetching, no AI calls.
+        prev = load_json(DATA_PATH, {})
+        for ps in prev.get("sites", []):
+            health[ps["name"]] = {k: ps.get(k) for k in ("ok", "error", "method", "url", "pages", "undated")}
+            sections[ps["name"]] = {x["section"]: x["pages"] for x in ps.get("programmatic", [])}
+        for p in pages.values():
+            if p.get("dates_checked"):
+                decide_kind(p, now)
+    else:
+        # 1. Discover every site's pages
+        log("== Discover")
+        for s in cfg["sites"]:
+            name, host = s["name"], site_host(s, f)
+            first = not state["sites"].get(name, {}).get("initialized")
+            try:
+                method, used, items = discover(s, f)
+            except Exception as e:  # noqa: BLE001
+                health[name] = {"ok": False, "error": short_error(e), "method": None, "url": s["site"]}
+                log(f"  FAIL {name}: {health[name]['error']}")
+                continue
+            items = [i for i in items if keep_url(i["url"], s, host)]
+            prog = programmatic_sections([i["url"] for i in items], int(s.get("programmatic_min", cfg.get("programmatic_min", 100))))
+            if prog:
+                log(f"  {name}: templated sections counted, not classified: {prog}")
+            # Some sites stamp every page with the deploy date. If most pages share a
+            # very recent lastmod, those dates say nothing about when pages were published.
+            recent = sum(1 for i in items if i["published"] and i["published"] >= now - timedelta(days=2))
+            unreliable = len(items) >= 20 and recent > 0.5 * len(items)
+            if unreliable:
+                log(f"  {name}: sitemap dates look like deploy dates, ignoring them")
+                for i in items:
+                    i["published"] = None
+            new = refreshed = 0
+            for it in items:
+                k = url_key(it["url"])
+                lastmod = it["published"]
+                rec = pages.get(k)
+                if rec is None:
+                    # A page's date is its sitemap/feed date when there is one, else the day we first saw it.
+                    date = lastmod if lastmod and lastmod <= now else (None if first else now)
+                    pages[k] = {"site": name, "url": it["url"], "title": it["title"], "date": iso(date),
+                                "lastmod": iso(lastmod), "first_seen": iso(now), "cls": None, "baseline": first}
+                    if not first:
+                        pages[k].update(kind="new", event=iso(now))
+                    elif method == "feed" and date:
+                        pages[k].update(kind="new", event=iso(date), feed_dated=True)   # feed dates are publish dates
+                    new += 1
+                else:
+                    if lastmod and rec.get("lastmod") and lastmod > parse_iso(rec["lastmod"]) + timedelta(hours=1):
+                        recheck.append(rec)          # verified below: real edit or just a date bump?
+                        refreshed += 1
+                    rec["lastmod"] = iso(lastmod) if lastmod else rec.get("lastmod")
+                sec = section_of(it["url"])
+                pages[k]["prog"] = sec if sec in prog else None
+            undated = sum(1 for i in items if not i["published"])
+            if first:
+                first_sites.append(name)
+                if undated > len(items) / 2:
+                    # No dates in the sitemap: read a sample of pages to find their publish dates.
+                    sample = [i for i in items if not i["published"]]
+                    sample.sort(key=lambda i: 0 if PREFERRED_CHILD.search(i["url"]) else 1)
+                    for it in sample[: int(cfg.get("first_run_sample", 40))]:
+                        try:
+                            info = read_page(it["url"], f)
+                        except Exception:  # noqa: BLE001
+                            continue
+                        prefetched[url_key(it["url"])] = info
+                        rec = pages.get(url_key(it["url"]))
+                        if rec and info["published"] and not rec.get("date"):
+                            rec["date"] = iso(min(info["published"], now))
+                        time.sleep(0.3)
+            sections[name] = prog
+            health[name] = {"ok": True, "error": None, "method": method, "url": used, "pages": len(items),
+                            "undated": undated, "new_urls": 0 if first else new}
+            if items:
+                state["sites"][name] = {"initialized": True}   # only once we've actually seen pages
+            log(f"  OK   {name}: {method}, {len(items)} pages, {new} new, {refreshed} updated")
 
-    # 2. Classify recent pages that haven't been classified yet (newest first, capped)
-    todo = [p for p in pages.values() if p["cls"] is None and not p.get("prog") and p.get("date") and parse_iso(p["date"]) >= horizon
-            and health.get(p["site"], {}).get("ok")]
-    todo.sort(key=lambda p: p["date"], reverse=True)
-    per_site, queue = {}, []
-    cap_site = int(cfg.get("max_classify_per_site", 40))
-    for p in todo:           # newest first, but no single site can use the whole budget
-        if per_site.get(p["site"], 0) < cap_site and len(queue) < int(cfg["max_classify_per_run"]):
-            queue.append(p)
-            per_site[p["site"]] = per_site.get(p["site"], 0) + 1
-    log(f"== Classify {len(queue)} pages" + (f" ({len(todo) - len(queue)} queued for next run)" if len(todo) > len(queue) else ""))
-    for p in queue:
-        try:
-            info = prefetched.get(url_key(p["url"])) or read_page(p["url"], f)
-            p["title"] = info["title"] or p["title"]
-            date_kind(p, info, now)
-            if info["published"] and not p.get("lastmod"):
-                p["date"] = iso(info["published"])
-        except Exception as e:  # noqa: BLE001
-            info = {}
-            p["read_error"] = short_error(e)
-        try:
-            p["cls"] = classify({**p, "info": info}, p["site"], cfg)
-        except Exception as e:  # noqa: BLE001
-            errors.append(f"classify: {str(e)[:200]}")
-            log(f"    classify failed: {e}")
-        time.sleep(0.3)
+    if not offline:
+        # 2. Classify recent pages that haven't been classified yet (newest first, capped)
+        todo = [p for p in pages.values() if p["cls"] is None and not p.get("prog") and p.get("date") and parse_iso(p["date"]) >= horizon
+                and health.get(p["site"], {}).get("ok")]
+        todo.sort(key=lambda p: p["date"], reverse=True)
+        per_site, queue = {}, []
+        cap_site = int(cfg.get("max_classify_per_site", 40))
+        for p in todo:           # newest first, but no single site can use the whole budget
+            if per_site.get(p["site"], 0) < cap_site and len(queue) < int(cfg["max_classify_per_run"]):
+                queue.append(p)
+                per_site[p["site"]] = per_site.get(p["site"], 0) + 1
+        log(f"== Classify {len(queue)} pages" + (f" ({len(todo) - len(queue)} queued for next run)" if len(todo) > len(queue) else ""))
+        for p in queue:
+            try:
+                info = prefetched.get(url_key(p["url"])) or read_page(p["url"], f)
+                p["title"] = info["title"] or p["title"]
+                date_kind(p, info, now)
+                if info["published"] and not p.get("lastmod"):
+                    p["date"] = iso(info["published"])
+            except Exception as e:  # noqa: BLE001
+                info = {}
+                p["read_error"] = short_error(e)
+            try:
+                p["cls"] = classify({**p, "info": info}, p["site"], cfg)
+            except Exception as e:  # noqa: BLE001
+                errors.append(f"classify: {str(e)[:200]}")
+                log(f"    classify failed: {e}")
+            time.sleep(0.3)
 
-    # 2b. New vs updated. Verify date bumps against the text fingerprint, and date
-    #     pages classified before this existed. Page fetches only, no AI calls.
-    checks = [p for p in recheck if not p.get("prog")][: int(cfg.get("max_rechecks", 300))]
-    real = 0
-    for p in checks:
-        try:
-            info = read_page(p["url"], f)
-        except Exception:  # noqa: BLE001
-            continue
-        if p.get("fp") and info["fp"] != p["fp"]:
-            p.update(kind="updated", event=iso(now))
-            real += 1
-        elif not p.get("fp"):
-            p.pop("kind", None)
-            p["date"] = p.get("lastmod") or p["date"]      # its sitemap date just moved to now
-            date_kind(p, info, now)
-        p["fp"], p["dates_checked"] = info["fp"], iso(now)
-        time.sleep(0.2)
-    backfill = [p for p in pages.values() if p.get("cls") and not p.get("dates_checked") and not p.get("prog")
-                and p.get("date") and parse_iso(p["date"]) >= horizon][: int(cfg.get("max_backfill", 400))]
-    for p in backfill:
-        try:
-            date_kind(p, read_page(p["url"], f), now)
-        except Exception:  # noqa: BLE001
-            p["dates_checked"] = iso(now)
-        time.sleep(0.2)
-    log(f"== New vs updated: {real} of {len(checks)} date bumps were real edits; dated {len(backfill)} older pages")
+        # 2b. New vs updated. Verify date bumps against the text fingerprint, and date
+        #     pages classified before this existed. Page fetches only, no AI calls.
+        checks = [p for p in recheck if not p.get("prog")][: int(cfg.get("max_rechecks", 300))]
+        real = 0
+        for p in checks:
+            try:
+                info = read_page(p["url"], f)
+            except Exception:  # noqa: BLE001
+                continue
+            if p.get("fp") and info["fp"] != p["fp"]:
+                p.update(kind="updated", event=iso(now), fp_verified=True)
+                real += 1
+            elif not p.get("fp"):
+                p.pop("kind", None)
+                p["date"] = p.get("lastmod") or p["date"]      # its sitemap date just moved to now
+                date_kind(p, info, now)
+            p["fp"], p["dates_checked"] = info["fp"], iso(now)
+            time.sleep(0.2)
+        backfill = [p for p in pages.values() if p.get("cls") and not p.get("dates_checked") and not p.get("prog")
+                    and p.get("date") and parse_iso(p["date"]) >= horizon][: int(cfg.get("max_backfill", 400))]
+        for p in backfill:
+            try:
+                date_kind(p, read_page(p["url"], f), now)
+            except Exception:  # noqa: BLE001
+                p["dates_checked"] = iso(now)
+            time.sleep(0.2)
+        log(f"== New vs updated: {real} of {len(checks)} date bumps were real edits; dated {len(backfill)} older pages")
 
     # 3. Stats per site for the window
     stats = []
@@ -860,7 +887,10 @@ def run(cfg: dict) -> dict:
     log("== Analyse")
     data = load_json(DATA_PATH, {})
     analysis = data.get("analysis") or {}
-    if any(s["n"] for s in stats):
+    prev_plays = {ps["name"]: {"play": ps.get("play", ""), "aimed": ps.get("aimed", "")} for ps in data.get("sites", [])}
+    if offline:
+        pass
+    elif any(s["n"] for s in stats):
         try:
             analysis = analyse([s for s in stats if s.get("ok")], cfg)
         except Exception as e:  # noqa: BLE001
@@ -870,7 +900,7 @@ def run(cfg: dict) -> dict:
         analysis = {"summary": f"No new pages from these sites in the last {cfg['window_days']} days.",
                     "points": [], "plays": {}, "shared": [], "gaps": []}
     for s in stats:
-        s.update(analysis.get("plays", {}).get(s["name"], {"play": "", "aimed": ""}))
+        s.update(analysis.get("plays", {}).get(s["name"]) or prev_plays.get(s["name"]) or {"play": "", "aimed": ""})
         s.pop("sample", None)
 
     # 5. Save
@@ -885,11 +915,13 @@ def run(cfg: dict) -> dict:
     data = {
         "meta": {"title": cfg.get("title", "Competitor Radar"), "niche": cfg["niche"], "updated": iso(now),
                  "window_days": int(cfg["window_days"]), "repo": repo, "first_run": first_run,
-                 "errors": list(dict.fromkeys(errors))[:5], "pending": max(0, len(todo) - len(queue)),
+                 "errors": list(dict.fromkeys(errors))[:5],
+                 "pending": (data.get("meta") or {}).get("pending", 0) if offline else max(0, len(todo) - len(queue)),
+                 "analysis_stale": offline or any(e.startswith("analysis:") for e in errors),
                  "per_run": int(cfg["max_classify_per_run"]), "tracking_since": state["tracking_since"],
                  "tracking_days": (now - parse_iso(state["tracking_since"])).days},
         "types": cfg["types"],
-        "analysis": {k: v for k, v in analysis.items() if k != "plays"},
+        "analysis": analysis,        # plays kept too, so a failed run can reuse them
         "sites": stats,
         "pages": out_pages,
     }
@@ -908,13 +940,17 @@ def run(cfg: dict) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser(description="Competitor Radar")
     ap.add_argument("--check", action="store_true", help="test your sites only (no API key, no writes)")
+    ap.add_argument("--rebuild", action="store_true", help="rebuild the dashboard from saved data (no fetching, no AI)")
     args = ap.parse_args()
     cfg = load_config()
     if os.environ.get("RADAR_CLASSIFY_LIMIT", "").strip().isdigit():
         # One-off catch-up: lift the per-run and per-site caps to clear a backlog.
         cfg["max_classify_per_run"] = cfg["max_classify_per_site"] = int(os.environ["RADAR_CLASSIFY_LIMIT"])
         cfg["max_backfill"] = 1500           # also date every already-classified page (fetches only, no AI)
-    check_sites(cfg) if args.check else run(cfg)
+    if args.check:
+        check_sites(cfg)
+    else:
+        run(cfg, offline=args.rebuild)
 
 
 if __name__ == "__main__":

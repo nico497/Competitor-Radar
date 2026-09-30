@@ -84,6 +84,10 @@ FAIL Rival Two       no sitemap or feed found. Add a sitemap: or feed: line for 
 
 `max_classify_per_run` caps spend. Extra pages wait for the next run. To clear a backlog faster, go to **Run workflow** and set *classify_limit* (e.g. 700). Keep it under about 800 so the run finishes within the hour. For current rates, see [anthropic.com/pricing](https://www.anthropic.com/pricing).
 
+## Rebuild without spending
+
+`python radar.py --rebuild` recomputes the dashboard from saved data, with no fetching and no AI calls.
+
 ## Limits
 
 - **It shows what competitors publish, not what works.** There's no traffic or ranking data.
