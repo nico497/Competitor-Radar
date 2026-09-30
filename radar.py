@@ -1,0 +1,760 @@
+#!/usr/bin/env python3
+"""
+Competitor Radar
+----------------
+Watches what your competitors publish on their websites, classifies every new
+page (type, buyer stage, topic, likely search), and writes a plain-English
+breakdown of each competitor's content strategy, the plays they share, and the
+gaps nobody covers.
+
+Usage
+  python radar.py            # full run: discover -> classify -> analyse -> save
+  python radar.py --check    # test your sites only (no API key, no writes)
+
+Environment
+  ANTHROPIC_API_KEY   required for a full run
+  RADAR_CONFIG        optional path to config (default: config.yaml)
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import sys
+import time
+import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
+
+import feedparser
+import requests
+import yaml
+from bs4 import BeautifulSoup
+
+ROOT = Path(__file__).resolve().parent
+CONFIG_PATH = Path(os.environ.get("RADAR_CONFIG", ROOT / "config.yaml"))
+DATA_PATH = ROOT / "docs" / "data.json"      # what the dashboard reads
+STATE_PATH = ROOT / "state" / "state.json"   # every page seen, with its classification
+API_URL = "https://api.anthropic.com/v1/messages"
+
+
+# ---------------------------------------------------------------- helpers
+
+def utcnow() -> datetime:
+    return datetime.now(timezone.utc)
+
+
+def iso(d: datetime | None) -> str | None:
+    return d.astimezone(timezone.utc).isoformat(timespec="seconds") if d else None
+
+
+def parse_iso(s: str | None) -> datetime | None:
+    if not s:
+        return None
+    try:
+        d = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
+
+
+def log(msg: str) -> None:
+    print(msg, flush=True)
+
+
+def short_error(e: Exception) -> str:
+    if isinstance(e, requests.HTTPError) and e.response is not None:
+        code = e.response.status_code
+        hint = {403: "blocked by the site (403)", 404: "URL not found (404)",
+                429: "rate limited (429)"}.get(code, f"HTTP {code}")
+        return hint
+    if isinstance(e, requests.Timeout):
+        return "timed out"
+    if isinstance(e, requests.ConnectionError):
+        return "could not connect"
+    return str(e)[:200]
+
+
+TRACKING = re.compile(r"^(utm_|mc_|hsa_|_hs|fbclid|gclid|ref$|source$)", re.I)
+
+
+def normalize_url(u: str) -> str:
+    p = urlparse(u.strip())
+    query = urlencode([(k, v) for k, v in parse_qsl(p.query) if not TRACKING.match(k)])
+    return urlunparse((p.scheme.lower() or "https", p.netloc.lower(), p.path or "/", "", query, ""))
+
+
+def url_key(u: str) -> str:
+    """Identity for de-duplication: ignores scheme, www and trailing slash."""
+    p = urlparse(u)
+    host = p.netloc.lower().removeprefix("www.")
+    return f"{host}{p.path.rstrip('/')}" + (f"?{p.query}" if p.query else "")
+
+
+def slug_title(url: str) -> str:
+    seg = [s for s in urlparse(url).path.split("/") if s]
+    words = re.sub(r"[-_]+", " ", seg[-1] if seg else url)
+    words = re.sub(r"\.(html?|php|aspx?)$", "", words)
+    return words[:1].upper() + words[1:]
+
+
+def strip_html(s: str, limit: int = 400) -> str:
+    text = BeautifulSoup(s or "", "html.parser").get_text(" ", strip=True)
+    return re.sub(r"\s+", " ", text)[:limit]
+
+
+class Fetcher:
+    def __init__(self, user_agent: str):
+        self.s = requests.Session()
+        self.s.headers.update({
+            "User-Agent": user_agent,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+        })
+
+    def get(self, url: str) -> requests.Response:
+        r = self.s.get(url, timeout=30, allow_redirects=True)
+        r.raise_for_status()
+        return r
+
+
+
+def discover_feed(src: dict, f: Fetcher) -> list[dict]:
+    r = f.get(src["feed"])
+    parsed = feedparser.parse(r.content)
+    if not parsed.entries:
+        raise ValueError("no entries: not a readable RSS/Atom feed")
+    items = []
+    for e in parsed.entries:
+        link = e.get("link")
+        if not link:
+            continue
+        t = e.get("published_parsed") or e.get("updated_parsed")
+        pub = datetime(*t[:6], tzinfo=timezone.utc) if t else None
+        items.append({
+            "url": normalize_url(urljoin(r.url, link)),
+            "title": strip_html(e.get("title", ""), 300) or slug_title(link),
+            "published": pub,
+            "snippet": strip_html(e.get("summary", ""), 1500),
+            # Full text when the feed carries it (Substack, WordPress): fallback if the page blocks us
+            "feed_text": strip_html((e.get("content") or [{}])[0].get("value", ""), 60000),
+        })
+    return items
+
+
+def discover_page(src: dict, f: Fetcher) -> list[dict]:
+    r = f.get(src["page"])
+    soup = BeautifulSoup(r.text, "html.parser")
+    pattern = re.compile(src["link_pattern"])
+    listing = url_key(r.url)
+    found: dict[str, str] = {}
+    for a in soup.find_all("a", href=True):
+        url = normalize_url(urljoin(r.url, a["href"]))
+        if url_key(url) == listing or not pattern.search(url):
+            continue
+        text = a.get_text(" ", strip=True) or a.get("aria-label", "") or a.get("title", "")
+        # Cards often link twice (image + title): keep the most descriptive text.
+        if len(text) > len(found.get(url, "")):
+            found[url] = text
+        else:
+            found.setdefault(url, "")
+    return [{"url": u, "title": (t[:300] or slug_title(u)), "published": None, "snippet": ""}
+            for u, t in found.items()]
+
+
+def _xml_children(root: ET.Element, name: str):
+    return [el for el in root.iter() if el.tag.split("}")[-1] == name]
+
+
+def _xml_text(el: ET.Element, name: str) -> str | None:
+    for child in el:
+        if child.tag.split("}")[-1] == name:
+            return (child.text or "").strip()
+    return None
+
+
+
+
+_NO_FORCED_TOOL: set[str] = set()   # models that reject tool_choice "tool"
+
+
+def _api_error(r: requests.Response) -> str:
+    try:
+        return f"Anthropic API {r.status_code}: {r.json()['error']['message']}"
+    except Exception:  # noqa: BLE001
+        return f"Anthropic API {r.status_code}: {r.text[:200]}"
+
+
+def call_claude(model: str, system: str, user: str, tool: dict, max_tokens: int = 1500) -> dict:
+    """One structured call: the model answers by calling `tool`. Returns the tool input."""
+    headers = {"x-api-key": os.environ.get("ANTHROPIC_API_KEY", ""),
+               "anthropic-version": "2023-06-01", "content-type": "application/json"}
+    messages = [{"role": "user", "content": user}]
+    nudged = False
+    attempt = 0
+    while attempt < 6:
+        attempt += 1
+        forced = model not in _NO_FORCED_TOOL
+        body = {
+            "model": model, "max_tokens": max_tokens, "messages": messages, "tools": [tool],
+            "system": system if forced else f"{system}\n\nRespond only by calling the {tool['name']} tool.",
+            "tool_choice": {"type": "tool", "name": tool["name"]} if forced else {"type": "auto"},
+        }
+        r = requests.post(API_URL, headers=headers, json=body, timeout=180)
+        if r.status_code in (429, 500, 502, 503, 529):
+            wait = int(r.headers.get("retry-after", 0) or 0) or 10 * attempt
+            log(f"    API busy ({r.status_code}), retrying in {wait}s")
+            time.sleep(wait)
+            continue
+        if r.status_code == 400 and forced and "tool_choice" in r.text:
+            # Some models don't support forcing a tool. Ask for it in the prompt instead.
+            _NO_FORCED_TOOL.add(model)
+            continue
+        if r.status_code >= 400:
+            raise RuntimeError(_api_error(r))
+        content = r.json().get("content", [])
+        for block in content:
+            if block.get("type") == "tool_use":
+                return block["input"]
+        if not nudged:
+            nudged = True
+            messages = messages + [{"role": "assistant", "content": content or "..."},
+                                   {"role": "user", "content": f"Please answer by calling the {tool['name']} tool."}]
+            continue
+        raise RuntimeError("model returned no structured output")
+    raise RuntimeError("Anthropic API kept failing, try again later")
+
+
+
+STYLE_RULES = """Writing style: Smart Brevity, plain English.
+- Easy English. Short sentences. Everyday words. Write so a smart 15-year-old gets it on first read.
+- No jargon. If a technical term can't be avoided, explain it in a few words in brackets,
+  e.g. "fan-out queries (the extra searches AI tools run behind the scenes)".
+- Lead with the point. No warm-up, no "this study shows", no hedging words, no hype.
+- Keep numbers exactly as published, but at most two numbers per sentence.
+- Respect every word limit."""
+
+
+def _clean(v) -> str:
+    """Strip stray tool-call markup a model sometimes leaves inside a string."""
+    v = re.sub(r"</?parameter[^>]*>", " ", str(v or ""))
+    return re.sub(r"\s+", " ", v).strip()
+
+
+
+def load_json(path: Path, default: dict) -> dict:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return default
+
+
+def save_json(path: Path, obj: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(json.dumps(obj, ensure_ascii=False, indent=1), encoding="utf-8")
+    tmp.replace(path)
+
+
+
+# ---------------------------------------------------------------- site discovery
+
+DEFAULT_EXCLUDE = re.compile(
+    r"/(tags?|categor(y|ies)|authors?|page/\d+|wp-content|wp-json|feed|search|cart|checkout|"
+    r"login|log-in|signin|sign-in|signup|sign-up|register|account|legal|privacy|terms|cookies?|"
+    r"careers|jobs|press-kit|thank-you|thanks|unsubscribe)(/|$)"
+    r"|/(de|fr|es|it|pt|nl|ja|ko|zh|sv|da|pl|tr|ru|id|pt-br|es-es|es-mx|fr-fr|de-de|en-gb|en-au|zh-cn|ja-jp)(/|$)"
+    r"|\.(pdf|jpe?g|png|gif|webp|svg|xml|zip|mp4)$",
+    re.I)
+
+PREFERRED_CHILD = re.compile(r"post|blog|article|resource|guide|learn|insight|news|page|compare|vs|alternative|glossary|case|customer", re.I)
+SKIP_CHILD = re.compile(r"image|video|author|tag|categor|product_cat|attachment", re.I)
+
+
+def discover_sitemap(src: dict, f: Fetcher) -> list[dict]:
+    """Walk a sitemap (or sitemap index) and return every page URL with its lastmod date."""
+    include = re.compile(src["link_pattern"]) if src.get("link_pattern") else None
+    child_pat = re.compile(src["sitemap_pattern"]) if src.get("sitemap_pattern") else None
+    queue, entries, fetched = [src["sitemap"]], {}, 0
+    while queue and fetched < 25:
+        url = queue.pop(0)
+        root = ET.fromstring(f.get(url).content)
+        fetched += 1
+        if root.tag.split("}")[-1] == "sitemapindex":
+            kids = [k for k in (_xml_text(s, "loc") for s in _xml_children(root, "sitemap")) if k]
+            kids = [k for k in kids if not SKIP_CHILD.search(k) and (not child_pat or child_pat.search(k))]
+            kids.sort(key=lambda k: 0 if PREFERRED_CHILD.search(k) else 1)
+            queue += kids
+            continue
+        for u in _xml_children(root, "url"):
+            loc = _xml_text(u, "loc")
+            if not loc or (include and not include.search(loc)):
+                continue
+            entries[normalize_url(loc)] = parse_iso(_xml_text(u, "lastmod"))
+        if len(entries) > 20000:
+            break
+    return [{"url": u, "title": slug_title(u), "published": d, "snippet": ""} for u, d in entries.items()]
+
+
+def discover(src: dict, f: Fetcher) -> tuple[str, str, list[dict]]:
+    """Returns (method, url used, items). Auto-detects a sitemap or feed from `site`."""
+    if src.get("sitemap"):
+        return "sitemap", src["sitemap"], discover_sitemap(src, f)
+    if src.get("feed"):
+        return "feed", src["feed"], discover_feed(src, f)
+    if src.get("page"):
+        if not src.get("link_pattern"):
+            raise ValueError("'page' needs a link_pattern")
+        return "page", src["page"], discover_page(src, f)
+    site = src.get("site")
+    if not site:
+        raise ValueError("needs a site (or a sitemap / feed / page)")
+    base = site.rstrip("/")
+    candidates = []
+    try:
+        robots = f.get(base + "/robots.txt").text
+        candidates += re.findall(r"(?im)^\s*sitemap:\s*(\S+)", robots)
+    except Exception:  # noqa: BLE001
+        pass
+    candidates += [base + p for p in ("/sitemap.xml", "/sitemap_index.xml", "/wp-sitemap.xml")]
+    tried = []
+    for sm in dict.fromkeys(candidates):
+        try:
+            items = discover_sitemap({**src, "sitemap": sm}, f)
+            if items:
+                return "sitemap", sm, items
+        except Exception as e:  # noqa: BLE001
+            tried.append(f"{sm}: {short_error(e)}")
+    for fd in ("/feed", "/blog/feed", "/rss.xml", "/blog/rss.xml", "/feed.xml", "/atom.xml", "/index.xml"):
+        try:
+            items = discover_feed({"feed": base + fd}, f)
+            if items:
+                return "feed", base + fd, items
+        except Exception:  # noqa: BLE001
+            continue
+    raise ValueError("no sitemap or feed found. Add a sitemap: or feed: line for this site in config.yaml")
+
+
+def keep_url(url: str, src: dict, site_host: str) -> bool:
+    p = urlparse(url)
+    if p.netloc.lower().removeprefix("www.") != site_host:
+        return False            # other domains / subdomains (docs., help., app.)
+    if p.path.strip("/") == "":
+        return False            # homepage
+    if src.get("default_excludes", True) and DEFAULT_EXCLUDE.search(p.path):
+        return False
+    if src.get("include_pattern") and not re.search(src["include_pattern"], url):
+        return False
+    if src.get("exclude_pattern") and re.search(src["exclude_pattern"], url):
+        return False
+    return True
+
+
+# ---------------------------------------------------------------- reading + classifying
+
+def read_page(url: str, f: Fetcher) -> dict:
+    r = f.get(url)
+    soup = BeautifulSoup(r.text, "html.parser")
+
+    def meta(*names):
+        for n in names:
+            tag = soup.find("meta", attrs={"property": n}) or soup.find("meta", attrs={"name": n})
+            if tag and tag.get("content"):
+                return tag["content"].strip()
+        return None
+
+    title = meta("og:title") or (soup.title.string.strip() if soup.title and soup.title.string else "")
+    desc = meta("description", "og:description") or ""
+    published = parse_iso(meta("article:published_time", "datePublished"))
+    heads = [h.get_text(" ", strip=True) for h in soup.find_all(["h1", "h2"])][:15]
+    for t in soup(["script", "style", "noscript", "svg", "iframe", "nav", "footer", "header", "aside", "form"]):
+        t.decompose()
+    node = max(soup.find_all("article") + soup.find_all("main"), key=lambda n: len(n.get_text()), default=None) or soup.body or soup
+    text = re.sub(r"\s+", " ", node.get_text(" ", strip=True))
+    return {"title": title, "desc": desc, "published": published, "heads": heads,
+            "text": text[:2500], "words": len(text.split())}
+
+
+def classify_tool(types: list[list[str]]) -> dict:
+    s = {"type": "string"}
+    return {
+        "name": "classify_page",
+        "description": "Classify one page from a competitor's website.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "is_content": {"type": "boolean", "description": "False for utility pages: login, pricing tables with no copy, legal, jobs, contact, thank-you, empty tag pages."},
+                "type": {"type": "string", "enum": [t[0] for t in types],
+                         "description": "; ".join(f"{k} = {label}" for k, label in types)},
+                "stage": {"type": "string", "enum": ["learning", "comparing", "buying", "customers"],
+                          "description": "Who it's for: learning = early research; comparing = weighing options; buying = ready to choose (pricing, demos, vs pages, case studies); customers = existing users."},
+                "topic": {**s, "description": "Main topic, max 5 plain words."},
+                "search": {**s, "description": "The Google search this page most likely targets, max 8 words. Empty if none."},
+                "why": {**s, "description": "Why they published it, in plain English. One sentence, max 16 words."},
+            },
+            "required": ["is_content", "type", "stage", "topic", "search", "why"],
+        },
+    }
+
+
+CLASSIFY_SYSTEM = """You classify pages from a company's website for a competitor content report.
+Judge from the URL, title, headings and opening text. Be decisive. Plain English, respect word limits.
+"why" explains the business reason (e.g. "Catches buyers comparing them with a bigger rival."), never restates the title."""
+
+
+def classify(page: dict, comp: str, cfg: dict) -> dict:
+    info = page.get("info") or {}
+    user = (f"Company: {comp}\nNiche: {cfg['niche']}\nURL: {page['url']}\n"
+            f"Title: {info.get('title') or page.get('title','')}\nDescription: {info.get('desc','')}\n"
+            f"Headings: {' | '.join(info.get('heads', []))}\nOpening text: {info.get('text','')[:1800]}")
+    out = call_claude(cfg["models"]["classify"], CLASSIFY_SYSTEM, user, classify_tool(cfg["types"]), 400)
+    keys = [t[0] for t in cfg["types"]]
+    typ = str(out.get("type", "")).strip().lower()
+    stage = str(out.get("stage", "")).strip().lower()
+    return {
+        "is_content": out.get("is_content", True) not in (False, "false", "False"),
+        "type": typ if typ in keys else keys[-1],
+        "stage": stage if stage in ("learning", "comparing", "buying", "customers") else "learning",
+        "topic": _clean(out.get("topic"))[:60],
+        "search": _clean(out.get("search"))[:80],
+        "why": _clean(out.get("why"))[:200],
+    }
+
+
+# ---------------------------------------------------------------- analysis
+
+ANALYSIS_TOOL = {
+    "name": "write_analysis",
+    "description": "Write the competitor content report.",
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "summary": {"type": "string", "description": "The big picture, max 30 words, two short sentences."},
+            "points": {"type": "array", "maxItems": 3, "items": {"type": "string"},
+                       "description": "Up to 3 takeaways for the reader, one sentence each, max 22 words. End each with the company names it's about in square brackets, e.g. 'Payloom is targeting rivals' customers. [Payloom]'"},
+            "plays": {"type": "array", "items": {"type": "string"},
+                      "description": "One line per company in the data: 'Name :: their play, max 16 words :: who it's aimed at, max 6 words'."},
+            "shared": {"type": "array", "maxItems": 3, "items": {"type": "string"},
+                       "description": "Plays that 2+ companies share: 'Short title :: what they do and what it means for the reader, max 35 words :: Name1, Name2'."},
+            "gaps": {"type": "array", "maxItems": 3, "items": {"type": "string"},
+                     "description": "Topics or formats nobody (or only one company) covers that the reader could own: 'Short title :: why it's open, max 30 words'."},
+        },
+        "required": ["summary", "points", "plays", "shared", "gaps"],
+    },
+}
+
+ANALYSIS_SYSTEM_BASE = """You analyse what a set of companies published on their websites and explain their content strategy to a busy reader.
+
+""" + STYLE_RULES + """
+
+Rules:
+- Use only the data provided. Name companies. Use their real counts.
+- Describe what they publish and the likely intent. Don't claim what works: there is no traffic or ranking data.
+- Small numbers are weak signals. Don't call 1-2 pages a strategy.
+- A shared play needs at least 2 companies. A gap is something the reader could own."""
+
+
+def _split(line: str, n: int) -> list[str]:
+    parts = [p.strip() for p in re.split(r"\s*::\s*", _clean(line))]
+    return (parts + [""] * n)[:n]
+
+
+def analyse(stats: list[dict], cfg: dict) -> dict:
+    you = next((s["name"] for s in stats if s["you"]), None)
+    blocks = []
+    for s in stats:
+        mix = ", ".join(f"{label}: {s['mix'].get(k, 0)}" for k, label in cfg["types"] if s["mix"].get(k))
+        stages = ", ".join(f"{k}: {v}" for k, v in s["stages"].items() if v)
+        titles = "\n".join(f"    - [{p['type']}] {p['title']}" for p in s["sample"])
+        blocks.append(f"## {s['name']}{' (THE READER)' if s['you'] else ''}\n"
+                      f"Pages in last {cfg['window_days']} days: {s['n']} (previous {cfg['window_days']} days: {s['n_prev']}). Updated old pages: {s['refreshed']}\n"
+                      f"Mix: {mix or 'none'}\nWho it's for: {stages or 'n/a'}\nTop topics: {', '.join(s['topics']) or 'n/a'}\nPages:\n{titles or '    (none)'}")
+    reader = (f"The reader is {you}. Compare competitors against them; gaps are openings for {you}."
+              if you else "The reader is a company in this market.")
+    system = ANALYSIS_SYSTEM_BASE + "\n- " + reader
+    user = f"Market: {cfg['niche']}\nReader: {cfg['audience']}\n\n" + "\n\n".join(blocks)
+    out = call_claude(cfg["models"]["analyse"], system, user, ANALYSIS_TOOL, 2500)
+    names = [s["name"] for s in stats]
+
+    def as_list(v):
+        if isinstance(v, str):
+            try:
+                v = json.loads(v)
+            except json.JSONDecodeError:
+                v = [x for x in v.split("\n") if x.strip()]
+        return [x if isinstance(x, str) else " :: ".join(str(y) for y in (x.values() if isinstance(x, dict) else x)) for x in (v or [])]
+
+    points = []
+    for p in as_list(out.get("points"))[:3]:
+        m = re.search(r"\[([^\]]+)\]\s*\.?\s*$", p)
+        who = [n for n in names if m and n.lower() in m.group(1).lower()]
+        text = _clean(p[: m.start()] if m else p)
+        if text:
+            points.append({"text": text, "names": who})
+    plays = {}
+    for line in as_list(out.get("plays")):
+        name, play, aimed = _split(line, 3)
+        match = next((n for n in names if n.lower() == name.lower()), None) or \
+            next((n for n in names if n.lower() in name.lower()), None)
+        if match:
+            plays[match] = {"play": play, "aimed": aimed}
+    shared = []
+    for line in as_list(out.get("shared"))[:3]:
+        title, text, who = _split(line, 3)
+        who_list = [n for n in names if n.lower() in who.lower()]
+        if title and len(who_list) >= 2:
+            shared.append({"title": title, "text": text, "names": who_list})
+    gaps = []
+    for line in as_list(out.get("gaps"))[:3]:
+        title, text = _split(line, 2)
+        if title:
+            gaps.append({"title": title, "text": text})
+    return {"summary": _clean(out.get("summary")), "points": points, "plays": plays, "shared": shared, "gaps": gaps}
+
+
+# ---------------------------------------------------------------- config
+
+DEFAULT_TYPES = [
+    ["compare", "Comparison / alternatives"],
+    ["howto", "How-to / explainer"],
+    ["list", "Listicle"],
+    ["research", "Original research"],
+    ["case", "Case study"],
+    ["opinion", "Opinion / thought leadership"],
+    ["news", "Product / company news"],
+    ["landing", "Landing / service page"],
+]
+DEFAULTS = {
+    "window_days": 30,
+    "first_run_days": 60,
+    "max_classify_per_run": 200,
+    "max_classify_per_site": 40,
+    "keep_pages": 1500,
+    "user_agent": "Mozilla/5.0 (compatible; CompetitorRadar/1.0; content research bot)",
+    "models": {"classify": "claude-haiku-4-5-20251001", "analyse": "claude-sonnet-5-5"},
+}
+
+
+def load_config() -> dict:
+    cfg = yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8")) or {}
+    merged = {**DEFAULTS, **cfg}
+    merged["models"] = {**DEFAULTS["models"], **(cfg.get("models") or {})}
+    merged["types"] = [list(t) if isinstance(t, (list, tuple)) else [str(t).lower().replace(" ", "-"), str(t)]
+                       for t in (cfg.get("types") or DEFAULT_TYPES)][:8]
+    for k in ("niche", "audience", "competitors"):
+        if not merged.get(k):
+            sys.exit(f"config.yaml is missing '{k}'")
+    sites = ([{**merged["you"], "you": True}] if merged.get("you") else []) + \
+            [{**c, "you": False} for c in merged["competitors"]]
+    names = [s.get("name") for s in sites]
+    if None in names or len(set(names)) != len(names):
+        sys.exit("Every site needs a unique 'name'")
+    for s in sites:
+        if not (s.get("site") or s.get("sitemap") or s.get("feed") or s.get("page")):
+            sys.exit(f"{s['name']}: add a 'site' URL")
+        if not s.get("site"):
+            u = urlparse(s.get("sitemap") or s.get("feed") or s.get("page"))
+            s["site"] = f"{u.scheme}://{u.netloc}"
+    merged["sites"] = sites
+    return merged
+
+
+# ---------------------------------------------------------------- run
+
+def check_sites(cfg: dict) -> None:
+    f = Fetcher(cfg["user_agent"])
+    for s in cfg["sites"]:
+        host = urlparse(s["site"]).netloc.lower().removeprefix("www.")
+        try:
+            method, used, items = discover(s, f)
+            kept = [i for i in items if keep_url(i["url"], s, host)]
+            dated = sum(1 for i in kept if i["published"])
+            log(f"OK   {s['name']:<22} {method:<8} {len(kept):>5} pages ({dated} dated)  {used}")
+        except Exception as e:  # noqa: BLE001
+            log(f"FAIL {s['name']:<22} {short_error(e)}")
+
+
+def run(cfg: dict) -> dict:
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        sys.exit("Set ANTHROPIC_API_KEY (GitHub: Settings > Secrets and variables > Actions).")
+    f = Fetcher(cfg["user_agent"])
+    now = utcnow()
+    window = timedelta(days=int(cfg["window_days"]))
+    horizon = now - timedelta(days=max(int(cfg["first_run_days"]), 2 * int(cfg["window_days"])))
+    state = load_json(STATE_PATH, {"pages": {}, "sites": {}})
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    if repo and state.get("repo") and state["repo"] != repo:
+        log(f"New copy of {state['repo']}: starting clean")
+        state = {"pages": {}, "sites": {}}
+    if repo:
+        state["repo"] = repo
+    pages, errors, health = state["pages"], [], {}
+    first_sites, prefetched = [], {}
+
+    # 1. Discover every site's pages
+    log("== Discover")
+    for s in cfg["sites"]:
+        name, host = s["name"], urlparse(s["site"]).netloc.lower().removeprefix("www.")
+        first = not state["sites"].get(name, {}).get("initialized")
+        try:
+            method, used, items = discover(s, f)
+        except Exception as e:  # noqa: BLE001
+            health[name] = {"ok": False, "error": short_error(e), "method": None, "url": s["site"]}
+            log(f"  FAIL {name}: {health[name]['error']}")
+            continue
+        items = [i for i in items if keep_url(i["url"], s, host)]
+        # Some sites stamp every page with the deploy date. If most pages share a
+        # very recent lastmod, those dates say nothing about when pages were published.
+        recent = sum(1 for i in items if i["published"] and i["published"] >= now - timedelta(days=2))
+        unreliable = len(items) >= 20 and recent > 0.5 * len(items)
+        if unreliable:
+            log(f"  {name}: sitemap dates look like deploy dates, ignoring them")
+            for i in items:
+                i["published"] = None
+        new = refreshed = 0
+        for it in items:
+            k = url_key(it["url"])
+            lastmod = it["published"]
+            rec = pages.get(k)
+            if rec is None:
+                # A page's date is its sitemap/feed date when there is one, else the day we first saw it.
+                date = lastmod if lastmod and lastmod <= now else (None if first else now)
+                pages[k] = {"site": name, "url": it["url"], "title": it["title"], "date": iso(date),
+                            "lastmod": iso(lastmod), "first_seen": iso(now), "cls": None}
+                new += 1
+            else:
+                if lastmod and rec.get("lastmod") and lastmod > parse_iso(rec["lastmod"]) + timedelta(hours=1):
+                    rec["refreshed"] = iso(now)
+                    refreshed += 1
+                rec["lastmod"] = iso(lastmod) if lastmod else rec.get("lastmod")
+        undated = sum(1 for i in items if not i["published"])
+        if first:
+            first_sites.append(name)
+            if undated > len(items) / 2:
+                # No dates in the sitemap: read a sample of pages to find their publish dates.
+                sample = [i for i in items if not i["published"]]
+                sample.sort(key=lambda i: 0 if PREFERRED_CHILD.search(i["url"]) else 1)
+                for it in sample[: int(cfg.get("first_run_sample", 40))]:
+                    try:
+                        info = read_page(it["url"], f)
+                    except Exception:  # noqa: BLE001
+                        continue
+                    prefetched[url_key(it["url"])] = info
+                    rec = pages.get(url_key(it["url"]))
+                    if rec and info["published"] and not rec.get("date"):
+                        rec["date"] = iso(min(info["published"], now))
+                    time.sleep(0.3)
+        health[name] = {"ok": True, "error": None, "method": method, "url": used, "pages": len(items),
+                        "undated": undated, "new": 0 if first else new}
+        state["sites"][name] = {"initialized": True}
+        log(f"  OK   {name}: {method}, {len(items)} pages, {new} new, {refreshed} updated")
+
+    # 2. Classify recent pages that haven't been classified yet (newest first, capped)
+    todo = [p for p in pages.values() if p["cls"] is None and p.get("date") and parse_iso(p["date"]) >= horizon
+            and health.get(p["site"], {}).get("ok")]
+    todo.sort(key=lambda p: p["date"], reverse=True)
+    per_site, queue = {}, []
+    cap_site = int(cfg.get("max_classify_per_site", 40))
+    for p in todo:           # newest first, but no single site can use the whole budget
+        if per_site.get(p["site"], 0) < cap_site and len(queue) < int(cfg["max_classify_per_run"]):
+            queue.append(p)
+            per_site[p["site"]] = per_site.get(p["site"], 0) + 1
+    log(f"== Classify {len(queue)} pages" + (f" ({len(todo) - len(queue)} queued for next run)" if len(todo) > len(queue) else ""))
+    for p in queue:
+        try:
+            info = prefetched.get(url_key(p["url"])) or read_page(p["url"], f)
+            p["title"] = info["title"] or p["title"]
+            if info["published"] and not p.get("lastmod"):
+                p["date"] = iso(info["published"])
+        except Exception as e:  # noqa: BLE001
+            info = {}
+            p["read_error"] = short_error(e)
+        try:
+            p["cls"] = classify({**p, "info": info}, p["site"], cfg)
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"classify: {str(e)[:200]}")
+            log(f"    classify failed: {e}")
+        time.sleep(0.3)
+
+    # 3. Stats per site for the window
+    stats = []
+    for s in cfg["sites"]:
+        name = s["name"]
+        mine = [p for p in pages.values() if p["site"] == name and p.get("date")]
+        cur = [p for p in mine if parse_iso(p["date"]) >= now - window]
+        prev = [p for p in mine if now - 2 * window <= parse_iso(p["date"]) < now - window
+                and (not p.get("cls") or p["cls"]["is_content"])]
+        content = [p for p in cur if p.get("cls") and p["cls"]["is_content"]]
+        mix = {t[0]: sum(1 for p in content if p["cls"]["type"] == t[0]) for t in cfg["types"]}
+        stages = {k: sum(1 for p in content if p["cls"]["stage"] == k) for k in ("learning", "comparing", "buying", "customers")}
+        topics = {}
+        for p in content:
+            topics[p["cls"]["topic"].lower()] = topics.get(p["cls"]["topic"].lower(), 0) + 1
+        refreshed = sum(1 for p in mine if p.get("refreshed") and parse_iso(p["refreshed"]) >= now - window)
+        stats.append({
+            "name": name, "site": s["site"], "you": s["you"], "n": len([p for p in cur if not p.get("cls") or p["cls"]["is_content"]]),
+            "n_prev": len(prev), "refreshed": refreshed, "mix": mix, "stages": stages,
+            "topics": [t for t, _ in sorted(topics.items(), key=lambda x: -x[1])[:5]],
+            "unclassified": sum(1 for p in cur if not p.get("cls")),
+            "sample": [{"type": p["cls"]["type"], "title": p["title"]} for p in sorted(content, key=lambda p: p["date"], reverse=True)[:40]],
+            **{k: v for k, v in health.get(name, {"ok": False, "error": "not checked"}).items()},
+        })
+
+    # 4. Analysis (one call to the stronger model)
+    log("== Analyse")
+    data = load_json(DATA_PATH, {})
+    analysis = data.get("analysis") or {}
+    if any(s["n"] for s in stats):
+        try:
+            analysis = analyse([s for s in stats if s.get("ok")], cfg)
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"analysis: {str(e)[:200]}")
+            log(f"  analysis failed, kept last one: {e}")
+    else:
+        analysis = {"summary": f"No new pages from these sites in the last {cfg['window_days']} days.",
+                    "points": [], "plays": {}, "shared": [], "gaps": []}
+    for s in stats:
+        s.update(analysis.get("plays", {}).get(s["name"], {"play": "", "aimed": ""}))
+        s.pop("sample", None)
+
+    # 5. Save
+    recent = [p for p in pages.values() if p.get("cls") and p["cls"]["is_content"] and p.get("date")
+              and parse_iso(p["date"]) >= horizon]
+    recent.sort(key=lambda p: p["date"], reverse=True)
+    out_pages = [{"site": p["site"], "url": p["url"], "title": p["title"], "date": p["date"],
+                  "first_seen": p["first_seen"], **{k: v for k, v in p["cls"].items() if k != "is_content"}}
+                 for p in recent[: int(cfg["keep_pages"])]]
+    first_run = bool(first_sites)
+    data = {
+        "meta": {"title": cfg.get("title", "Competitor Radar"), "niche": cfg["niche"], "updated": iso(now),
+                 "window_days": int(cfg["window_days"]), "repo": repo, "first_run": first_run,
+                 "errors": list(dict.fromkeys(errors))[:5], "pending": max(0, len(todo) - len(queue))},
+        "types": cfg["types"],
+        "analysis": {k: v for k, v in analysis.items() if k != "plays"},
+        "sites": stats,
+        "pages": out_pages,
+    }
+    save_json(DATA_PATH, data)
+    save_json(STATE_PATH, state)
+    lines = ["## Competitor Radar run"] + [f"- {s['name']}: {s['n']} pages in window" + ("" if s.get("ok") else f" (FAILED: {s.get('error')})") for s in stats]
+    if errors:
+        lines += ["", "**Errors**"] + [f"- {e}" for e in data["meta"]["errors"]]
+    log("\n".join(lines))
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as fh:
+            fh.write("\n".join(lines) + "\n")
+    return data
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description="Competitor Radar")
+    ap.add_argument("--check", action="store_true", help="test your sites only (no API key, no writes)")
+    args = ap.parse_args()
+    cfg = load_config()
+    check_sites(cfg) if args.check else run(cfg)
+
+
+if __name__ == "__main__":
+    main()

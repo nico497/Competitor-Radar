@@ -1,0 +1,51 @@
+name: Competitor Radar
+
+on:
+  schedule:
+    # Mondays 06:17 UTC. Change to suit your timezone: https://crontab.guru
+    - cron: "17 6 * * 1"
+  workflow_dispatch: {}   # adds a "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: competitor-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - name: Check setup
+        if: env.ANTHROPIC_API_KEY == ''
+        run: |
+          echo "No ANTHROPIC_API_KEY secret yet, so skipping this run. See README > Setup." | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/checkout@v4
+        if: env.ANTHROPIC_API_KEY != ''
+
+      - uses: actions/setup-python@v5
+        if: env.ANTHROPIC_API_KEY != ''
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+        if: env.ANTHROPIC_API_KEY != ''
+
+      - name: Find and classify new pages
+        if: env.ANTHROPIC_API_KEY != ''
+        run: python radar.py
+
+      - name: Save results
+        if: env.ANTHROPIC_API_KEY != ''
+        run: |
+          git config user.name  "competitor-radar[bot]"
+          git config user.email "competitor-radar@users.noreply.github.com"
+          git add docs/data.json state/state.json
+          git diff --staged --quiet || git commit -m "Radar update $(date -u +%F)"
+          git push

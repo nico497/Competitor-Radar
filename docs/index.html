@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Competitor Radar</title>
+<meta name="description" content="What your competitors publish, and what it says about their strategy.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='18' width='6' height='11' rx='2' fill='%23c2410c'/%3E%3Crect x='13' y='10' width='6' height='19' rx='2' fill='%23c2410c'/%3E%3Crect x='23' y='3' width='6' height='26' rx='2' fill='%23c2410c'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #f6f4ef; --surface: #ffffff; --surface-2: #faf8f4; --ink: #1c1b19; --ink-2: #57534e;
+  --ink-3: #8a847c; --line: #e6e1d8; --accent: #c2410c; --accent-soft: #fdf0e8;
+  --up: #15803d; --down: #b91c1c; --warn-bg: #fbf3dc; --warn: #a16207;
+  --t1: #2a78d6; --t2: #eb6834; --t3: #1baf7a; --t4: #eda100; --t5: #e87ba4; --t6: #008300; --t7: #4a3aa7; --t8: #e34948;
+  --shadow: 0 1px 2px rgba(28,27,25,.05), 0 4px 16px rgba(28,27,25,.04);
+  --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151412; --surface: #1d1c19; --surface-2: #232220; --ink: #f1eee8; --ink-2: #b9b3a9;
+    --ink-3: #857f76; --line: #33312d; --accent: #fb923c; --accent-soft: #2c1d13; --up: #4ade80; --down: #f87171;
+    --warn-bg: #2b2412; --warn: #fbbf24;
+    --t1: #3987e5; --t2: #d95926; --t3: #199e70; --t4: #c98500; --t5: #d55181; --t6: #008300; --t7: #9085e9; --t8: #e66767;
+    --shadow: none; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151412; --surface: #1d1c19; --surface-2: #232220; --ink: #f1eee8; --ink-2: #b9b3a9;
+  --ink-3: #857f76; --line: #33312d; --accent: #fb923c; --accent-soft: #2c1d13; --up: #4ade80; --down: #f87171;
+  --warn-bg: #2b2412; --warn: #fbbf24;
+  --t1: #3987e5; --t2: #d95926; --t3: #199e70; --t4: #c98500; --t5: #d55181; --t6: #008300; --t7: #9085e9; --t8: #e66767;
+  --shadow: none; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans); }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 24px 16px 40px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; box-shadow: var(--shadow); }
+.notice { background: var(--warn-bg); color: var(--warn); border-radius: 10px; padding: 8px 12px; font-size: 13.5px; margin-bottom: 12px; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.head { display: flex; justify-content: space-between; gap: 4px 12px; flex-wrap: wrap; align-items: baseline; }
+.ctx { font-size: 12.5px; color: var(--ink-3); }
+h2.sec { font: 600 18px/1.3 var(--serif); margin: 28px 0 10px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px 12px; flex-wrap: wrap; }
+h2.sec small { font: 13px var(--sans); color: var(--ink-3); display: flex; gap: 6px; flex-wrap: wrap; }
+.summary { font: 500 19px/1.45 var(--serif); margin: 6px 0 14px; }
+.points { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; counter-reset: p; }
+.points li { counter-increment: p; display: grid; grid-template-columns: 26px 1fr; gap: 4px; }
+.points li::before { content: counter(p); width: 20px; height: 20px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 700; display: grid; place-items: center; margin-top: 2px; }
+.chip { display: inline-block; font-size: 12px; color: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; margin: 3px 4px 0 0; background: var(--surface-2); }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--ink-2); margin: 0 0 12px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 10px; height: 10px; border-radius: 3px; display: inline-block; flex: none; }
+.toggle { border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 3px 10px; font-size: 13px; color: var(--ink-2); }
+
+.comp { display: grid; grid-template-columns: 160px 1fr; gap: 6px 18px; padding: 14px 0; border-top: 1px solid var(--line); }
+.comp:first-child { border-top: 0; padding-top: 0; }
+.comp.you .cname::after { content: "You"; margin-left: 8px; font-size: 11px; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 1px 7px; vertical-align: 2px; }
+.cname { font-weight: 600; }
+.cname a { text-decoration: none; }
+.vol { font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.d.up { color: var(--up); } .d.down { color: var(--down); }
+.bar { display: flex; gap: 2px; height: 12px; margin: 4px 0 8px; }
+.bar i { display: block; height: 100%; min-width: 3px; }
+.bar i:first-child { border-radius: 4px 0 0 4px; } .bar i:last-child { border-radius: 0 4px 4px 0; } .bar i:only-child { border-radius: 4px; }
+.bar.empty { background: var(--surface-2); border: 1px dashed var(--line); border-radius: 4px; }
+.play { margin: 0; font-size: 14.5px; }
+.play b { font-weight: 600; }
+.meta { font-size: 12.5px; color: var(--ink-3); margin-top: 3px; }
+.fail { color: var(--down); font-size: 13.5px; }
+table.nums { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.nums th, table.nums td { text-align: right; padding: 6px 5px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+table.nums th:first-child, table.nums td:first-child { text-align: left; }
+table.nums th { font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: .03em; font-weight: 600; }
+.scroll { overflow-x: auto; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.mini { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.mini .k { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.mini h3 { font: 600 16.5px/1.35 var(--serif); margin: 4px 0 4px; }
+.mini p { margin: 0; color: var(--ink-2); font-size: 14px; }
+.count { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 6px; }
+.count i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.count i.on { background: var(--accent); }
+.gap { border-style: dashed; }
+.empty-note { color: var(--ink-3); font-size: 14px; background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; padding: 14px 16px; }
+
+.filters select { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; font: inherit; font-size: 13px; color: var(--ink); max-width: 100%; }
+.posts { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.post { padding: 12px 16px; border-top: 1px solid var(--line); }
+.post:first-child { border-top: 0; }
+.pmeta { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 12.5px; color: var(--ink-3); align-items: center; }
+.pmeta .who { color: var(--ink); font-weight: 600; }
+.type { display: inline-flex; align-items: center; gap: 5px; color: var(--ink-2); }
+.stage { border: 1px solid var(--line); border-radius: 999px; padding: 0 7px; font-size: 11.5px; }
+.ptitle { font-weight: 600; margin: 3px 0 2px; font-size: 15px; display: block; text-decoration: none; }
+.ptitle:hover { text-decoration: underline; }
+.why { margin: 0; color: var(--ink-2); font-size: 14px; }
+.why b { color: var(--ink); font-weight: 600; }
+.search { font-size: 12.5px; color: var(--ink-3); margin-top: 2px; }
+.more { display: block; width: 100%; border: 0; border-top: 1px solid var(--line); background: var(--surface-2); padding: 9px; font-size: 13.5px; color: var(--ink-2); }
+
+details.health { margin-top: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; }
+details.health summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left: 6px; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: var(--up); }
+.dot.bad { background: var(--down); }
+.url { word-break: break-all; color: var(--ink-3); font-size: 12px; }
+.tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 12.5px; padding: 5px 9px; border-radius: 6px; opacity: 0; transition: opacity .1s; z-index: 10; white-space: nowrap; }
+.foot { color: var(--ink-3); font-size: 12.5px; text-align: center; margin-top: 24px; }
+.hide { display: none !important; }
+
+@media (max-width: 640px) {
+  .comp { grid-template-columns: 1fr; }
+  .grid2 { grid-template-columns: 1fr; }
+  .card { padding: 16px; } .summary { font-size: 17px; }
+}
+</style>
+</head>
+<body>
+<div class="banner hide" id="banner" style="background:var(--ink);color:var(--bg);text-align:center;font-size:13px;padding:6px 16px"></div>
+<div class="wrap">
+  <div id="notices"></div>
+
+  <section class="card" id="overview"></section>
+
+  <h2 class="sec">What each competitor is doing <small><button class="toggle" id="tbl">Show as table</button></small></h2>
+  <section class="card"><div class="legend" id="legend"></div><div id="comps"></div></section>
+
+  <h2 class="sec">Shared plays <small>What several competitors are doing</small></h2>
+  <div id="shared"></div>
+
+  <h2 class="sec">Gaps <small>What nobody is covering</small></h2>
+  <div id="gaps"></div>
+
+  <h2 class="sec">Latest pages
+    <small class="filters">
+      <select id="fc" aria-label="Company"><option value="">All companies</option></select>
+      <select id="ft" aria-label="Type"><option value="">All types</option></select>
+      <select id="fs" aria-label="Who it's for"><option value="">Anyone</option></select>
+    </small>
+  </h2>
+  <div class="posts" id="posts"></div>
+
+  <details class="health" id="health"></details>
+  <p class="foot" id="foot"></p>
+</div>
+<div class="tip" id="tip"></div>
+
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fmt = (s, y) => s ? new Date(s).toLocaleDateString(undefined, { day: "numeric", month: "short", ...(y ? { year: "numeric" } : {}) }) : "";
+  const STAGES = { learning: "Learning", comparing: "Comparing options", buying: "Ready to buy", customers: "Existing customers" };
+  let data = { meta: {}, types: [], analysis: {}, sites: [], pages: [] };
+  let asTable = false, shown = 25;
+
+  const typeIdx = (k) => Math.max(0, data.types.findIndex((t) => t[0] === k));
+  const color = (k) => `var(--t${typeIdx(k) + 1})`;
+  const label = (k) => (data.types.find((t) => t[0] === k) || [k, k])[1];
+
+  function belongsHere(m) {
+    const host = location.hostname.toLowerCase();
+    if (!m.repo || !host.endsWith(".github.io")) return true;
+    const owner = host.replace(/\.github\.io$/, "");
+    const first = location.pathname.split("/").filter(Boolean)[0] || "";
+    return (first ? `${owner}/${first}` : `${owner}/${owner}.github.io`) === m.repo.toLowerCase();
+  }
+
+  function renderNotices() {
+    const m = data.meta, out = [];
+    if (m.first_run) out.push(`First run: counts use sitemap dates, which can include recently updated pages. From next week, "new" means genuinely new.`);
+    if (m.pending) out.push(`${m.pending} pages are still waiting to be classified. They'll be done on the next run.`);
+    (m.errors || []).forEach((e) => out.push(`Error this run: ${e}`));
+    $("#notices").innerHTML = out.map((t) => `<div class="notice">${esc(t)}</div>`).join("");
+  }
+
+  function renderOverview() {
+    const a = data.analysis || {}, m = data.meta;
+    if (!m.updated) {
+      $("#overview").innerHTML = `<div class="eyebrow">No data yet</div><p class="summary">Run the workflow once: Actions → Competitor Radar → Run workflow. Then refresh this page.</p>`;
+      return;
+    }
+    const comps = data.sites.filter((s) => !s.you).length;
+    $("#overview").innerHTML = `<div class="head"><span class="eyebrow">Last ${m.window_days} days · to ${esc(fmt(m.updated))}</span><span class="ctx">${esc(m.niche)} · ${comps} competitors</span></div>
+      <p class="summary">${esc(a.summary || "")}</p>
+      ${(a.points || []).length ? `<ol class="points">${a.points.map((p) => `<li><div>${esc(p.text)}<br>${(p.names || []).map((n) => `<span class="chip">${esc(n)}</span>`).join("")}</div></li>`).join("")}</ol>` : ""}`;
+  }
+
+  function renderLegend() {
+    $("#legend").innerHTML = data.types.map(([k, l]) => `<span><i class="sw" style="background:${color(k)}"></i>${esc(l)}</span>`).join("");
+  }
+
+  function renderComps() {
+    const el = $("#comps"), W = data.meta.window_days;
+    if (!data.sites.length) { el.innerHTML = `<p class="empty-note">No sites yet.</p>`; return; }
+    if (asTable) {
+      el.innerHTML = `<div class="scroll"><table class="nums"><thead><tr><th>Company</th><th>Pages</th><th>Prev.</th>${data.types.map(([k, l]) => `<th title="${esc(l)}">${esc(l.split(/[ /]/)[0])}</th>`).join("")}</tr></thead><tbody>${
+        data.sites.map((s) => `<tr><td>${esc(s.name)}${s.you ? " (you)" : ""}</td><td>${s.n ?? "–"}</td><td>${s.n_prev ?? "–"}</td>${data.types.map(([k]) => `<td>${(s.mix || {})[k] || "–"}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+      return;
+    }
+    el.innerHTML = data.sites.map((s) => {
+      const total = Object.values(s.mix || {}).reduce((a, b) => a + b, 0);
+      const segs = data.types.filter(([k]) => (s.mix || {})[k]).map(([k, l]) =>
+        `<i style="flex:${s.mix[k]};background:${color(k)}" data-tip="${esc(l)}: ${s.mix[k]} of ${total} (${Math.round(s.mix[k] / total * 100)}%)"></i>`).join("");
+      const diff = (s.n ?? 0) - (s.n_prev ?? 0);
+      const d = data.meta.first_run ? "" : diff > 0 ? ` · <span class="d up">▲ ${diff}</span>` : diff < 0 ? ` · <span class="d down">▼ ${-diff}</span>` : " · no change";
+      const stages = Object.entries(s.stages || {}).filter(([, v]) => v).sort((a, b) => b[1] - a[1]);
+      const aimed = s.aimed || (stages[0] ? `Mostly for people ${STAGES[stages[0][0]].toLowerCase()}` : "");
+      const extra = [aimed, s.refreshed ? `${s.refreshed} old pages updated` : "", s.unclassified ? `${s.unclassified} not yet classified` : ""].filter(Boolean).join(" · ");
+      return `<div class="comp${s.you ? " you" : ""}"><div><div class="cname"><a href="${esc(s.site)}" target="_blank" rel="noopener">${esc(s.name)}</a></div>
+          <div class="vol">${s.ok ? `<b>${s.n}</b> pages${d}` : ""}</div></div>
+        <div>${!s.ok ? `<p class="fail">Couldn't read this site: ${esc(s.error)}. See Sources below.</p>`
+          : `<div class="bar${segs ? "" : " empty"}" role="img" aria-label="${esc(s.name)} content mix">${segs}</div>
+          <p class="play"><b>${s.you ? "Your play" : "Their play"}:</b> ${esc(s.play || (s.n ? "Not enough pages to call it yet." : `Nothing new in the last ${W} days.`))}</p>
+          ${extra ? `<div class="meta">${esc(extra)}</div>` : ""}`}</div></div>`;
+    }).join("");
+  }
+
+  function renderShared() {
+    const sh = (data.analysis || {}).shared || [], total = data.sites.filter((x) => x.ok).length;
+    $("#shared").innerHTML = sh.length ? `<div class="grid2">${sh.map((p) => {
+      const n = (p.names || []).length;
+      return `<div class="mini"><div class="k"><span class="count">${Array.from({ length: Math.min(total, 10) }, (_, i) => `<i class="${i < n ? "on" : ""}"></i>`).join("")}</span>${n} of ${total}</div>
+        <h3>${esc(p.title)}</h3><p>${esc(p.text)}</p><div>${(p.names || []).map((x) => `<span class="chip">${esc(x)}</span>`).join("")}</div></div>`;
+    }).join("")}</div>` : `<p class="empty-note">No shared plays spotted yet.</p>`;
+  }
+
+  function renderGaps() {
+    const g = (data.analysis || {}).gaps || [];
+    $("#gaps").innerHTML = g.length ? `<div class="grid2">${g.map((x) => `<div class="mini gap"><div class="k">Open lane</div><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div>`).join("")}</div>`
+      : `<p class="empty-note">No clear gaps spotted yet.</p>`;
+  }
+
+  function renderPosts() {
+    const c = $("#fc").value, t = $("#ft").value, st = $("#fs").value;
+    const rows = data.pages.filter((p) => (!c || p.site === c) && (!t || p.type === t) && (!st || p.stage === st));
+    const view = rows.slice(0, shown);
+    $("#posts").innerHTML = rows.length ? view.map((p) => `<div class="post">
+        <div class="pmeta"><span class="who">${esc(p.site)}</span><span>${esc(fmt(p.date))}</span>
+          <span class="type"><i class="sw" style="background:${color(p.type)}"></i>${esc(label(p.type))}</span>
+          <span class="stage">${esc(STAGES[p.stage] || p.stage)}</span></div>
+        <a class="ptitle" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>
+        <p class="why"><b>Why they published it:</b> ${esc(p.why)}</p>
+        ${p.search ? `<div class="search">Likely targets: “${esc(p.search)}”</div>` : ""}</div>`).join("")
+        + (rows.length > shown ? `<button class="more" id="more">Show more (${rows.length - shown} left)</button>` : "")
+      : `<div class="post"><p class="why">No pages match these filters.</p></div>`;
+    const more = $("#more");
+    if (more) more.onclick = () => { shown += 25; renderPosts(); };
+  }
+
+  function renderHealth() {
+    const s = data.sites;
+    if (!s.length) { $("#health").classList.add("hide"); return; }
+    const bad = s.filter((x) => !x.ok).length;
+    $("#health").innerHTML = `<summary>Sources<span class="sub">${s.length - bad} of ${s.length} OK${bad ? ` · ${bad} failing` : ""}</span></summary>
+      <div class="scroll"><table class="nums" style="margin-top:8px"><thead><tr><th>Site</th><th style="text-align:left">Status</th><th>Pages</th></tr></thead><tbody>${
+      s.map((x) => `<tr><td>${esc(x.name)}<div class="url">${esc(x.url || x.site)}</div></td>
+        <td style="text-align:left"><span class="dot ${x.ok ? "" : "bad"}"></span>${x.ok ? `OK · ${esc(x.method)}` : esc(x.error)}</td>
+        <td>${x.pages ?? "–"}</td></tr>`).join("")}</tbody></table></div>`;
+    if (bad) $("#health").open = true;
+  }
+
+  function hydrate() {
+    if (!belongsHere(data.meta || {})) data = { meta: {}, types: [], analysis: {}, sites: [], pages: [] };
+    const m = data.meta || {};
+    if (m.title) document.title = m.title;
+    if (m.banner) { $("#banner").textContent = m.banner; $("#banner").classList.remove("hide"); }
+    data.sites.forEach((s) => $("#fc").insertAdjacentHTML("beforeend", `<option>${esc(s.name)}</option>`));
+    data.types.forEach(([k, l]) => $("#ft").insertAdjacentHTML("beforeend", `<option value="${esc(k)}">${esc(l)}</option>`));
+    Object.entries(STAGES).forEach(([k, l]) => $("#fs").insertAdjacentHTML("beforeend", `<option value="${k}">${esc(l)}</option>`));
+    $("#foot").textContent = m.updated ? `Updated ${fmt(m.updated, true)} · shows what companies publish, not how it performs` : "";
+    renderNotices(); renderOverview(); renderLegend(); renderComps(); renderShared(); renderGaps(); renderPosts(); renderHealth();
+  }
+
+  $("#tbl").addEventListener("click", (e) => { asTable = !asTable; e.target.textContent = asTable ? "Show as chart" : "Show as table"; renderComps(); });
+  ["#fc", "#ft", "#fs"].forEach((s) => $(s).addEventListener("input", () => { shown = 25; renderPosts(); }));
+  const tip = $("#tip");
+  document.addEventListener("mousemove", (e) => {
+    const t = e.target.closest("[data-tip]");
+    if (!t) { tip.style.opacity = 0; return; }
+    tip.textContent = t.dataset.tip; tip.style.opacity = 1;
+    tip.style.left = Math.min(e.clientX + 12, innerWidth - tip.offsetWidth - 8) + "px"; tip.style.top = (e.clientY + 14) + "px";
+  });
+
+  if (window.RADAR_DATA) { data = { ...data, ...window.RADAR_DATA }; hydrate(); }
+  else fetch("data.json", { cache: "no-store" }).then((r) => r.ok ? r.json() : Promise.reject())
+    .then((d) => { data = { ...data, ...d }; hydrate(); }).catch(() => hydrate());
+})();
+</script>
+</body>
+</html>

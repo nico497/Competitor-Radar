@@ -1,0 +1,55 @@
+# ------------------------------------------------------------------
+# Competitor Radar config
+# List your competitors (and optionally yourself). That's all most people need.
+# Test the sites any time with:  python radar.py --check
+# ------------------------------------------------------------------
+
+title: Competitor Radar
+
+# Used to tailor the analysis.
+niche: US sales tax compliance software for mid-market ecommerce and SaaS brands
+audience: TaxCloud's marketing team, winning mid-market brands that are switching providers
+
+window_days: 30          # the dashboard compares the last 30 days with the 30 before
+first_run_days: 60       # on the first run, classify pages dated within this many days
+max_classify_per_run: 200   # spend cap: extra pages wait for the next run
+
+models:
+  classify: claude-haiku-4-5-20251001   # one cheap call per new page
+  analyse: claude-sonnet-5-5            # one call per run for the breakdown
+
+# Optional: your own site, shown as the first row so gaps are relative to you.
+you:
+  name: TaxCloud
+  site: https://taxcloud.com
+
+# ------------------------------------------------------------------
+# Competitors. Each needs a name and a site. The radar finds the sitemap
+# (or feed) itself. If it can't, add one of these:
+#   sitemap: https://example.com/post-sitemap.xml
+#   feed:    https://example.com/blog/feed
+# Optional:
+#   include_pattern: /blog/     only count URLs matching this regex
+#   exclude_pattern: /docs/     ignore URLs matching this regex
+# ------------------------------------------------------------------
+competitors:
+  - name: Avalara
+    site: https://www.avalara.com
+    # Huge global site: keep US English pages, skip the thousands of tax-rate pages
+    include_pattern: avalara\.com/us/en/
+    exclude_pattern: /taxrates/|/tax-rates/
+
+  - name: TaxJar
+    site: https://www.taxjar.com
+
+  - name: Anrok
+    site: https://www.anrok.com
+
+  - name: Numeral
+    site: https://www.numeralhq.com
+
+  - name: Zamp
+    site: https://zamp.com
+
+  - name: Kintsugi
+    site: https://www.trykintsugi.com
