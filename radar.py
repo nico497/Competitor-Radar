@@ -21,6 +21,7 @@ import argparse
 import hashlib
 import json
 import os
+import random
 import re
 import sys
 import time
@@ -38,6 +39,7 @@ ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = Path(os.environ.get("RADAR_CONFIG", ROOT / "config.yaml"))
 DATA_PATH = ROOT / "docs" / "data.json"      # what the dashboard reads
 STATE_PATH = ROOT / "state" / "state.json"   # every page seen, with its classification
+HISTORY_PATH = ROOT / "state" / "history.json"   # weekly counts per site, for trends
 API_URL = "https://api.anthropic.com/v1/messages"
 
 
@@ -626,6 +628,7 @@ def analyse(stats: list[dict], cfg: dict) -> dict:
                       f"Pages in last {cfg['window_days']} days: {s['n']} ({s.get('new', 0)} new, {s.get('updated', 0)} updated old pages, rest bulk-dated or undated). " + (f"Previous {cfg['window_days']} days: {s['n_prev']}" if cfg.get("_history_ok") else "(no reliable previous-period count yet)") + "\n"
                       + ("Bulk events (many pages sharing one publish or modified date: a bulk launch, republish or site-wide change, NOT individual articles): "
                          + ", ".join(f"{b['type']}: {b['pages']} pages on {b['day']}" for b in s.get('bulk', [])) + "\n" if s.get("bulk") else "")
+                      + (f"Pages removed from the site this period: {s['removed']} (e.g. " + "; ".join(s.get("removed_titles", [])[:8]) + ")\n" if s.get("removed") else "")
                       + (f"Templated/programmatic sections (not in the counts above): " + ", ".join(f"/{x['section']}/ ({x['pages']} pages)" for x in s.get('programmatic', [])) + "\n" if s.get("programmatic") else "")
                       + f"Mix: {mix or 'none'}\nWho it's for: {stages or 'n/a'}\nTop topics: {', '.join(s['topics']) or 'n/a'}\nPages:\n{titles or '    (none)'}")
     reader = (f"The reader is {you}. Compare competitors against them; gaps are openings for {you}."
@@ -832,10 +835,29 @@ def run(cfg: dict, offline: bool = False, reanalyse: bool = False) -> dict:
                             rec["date"] = iso(min(info["published"], now))
                         time.sleep(0.3)
             sections[name] = prog
+            # Pages that dropped out of the sitemap. A big sudden drop is more likely a fetch
+            # problem than real deletions, so skip it. A page must be missing on two runs in a row.
+            seen_now = {url_key(i["url"]) for i in items}
+            prev_count = state["sites"].get(name, {}).get("count", 0)
+            gone = [p for k, p in pages.items() if p["site"] == name and k not in seen_now and not p.get("removed")]
+            big_drop = prev_count - len(items) > max(10, 0.3 * prev_count)
+            if not first and items and not big_drop:
+                for p in gone:
+                    if p.get("missing_since"):
+                        p["removed"] = iso(now)
+                    else:
+                        p["missing_since"] = iso(now)
+            elif gone and not first:
+                log(f"  {name}: page count fell from {prev_count} to {len(items)}, not treating as removals")
+            for k in seen_now:
+                if k in pages:
+                    pages[k].pop("missing_since", None)
+                    if pages[k].pop("removed", None):
+                        log(f"    back again: {pages[k]['url']}")
             health[name] = {"ok": True, "error": None, "method": method, "url": used, "pages": len(items),
                             "undated": undated, "new_urls": 0 if first else new}
             if items:
-                state["sites"][name] = {"initialized": True}   # only once we've actually seen pages
+                state["sites"][name] = {"initialized": True, "count": len(items)}   # only once we've seen pages
             log(f"  OK   {name}: {method}, {len(items)} pages, {new} new, {refreshed} updated")
 
     if not offline:
@@ -885,6 +907,26 @@ def run(cfg: dict, offline: bool = False, reanalyse: bool = False) -> dict:
                 date_kind(p, info, now)
             p["fp"], p["dates_checked"] = info["fp"], iso(now)
             time.sleep(0.2)
+        # Spot-check a random sample of known pages each run, so edits are caught even on
+        # sites that never change their sitemap dates. Page fetches only, no AI calls.
+        pool = [p for p in pages.values() if p.get("fp") and p.get("cls") and p["cls"]["is_content"]
+                and not p.get("prog") and not p.get("removed") and health.get(p["site"], {}).get("ok")
+                and (not p.get("dates_checked") or parse_iso(p["dates_checked"]) < now - timedelta(days=14))]
+        rng = random.Random(now.strftime("%Y-%W"))
+        spot = rng.sample(pool, min(len(pool), int(cfg.get("spot_checks", 60))))
+        spot_edits = 0
+        for p in spot:
+            try:
+                info = read_page(p["url"], f)
+            except Exception:  # noqa: BLE001
+                continue
+            if info["fp"] != p["fp"]:
+                p.update(kind="updated", event=iso(now), fp_verified=True)
+                spot_edits += 1
+            p["fp"], p["dates_checked"] = info["fp"], iso(now)
+            time.sleep(0.2)
+        if spot:
+            log(f"== Spot checks: {spot_edits} of {len(spot)} sampled pages had changed text")
         backfill = [p for p in pages.values() if p.get("cls") and not p.get("dates_checked") and not p.get("prog")
                     and p.get("date") and parse_iso(p["date"]) >= horizon][: int(cfg.get("max_backfill", 400))]
         for p in backfill:
@@ -907,7 +949,7 @@ def run(cfg: dict, offline: bool = False, reanalyse: bool = False) -> dict:
     for s in cfg["sites"]:
         name = s["name"]
         allmine = [p for p in pages.values() if p["site"] == name]
-        mine = [p for p in allmine if p.get("date") and not p.get("prog")]
+        mine = [p for p in allmine if p.get("date") and not p.get("prog") and not p.get("removed")]
         prog_info = [{"section": sec, "pages": n,
                       "new": sum(1 for p in allmine if p.get("prog") == sec and not p.get("baseline", True)
                                  and parse_iso(p["first_seen"]) >= now - window)}
@@ -928,6 +970,8 @@ def run(cfg: dict, offline: bool = False, reanalyse: bool = False) -> dict:
             "n_prev": len(prev), "refreshed": refreshed, "mix": mix, "stages": stages,
             "topics": [t for t, _ in sorted(topics.items(), key=lambda x: -x[1])[:5]],
             "unclassified": sum(1 for p in cur if not p.get("cls")),
+            "removed": sum(1 for p in allmine if p.get("removed") and parse_iso(p["removed"]) >= now - window),
+            "removed_titles": [p["title"] for p in allmine if p.get("removed") and parse_iso(p["removed"]) >= now - window][:15],
             "new": sum(1 for p in cur if p.get("kind") == "new" and (not p.get("cls") or p["cls"]["is_content"])),
             "updated": sum(1 for p in cur if p.get("kind") == "updated" and (not p.get("cls") or p["cls"]["is_content"])),
             "bulk": sorted((e for e in bulk_events.get(name, []) if parse_iso(e["day"] + "T00:00:00+00:00") >= now - window),
@@ -983,6 +1027,25 @@ def run(cfg: dict, offline: bool = False, reanalyse: bool = False) -> dict:
         "sites": stats,
         "pages": out_pages,
     }
+    # Weekly history: one entry per ISO week (a manual re-run in the same week overwrites it).
+    week = now.strftime("%G-W%V")
+    last7 = now - timedelta(days=7)
+    entry = {"week": week, "date": iso(now), "sites": {}}
+    for s_ in cfg["sites"]:
+        mine = [p for p in pages.values() if p["site"] == s_["name"] and not p.get("prog")]
+        ev = lambda p: parse_iso(p.get("event") or p.get("date"))  # noqa: E731
+        entry["sites"][s_["name"]] = {
+            "new": sum(1 for p in mine if p.get("kind") == "new" and ev(p) and ev(p) >= last7),
+            "updated": sum(1 for p in mine if p.get("kind") == "updated" and ev(p) and ev(p) >= last7),
+            "removed": sum(1 for p in mine if p.get("removed") and parse_iso(p["removed"]) >= last7),
+            "pages": sum(1 for p in mine if not p.get("removed")),
+        }
+    history = load_json(HISTORY_PATH, {"weeks": []})
+    if not offline:
+        history["weeks"] = [w for w in history["weeks"] if w["week"] != week] + [entry]
+        history["weeks"] = history["weeks"][-104:]
+        save_json(HISTORY_PATH, history)
+    data["history"] = history["weeks"][-26:]
     save_json(DATA_PATH, data)
     save_json(STATE_PATH, state)
     lines = ["## Competitor Radar run"] + [f"- {s['name']}: {s['n']} pages in window" + ("" if s.get("ok") else f" (FAILED: {s.get('error')})") for s in stats]

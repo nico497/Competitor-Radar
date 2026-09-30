@@ -32,6 +32,14 @@ Every Monday (GitHub Actions)
 
 **New vs updated:** a URL that appears in a sitemap for the first time counts as **new**. A known URL counts as **updated** only when its text actually changed. The radar keeps a fingerprint of each page, so a date bump alone doesn't count. For pages from before tracking started, it uses the page's own published and modified dates, and marks the page "unclear" if the site doesn't show them.
 
+## How accuracy improves over time
+
+- **New pages** are observed directly. A URL that wasn't in last week's sitemap is new, whatever its dates say.
+- **Updates are verified.** When a page's date moves, the radar re-reads it and only counts an update if the article text changed. It also spot-checks a random sample of pages each week, which catches edits on sites that never change their sitemap dates.
+- **Removed pages** are recorded once a URL has been missing from the sitemap on two runs in a row. A sudden large drop is treated as a fetch problem, not deletions.
+- **Trends:** each run saves weekly counts to `state/history.json`, and the dashboard charts new pages per week once there are 3 weeks of history. Month-on-month comparisons switch on after 60 days.
+- The first month relies on the pages' own published and modified dates. One-day spikes (dozens of pages sharing one date) are shown as bulk events, not as individual new or updated pages.
+
 ## Setup (about 10 minutes)
 
 1. **Copy the repo.** Click **Use this template** (or fork it). Your copy starts clean.
