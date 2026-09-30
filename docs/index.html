@@ -173,8 +173,15 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
 
   function renderNotices() {
     const m = data.meta, out = [];
-    if (m.first_run) out.push(`First run: counts use sitemap dates, which can include recently updated pages. From next week, "new" means genuinely new.`);
-    if (m.pending) out.push(`${m.pending} pages are still waiting to be classified. They'll be done on the next run.`);
+    const W = m.window_days || 30, days = m.tracking_days ?? 0;
+    if (m.updated && days < W) {
+      const until = new Date(new Date(m.tracking_since || m.updated).getTime() + W * 864e5);
+      out.push(`Tracking started ${fmt(m.tracking_since || m.updated)}. Until ${fmt(until)}, page counts lean on sitemap dates, which can include pages that were only updated.`);
+    }
+    if (m.pending) {
+      const runs = Math.ceil(m.pending / (m.per_run || 200));
+      out.push(`${m.pending.toLocaleString()} older pages are still waiting to be classified: about ${runs} more run${runs > 1 ? "s" : ""}. Run the workflow manually to catch up faster.`);
+    }
     (m.errors || []).forEach((e) => out.push(`Error this run: ${e}`));
     $("#notices").innerHTML = out.map((t) => `<div class="notice">${esc(t)}</div>`).join("");
   }
@@ -208,7 +215,8 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
       const segs = data.types.filter(([k]) => (s.mix || {})[k]).map(([k, l]) =>
         `<i style="flex:${s.mix[k]};background:${color(k)}" data-tip="${esc(l)}: ${s.mix[k]} of ${total} (${Math.round(s.mix[k] / total * 100)}%)"></i>`).join("");
       const diff = (s.n ?? 0) - (s.n_prev ?? 0);
-      const d = data.meta.first_run ? "" : diff > 0 ? ` · <span class="d up">▲ ${diff}</span>` : diff < 0 ? ` · <span class="d down">▼ ${-diff}</span>` : " · no change";
+      const showDelta = !data.meta.first_run && (data.meta.tracking_days ?? 0) >= 2 * W;
+      const d = !showDelta ? "" : diff > 0 ? ` · <span class="d up">▲ ${diff}</span>` : diff < 0 ? ` · <span class="d down">▼ ${-diff}</span>` : " · no change";
       const stages = Object.entries(s.stages || {}).filter(([, v]) => v).sort((a, b) => b[1] - a[1]);
       const aimed = s.aimed || (stages[0] ? `Mostly for people ${STAGES[stages[0][0]].toLowerCase()}` : "");
       const prog = (s.programmatic || []).map((x) => `/${x.section}/ (${x.pages.toLocaleString()} pages${x.new ? `, +${x.new} new` : ""})`).join(", ");

@@ -622,6 +622,7 @@ def run(cfg: dict) -> dict:
         state = {"pages": {}, "sites": {}}
     if repo:
         state["repo"] = repo
+    state.setdefault("tracking_since", iso(now))
     pages, errors, health = state["pages"], [], {}
     first_sites, prefetched, sections = [], {}, {}
 
@@ -774,7 +775,9 @@ def run(cfg: dict) -> dict:
     data = {
         "meta": {"title": cfg.get("title", "Competitor Radar"), "niche": cfg["niche"], "updated": iso(now),
                  "window_days": int(cfg["window_days"]), "repo": repo, "first_run": first_run,
-                 "errors": list(dict.fromkeys(errors))[:5], "pending": max(0, len(todo) - len(queue))},
+                 "errors": list(dict.fromkeys(errors))[:5], "pending": max(0, len(todo) - len(queue)),
+                 "per_run": int(cfg["max_classify_per_run"]), "tracking_since": state["tracking_since"],
+                 "tracking_days": (now - parse_iso(state["tracking_since"])).days},
         "types": cfg["types"],
         "analysis": {k: v for k, v in analysis.items() if k != "plays"},
         "sites": stats,
