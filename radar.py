@@ -623,7 +623,7 @@ def analyse(stats: list[dict], cfg: dict) -> dict:
         stages = ", ".join(f"{k}: {v}" for k, v in s["stages"].items() if v)
         titles = "\n".join(f"    - [{p['type']}, {p.get('kind', 'unknown')}] {p['title']}" for p in s["sample"])
         blocks.append(f"## {s['name']}{' (THE READER)' if s['you'] else ''}\n"
-                      f"Pages in last {cfg['window_days']} days: {s['n']} ({s.get('new', 0)} new, {s.get('updated', 0)} updated old pages, rest bulk-dated or undated). Previous {cfg['window_days']} days: {s['n_prev']}\n"
+                      f"Pages in last {cfg['window_days']} days: {s['n']} ({s.get('new', 0)} new, {s.get('updated', 0)} updated old pages, rest bulk-dated or undated). " + (f"Previous {cfg['window_days']} days: {s['n_prev']}" if cfg.get("_history_ok") else "(no reliable previous-period count yet)") + "\n"
                       + ("Bulk events (many pages sharing one publish or modified date: a bulk launch, republish or site-wide change, NOT individual articles): "
                          + ", ".join(f"{b['type']}: {b['pages']} pages on {b['day']}" for b in s.get('bulk', [])) + "\n" if s.get("bulk") else "")
                       + (f"Templated/programmatic sections (not in the counts above): " + ", ".join(f"/{x['section']}/ ({x['pages']} pages)" for x in s.get('programmatic', [])) + "\n" if s.get("programmatic") else "")
@@ -937,6 +937,9 @@ def run(cfg: dict, offline: bool = False, reanalyse: bool = False) -> dict:
                        for p in sorted(content, key=lambda p: p.get("event") or p["date"], reverse=True)[:40]],
             **{k: v for k, v in health.get(name, {"ok": False, "error": "not checked"}).items()},
         })
+
+    # Period-on-period comparisons only once we have two full windows of our own history.
+    cfg["_history_ok"] = (now - parse_iso(state["tracking_since"])).days >= 2 * int(cfg["window_days"])
 
     # 4. Analysis (one call to the stronger model)
     log("== Analyse")
