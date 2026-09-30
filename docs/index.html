@@ -262,7 +262,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
     const rows = data.pages.filter((p) => (!c || p.site === c) && (!t || p.type === t) && (!st || p.stage === st) && (!k || p.kind === k));
     const view = rows.slice(0, shown);
     $("#posts").innerHTML = rows.length ? view.map((p) => `<div class="post">
-        <div class="pmeta"><span class="who">${esc(p.site)}</span>${KIND[p.kind] || ""}<span>${esc(fmt(p.date))}</span>
+        <div class="pmeta"><span class="who">${esc(p.site)}</span>${KIND[p.kind] || ""}<span>${esc(fmt(p.date))}${p.kind === "updated" && p.published ? ` · first published ${esc(fmt(p.published, true))}` : ""}</span>
           <span class="type"><i class="sw" style="background:${color(p.type)}"></i>${esc(label(p.type))}</span>
           <span class="stage">${esc(STAGES[p.stage] || p.stage)}</span></div>
         <a class="ptitle" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>

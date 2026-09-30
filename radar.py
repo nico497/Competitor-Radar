@@ -426,14 +426,35 @@ def read_page(url: str, f: Fetcher) -> dict:
     published = parse_iso(meta("article:published_time", "datePublished")) or ld_pub
     modified = parse_iso(meta("article:modified_time", "og:updated_time", "dateModified")) or ld_mod
     heads = [h.get_text(" ", strip=True) for h in soup.find_all(["h1", "h2"])][:15]
+    if not published:
+        tag = soup.find("time", attrs={"datetime": True})
+        published = parse_iso(tag["datetime"]) if tag else None
     for t in soup(["script", "style", "noscript", "svg", "iframe", "nav", "footer", "header", "aside", "form"]):
         t.decompose()
     node = max(soup.find_all("article") + soup.find_all("main"), key=lambda n: len(n.get_text()), default=None) or soup.body or soup
     text = re.sub(r"\s+", " ", node.get_text(" ", strip=True))
+    if not published:
+        published = byline_date(text[:1500])
     # Fingerprint of the main text: tells a real edit apart from a date bump.
     fp = hashlib.sha1(re.sub(r"\d", "", text[:30000]).encode("utf-8", "ignore")).hexdigest()[:16]
     return {"title": title, "desc": desc, "published": published, "modified": modified, "heads": heads,
             "text": text[:2500], "words": len(text.split()), "fp": fp}
+
+
+MONTHS = {m: i + 1 for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"])}
+
+
+def byline_date(text: str) -> datetime | None:
+    """Last resort: a visible date near the top of the article, e.g. 'May 20, 2026' or '20 May 2026'."""
+    for m in re.finditer(r"\b([A-Z][a-z]{2,8})\.? (\d{1,2}),? (20\d\d)\b|\b(\d{1,2}) ([A-Z][a-z]{2,8}),? (20\d\d)\b", text):
+        mon, day, year = (m.group(1), m.group(2), m.group(3)) if m.group(1) else (m.group(5), m.group(4), m.group(6))
+        month = MONTHS.get(mon[:3].lower())
+        if month:
+            try:
+                return datetime(int(year), month, int(day), tzinfo=timezone.utc)
+            except ValueError:
+                continue
+    return None
 
 
 def date_kind(p: dict, info: dict, now: datetime) -> None:
