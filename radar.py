@@ -18,6 +18,7 @@ Environment
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -385,27 +386,76 @@ def programmatic_sections(urls: list[str], min_pages: int) -> dict[str, int]:
 
 # ---------------------------------------------------------------- reading + classifying
 
+def _ld_dates(soup) -> tuple[datetime | None, datetime | None]:
+    """datePublished / dateModified from JSON-LD blocks (incl. @graph)."""
+    pub = mod = None
+
+    def walk(x):
+        nonlocal pub, mod
+        if isinstance(x, dict):
+            pub = pub or parse_iso(str(x.get("datePublished") or "")) if x.get("datePublished") else pub
+            mod = mod or parse_iso(str(x.get("dateModified") or "")) if x.get("dateModified") else mod
+            for v in x.values():
+                walk(v)
+        elif isinstance(x, list):
+            for v in x:
+                walk(v)
+    for tag in soup.find_all("script", type="application/ld+json"):
+        try:
+            walk(json.loads(tag.string or "{}"))
+        except (json.JSONDecodeError, TypeError):
+            continue
+    return pub, mod
+
+
 def read_page(url: str, f: Fetcher) -> dict:
     r = f.get(url)
     soup = BeautifulSoup(r.text, "html.parser")
 
     def meta(*names):
         for n in names:
-            tag = soup.find("meta", attrs={"property": n}) or soup.find("meta", attrs={"name": n})
+            tag = soup.find("meta", attrs={"property": n}) or soup.find("meta", attrs={"name": n}) \
+                or soup.find("meta", attrs={"itemprop": n})
             if tag and tag.get("content"):
                 return tag["content"].strip()
         return None
 
     title = meta("og:title") or (soup.title.string.strip() if soup.title and soup.title.string else "")
     desc = meta("description", "og:description") or ""
-    published = parse_iso(meta("article:published_time", "datePublished"))
+    ld_pub, ld_mod = _ld_dates(soup)
+    published = parse_iso(meta("article:published_time", "datePublished")) or ld_pub
+    modified = parse_iso(meta("article:modified_time", "og:updated_time", "dateModified")) or ld_mod
     heads = [h.get_text(" ", strip=True) for h in soup.find_all(["h1", "h2"])][:15]
     for t in soup(["script", "style", "noscript", "svg", "iframe", "nav", "footer", "header", "aside", "form"]):
         t.decompose()
     node = max(soup.find_all("article") + soup.find_all("main"), key=lambda n: len(n.get_text()), default=None) or soup.body or soup
     text = re.sub(r"\s+", " ", node.get_text(" ", strip=True))
-    return {"title": title, "desc": desc, "published": published, "heads": heads,
-            "text": text[:2500], "words": len(text.split())}
+    # Fingerprint of the main text: tells a real edit apart from a date bump.
+    fp = hashlib.sha1(re.sub(r"\d", "", text[:30000]).encode("utf-8", "ignore")).hexdigest()[:16]
+    return {"title": title, "desc": desc, "published": published, "modified": modified, "heads": heads,
+            "text": text[:2500], "words": len(text.split()), "fp": fp}
+
+
+def date_kind(p: dict, info: dict, now: datetime) -> None:
+    """Label a page 'new', 'updated' or 'unknown', with the date of that event."""
+    if not info:
+        return
+    p["pub"] = iso(info.get("published"))
+    p["mod"] = iso(info.get("modified"))
+    p["fp"] = info.get("fp")
+    p["dates_checked"] = iso(now)
+    if p.get("kind"):
+        return                                  # already decided by tracking (new / real update)
+    pub, mod = info.get("published"), info.get("modified")
+    ref = parse_iso(p.get("date")) or mod
+    if not p.get("baseline", True):
+        p["kind"], p["event"] = "new", p["first_seen"]
+    elif pub and ref and pub >= ref - timedelta(days=3):
+        p["kind"], p["event"] = "new", iso(min(pub, now))
+    elif pub and ref:
+        p["kind"], p["event"] = "updated", iso(min(ref, now))
+    else:
+        p["kind"], p["event"] = "unknown", p.get("date")
 
 
 def classify_tool(types: list[list[str]]) -> dict:
@@ -484,7 +534,8 @@ Rules:
 - Use only the data provided. Name companies. Use their real counts.
 - Describe what they publish and the likely intent. Don't claim what works: there is no traffic or ranking data.
 - Small numbers are weak signals. Don't call 1-2 pages a strategy.
-- A shared play needs at least 2 companies. A gap is something the reader could own."""
+- A shared play needs at least 2 companies. A gap is something the reader could own.
+- New pages and updates of old pages are different plays: a wave of updates means a refresh push."""
 
 
 def _split(line: str, n: int) -> list[str]:
@@ -498,9 +549,9 @@ def analyse(stats: list[dict], cfg: dict) -> dict:
     for s in stats:
         mix = ", ".join(f"{label}: {s['mix'].get(k, 0)}" for k, label in cfg["types"] if s["mix"].get(k))
         stages = ", ".join(f"{k}: {v}" for k, v in s["stages"].items() if v)
-        titles = "\n".join(f"    - [{p['type']}] {p['title']}" for p in s["sample"])
+        titles = "\n".join(f"    - [{p['type']}, {p.get('kind', 'unknown')}] {p['title']}" for p in s["sample"])
         blocks.append(f"## {s['name']}{' (THE READER)' if s['you'] else ''}\n"
-                      f"Pages in last {cfg['window_days']} days: {s['n']} (previous {cfg['window_days']} days: {s['n_prev']}). Updated old pages: {s['refreshed']}\n"
+                      f"Pages in last {cfg['window_days']} days: {s['n']} ({s.get('new', 0)} new, {s.get('updated', 0)} updated old pages, rest unknown). Previous {cfg['window_days']} days: {s['n_prev']}\n"
                       + (f"Templated/programmatic sections (not in the counts above): " + ", ".join(f"/{x['section']}/ ({x['pages']} pages)" for x in s.get('programmatic', [])) + "\n" if s.get("programmatic") else "")
                       + f"Mix: {mix or 'none'}\nWho it's for: {stages or 'n/a'}\nTop topics: {', '.join(s['topics']) or 'n/a'}\nPages:\n{titles or '    (none)'}")
     reader = (f"The reader is {you}. Compare competitors against them; gaps are openings for {you}."
@@ -624,7 +675,7 @@ def run(cfg: dict) -> dict:
         state["repo"] = repo
     state.setdefault("tracking_since", iso(now))
     pages, errors, health = state["pages"], [], {}
-    first_sites, prefetched, sections = [], {}, {}
+    first_sites, prefetched, sections, recheck = [], {}, {}, []
 
     # 1. Discover every site's pages
     log("== Discover")
@@ -659,10 +710,14 @@ def run(cfg: dict) -> dict:
                 date = lastmod if lastmod and lastmod <= now else (None if first else now)
                 pages[k] = {"site": name, "url": it["url"], "title": it["title"], "date": iso(date),
                             "lastmod": iso(lastmod), "first_seen": iso(now), "cls": None, "baseline": first}
+                if not first:
+                    pages[k].update(kind="new", event=iso(now))
+                elif method == "feed" and date:
+                    pages[k].update(kind="new", event=iso(date))   # feed dates are publish dates
                 new += 1
             else:
                 if lastmod and rec.get("lastmod") and lastmod > parse_iso(rec["lastmod"]) + timedelta(hours=1):
-                    rec["refreshed"] = iso(now)
+                    recheck.append(rec)          # verified below: real edit or just a date bump?
                     refreshed += 1
                 rec["lastmod"] = iso(lastmod) if lastmod else rec.get("lastmod")
             sec = section_of(it["url"])
@@ -686,7 +741,7 @@ def run(cfg: dict) -> dict:
                     time.sleep(0.3)
         sections[name] = prog
         health[name] = {"ok": True, "error": None, "method": method, "url": used, "pages": len(items),
-                        "undated": undated, "new": 0 if first else new}
+                        "undated": undated, "new_urls": 0 if first else new}
         state["sites"][name] = {"initialized": True}
         log(f"  OK   {name}: {method}, {len(items)} pages, {new} new, {refreshed} updated")
 
@@ -705,6 +760,7 @@ def run(cfg: dict) -> dict:
         try:
             info = prefetched.get(url_key(p["url"])) or read_page(p["url"], f)
             p["title"] = info["title"] or p["title"]
+            date_kind(p, info, now)
             if info["published"] and not p.get("lastmod"):
                 p["date"] = iso(info["published"])
         except Exception as e:  # noqa: BLE001
@@ -717,6 +773,34 @@ def run(cfg: dict) -> dict:
             log(f"    classify failed: {e}")
         time.sleep(0.3)
 
+    # 2b. New vs updated. Verify date bumps against the text fingerprint, and date
+    #     pages classified before this existed. Page fetches only, no AI calls.
+    checks = [p for p in recheck if not p.get("prog")][: int(cfg.get("max_rechecks", 300))]
+    real = 0
+    for p in checks:
+        try:
+            info = read_page(p["url"], f)
+        except Exception:  # noqa: BLE001
+            continue
+        if p.get("fp") and info["fp"] != p["fp"]:
+            p.update(kind="updated", event=iso(now))
+            real += 1
+        elif not p.get("fp"):
+            p.pop("kind", None)
+            p["date"] = p.get("lastmod") or p["date"]      # its sitemap date just moved to now
+            date_kind(p, info, now)
+        p["fp"], p["dates_checked"] = info["fp"], iso(now)
+        time.sleep(0.2)
+    backfill = [p for p in pages.values() if p.get("cls") and not p.get("dates_checked") and not p.get("prog")
+                and p.get("date") and parse_iso(p["date"]) >= horizon][: int(cfg.get("max_backfill", 400))]
+    for p in backfill:
+        try:
+            date_kind(p, read_page(p["url"], f), now)
+        except Exception:  # noqa: BLE001
+            p["dates_checked"] = iso(now)
+        time.sleep(0.2)
+    log(f"== New vs updated: {real} of {len(checks)} date bumps were real edits; dated {len(backfill)} older pages")
+
     # 3. Stats per site for the window
     stats = []
     for s in cfg["sites"]:
@@ -727,7 +811,8 @@ def run(cfg: dict) -> dict:
                       "new": sum(1 for p in allmine if p.get("prog") == sec and not p.get("baseline", True)
                                  and parse_iso(p["first_seen"]) >= now - window)}
                      for sec, n in sorted(sections.get(name, {}).items(), key=lambda x: -x[1])]
-        cur = [p for p in mine if parse_iso(p["date"]) >= now - window]
+        evdate = lambda p: parse_iso(p.get("event") or p["date"])  # noqa: E731
+        cur = [p for p in mine if evdate(p) >= now - window]
         prev = [p for p in mine if now - 2 * window <= parse_iso(p["date"]) < now - window
                 and (not p.get("cls") or p["cls"]["is_content"])]
         content = [p for p in cur if p.get("cls") and p["cls"]["is_content"]]
@@ -736,14 +821,17 @@ def run(cfg: dict) -> dict:
         topics = {}
         for p in content:
             topics[p["cls"]["topic"].lower()] = topics.get(p["cls"]["topic"].lower(), 0) + 1
-        refreshed = sum(1 for p in mine if p.get("refreshed") and parse_iso(p["refreshed"]) >= now - window)
+        refreshed = sum(1 for p in mine if p.get("kind") == "updated" and evdate(p) >= now - window)
         stats.append({
             "name": name, "site": s["site"], "you": s["you"], "n": len([p for p in cur if not p.get("cls") or p["cls"]["is_content"]]),
             "n_prev": len(prev), "refreshed": refreshed, "mix": mix, "stages": stages,
             "topics": [t for t, _ in sorted(topics.items(), key=lambda x: -x[1])[:5]],
             "unclassified": sum(1 for p in cur if not p.get("cls")),
+            "new": sum(1 for p in cur if p.get("kind") == "new" and (not p.get("cls") or p["cls"]["is_content"])),
+            "updated": sum(1 for p in cur if p.get("kind") == "updated" and (not p.get("cls") or p["cls"]["is_content"])),
             "programmatic": prog_info,
-            "sample": [{"type": p["cls"]["type"], "title": p["title"]} for p in sorted(content, key=lambda p: p["date"], reverse=True)[:40]],
+            "sample": [{"type": p["cls"]["type"], "title": p["title"], "kind": p.get("kind", "unknown")}
+                       for p in sorted(content, key=lambda p: p.get("event") or p["date"], reverse=True)[:40]],
             **{k: v for k, v in health.get(name, {"ok": False, "error": "not checked"}).items()},
         })
 
@@ -767,8 +855,9 @@ def run(cfg: dict) -> dict:
     # 5. Save
     recent = [p for p in pages.values() if p.get("cls") and p["cls"]["is_content"] and p.get("date")
               and parse_iso(p["date"]) >= horizon]
-    recent.sort(key=lambda p: p["date"], reverse=True)
-    out_pages = [{"site": p["site"], "url": p["url"], "title": p["title"], "date": p["date"],
+    recent.sort(key=lambda p: p.get("event") or p["date"], reverse=True)
+    out_pages = [{"site": p["site"], "url": p["url"], "title": p["title"], "date": p.get("event") or p["date"],
+                  "kind": p.get("kind", "unknown"), "published": p.get("pub"),
                   "first_seen": p["first_seen"], **{k: v for k, v in p["cls"].items() if k != "is_content"}}
                  for p in recent[: int(cfg["keep_pages"])]]
     first_run = bool(first_sites)

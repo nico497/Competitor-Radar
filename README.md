@@ -30,6 +30,8 @@ Every Monday (GitHub Actions)
 
 **Buyer stage:** Learning, Comparing options, Ready to buy, Existing customers.
 
+**New vs updated:** a URL that appears in a sitemap for the first time counts as **new**. A known URL counts as **updated** only when its text actually changed. The radar keeps a fingerprint of each page, so a date bump alone doesn't count. For pages from before tracking started, it uses the page's own published and modified dates, and marks the page "unclear" if the site doesn't show them.
+
 ## Setup (about 10 minutes)
 
 1. **Copy the repo.** Click **Use this template** (or fork it). Your copy starts clean.

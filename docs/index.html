@@ -95,6 +95,11 @@ table.nums th { font-size: 11px; color: var(--ink-3); text-transform: uppercase;
 .pmeta { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 12.5px; color: var(--ink-3); align-items: center; }
 .pmeta .who { color: var(--ink); font-weight: 600; }
 .type { display: inline-flex; align-items: center; gap: 5px; color: var(--ink-2); }
+.kind { font-size: 11px; font-weight: 600; border-radius: 999px; padding: 0 7px; }
+.kind.new { background: var(--accent-soft); color: var(--accent); }
+.kind.upd { background: var(--surface-2); color: var(--ink-2); border: 1px solid var(--line); }
+.vol.split { font-size: 12.5px; color: var(--ink-3); }
+.vol .k-new { color: var(--accent); font-weight: 600; }
 .stage { border: 1px solid var(--line); border-radius: 999px; padding: 0 7px; font-size: 11.5px; }
 .ptitle { font-weight: 600; margin: 3px 0 2px; font-size: 15px; display: block; text-decoration: none; }
 .ptitle:hover { text-decoration: underline; }
@@ -141,6 +146,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
       <select id="fc" aria-label="Company"><option value="">All companies</option></select>
       <select id="ft" aria-label="Type"><option value="">All types</option></select>
       <select id="fs" aria-label="Who it's for"><option value="">Anyone</option></select>
+      <select id="fk" aria-label="New or updated"><option value="">New + updated</option><option value="new">New only</option><option value="updated">Updated only</option></select>
     </small>
   </h2>
   <div class="posts" id="posts"></div>
@@ -155,6 +161,10 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
   const $ = (s) => document.querySelector(s);
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const fmt = (s, y) => s ? new Date(s).toLocaleDateString(undefined, { day: "numeric", month: "short", ...(y ? { year: "numeric" } : {}) }) : "";
+  const KIND = {
+    new: '<span class="kind new">New</span>',
+    updated: '<span class="kind upd" title="An existing page whose text changed">Updated</span>',
+  };
   const STAGES = { learning: "Learning", comparing: "Comparing options", buying: "Ready to buy", customers: "Existing customers" };
   let data = { meta: {}, types: [], analysis: {}, sites: [], pages: [] };
   let asTable = false, shown = 25;
@@ -176,7 +186,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
     const W = m.window_days || 30, days = m.tracking_days ?? 0;
     if (m.updated && days < W) {
       const until = new Date(new Date(m.tracking_since || m.updated).getTime() + W * 864e5);
-      out.push(`Tracking started ${fmt(m.tracking_since || m.updated)}. Until ${fmt(until)}, page counts lean on sitemap dates, which can include pages that were only updated.`);
+      out.push(`Tracking started ${fmt(m.tracking_since || m.updated)}. Until ${fmt(until)}, pages from before tracking are dated from their own published and modified dates where the site shows them, and marked "unclear" where it doesn't.`);
     }
     if (m.pending) {
       const runs = Math.ceil(m.pending / (m.per_run || 200));
@@ -220,10 +230,11 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
       const stages = Object.entries(s.stages || {}).filter(([, v]) => v).sort((a, b) => b[1] - a[1]);
       const aimed = s.aimed || (stages[0] ? `Mostly for people ${STAGES[stages[0][0]].toLowerCase()}` : "");
       const prog = (s.programmatic || []).map((x) => `/${x.section}/ (${x.pages.toLocaleString()} pages${x.new ? `, +${x.new} new` : ""})`).join(", ");
-      const extra = [aimed, s.refreshed ? `${s.refreshed} old pages updated` : "", s.unclassified ? `${s.unclassified} not yet classified` : ""].filter(Boolean).join(" · ");
+      const extra = [aimed, s.unclassified ? `${s.unclassified} not yet classified` : ""].filter(Boolean).join(" · ");
       const progLine = prog ? `<div class="meta">Also runs templated pages: ${esc(prog)}</div>` : "";
       return `<div class="comp${s.you ? " you" : ""}"><div><div class="cname"><a href="${esc(s.site)}" target="_blank" rel="noopener">${esc(s.name)}</a></div>
-          <div class="vol">${s.ok ? `<b>${s.n}</b> pages${d}` : ""}</div></div>
+          <div class="vol">${s.ok ? `<b>${s.n}</b> pages${d}` : ""}</div>
+          ${s.ok && (s.new || s.updated) ? `<div class="vol split"><span class="k-new">${s.new || 0} new</span> · <span>${s.updated || 0} updated</span>${s.n - (s.new || 0) - (s.updated || 0) > 0 ? ` · ${s.n - (s.new || 0) - (s.updated || 0)} unclear` : ""}</div>` : ""}</div>
         <div>${!s.ok ? `<p class="fail">Couldn't read this site: ${esc(s.error)}. See Sources below.</p>`
           : `<div class="bar${segs ? "" : " empty"}" role="img" aria-label="${esc(s.name)} content mix">${segs}</div>
           <p class="play"><b>${s.you ? "Your play" : "Their play"}:</b> ${esc(s.play || (s.n ? "Not enough pages to call it yet." : `Nothing new in the last ${W} days.`))}</p>
@@ -247,11 +258,11 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
   }
 
   function renderPosts() {
-    const c = $("#fc").value, t = $("#ft").value, st = $("#fs").value;
-    const rows = data.pages.filter((p) => (!c || p.site === c) && (!t || p.type === t) && (!st || p.stage === st));
+    const c = $("#fc").value, t = $("#ft").value, st = $("#fs").value, k = $("#fk").value;
+    const rows = data.pages.filter((p) => (!c || p.site === c) && (!t || p.type === t) && (!st || p.stage === st) && (!k || p.kind === k));
     const view = rows.slice(0, shown);
     $("#posts").innerHTML = rows.length ? view.map((p) => `<div class="post">
-        <div class="pmeta"><span class="who">${esc(p.site)}</span><span>${esc(fmt(p.date))}</span>
+        <div class="pmeta"><span class="who">${esc(p.site)}</span>${KIND[p.kind] || ""}<span>${esc(fmt(p.date))}</span>
           <span class="type"><i class="sw" style="background:${color(p.type)}"></i>${esc(label(p.type))}</span>
           <span class="stage">${esc(STAGES[p.stage] || p.stage)}</span></div>
         <a class="ptitle" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>
@@ -288,7 +299,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
   }
 
   $("#tbl").addEventListener("click", (e) => { asTable = !asTable; e.target.textContent = asTable ? "Show as chart" : "Show as table"; renderComps(); });
-  ["#fc", "#ft", "#fs"].forEach((s) => $(s).addEventListener("input", () => { shown = 25; renderPosts(); }));
+  ["#fc", "#ft", "#fs", "#fk"].forEach((s) => $(s).addEventListener("input", () => { shown = 25; renderPosts(); }));
   const tip = $("#tip");
   document.addEventListener("mousemove", (e) => {
     const t = e.target.closest("[data-tip]");
