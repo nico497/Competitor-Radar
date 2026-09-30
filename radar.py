@@ -800,6 +800,9 @@ def main() -> None:
     ap.add_argument("--check", action="store_true", help="test your sites only (no API key, no writes)")
     args = ap.parse_args()
     cfg = load_config()
+    if os.environ.get("RADAR_CLASSIFY_LIMIT", "").strip().isdigit():
+        # One-off catch-up: lift the per-run and per-site caps to clear a backlog.
+        cfg["max_classify_per_run"] = cfg["max_classify_per_site"] = int(os.environ["RADAR_CLASSIFY_LIMIT"])
     check_sites(cfg) if args.check else run(cfg)
 
 

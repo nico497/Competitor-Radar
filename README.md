@@ -80,7 +80,7 @@ FAIL Rival Two       no sitemap or feed found. Add a sitemap: or feed: line for 
 - **Classifying:** one small call per new page on the cheap model. The first run tags up to 200 pages from the last 60 days. After that, it's only new pages.
 - **Analysis:** one call per run on the stronger model.
 
-`max_classify_per_run` caps spend. Extra pages wait for the next run. For current rates, see [anthropic.com/pricing](https://www.anthropic.com/pricing).
+`max_classify_per_run` caps spend. Extra pages wait for the next run. To clear a backlog faster, go to **Run workflow** and set *classify_limit* (e.g. 700). Keep it under about 800 so the run finishes within the hour. For current rates, see [anthropic.com/pricing](https://www.anthropic.com/pricing).
 
 ## Limits
 

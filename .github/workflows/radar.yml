@@ -4,7 +4,12 @@ on:
   schedule:
     # Mondays 06:17 UTC. Change to suit your timezone: https://crontab.guru
     - cron: "17 6 * * 1"
-  workflow_dispatch: {}   # adds a "Run workflow" button in the Actions tab
+  workflow_dispatch:      # adds a "Run workflow" button in the Actions tab
+    inputs:
+      classify_limit:
+        description: "Catch-up: classify up to this many pages in one run (blank = normal caps)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -16,7 +21,7 @@ concurrency:
 jobs:
   radar:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     steps:
@@ -39,6 +44,8 @@ jobs:
 
       - name: Find and classify new pages
         if: env.ANTHROPIC_API_KEY != ''
+        env:
+          RADAR_CLASSIFY_LIMIT: ${{ inputs.classify_limit }}
         run: python radar.py
 
       - name: Save results
