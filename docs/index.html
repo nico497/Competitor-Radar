@@ -133,7 +133,8 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
   <section class="card" id="overview"></section>
 
   <h2 class="sec">What each competitor is doing <small><button class="toggle" id="tbl">Show as table</button></small></h2>
-  <section class="card"><div class="legend" id="legend"></div><div id="comps"></div></section>
+  <section class="card"><div class="legend" id="legend"></div><div id="comps"></div>
+    <p class="meta" style="margin:10px 0 0">New = first published in this period. Updated = an older page whose own "modified" date is recent (small edits count). Bulk = dozens of pages sharing one date, from a launch, republish or site-wide change, shown as one event. Undated = the site doesn't show dates.</p></section>
 
   <h2 class="sec">Shared plays <small>What several competitors are doing</small></h2>
   <div id="shared"></div>
@@ -146,7 +147,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
       <select id="fc" aria-label="Company"><option value="">All companies</option></select>
       <select id="ft" aria-label="Type"><option value="">All types</option></select>
       <select id="fs" aria-label="Who it's for"><option value="">Anyone</option></select>
-      <select id="fk" aria-label="New or updated"><option value="">New + updated</option><option value="new">New only</option><option value="updated">Updated only</option></select>
+      <select id="fk" aria-label="New or updated"><option value="">New + updated</option><option value="new">New only</option><option value="updated">Updated only</option><option value="bulk">Bulk-dated only</option></select>
     </small>
   </h2>
   <div class="posts" id="posts"></div>
@@ -163,7 +164,8 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
   const fmt = (s, y) => s ? new Date(s).toLocaleDateString(undefined, { day: "numeric", month: "short", ...(y ? { year: "numeric" } : {}) }) : "";
   const KIND = {
     new: '<span class="kind new">New</span>',
-    updated: '<span class="kind upd" title="An existing page whose text changed">Updated</span>',
+    updated: '<span class="kind upd" title="An older page that reports a recent edit. Small edits count too.">Updated</span>',
+    bulk: '<span class="kind upd" title="One of many pages stamped with the same date: a bulk launch or a republish">Bulk</span>',
   };
   const STAGES = { learning: "Learning", comparing: "Comparing options", buying: "Ready to buy", customers: "Existing customers" };
   let data = { meta: {}, types: [], analysis: {}, sites: [], pages: [] };
@@ -233,13 +235,15 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
       const prog = (s.programmatic || []).map((x) => `/${x.section}/ (${x.pages.toLocaleString()} pages${x.new ? `, +${x.new} new` : ""})`).join(", ");
       const extra = [aimed, s.unclassified ? `${s.unclassified} not yet classified` : ""].filter(Boolean).join(" · ");
       const progLine = prog ? `<div class="meta">Also runs templated pages: ${esc(prog)}</div>` : "";
+      const BULK = { launch: "published on one day (bulk launch or date reset)", edit: "marked edited on one day (site-wide change)" };
+      const bulkLine = (s.bulk || []).map((b) => `<div class="meta">Bulk event: ${b.pages} pages ${BULK[b.type] || "on one day"}, ${esc(fmt(b.day + "T12:00:00Z"))}</div>`).join("");
       return `<div class="comp${s.you ? " you" : ""}"><div><div class="cname"><a href="${esc(s.site)}" target="_blank" rel="noopener">${esc(s.name)}</a></div>
           <div class="vol">${s.ok ? `<b>${s.n}</b> pages${d}` : ""}</div>
-          ${s.ok && (s.new || s.updated) ? `<div class="vol split"><span class="k-new">${s.new || 0} new</span> · <span>${s.updated || 0} updated</span>${s.n - (s.new || 0) - (s.updated || 0) > 0 ? ` · ${s.n - (s.new || 0) - (s.updated || 0)} unclear` : ""}</div>` : ""}</div>
+          ${s.ok && (s.new || s.updated) ? `<div class="vol split"><span class="k-new">${s.new || 0} new</span> · <span>${s.updated || 0} updated</span>${s.n - (s.new || 0) - (s.updated || 0) > 0 ? ` · ${s.n - (s.new || 0) - (s.updated || 0)} bulk or undated` : ""}</div>` : ""}</div>
         <div>${!s.ok ? `<p class="fail">Couldn't read this site: ${esc(s.error)}. See Sources below.</p>`
           : `<div class="bar${segs ? "" : " empty"}" role="img" aria-label="${esc(s.name)} content mix">${segs}</div>
           <p class="play"><b>${s.you ? "Your play" : "Their play"}:</b> ${esc(s.play || (s.n ? "Not enough pages to call it yet." : `Nothing new in the last ${W} days.`))}</p>
-          ${extra ? `<div class="meta">${esc(extra)}</div>` : ""}${progLine}`}</div></div>`;
+          ${extra ? `<div class="meta">${esc(extra)}</div>` : ""}${bulkLine}${progLine}`}</div></div>`;
     }).join("");
   }
 

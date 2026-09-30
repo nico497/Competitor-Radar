@@ -6,6 +6,11 @@ on:
     - cron: "17 6 * * 1"
   workflow_dispatch:      # adds a "Run workflow" button in the Actions tab
     inputs:
+      mode:
+        description: "run = normal scan. reanalyse = rewrite the analysis from saved data (one AI call)."
+        type: choice
+        options: [run, reanalyse]
+        default: run
       classify_limit:
         description: "Catch-up: classify up to this many pages in one run (blank = normal caps)"
         required: false
@@ -46,7 +51,7 @@ jobs:
         if: env.ANTHROPIC_API_KEY != ''
         env:
           RADAR_CLASSIFY_LIMIT: ${{ inputs.classify_limit }}
-        run: python radar.py
+        run: python radar.py ${{ inputs.mode == 'reanalyse' && '--reanalyse' || '' }}
 
       - name: Save results
         if: env.ANTHROPIC_API_KEY != ''

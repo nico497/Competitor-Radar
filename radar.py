@@ -470,27 +470,64 @@ def date_kind(p: dict, info: dict, now: datetime) -> None:
 
 def decide_kind(p: dict, now: datetime) -> None:
     pub, mod = parse_iso(p.get("pub")), parse_iso(p.get("mod"))
+    if pub and pub > now + timedelta(days=1):
+        pub = None                              # future dates are placeholders
+    if mod and mod > now + timedelta(days=1):
+        mod = None
     first_seen = parse_iso(p.get("first_seen")) or now
+    recent = now - timedelta(days=45)
     if (p.get("kind") == "updated" and p.get("fp_verified")) or (p.get("kind") == "new" and p.get("feed_dated")):
         return                                  # a verified edit, or a feed's own publish date: keep it
+    if p.get("bulk_pub") and pub:
+        # Dozens of pages stamped with the same publish day: a bulk launch or a date reset.
+        p["kind"], p["bulk_type"], p["event"] = "bulk", "launch", iso(min(pub, now))
+        return
     if not p.get("baseline", True):
-        # Seen for the first time after tracking began. New, unless the page says it's old
-        # (e.g. an old post that just got added to the sitemap).
+        # Seen for the first time after tracking began. New, unless the page says it's old.
         if pub and pub < first_seen - timedelta(days=14):
-            if mod and mod >= first_seen - timedelta(days=14):
+            if mod and mod >= first_seen - timedelta(days=14) and not p.get("bulk_mod"):
                 p["kind"], p["event"] = "updated", iso(min(mod, now))
             else:
                 p["kind"], p["event"] = "unknown", iso(pub)
         else:
             p["kind"], p["event"] = "new", p["first_seen"]
         return
-    ref = parse_iso(p.get("date")) or mod
-    if pub and ref and pub >= ref - timedelta(days=3):
+    # Pages that existed before tracking began. Only the page's own dates count:
+    # sitemap dates move with every redeploy, so on their own they prove nothing.
+    if pub and pub >= recent and (not mod or mod <= pub + timedelta(days=3)):
         p["kind"], p["event"] = "new", iso(min(pub, now))
-    elif pub and ref:
-        p["kind"], p["event"] = "updated", iso(min(ref, now))
+    elif mod and pub and mod > pub + timedelta(days=3):
+        if p.get("bulk_mod"):
+            # Dozens of pages "modified" on one day: a site-wide change (template, links, migration).
+            p["kind"], p["bulk_type"], p["event"] = "bulk", "edit", iso(min(mod, now))
+        else:
+            p["kind"], p["event"] = "updated", iso(min(mod, now))
+    elif pub:
+        p["kind"], p["event"] = ("new" if pub >= recent else "unknown"), iso(min(pub, now))
     else:
-        p["kind"], p["event"] = "unknown", p.get("date")
+        p["kind"], p["event"] = "unknown", (iso(mod) if mod else p.get("date"))
+
+
+def mark_bulk_dates(pages: dict, now: datetime, min_pages: int = 20) -> dict[str, list[dict]]:
+    """Find days when dozens of a site's pages share a publish or modified date. Those are
+    bulk events (a launch, a republish, a template change), reported once instead of being
+    counted as dozens of individual new or updated pages."""
+    groups: dict[tuple, list] = {}
+    for p in pages.values():
+        if p.get("prog"):
+            continue
+        for field, tag in (("pub", "launch"), ("mod", "edit")):
+            d = parse_iso(p.get(field))
+            if d and d <= now + timedelta(days=1):
+                groups.setdefault((p["site"], tag, p[field][:10]), []).append(p)
+        p["bulk_pub"] = p["bulk_mod"] = False
+    events: dict[str, list[dict]] = {}
+    for (site, tag, day), ps in groups.items():
+        if len(ps) >= min_pages:
+            for p in ps:
+                p["bulk_pub" if tag == "launch" else "bulk_mod"] = True
+            events.setdefault(site, []).append({"type": tag, "day": day, "pages": len(ps)})
+    return events
 
 
 def classify_tool(types: list[list[str]]) -> dict:
@@ -586,7 +623,9 @@ def analyse(stats: list[dict], cfg: dict) -> dict:
         stages = ", ".join(f"{k}: {v}" for k, v in s["stages"].items() if v)
         titles = "\n".join(f"    - [{p['type']}, {p.get('kind', 'unknown')}] {p['title']}" for p in s["sample"])
         blocks.append(f"## {s['name']}{' (THE READER)' if s['you'] else ''}\n"
-                      f"Pages in last {cfg['window_days']} days: {s['n']} ({s.get('new', 0)} new, {s.get('updated', 0)} updated old pages, rest unknown). Previous {cfg['window_days']} days: {s['n_prev']}\n"
+                      f"Pages in last {cfg['window_days']} days: {s['n']} ({s.get('new', 0)} new, {s.get('updated', 0)} updated old pages, rest bulk-dated or undated). Previous {cfg['window_days']} days: {s['n_prev']}\n"
+                      + ("Bulk events (many pages sharing one publish or modified date: a bulk launch, republish or site-wide change, NOT individual articles): "
+                         + ", ".join(f"{b['type']}: {b['pages']} pages on {b['day']}" for b in s.get('bulk', [])) + "\n" if s.get("bulk") else "")
                       + (f"Templated/programmatic sections (not in the counts above): " + ", ".join(f"/{x['section']}/ ({x['pages']} pages)" for x in s.get('programmatic', [])) + "\n" if s.get("programmatic") else "")
                       + f"Mix: {mix or 'none'}\nWho it's for: {stages or 'n/a'}\nTop topics: {', '.join(s['topics']) or 'n/a'}\nPages:\n{titles or '    (none)'}")
     reader = (f"The reader is {you}. Compare competitors against them; gaps are openings for {you}."
@@ -694,8 +733,8 @@ def check_sites(cfg: dict) -> None:
             log(f"FAIL {s['name']:<22} {short_error(e)}")
 
 
-def run(cfg: dict, offline: bool = False) -> dict:
-    if not offline and not os.environ.get("ANTHROPIC_API_KEY"):
+def run(cfg: dict, offline: bool = False, reanalyse: bool = False) -> dict:
+    if (reanalyse or not offline) and not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("Set ANTHROPIC_API_KEY (GitHub: Settings > Secrets and variables > Actions).")
     f = Fetcher(cfg["user_agent"])
     now = utcnow()
@@ -849,6 +888,13 @@ def run(cfg: dict, offline: bool = False) -> dict:
             time.sleep(0.2)
         log(f"== New vs updated: {real} of {len(checks)} date bumps were real edits; dated {len(backfill)} older pages")
 
+    bulk_events = mark_bulk_dates(pages, now)
+    if bulk_events:
+        log(f"== Bulk dates (reported as events, not as new pages): {bulk_events}")
+    for p in pages.values():
+        if p.get("dates_checked"):
+            decide_kind(p, now)
+
     # 3. Stats per site for the window
     stats = []
     for s in cfg["sites"]:
@@ -877,6 +923,8 @@ def run(cfg: dict, offline: bool = False) -> dict:
             "unclassified": sum(1 for p in cur if not p.get("cls")),
             "new": sum(1 for p in cur if p.get("kind") == "new" and (not p.get("cls") or p["cls"]["is_content"])),
             "updated": sum(1 for p in cur if p.get("kind") == "updated" and (not p.get("cls") or p["cls"]["is_content"])),
+            "bulk": sorted((e for e in bulk_events.get(name, []) if parse_iso(e["day"] + "T00:00:00+00:00") >= now - window),
+                           key=lambda e: e["day"]),
             "programmatic": prog_info,
             "sample": [{"type": p["cls"]["type"], "title": p["title"], "kind": p.get("kind", "unknown")}
                        for p in sorted(content, key=lambda p: p.get("event") or p["date"], reverse=True)[:40]],
@@ -888,7 +936,7 @@ def run(cfg: dict, offline: bool = False) -> dict:
     data = load_json(DATA_PATH, {})
     analysis = data.get("analysis") or {}
     prev_plays = {ps["name"]: {"play": ps.get("play", ""), "aimed": ps.get("aimed", "")} for ps in data.get("sites", [])}
-    if offline:
+    if offline and not reanalyse:
         pass
     elif any(s["n"] for s in stats):
         try:
@@ -917,7 +965,7 @@ def run(cfg: dict, offline: bool = False) -> dict:
                  "window_days": int(cfg["window_days"]), "repo": repo, "first_run": first_run,
                  "errors": list(dict.fromkeys(errors))[:5],
                  "pending": (data.get("meta") or {}).get("pending", 0) if offline else max(0, len(todo) - len(queue)),
-                 "analysis_stale": offline or any(e.startswith("analysis:") for e in errors),
+                 "analysis_stale": (offline and not reanalyse) or any(e.startswith("analysis:") for e in errors),
                  "per_run": int(cfg["max_classify_per_run"]), "tracking_since": state["tracking_since"],
                  "tracking_days": (now - parse_iso(state["tracking_since"])).days},
         "types": cfg["types"],
@@ -941,6 +989,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Competitor Radar")
     ap.add_argument("--check", action="store_true", help="test your sites only (no API key, no writes)")
     ap.add_argument("--rebuild", action="store_true", help="rebuild the dashboard from saved data (no fetching, no AI)")
+    ap.add_argument("--reanalyse", action="store_true", help="rebuild from saved data and rewrite the analysis (one AI call)")
     args = ap.parse_args()
     cfg = load_config()
     if os.environ.get("RADAR_CLASSIFY_LIMIT", "").strip().isdigit():
@@ -950,7 +999,7 @@ def main() -> None:
     if args.check:
         check_sites(cfg)
     else:
-        run(cfg, offline=args.rebuild)
+        run(cfg, offline=args.rebuild or args.reanalyse, reanalyse=args.reanalyse)
 
 
 if __name__ == "__main__":
