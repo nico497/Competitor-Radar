@@ -2,7 +2,7 @@
  "meta": {
   "title": "Competitor Radar",
   "niche": "US sales tax compliance software for mid-market ecommerce and SaaS brands",
-  "updated": "2026-10-01T03:25:32+00:00",
+  "updated": "2026-10-01T03:54:40+00:00",
   "window_days": 30,
   "repo": "nico497/Competitor-Radar",
   "first_run": false,
@@ -48,98 +48,114 @@
   ]
  ],
  "analysis": {
-  "summary": "TaxCloud leads on switcher content: 17 comparison pages and 16 case studies, mostly refreshed. Rivals publish more learning content, like state guides and webinars, while Kintsugi and Zamp target Avalara and TaxJar users.",
+  "summary": "Most rivals publish new learning content, led by Kintsugi's state guides. TaxCloud updated 50 old pages and leans toward buyers, with 30 buying-stage pages.",
   "points": [
    {
-    "text": "TaxCloud refreshed 50 older pages and added 6 new ones, so its push is a refresh of proof and comparison pages.",
-    "names": [
-     "TaxCloud"
-    ]
-   },
-   {
-    "text": "Kintsugi published 48 new pages in 30 days, mostly state filing guides, plus 3 'Avalara/TaxJar for Shopify or NetSuite: pricing and an alternative' pages.",
+    "text": "Kintsugi is the volume threat: 48 new pages, mostly state how-to guides, plus pages aimed at Avalara and TaxJar users.",
     "names": [
      "Kintsugi"
     ]
    },
    {
-    "text": "Zamp's two new pricing pages on TaxJar and Avalara aim at buyers weighing a switch, the same group TaxCloud wants.",
+    "text": "TaxCloud is in a refresh push: 50 updated pages against 6 new. Avalara, Anrok and Numeral published only new pages and updated none.",
     "names": [
-     "Zamp"
+     "TaxCloud",
+     "Avalara",
+     "Anrok",
+     "Numeral"
+    ]
+   },
+   {
+    "text": "Rivals are courting switchers with pricing and alternatives pages for Avalara and TaxJar, a space where TaxCloud already has 17 comparison pages.",
+    "names": [
+     "TaxJar",
+     "Zamp",
+     "Kintsugi"
     ]
    }
   ],
   "plays": {
    "TaxCloud": {
-    "play": "Refreshes 50 old pages: comparisons, switch guides and 16 customer stories, with a few new pages.",
-    "aimed": "Buyers switching from rivals"
+    "play": "Refreshes 50 old pages and leans on comparisons and 16 customer stories to win buyers.",
+    "aimed": "Mid-market sellers ready to switch"
    },
    "Avalara": {
-    "play": "10 new pages, mostly webinars and product tours, with no updates to old pages.",
-    "aimed": "Enterprise and ERP-using finance teams"
+    "play": "Ten new pages, mostly webinar sign-ups and demos tied to SAP, Microsoft and QuickBooks.",
+    "aimed": "Larger firms using SAP, Microsoft, QuickBooks"
    },
    "TaxJar": {
-    "play": "Mostly refreshed how-to pages on taxability, due dates and filing, plus a new Anrok comparison.",
-    "aimed": "Online sellers learning sales tax"
+    "play": "Keeps state-by-state taxability how-tos fresh; a site-wide edit touched 58 pages on 2026-09-28.",
+    "aimed": "Online sellers learning the rules"
    },
    "Anrok": {
-    "play": "Pushes native Stripe tax automation, with e-invoicing and VAT content and two case studies.",
-    "aimed": "SaaS finance and engineering leaders"
+    "play": "Pitches Stripe-based tax automation with two case studies, CFO guides and a 113-page VAT section.",
+    "aimed": "SaaS and Stripe-based finance teams"
    },
    "Numeral": {
-    "play": "Publishes state-by-state sales tax guides and nexus explainers. All 15 pages are learning content.",
-    "aimed": "Sellers researching state rules"
+    "play": "15 new pages, all learning: state sales tax guides and nexus explainers, plus Series C news.",
+    "aimed": "Early-stage sellers researching state rules"
    },
    "Zamp": {
-    "play": "Compares pricing against TaxJar and Avalara, and launches developer and accountant products.",
-    "aimed": "Ecommerce and SaaS buyers comparing tools"
+    "play": "Publishes rival pricing breakdowns and developer and accountant launches, backed by 3,932 calculator pages.",
+    "aimed": "Rival customers, developers, accountants"
    },
    "Kintsugi": {
-    "play": "Floods the site with state filing guides, rate research and 'alternative to' pages.",
-    "aimed": "Sellers searching state tax questions"
+    "play": "48 new pages: state filing guides, rival alternatives, rate-change research and product launches.",
+    "aimed": "Sellers researching, then comparing providers"
    }
   },
   "shared": [
    {
-    "title": "State sales tax guides",
-    "text": "Kintsugi (40 how-tos), Numeral (13 how-tos) and TaxJar publish state-level tax guides. They catch early searches, so TaxCloud's 105 /sales-tax/ pages need to keep up.",
+    "title": "Rival-targeting pages",
+    "text": "Kintsugi has three Avalara or TaxJar alternative pages. Zamp has two rival pricing pages. TaxJar has one Anrok comparison. They want rivals' customers; TaxCloud's 17 comparison pages already compete.",
     "names": [
+     "TaxJar",
+     "Zamp",
+     "Kintsugi"
+    ]
+   },
+   {
+    "title": "State-by-state guides",
+    "text": "Numeral posts seven state guides. Kintsugi posts 10 state filing guides. TaxJar covers taxability by state. All chase early researchers; TaxCloud's 105 /sales-tax/ pages compete here.",
+    "names": [
+     "TaxCloud",
      "TaxJar",
      "Numeral",
      "Kintsugi"
     ]
    },
    {
-    "title": "Rival pricing and alternative pages",
-    "text": "Zamp and Kintsugi write pages on TaxJar and Avalara pricing and alternatives. They target unhappy customers, so TaxCloud's switch pages face direct competition.",
+    "title": "Fit with the buyer's tools",
+    "text": "Anrok has three Stripe pages. Zamp launched a developer platform. Avalara pushes SAP, Microsoft and QuickBooks pages. They sell by naming the software the buyer already uses.",
     "names": [
-     "Zamp",
-     "Kintsugi"
-    ]
-   },
-   {
-    "title": "Black Friday prep content",
-    "text": "Anrok and TaxJar both published Black Friday/Cyber Monday readiness guides. Seasonal buying-window content is getting crowded before the peak.",
-    "names": [
-     "TaxJar",
-     "Anrok"
+     "Avalara",
+     "Anrok",
+     "Zamp"
     ]
    }
   ],
   "gaps": [
    {
-    "title": "Switching playbook for mid-market",
-    "text": "Only TaxCloud has a Numeral migration guide. Nobody has a full guide on moving from Avalara or TaxJar, with timelines, data export and filing overlap."
+    "title": "Switch-from guides",
+    "text": "Only TaxCloud has a migration guide (from Numeral). No rival explains how to move off Avalara or TaxJar step by step."
    },
    {
-    "title": "Customer proof by platform",
-    "text": "Rivals have only 1-2 case studies each. TaxCloud has 16 and could add results by Shopify, Stripe and QuickBooks setup."
+    "title": "Streamlined Sales Tax (SST) angle",
+    "text": "Only Avalara has one SST webinar. TaxCloud already has SST pages, so it could own how SST cuts filing costs."
    },
    {
-    "title": "Avalara IPO customer guidance",
-    "text": "Only TaxCloud covers the Avalara IPO. Avalara's webinars ignore it, so TaxCloud can own questions on price and contract changes."
+    "title": "Cleanup when you switch",
+    "text": "TaxJar has one past-due returns page. Kintsugi has one amnesty page and one penalties page. Backfilling and amnesty for switchers is open."
    }
-  ]
+  ],
+  "versus": {
+   "Avalara": "Ten new pages, mostly webinars and demos, none updated. TaxCloud publishes fewer new pages but sells harder, with comparisons and customer stories.",
+   "TaxJar": "Mostly learning how-tos refreshed in bulk, with one comparison page. TaxCloud has 17 comparison pages and 16 case studies aimed at buyers.",
+   "Anrok": "Targets SaaS finance teams through Stripe, with 11 new pages and two case studies. TaxCloud has 16 case studies and a wider ecommerce focus.",
+   "Numeral": "All 15 new pages are learning guides. TaxCloud has buyer pages, including a guide for switching from Numeral.",
+   "Zamp": "Builds scale with 3,932 calculator pages and rival pricing pages. TaxCloud uses 105 templated pages and goes deeper on comparisons and proof.",
+   "Kintsugi": "Out-publishes TaxCloud on new pages (48 versus 6) and targets rivals' users. TaxCloud counters with 50 refreshed pages and 16 case studies."
+  }
  },
  "sites": [
   {
@@ -192,8 +208,8 @@
    "url": "https://taxcloud.com/sitemap_index.xml",
    "pages": 447,
    "undated": 0,
-   "play": "Refreshes 50 old pages: comparisons, switch guides and 16 customer stories, with a few new pages.",
-   "aimed": "Buyers switching from rivals"
+   "play": "Refreshes 50 old pages and leans on comparisons and 16 customer stories to win buyers.",
+   "aimed": "Mid-market sellers ready to switch"
   },
   {
    "name": "Avalara",
@@ -239,8 +255,8 @@
    "url": "https://www.avalara.com/us/en/sitemap.xml",
    "pages": 702,
    "undated": 0,
-   "play": "10 new pages, mostly webinars and product tours, with no updates to old pages.",
-   "aimed": "Enterprise and ERP-using finance teams"
+   "play": "Ten new pages, mostly webinar sign-ups and demos tied to SAP, Microsoft and QuickBooks.",
+   "aimed": "Larger firms using SAP, Microsoft, QuickBooks"
   },
   {
    "name": "TaxJar",
@@ -292,8 +308,8 @@
    "url": "https://www.taxjar.com/sitemap_index.xml",
    "pages": 868,
    "undated": 0,
-   "play": "Mostly refreshed how-to pages on taxability, due dates and filing, plus a new Anrok comparison.",
-   "aimed": "Online sellers learning sales tax"
+   "play": "Keeps state-by-state taxability how-tos fresh; a site-wide edit touched 58 pages on 2026-09-28.",
+   "aimed": "Online sellers learning the rules"
   },
   {
    "name": "Anrok",
@@ -345,8 +361,8 @@
    "url": "https://www.anrok.com/sitemap.xml",
    "pages": 665,
    "undated": 0,
-   "play": "Pushes native Stripe tax automation, with e-invoicing and VAT content and two case studies.",
-   "aimed": "SaaS finance and engineering leaders"
+   "play": "Pitches Stripe-based tax automation with two case studies, CFO guides and a 113-page VAT section.",
+   "aimed": "SaaS and Stripe-based finance teams"
   },
   {
    "name": "Numeral",
@@ -392,8 +408,8 @@
    "url": "https://www.numeral.com/sitemap.xml",
    "pages": 399,
    "undated": 0,
-   "play": "Publishes state-by-state sales tax guides and nexus explainers. All 15 pages are learning content.",
-   "aimed": "Sellers researching state rules"
+   "play": "15 new pages, all learning: state sales tax guides and nexus explainers, plus Series C news.",
+   "aimed": "Early-stage sellers researching state rules"
   },
   {
    "name": "Zamp",
@@ -451,8 +467,8 @@
    "url": "https://zamp.com/sitemap.xml",
    "pages": 4438,
    "undated": 0,
-   "play": "Compares pricing against TaxJar and Avalara, and launches developer and accountant products.",
-   "aimed": "Ecommerce and SaaS buyers comparing tools"
+   "play": "Publishes rival pricing breakdowns and developer and accountant launches, backed by 3,932 calculator pages.",
+   "aimed": "Rival customers, developers, accountants"
   },
   {
    "name": "Kintsugi",
@@ -515,8 +531,8 @@
    "url": "https://trykintsugi.com/sitemap.xml",
    "pages": 1034,
    "undated": 209,
-   "play": "Floods the site with state filing guides, rate research and 'alternative to' pages.",
-   "aimed": "Sellers searching state tax questions"
+   "play": "48 new pages: state filing guides, rival alternatives, rate-change research and product launches.",
+   "aimed": "Sellers researching, then comparing providers"
   }
  ],
  "pages": [
