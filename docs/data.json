@@ -2,14 +2,14 @@
  "meta": {
   "title": "Competitor Radar",
   "niche": "US sales tax compliance software for mid-market ecommerce and SaaS brands",
-  "updated": "2026-09-30T07:23:19+00:00",
+  "updated": "2026-10-01T03:25:05+00:00",
   "window_days": 30,
-  "repo": "nico497/Competitor-Radar",
+  "repo": null,
   "first_run": false,
   "errors": [],
   "pending": 0,
-  "analysis_stale": false,
-  "per_run": 150,
+  "analysis_stale": true,
+  "per_run": 200,
   "tracking_since": "2026-09-30T04:27:42+00:00",
   "tracking_days": 0
  },
@@ -153,11 +153,12 @@
    "name": "TaxCloud",
    "site": "https://taxcloud.com",
    "you": true,
-   "n": 58,
-   "n_prev": 95,
+   "n": 56,
+   "site_pages": 447,
+   "n_prev": 94,
    "refreshed": 50,
    "mix": {
-    "compare": 19,
+    "compare": 17,
     "howto": 15,
     "list": 3,
     "research": 0,
@@ -168,8 +169,8 @@
    },
    "stages": {
     "learning": 14,
-    "comparing": 13,
-    "buying": 31,
+    "comparing": 12,
+    "buying": 30,
     "customers": 0
    },
    "topics": [
@@ -198,7 +199,6 @@
    "url": "https://taxcloud.com/sitemap_index.xml",
    "pages": 447,
    "undated": 0,
-   "new_urls": 0,
    "play": "Switcher content: 19 comparison pages, 16 case studies, Avalara news, and 50 refreshed pages.",
    "aimed": "Sellers leaving Avalara or TaxJar"
   },
@@ -206,36 +206,37 @@
    "name": "Avalara",
    "site": "https://www.avalara.com",
    "you": false,
-   "n": 74,
+   "n": 10,
+   "site_pages": 702,
    "n_prev": 31,
    "refreshed": 0,
    "mix": {
     "compare": 0,
-    "howto": 44,
+    "howto": 1,
     "list": 0,
-    "research": 2,
-    "case": 1,
-    "opinion": 3,
-    "news": 11,
-    "landing": 13
+    "research": 0,
+    "case": 0,
+    "opinion": 1,
+    "news": 4,
+    "landing": 4
    },
    "stages": {
-    "learning": 60,
-    "comparing": 5,
-    "buying": 9,
+    "learning": 6,
+    "comparing": 2,
+    "buying": 2,
     "customers": 0
    },
    "topics": [
-    "streamlined sales tax compliance program",
-    "sales tax compliance education resources",
-    "de minimis thresholds international shipping",
     "sales tax compliance webinars",
-    "trade tax tariff compliance webinars"
+    "manufacturing tax compliance 2026",
+    "sap compliance demo webinar",
+    "automate sales tax filing quickbooks",
+    "eu customs reform cross-border duties"
    ],
    "unclassified": 0,
    "removed": 0,
    "removed_titles": [],
-   "new": 12,
+   "new": 10,
    "updated": 0,
    "bulk": [],
    "programmatic": [],
@@ -245,7 +246,6 @@
    "url": "https://www.avalara.com/us/en/sitemap.xml",
    "pages": 702,
    "undated": 0,
-   "new_urls": 0,
    "play": "Teaching at scale: 44 how-to pages, state nexus guides and webinars; only 1 case study.",
    "aimed": "Learners researching tax rules, not switchers"
   },
@@ -253,36 +253,37 @@
    "name": "TaxJar",
    "site": "https://www.taxjar.com",
    "you": false,
-   "n": 77,
-   "n_prev": 17,
+   "n": 18,
+   "site_pages": 868,
+   "n_prev": 18,
    "refreshed": 15,
    "mix": {
     "compare": 1,
-    "howto": 61,
-    "list": 13,
-    "research": 1,
+    "howto": 12,
+    "list": 4,
+    "research": 0,
     "case": 0,
     "opinion": 0,
     "news": 1,
     "landing": 0
    },
    "stages": {
-    "learning": 67,
-    "comparing": 2,
-    "buying": 4,
-    "customers": 4
+    "learning": 14,
+    "comparing": 1,
+    "buying": 2,
+    "customers": 1
    },
    "topics": [
-    "digital product sales tax classification",
     "october 2026 sales tax due dates",
     "automate state sales tax filings",
     "sales tax filing tips compliance",
-    "sales tax on clothing by state"
+    "sales tax on clothing by state",
+    "sales tax medication prescription nonprescription"
    ],
    "unclassified": 0,
    "removed": 0,
    "removed_titles": [],
-   "new": 5,
+   "new": 4,
    "updated": 14,
    "bulk": [
     {
@@ -298,7 +299,6 @@
    "url": "https://www.taxjar.com/sitemap_index.xml",
    "pages": 868,
    "undated": 0,
-   "new_urls": 0,
    "play": "Answer pages: 61 how-to, shipping-by-state, due dates; 58 pages bulk-edited 2026-09-28.",
    "aimed": "Sellers searching tax rules"
   },
@@ -306,31 +306,32 @@
    "name": "Anrok",
    "site": "https://www.anrok.com",
    "you": false,
-   "n": 61,
+   "n": 11,
+   "site_pages": 665,
    "n_prev": 428,
    "refreshed": 0,
    "mix": {
     "compare": 1,
-    "howto": 19,
-    "list": 4,
-    "research": 4,
-    "case": 17,
-    "opinion": 2,
+    "howto": 4,
+    "list": 0,
+    "research": 0,
+    "case": 2,
+    "opinion": 1,
     "news": 1,
-    "landing": 13
+    "landing": 2
    },
    "stages": {
-    "learning": 27,
-    "comparing": 7,
-    "buying": 21,
-    "customers": 6
+    "learning": 3,
+    "comparing": 1,
+    "buying": 6,
+    "customers": 1
    },
    "topics": [
-    "sales tax compliance for saas",
-    "saas sales tax compliance",
-    "e-invoicing compliance software",
-    "us sales tax automation software",
-    "sales tax compliance software tour"
+    "sales tax automation for alguna",
+    "stripe sales tax automation",
+    "bfcm sales tax compliance ecommerce",
+    "e-invoicing compliance cfo guide",
+    "native automatic tax on stripe integration"
    ],
    "unclassified": 0,
    "removed": 0,
@@ -351,7 +352,6 @@
    "url": "https://www.anrok.com/sitemap.xml",
    "pages": 665,
    "undated": 0,
-   "new_urls": 0,
    "play": "SaaS focus: 17 case studies, California SaaS tax, e-invoicing and VAT; 113 VAT pages.",
    "aimed": "SaaS finance teams and startups"
   },
@@ -359,31 +359,32 @@
    "name": "Numeral",
    "site": "https://www.numeralhq.com",
    "you": false,
-   "n": 93,
+   "n": 15,
+   "site_pages": 399,
    "n_prev": 6,
    "refreshed": 0,
    "mix": {
-    "compare": 12,
-    "howto": 15,
+    "compare": 0,
+    "howto": 13,
     "list": 0,
     "research": 0,
-    "case": 23,
+    "case": 0,
     "opinion": 0,
-    "news": 3,
-    "landing": 40
+    "news": 2,
+    "landing": 0
    },
    "stages": {
-    "learning": 18,
-    "comparing": 6,
-    "buying": 61,
-    "customers": 8
+    "learning": 15,
+    "comparing": 0,
+    "buying": 0,
+    "customers": 0
    },
    "topics": [
-    "sales tax compliance for ecommerce",
-    "sales tax compliance case study",
-    "sales tax compliance software alternative",
-    "sales tax compliance ecommerce",
-    "sales tax compliance software funding"
+    "sales tax compliance resources",
+    "colorado sales tax rates and compliance",
+    "direct pay permits sales tax",
+    "florida sales tax rates and rules",
+    "georgia sales tax rates compliance"
    ],
    "unclassified": 0,
    "removed": 0,
@@ -398,7 +399,6 @@
    "url": "https://www.numeral.com/sitemap.xml",
    "pages": 399,
    "undated": 0,
-   "new_urls": 0,
    "play": "Buyer pages: 40 landing, 23 case studies, 12 'alternative' pages including one on TaxCloud.",
    "aimed": "Ecommerce brands ready to buy"
   },
@@ -406,37 +406,38 @@
    "name": "Zamp",
    "site": "https://zamp.com",
    "you": false,
-   "n": 297,
+   "n": 8,
+   "site_pages": 4438,
    "n_prev": 50,
-   "refreshed": 6,
+   "refreshed": 5,
    "mix": {
-    "compare": 116,
-    "howto": 100,
-    "list": 22,
-    "research": 13,
-    "case": 21,
-    "opinion": 4,
-    "news": 6,
-    "landing": 15
+    "compare": 3,
+    "howto": 1,
+    "list": 2,
+    "research": 0,
+    "case": 0,
+    "opinion": 0,
+    "news": 2,
+    "landing": 0
    },
    "stages": {
-    "learning": 133,
-    "comparing": 84,
-    "buying": 63,
-    "customers": 17
+    "learning": 3,
+    "comparing": 2,
+    "buying": 2,
+    "customers": 1
    },
    "topics": [
-    "sales tax compliance software comparison",
-    "sales tax compliance software",
-    "sales tax compliance case study",
-    "sales tax compliance for ecommerce",
-    "sales tax compliance software alternatives"
+    "best ai tools for saas startups",
+    "ecommerce sales tax software comparison",
+    "zamp developer platform launch",
+    "sales tax notice management",
+    "sales tax os launch for accountants"
    ],
    "unclassified": 0,
    "removed": 0,
    "removed_titles": [],
    "new": 3,
-   "updated": 6,
+   "updated": 5,
    "bulk": [
     {
      "type": "edit",
@@ -457,7 +458,6 @@
    "url": "https://zamp.com/sitemap.xml",
    "pages": 4438,
    "undated": 0,
-   "new_urls": 0,
    "play": "Volume: 116 comparison pages, Avalara and TaxJar pricing pages, a 'Switch to Zamp' page.",
    "aimed": "Ecommerce sellers comparing or switching"
   },
@@ -465,24 +465,25 @@
    "name": "Kintsugi",
    "site": "https://www.trykintsugi.com",
    "you": false,
-   "n": 249,
-   "n_prev": 41,
+   "n": 57,
+   "site_pages": 1034,
+   "n_prev": 42,
    "refreshed": 9,
    "mix": {
-    "compare": 22,
-    "howto": 207,
-    "list": 5,
+    "compare": 6,
+    "howto": 40,
+    "list": 2,
     "research": 3,
-    "case": 3,
-    "opinion": 3,
+    "case": 2,
+    "opinion": 0,
     "news": 4,
-    "landing": 2
+    "landing": 0
    },
    "stages": {
-    "learning": 184,
-    "comparing": 17,
-    "buying": 40,
-    "customers": 8
+    "learning": 42,
+    "comparing": 5,
+    "buying": 6,
+    "customers": 4
    },
    "topics": [
     "sales tax compliance automation",
@@ -494,7 +495,7 @@
    "unclassified": 0,
    "removed": 0,
    "removed_titles": [],
-   "new": 49,
+   "new": 48,
    "updated": 9,
    "bulk": [
     {
@@ -521,7 +522,6 @@
    "url": "https://trykintsugi.com/sitemap.xml",
    "pages": 1034,
    "undated": 209,
-   "new_urls": 0,
    "play": "Guide flood: 207 how-to pages, plus alternatives pages for Avalara, Anrok, Numeral, Vertex, Zamp.",
    "aimed": "Sellers searching state tax how-tos"
   }
@@ -531,7 +531,7 @@
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/webinars.html",
    "title": "Sales & Use Tax Compliance Webinars - Avalara",
-   "date": "2026-09-30T07:23:19+00:00",
+   "date": "2026-10-01T00:00:00+00:00",
    "kind": "new",
    "published": "2026-10-01T00:00:00+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
@@ -545,7 +545,7 @@
    "site": "Avalara",
    "url": "https://www.avalara.com/us/en/learn/webinars/the-true-cost-of-cross-border-commerce-webinar.html",
    "title": "Cross-border commerce on-demand webinar | Avalara",
-   "date": "2026-09-30T07:23:19+00:00",
+   "date": "2026-10-01T00:00:00+00:00",
    "kind": "new",
    "published": "2026-10-01T00:00:00+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
@@ -559,7 +559,7 @@
    "site": "Kintsugi",
    "url": "https://trykintsugi.com/sales-tax-rate-changes",
    "title": "Sales Tax Rate Changes by Month | Kintsugi",
-   "date": "2026-09-30T07:23:19+00:00",
+   "date": "2026-10-01T00:00:00+00:00",
    "kind": "new",
    "published": "2026-10-01T00:00:00+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",
@@ -573,7 +573,7 @@
    "site": "Kintsugi",
    "url": "https://trykintsugi.com/sales-tax-rate-changes/2026-10",
    "title": "Sales Tax Rate Changes: October 2026 | Kintsugi",
-   "date": "2026-09-30T07:23:19+00:00",
+   "date": "2026-10-01T00:00:00+00:00",
    "kind": "new",
    "published": "2026-10-01T00:00:00+00:00",
    "first_seen": "2026-09-30T04:00:32+00:00",

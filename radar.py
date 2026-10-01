@@ -625,7 +625,7 @@ def analyse(stats: list[dict], cfg: dict) -> dict:
         stages = ", ".join(f"{k}: {v}" for k, v in s["stages"].items() if v)
         titles = "\n".join(f"    - [{p['type']}, {p.get('kind', 'unknown')}] {p['title']}" for p in s["sample"])
         blocks.append(f"## {s['name']}{' (THE READER)' if s['you'] else ''}\n"
-                      f"Pages in last {cfg['window_days']} days: {s['n']} ({s.get('new', 0)} new, {s.get('updated', 0)} updated old pages, rest bulk-dated or undated). " + (f"Previous {cfg['window_days']} days: {s['n_prev']}" if cfg.get("_history_ok") else "(no reliable previous-period count yet)") + "\n"
+                      f"Pages on the site: {s.get('site_pages', '?')}. Activity in the last {cfg['window_days']} days: {s.get('new', 0)} new pages, {s.get('updated', 0)} updated older pages. " + (f"Previous {cfg['window_days']} days: {s['n_prev']}" if cfg.get("_history_ok") else "(no reliable previous-period count yet)") + "\n"
                       + ("Bulk events (many pages sharing one publish or modified date: a bulk launch, republish or site-wide change, NOT individual articles): "
                          + ", ".join(f"{b['type']}: {b['pages']} pages on {b['day']}" for b in s.get('bulk', [])) + "\n" if s.get("bulk") else "")
                       + (f"Pages removed from the site this period: {s['removed']} (e.g. " + "; ".join(s.get("removed_titles", [])[:8]) + ")\n" if s.get("removed") else "")
@@ -958,7 +958,10 @@ def run(cfg: dict, offline: bool = False, reanalyse: bool = False) -> dict:
         cur = [p for p in mine if evdate(p) >= now - window]
         prev = [p for p in mine if now - 2 * window <= parse_iso(p["date"]) < now - window
                 and (not p.get("cls") or p["cls"]["is_content"])]
-        content = [p for p in cur if p.get("cls") and p["cls"]["is_content"]]
+        # Activity = pages with real evidence: new, or an update dated by the page itself.
+        # Pages whose only signal is a moved sitemap date are left out (they're noise).
+        active = [p for p in cur if p.get("kind") in ("new", "updated")]
+        content = [p for p in active if p.get("cls") and p["cls"]["is_content"]]
         mix = {t[0]: sum(1 for p in content if p["cls"]["type"] == t[0]) for t in cfg["types"]}
         stages = {k: sum(1 for p in content if p["cls"]["stage"] == k) for k in ("learning", "comparing", "buying", "customers")}
         topics = {}
@@ -966,7 +969,8 @@ def run(cfg: dict, offline: bool = False, reanalyse: bool = False) -> dict:
             topics[p["cls"]["topic"].lower()] = topics.get(p["cls"]["topic"].lower(), 0) + 1
         refreshed = sum(1 for p in mine if p.get("kind") == "updated" and evdate(p) >= now - window)
         stats.append({
-            "name": name, "site": s["site"], "you": s["you"], "n": len([p for p in cur if not p.get("cls") or p["cls"]["is_content"]]),
+            "name": name, "site": s["site"], "you": s["you"], "n": len([p for p in active if not p.get("cls") or p["cls"]["is_content"]]),
+            "site_pages": sum(1 for p in allmine if not p.get("removed")),
             "n_prev": len(prev), "refreshed": refreshed, "mix": mix, "stages": stages,
             "topics": [t for t, _ in sorted(topics.items(), key=lambda x: -x[1])[:5]],
             "unclassified": sum(1 for p in cur if not p.get("cls")),

@@ -137,7 +137,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
   <h2 class="sec">What each competitor is doing <small><button class="toggle" id="tbl">Show as table</button></small></h2>
   <section class="card"><div class="legend" id="legend"></div><div id="comps"></div>
     <p class="meta" id="trendNote" style="margin:10px 0 0"></p>
-    <p class="meta" style="margin:6px 0 0">New = first published in this period. Updated = an older page whose own "modified" date is recent (small edits count). Bulk = dozens of pages sharing one date, from a launch, republish or site-wide change, shown as one event. Undated = the site doesn't show dates.</p></section>
+    <p class="meta" style="margin:6px 0 0">Counts cover the last 30 days. New = first published in this period. Updated = an older page whose own "modified" date is recent (small edits count). Bulk events (dozens of pages sharing one date) are listed separately. Pages with no dates of their own aren't counted. The content mix shows new and updated pages only.</p></section>
 
   <h2 class="sec">Shared plays <small>What several competitors are doing</small></h2>
   <div id="shared"></div>
@@ -243,8 +243,8 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
       const BULK = { launch: "published on one day (bulk launch or date reset)", edit: "marked edited on one day (site-wide change)" };
       const bulkLine = (s.bulk || []).map((b) => `<div class="meta">Bulk event: ${b.pages} pages ${BULK[b.type] || "on one day"}, ${esc(fmt(b.day + "T12:00:00Z"))}</div>`).join("");
       return `<div class="comp${s.you ? " you" : ""}"><div><div class="cname"><a href="${esc(s.site)}" target="_blank" rel="noopener">${esc(s.name)}</a></div>
-          <div class="vol">${s.ok ? `<b>${s.n}</b> pages${d}` : ""}</div>
-          ${s.ok && (s.new || s.updated) ? `<div class="vol split"><span class="k-new">${s.new || 0} new</span> · <span>${s.updated || 0} updated</span>${s.n - (s.new || 0) - (s.updated || 0) > 0 ? ` · ${s.n - (s.new || 0) - (s.updated || 0)} bulk or undated` : ""}</div>` : ""}</div>
+          ${s.ok ? `<div class="vol"><span class="k-new"><b>${s.new || 0}</b> new</span> · <b>${s.updated || 0}</b> updated${d}</div>
+          <div class="vol split">${(s.site_pages ?? s.pages ?? 0).toLocaleString()} pages on the site</div>` : ""}</div>
         <div>${!s.ok ? `<p class="fail">Couldn't read this site: ${esc(s.error)}. See Sources below.</p>`
           : `<div class="bar${segs ? "" : " empty"}" role="img" aria-label="${esc(s.name)} content mix">${segs}</div>
           <p class="play"><b>${s.you ? "Your play" : "Their play"}:</b> ${esc(s.play || (s.n ? "Not enough pages to call it yet." : `Nothing new in the last ${W} days.`))}</p>
