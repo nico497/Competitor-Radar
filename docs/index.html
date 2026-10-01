@@ -239,8 +239,8 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
     }
     const you = data.sites.find((x) => x.you);
     const rivals = data.sites.filter((x) => !x.you);
-    const shownSites = you && rivals.length ? [you, rivals[((vsIdx % rivals.length) + rivals.length) % rivals.length]] : data.sites;
-    const cur = shownSites[shownSites.length - 1];
+    const shownSites = you && rivals.length ? [rivals[((vsIdx % rivals.length) + rivals.length) % rivals.length], you] : data.sites;
+    const cur = shownSites[0];
     const nav = you && rivals.length ? `<div class="vsnav"><button id="vsPrev" aria-label="Previous competitor">‹</button>
         <span class="vsname">${esc(cur.name)}</span><button id="vsNext" aria-label="Next competitor">›</button>
         <span class="vscount">${rivals.indexOf(cur) + 1} of ${rivals.length}</span></div>` : "";
