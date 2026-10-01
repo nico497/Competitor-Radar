@@ -593,6 +593,8 @@ ANALYSIS_TOOL = {
                       "description": "One line per company in the data: 'Name :: their play, max 16 words :: who it's aimed at, max 6 words'."},
             "shared": {"type": "array", "maxItems": 3, "items": {"type": "string"},
                        "description": "Plays that 2+ companies share: 'Short title :: what they do and what it means for the reader, max 35 words :: Name1, Name2'."},
+            "versus": {"type": "array", "items": {"type": "string"},
+                       "description": "If there is a reader company: one line per competitor, 'Name :: how their content approach compares with the reader's, one plain sentence, max 25 words'."},
             "gaps": {"type": "array", "maxItems": 3, "items": {"type": "string"},
                      "description": "Topics or formats nobody (or only one company) covers that the reader could own: 'Short title :: why it's open, max 30 words'."},
         },
@@ -673,12 +675,20 @@ def analyse(stats: list[dict], cfg: dict) -> dict:
         who_list = [n for n in names if n.lower() in who.lower()]
         if title and len(who_list) >= 2:
             shared.append({"title": title, "text": text, "names": who_list})
+    versus = {}
+    for line in as_list(out.get("versus")):
+        name, text = _split(line, 2)
+        match = next((n for n in names if n.lower() == name.lower()), None) or \
+            next((n for n in names if n.lower() in name.lower()), None)
+        if match and text:
+            versus[match] = text
     gaps = []
     for line in as_list(out.get("gaps"))[:3]:
         title, text = _split(line, 2)
         if title:
             gaps.append({"title": title, "text": text})
-    return {"summary": _clean(out.get("summary")), "points": points, "plays": plays, "shared": shared, "gaps": gaps}
+    return {"summary": _clean(out.get("summary")), "points": points, "plays": plays, "shared": shared, "gaps": gaps,
+            "versus": versus}
 
 
 # ---------------------------------------------------------------- config

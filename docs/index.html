@@ -88,6 +88,7 @@ table.nums th { font-size: 11px; color: var(--ink-3); text-transform: uppercase;
 .gap { border-style: dashed; }
 .empty-note { color: var(--ink-3); font-size: 14px; background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; padding: 14px 16px; }
 
+.filters input { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; font: inherit; font-size: 13px; color: var(--ink); min-width: 0; width: 170px; }
 .filters select { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; font: inherit; font-size: 13px; color: var(--ink); max-width: 100%; }
 .posts { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .post { padding: 12px 16px; border-top: 1px solid var(--line); }
@@ -102,6 +103,14 @@ table.nums th { font-size: 11px; color: var(--ink-3); text-transform: uppercase;
 .vol .k-new { color: var(--accent); font-weight: 600; }
 .trend { display: flex; align-items: flex-end; gap: 8px; margin-top: 8px; }
 .trend span { font-size: 12px; color: var(--ink-3); }
+.vsnav { display: flex; align-items: center; gap: 8px; margin: 2px 0 6px; }
+.vsnav button { border: 1px solid var(--line); background: var(--surface); border-radius: 8px; width: 30px; height: 28px; font-size: 18px; line-height: 1; color: var(--ink-2); }
+.vsnav button:hover { border-color: var(--ink-3); }
+.vsnav .vsname { font: 600 17px/1.2 var(--serif); min-width: 90px; text-align: center; }
+.vsnav .vscount { font-size: 12.5px; color: var(--ink-3); margin-left: 4px; }
+.versus { margin: 4px 0 0; padding: 10px 12px; background: var(--surface-2); border-radius: 10px; font-size: 14.5px; }
+.versus b { font-weight: 600; }
+.hintbox { padding: 16px; color: var(--ink-3); font-size: 14px; text-align: center; }
 .stage { border: 1px solid var(--line); border-radius: 999px; padding: 0 7px; font-size: 11.5px; }
 .ptitle { font-weight: 600; margin: 3px 0 2px; font-size: 15px; display: block; text-decoration: none; }
 .ptitle:hover { text-decoration: underline; }
@@ -134,7 +143,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
 
   <section class="card" id="overview"></section>
 
-  <h2 class="sec">What each competitor is doing <small><button class="toggle" id="tbl">Show as table</button></small></h2>
+  <h2 class="sec">What each competitor is doing <small><button class="toggle" id="tbl">Show as chart</button></small></h2>
   <section class="card"><div class="legend" id="legend"></div><div id="comps"></div>
     <p class="meta" id="trendNote" style="margin:10px 0 0"></p>
     <p class="meta" style="margin:6px 0 0">Counts cover the last 30 days. New = first published in this period. Updated = an older page whose own "modified" date is recent (small edits count). Bulk events (dozens of pages sharing one date) are listed separately. Pages with no dates of their own aren't counted. The content mix shows new and updated pages only.</p></section>
@@ -145,8 +154,9 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
   <h2 class="sec">Gaps <small>What nobody is covering</small></h2>
   <div id="gaps"></div>
 
-  <h2 class="sec">Latest pages
+  <h2 class="sec">Find pages
     <small class="filters">
+      <input id="pq" type="search" placeholder="Search pages" aria-label="Search pages">
       <select id="fc" aria-label="Company"><option value="">All companies</option></select>
       <select id="ft" aria-label="Type"><option value="">All types</option></select>
       <select id="fs" aria-label="Who it's for"><option value="">Anyone</option></select>
@@ -172,7 +182,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
   };
   const STAGES = { learning: "Learning", comparing: "Comparing options", buying: "Ready to buy", customers: "Existing customers" };
   let data = { meta: {}, types: [], analysis: {}, sites: [], pages: [] };
-  let asTable = false, shown = 25;
+  let asTable = true, shown = 25, vsIdx = 0;
 
   const typeIdx = (k) => Math.max(0, data.types.findIndex((t) => t[0] === k));
   const color = (k) => `var(--t${typeIdx(k) + 1})`;
@@ -220,13 +230,22 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
 
   function renderComps() {
     const el = $("#comps"), W = data.meta.window_days;
+    $("#legend").hidden = asTable;
     if (!data.sites.length) { el.innerHTML = `<p class="empty-note">No sites yet.</p>`; return; }
     if (asTable) {
       el.innerHTML = `<div class="scroll"><table class="nums"><thead><tr><th>Company</th><th>Pages</th><th>Prev.</th>${data.types.map(([k, l]) => `<th title="${esc(l)}">${esc(l.split(/[ /]/)[0])}</th>`).join("")}</tr></thead><tbody>${
         data.sites.map((s) => `<tr><td>${esc(s.name)}${s.you ? " (you)" : ""}</td><td>${s.n ?? "–"}</td><td>${s.n_prev ?? "–"}</td>${data.types.map(([k]) => `<td>${(s.mix || {})[k] || "–"}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
       return;
     }
-    el.innerHTML = data.sites.map((s) => {
+    const you = data.sites.find((x) => x.you);
+    const rivals = data.sites.filter((x) => !x.you);
+    const shownSites = you && rivals.length ? [you, rivals[((vsIdx % rivals.length) + rivals.length) % rivals.length]] : data.sites;
+    const cur = shownSites[shownSites.length - 1];
+    const nav = you && rivals.length ? `<div class="vsnav"><button id="vsPrev" aria-label="Previous competitor">‹</button>
+        <span class="vsname">${esc(cur.name)}</span><button id="vsNext" aria-label="Next competitor">›</button>
+        <span class="vscount">${rivals.indexOf(cur) + 1} of ${rivals.length}</span></div>` : "";
+    const versus = you && cur !== you ? (((data.analysis || {}).versus || {})[cur.name] || "") : "";
+    el.innerHTML = nav + shownSites.map((s) => {
       const total = Object.values(s.mix || {}).reduce((a, b) => a + b, 0);
       const segs = data.types.filter(([k]) => (s.mix || {})[k]).map(([k, l]) =>
         `<i style="flex:${s.mix[k]};background:${color(k)}" data-tip="${esc(l)}: ${s.mix[k]} of ${total} (${Math.round(s.mix[k] / total * 100)}%)"></i>`).join("");
@@ -249,7 +268,9 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
           : `<div class="bar${segs ? "" : " empty"}" role="img" aria-label="${esc(s.name)} content mix">${segs}</div>
           <p class="play"><b>${s.you ? "Your play" : "Their play"}:</b> ${esc(s.play || (s.n ? "Not enough pages to call it yet." : `Nothing new in the last ${W} days.`))}</p>
           ${extra ? `<div class="meta">${esc(extra)}</div>` : ""}${removedLine}${bulkLine}${progLine}${trend}`}</div></div>`;
-    }).join("");
+    }).join("") + (versus ? `<p class="versus"><b>Compared with ${esc(you.name)}:</b> ${esc(versus)}</p>` : "");
+    const step = (d) => { vsIdx += d; renderComps(); };
+    if ($("#vsPrev")) { $("#vsPrev").onclick = () => step(-1); $("#vsNext").onclick = () => step(1); }
   }
 
   // Weekly new pages per competitor, from the radar's own history (one bar per week).
@@ -285,8 +306,13 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
   }
 
   function renderPosts() {
-    const c = $("#fc").value, t = $("#ft").value, st = $("#fs").value, k = $("#fk").value;
-    const rows = data.pages.filter((p) => (!c || p.site === c) && (!t || p.type === t) && (!st || p.stage === st) && (!k || p.kind === k));
+    const c = $("#fc").value, t = $("#ft").value, st = $("#fs").value, k = $("#fk").value, q = $("#pq").value.trim().toLowerCase();
+    if (!c && !t && !st && !k && !q) {
+      $("#posts").innerHTML = `<div class="hintbox">${data.pages.length.toLocaleString()} pages tracked. Search, or pick a company, type or audience, to see them.</div>`;
+      return;
+    }
+    const rows = data.pages.filter((p) => (!c || p.site === c) && (!t || p.type === t) && (!st || p.stage === st) && (!k || p.kind === k)
+      && (!q || [p.title, p.topic, p.search, p.why, p.site].join(" ").toLowerCase().includes(q)));
     const view = rows.slice(0, shown);
     $("#posts").innerHTML = rows.length ? view.map((p) => `<div class="post">
         <div class="pmeta"><span class="who">${esc(p.site)}</span>${KIND[p.kind] || ""}<span>${esc(fmt(p.date))}${p.kind === "updated" && p.published ? ` · first published ${esc(fmt(p.published, true))}` : ""}</span>
@@ -327,8 +353,12 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
     renderNotices(); renderOverview(); renderLegend(); renderComps(); renderShared(); renderGaps(); renderPosts(); renderHealth();
   }
 
+  document.addEventListener("keydown", (e) => {
+    if (asTable || e.target.matches("input, select, textarea")) return;
+    if (e.key === "ArrowRight") { vsIdx++; renderComps(); } else if (e.key === "ArrowLeft") { vsIdx--; renderComps(); }
+  });
   $("#tbl").addEventListener("click", (e) => { asTable = !asTable; e.target.textContent = asTable ? "Show as chart" : "Show as table"; renderComps(); });
-  ["#fc", "#ft", "#fs", "#fk"].forEach((s) => $(s).addEventListener("input", () => { shown = 25; renderPosts(); }));
+  ["#pq", "#fc", "#ft", "#fs", "#fk"].forEach((s) => $(s).addEventListener("input", () => { shown = 25; renderPosts(); }));
   const tip = $("#tip");
   document.addEventListener("mousemove", (e) => {
     const t = e.target.closest("[data-tip]");
