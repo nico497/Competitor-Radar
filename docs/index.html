@@ -110,6 +110,8 @@ table.nums th { font-size: 11px; color: var(--ink-3); text-transform: uppercase;
 .vsnav .vscount { font-size: 12.5px; color: var(--ink-3); margin-left: 4px; }
 .versus { margin: 4px 0 0; padding: 10px 12px; background: var(--surface-2); border-radius: 10px; font-size: 14.5px; }
 .versus b { font-weight: 600; }
+.go { background: var(--ink); color: var(--bg); border: 0; border-radius: 8px; padding: 5px 14px; font-size: 13px; font-weight: 600; }
+.go:hover { opacity: .88; }
 .hintbox { padding: 16px; color: var(--ink-3); font-size: 14px; text-align: center; }
 .stage { border: 1px solid var(--line); border-radius: 999px; padding: 0 7px; font-size: 11.5px; }
 .ptitle { font-weight: 600; margin: 3px 0 2px; font-size: 15px; display: block; text-decoration: none; }
@@ -156,11 +158,11 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
 
   <h2 class="sec">Find pages
     <small class="filters">
-      <input id="pq" type="search" placeholder="Search pages" aria-label="Search pages">
       <select id="fc" aria-label="Company"><option value="">All companies</option></select>
       <select id="ft" aria-label="Type"><option value="">All types</option></select>
       <select id="fs" aria-label="Who it's for"><option value="">Anyone</option></select>
       <select id="fk" aria-label="New or updated"><option value="">New + updated</option><option value="new">New only</option><option value="updated">Updated only</option><option value="bulk">Bulk-dated only</option></select>
+      <button class="go" id="go">Search</button>
     </small>
   </h2>
   <div class="posts" id="posts"></div>
@@ -182,7 +184,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
   };
   const STAGES = { learning: "Learning", comparing: "Comparing options", buying: "Ready to buy", customers: "Existing customers" };
   let data = { meta: {}, types: [], analysis: {}, sites: [], pages: [] };
-  let asTable = true, shown = 25, vsIdx = 0;
+  let asTable = true, shown = 25, vsIdx = 0, searched = false;
 
   const typeIdx = (k) => Math.max(0, data.types.findIndex((t) => t[0] === k));
   const color = (k) => `var(--t${typeIdx(k) + 1})`;
@@ -306,13 +308,12 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
   }
 
   function renderPosts() {
-    const c = $("#fc").value, t = $("#ft").value, st = $("#fs").value, k = $("#fk").value, q = $("#pq").value.trim().toLowerCase();
-    if (!c && !t && !st && !k && !q) {
-      $("#posts").innerHTML = `<div class="hintbox">${data.pages.length.toLocaleString()} pages tracked. Search, or pick a company, type or audience, to see them.</div>`;
+    const c = $("#fc").value, t = $("#ft").value, st = $("#fs").value, k = $("#fk").value;
+    if (!searched) {
+      $("#posts").innerHTML = `<div class="hintbox">${data.pages.length.toLocaleString()} pages tracked. Pick a company, type or audience, then press Search.</div>`;
       return;
     }
-    const rows = data.pages.filter((p) => (!c || p.site === c) && (!t || p.type === t) && (!st || p.stage === st) && (!k || p.kind === k)
-      && (!q || [p.title, p.topic, p.search, p.why, p.site].join(" ").toLowerCase().includes(q)));
+    const rows = data.pages.filter((p) => (!c || p.site === c) && (!t || p.type === t) && (!st || p.stage === st) && (!k || p.kind === k));
     const view = rows.slice(0, shown);
     $("#posts").innerHTML = rows.length ? view.map((p) => `<div class="post">
         <div class="pmeta"><span class="who">${esc(p.site)}</span>${KIND[p.kind] || ""}<span>${esc(fmt(p.date))}${p.kind === "updated" && p.published ? ` · first published ${esc(fmt(p.published, true))}` : ""}</span>
@@ -358,7 +359,7 @@ details.health summary .sub { font-weight: 400; color: var(--ink-3); margin-left
     if (e.key === "ArrowRight") { vsIdx++; renderComps(); } else if (e.key === "ArrowLeft") { vsIdx--; renderComps(); }
   });
   $("#tbl").addEventListener("click", (e) => { asTable = !asTable; e.target.textContent = asTable ? "Show as chart" : "Show as table"; renderComps(); });
-  ["#pq", "#fc", "#ft", "#fs", "#fk"].forEach((s) => $(s).addEventListener("input", () => { shown = 25; renderPosts(); }));
+  $("#go").addEventListener("click", () => { searched = true; shown = 25; renderPosts(); });
   const tip = $("#tip");
   document.addEventListener("mousemove", (e) => {
     const t = e.target.closest("[data-tip]");
