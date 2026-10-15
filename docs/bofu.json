@@ -1,0 +1,3096 @@
+{
+ "meta": {
+  "title": "Bottom-of-funnel content tracker",
+  "niche": "US sales tax compliance software for mid-market ecommerce and SaaS brands",
+  "you": "TaxCloud",
+  "generated": "2026-10-15T06:40:56+00:00",
+  "state_updated": "2026-09-30T04:27:42+00:00",
+  "repo": "nico497/Competitor-Radar"
+ },
+ "types": [
+  [
+   "vs_you",
+   "Us vs. them"
+  ],
+  [
+   "alt",
+   "Alternatives"
+  ],
+  [
+   "switch",
+   "Switching and migration"
+  ],
+  [
+   "pricing",
+   "Rival pricing breakdowns"
+  ],
+  [
+   "vs_rivals",
+   "Rival vs. rival"
+  ],
+  [
+   "best",
+   "Best-of and roundups"
+  ],
+  [
+   "case",
+   "Case and customer stories"
+  ]
+ ],
+ "sites": [
+  {
+   "name": "TaxCloud",
+   "tracked": 447,
+   "considered": 341,
+   "own_pricing": "https://taxcloud.com/taxcloud-pricing/",
+   "hubs": [
+    "https://taxcloud.com/alternatives/",
+    "https://taxcloud.com/case-studies/"
+   ]
+  },
+  {
+   "name": "Avalara",
+   "tracked": 710,
+   "considered": 390,
+   "own_pricing": "https://www.avalara.com/us/en/products/pricing.html",
+   "hubs": []
+  },
+  {
+   "name": "TaxJar",
+   "tracked": 869,
+   "considered": 869,
+   "own_pricing": "https://www.taxjar.com/pricing",
+   "hubs": [
+    "https://www.taxjar.com/customers"
+   ]
+  },
+  {
+   "name": "Anrok",
+   "tracked": 667,
+   "considered": 518,
+   "own_pricing": "https://www.anrok.com/pricing",
+   "hubs": [
+    "https://www.anrok.com/type/customer-stories"
+   ]
+  },
+  {
+   "name": "Numeral",
+   "tracked": 403,
+   "considered": 403,
+   "own_pricing": "https://www.numeral.com/pricing",
+   "hubs": [
+    "https://www.numeral.com/reviews",
+    "https://www.numeral.com/case-studies"
+   ]
+  },
+  {
+   "name": "Zamp",
+   "tracked": 4440,
+   "considered": 479,
+   "own_pricing": "https://zamp.com/pricing",
+   "hubs": [
+    "https://zamp.com/customers",
+    "https://zamp.com/alternatives-comparison"
+   ]
+  },
+  {
+   "name": "Kintsugi",
+   "tracked": 1475,
+   "considered": 732,
+   "own_pricing": "https://trykintsugi.com/pricing",
+   "hubs": [
+    "https://trykintsugi.com/compare"
+   ]
+  }
+ ],
+ "vendors": [
+  "Avalara",
+  "TaxJar",
+  "Anrok",
+  "Numeral",
+  "Zamp",
+  "Kintsugi",
+  "TaxCloud",
+  "Vertex",
+  "Sovos",
+  "Stripe Tax",
+  "Shopify Tax",
+  "Sphere",
+  "Yonda",
+  "Host",
+  "Taxually",
+  "TaxValet",
+  "Taxwire",
+  "Taxdoo",
+  "Fonoa",
+  "Thomson Reuters",
+  "NetSuite"
+ ],
+ "excluded": {
+  "templated pages": 4727,
+  "webinars, glossary, events and category pages": 426,
+  "translated pages": 126
+ },
+ "pages": [
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/anrok-alternatives/",
+   "path": "/blog/anrok-alternatives",
+   "type": "alt",
+   "targets": [
+    "Anrok"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/avalara-alternatives/",
+   "path": "/blog/avalara-alternatives",
+   "type": "alt",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/numeral-sales-tax-alternatives/",
+   "path": "/blog/numeral-sales-tax-alternatives",
+   "type": "alt",
+   "targets": [
+    "Numeral"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/stripe-tax-alternatives/",
+   "path": "/blog/stripe-tax-alternatives",
+   "type": "alt",
+   "targets": [
+    "Stripe Tax"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/taxjar-alternatives/",
+   "path": "/blog/taxjar-alternatives",
+   "type": "alt",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/best-adobe-commerce-sales-tax-extensions-and-plugins/",
+   "path": "/blog/best-adobe-commerce-sales-tax-extensions-and-plugins",
+   "type": "best",
+   "targets": [],
+   "audience": "Adobe Commerce and Magento"
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/best-chargebee-sales-tax-tools/",
+   "path": "/blog/best-chargebee-sales-tax-tools",
+   "type": "best",
+   "targets": [],
+   "audience": "Chargebee"
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/best-magento-sales-tax-tools-and-extensions/",
+   "path": "/blog/best-magento-sales-tax-tools-and-extensions",
+   "type": "best",
+   "targets": [],
+   "audience": "Adobe Commerce and Magento"
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/best-sales-tax-app-for-shopify/",
+   "path": "/blog/best-sales-tax-app-for-shopify",
+   "type": "best",
+   "targets": [],
+   "audience": "Shopify"
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/best-sales-tax-platforms-for-saas-businesses/",
+   "path": "/blog/best-sales-tax-platforms-for-saas-businesses",
+   "type": "best",
+   "targets": [],
+   "audience": "SaaS"
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/best-sales-tax-plugins-for-woocommerce/",
+   "path": "/blog/best-sales-tax-plugins-for-woocommerce",
+   "type": "best",
+   "targets": [],
+   "audience": "WooCommerce"
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/best-sales-tax-software-ecommerce/",
+   "path": "/blog/best-sales-tax-software-ecommerce",
+   "type": "best",
+   "targets": [],
+   "audience": "Ecommerce"
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/best-sales-tax-software-for-quickbooks/",
+   "path": "/blog/best-sales-tax-software-for-quickbooks",
+   "type": "best",
+   "targets": [],
+   "audience": "QuickBooks"
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/best-sales-tax-software-with-audit-protection/",
+   "path": "/blog/best-sales-tax-software-with-audit-protection",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/best-tool-to-file-sales-tax-returns/",
+   "path": "/blog/best-tool-to-file-sales-tax-returns",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/chargebee-sales-tax-customer-story/",
+   "path": "/blog/chargebee-sales-tax-customer-story",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/almond-cow/",
+   "path": "/case-studies/almond-cow",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/aokca/",
+   "path": "/case-studies/aokca",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/avanquest/",
+   "path": "/case-studies/avanquest",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/bonanza/",
+   "path": "/case-studies/bonanza",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/cable-bullet/",
+   "path": "/case-studies/cable-bullet",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/craft-e-corner/",
+   "path": "/case-studies/craft-e-corner",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/fireresq/",
+   "path": "/case-studies/fireresq",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/how-to-be-a-redhead/",
+   "path": "/case-studies/how-to-be-a-redhead",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/joy-creative-shop/",
+   "path": "/case-studies/joy-creative-shop",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/mmci-holdings/",
+   "path": "/case-studies/mmci-holdings",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/music-direct/",
+   "path": "/case-studies/music-direct",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/namacbd/",
+   "path": "/case-studies/namacbd",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/pangobooks/",
+   "path": "/case-studies/pangobooks",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/persona-nutrition/",
+   "path": "/case-studies/persona-nutrition",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/quikrstuff/",
+   "path": "/case-studies/quikrstuff",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/rareform/",
+   "path": "/case-studies/rareform",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/sleefs/",
+   "path": "/case-studies/sleefs",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/untilgone/",
+   "path": "/case-studies/untilgone",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/usamm/",
+   "path": "/case-studies/usamm",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/case-studies/worx-printing-cooperative/",
+   "path": "/case-studies/worx-printing-cooperative",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/avalara-pricing/",
+   "path": "/blog/avalara-pricing",
+   "type": "pricing",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/sovos-pricing/",
+   "path": "/blog/sovos-pricing",
+   "type": "pricing",
+   "targets": [
+    "Sovos"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/taxjar-price-increase-2026/",
+   "path": "/blog/taxjar-price-increase-2026",
+   "type": "pricing",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/taxjar-pricing-how-much-does-taxjar-cost/",
+   "path": "/blog/taxjar-pricing-how-much-does-taxjar-cost",
+   "type": "pricing",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/vertex-pricing/",
+   "path": "/blog/vertex-pricing",
+   "type": "pricing",
+   "targets": [
+    "Vertex"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/how-to-switch-from-kintsugi/",
+   "path": "/blog/how-to-switch-from-kintsugi",
+   "type": "switch",
+   "targets": [
+    "Kintsugi"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/how-to-switch-from-numeral-sales-tax/",
+   "path": "/blog/how-to-switch-from-numeral-sales-tax",
+   "type": "switch",
+   "targets": [
+    "Numeral"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/migrating-from-avalara/",
+   "path": "/migrating-from-avalara",
+   "type": "switch",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/migrating-from-avatax-to-shopify-tax-and-taxcloud/",
+   "path": "/migrating-from-avatax-to-shopify-tax-and-taxcloud",
+   "type": "switch",
+   "targets": [
+    "Avalara",
+    "Shopify Tax"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/migrating-from-taxjar/",
+   "path": "/migrating-from-taxjar",
+   "type": "switch",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/switching-sales-tax-software/",
+   "path": "/switching-sales-tax-software",
+   "type": "switch",
+   "targets": []
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/anrok-vs-kintsugi-sales-tax-comparison/",
+   "path": "/blog/anrok-vs-kintsugi-sales-tax-comparison",
+   "type": "vs_rivals",
+   "targets": [
+    "Anrok",
+    "Kintsugi"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/anrok-vs-stripe-tax-comparison/",
+   "path": "/blog/anrok-vs-stripe-tax-comparison",
+   "type": "vs_rivals",
+   "targets": [
+    "Anrok",
+    "Stripe Tax"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/avalara-vs-anrok-comparison/",
+   "path": "/blog/avalara-vs-anrok-comparison",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "Anrok"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/avalara-vs-taxjar-comparison/",
+   "path": "/blog/avalara-vs-taxjar-comparison",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/avalara-vs-vertex-comparison/",
+   "path": "/blog/avalara-vs-vertex-comparison",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "Vertex"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/blog/sovos-vs-avalara-comparison/",
+   "path": "/blog/sovos-vs-avalara-comparison",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "Sovos"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/taxcloud-vs-anrok/",
+   "path": "/alternatives/taxcloud-vs-anrok",
+   "type": "vs_you",
+   "targets": [
+    "Anrok"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/taxcloud-vs-avalara/",
+   "path": "/alternatives/taxcloud-vs-avalara",
+   "type": "vs_you",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/taxcloud-vs-kintsugi-sales-tax/",
+   "path": "/alternatives/taxcloud-vs-kintsugi-sales-tax",
+   "type": "vs_you",
+   "targets": [
+    "Kintsugi"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/taxcloud-vs-numeral/",
+   "path": "/alternatives/taxcloud-vs-numeral",
+   "type": "vs_you",
+   "targets": [
+    "Numeral"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/taxcloud-vs-shopify-tax/",
+   "path": "/alternatives/taxcloud-vs-shopify-tax",
+   "type": "vs_you",
+   "targets": [
+    "Shopify Tax"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/taxcloud-vs-sovos/",
+   "path": "/alternatives/taxcloud-vs-sovos",
+   "type": "vs_you",
+   "targets": [
+    "Sovos"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/taxcloud-vs-stripe-tax/",
+   "path": "/alternatives/taxcloud-vs-stripe-tax",
+   "type": "vs_you",
+   "targets": [
+    "Stripe Tax"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/taxcloud-vs-taxjar/",
+   "path": "/alternatives/taxcloud-vs-taxjar",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/taxcloud-vs-vertex/",
+   "path": "/alternatives/taxcloud-vs-vertex",
+   "type": "vs_you",
+   "targets": [
+    "Vertex"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/taxcloud-vs-yonda-tax/",
+   "path": "/alternatives/taxcloud-vs-yonda-tax",
+   "type": "vs_you",
+   "targets": [
+    "Yonda"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/taxcloud-vs-zamp/",
+   "path": "/alternatives/taxcloud-vs-zamp",
+   "type": "vs_you",
+   "targets": [
+    "Zamp"
+   ]
+  },
+  {
+   "site": "TaxCloud",
+   "url": "https://taxcloud.com/alternatives/taxvalet/",
+   "path": "/alternatives/taxvalet",
+   "type": "vs_you",
+   "targets": [
+    "TaxValet"
+   ]
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/community/customers/customer-marketing-2020-sales-tax-changes-retail-sale-impact.html",
+   "path": "/us/en/community/customers/customer-marketing-2020-sales-tax-changes-retail-sale-impact.html",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/community/customers/newsletter.html",
+   "path": "/us/en/community/customers/newsletter.html",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Avalara",
+   "url": "https://www.avalara.com/us/en/community/customers/sales-tax-calculations-delivered-to-every-city-wide-franchise.html",
+   "path": "/us/en/community/customers/sales-tax-calculations-delivered-to-every-city-wide-franchise.html",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/2022-04-the-top-3-signs-its-time-to-look-for-a-new-sales-tax-solution",
+   "path": "/blog/2022-04-the-top-3-signs-its-time-to-look-for-a-new-sales-tax-solution",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/2026-sales-tax-software-comparison",
+   "path": "/blog/2026-sales-tax-software-comparison",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/best-sales-tax-solution-comparison",
+   "path": "/blog/best-sales-tax-solution-comparison",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/case-study-prevent-amazon-account-suspension-selling-internationally",
+   "path": "/blog/case-study-prevent-amazon-account-suspension-selling-internationally",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/customers/advanced-sign",
+   "path": "/customers/advanced-sign",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/customers/beautylish",
+   "path": "/customers/beautylish",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/customers/every-man-jack-thinks-differently-about-mens-grooming-products-and-sales-tax-compliance",
+   "path": "/customers/every-man-jack-thinks-differently-about-mens-grooming-products-and-sales-tax-compliance",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/customers/george-sleeman",
+   "path": "/customers/george-sleeman",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/customers/global-value-commerce",
+   "path": "/customers/global-value-commerce",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/customers/kornerstone-credit",
+   "path": "/customers/kornerstone-credit",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/customers/musicnotes",
+   "path": "/customers/musicnotes",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/customers/plant-therapy",
+   "path": "/customers/plant-therapy",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/customers/quimbee",
+   "path": "/customers/quimbee",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/customers/scottevest",
+   "path": "/customers/scottevest",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/customers/uncommon-goods",
+   "path": "/customers/uncommon-goods",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/customers/underwear-expert",
+   "path": "/customers/underwear-expert",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/guide-to-switching-sales-tax-providers",
+   "path": "/blog/guide-to-switching-sales-tax-providers",
+   "type": "switch",
+   "targets": []
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/taxcloud-vs-taxjar",
+   "path": "/blog/taxcloud-vs-taxjar",
+   "type": "vs_you",
+   "targets": [
+    "TaxCloud"
+   ]
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/taxjar-vs-anrok",
+   "path": "/blog/taxjar-vs-anrok",
+   "type": "vs_you",
+   "targets": [
+    "Anrok"
+   ]
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/taxjar-vs-kintsugi",
+   "path": "/blog/taxjar-vs-kintsugi",
+   "type": "vs_you",
+   "targets": [
+    "Kintsugi"
+   ]
+  },
+  {
+   "site": "TaxJar",
+   "url": "https://www.taxjar.com/blog/taxjar-vs-numeral",
+   "path": "/blog/taxjar-vs-numeral",
+   "type": "vs_you",
+   "targets": [
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/best-sales-tax-automation-software-for-ai-businesses",
+   "path": "/resources/best-sales-tax-automation-software-for-ai-businesses",
+   "type": "best",
+   "targets": [],
+   "audience": "AI"
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/best-sales-tax-automation-software-for-ecommerce",
+   "path": "/resources/best-sales-tax-automation-software-for-ecommerce",
+   "type": "best",
+   "targets": [],
+   "audience": "Ecommerce"
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/best-sales-tax-automation-solutions-for-global-companies",
+   "path": "/resources/best-sales-tax-automation-solutions-for-global-companies",
+   "type": "best",
+   "targets": [],
+   "audience": "Global VAT and GST"
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-aerospace-startup",
+   "path": "/resources/customer-case-study-aerospace-startup",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-agentsync",
+   "path": "/resources/customer-case-study-agentsync",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-brilliant",
+   "path": "/resources/customer-case-study-brilliant",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-chargeback",
+   "path": "/resources/customer-case-study-chargeback",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-gem",
+   "path": "/resources/customer-case-study-gem",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-hightouch",
+   "path": "/resources/customer-case-study-hightouch",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-j2health",
+   "path": "/resources/customer-case-study-j2health",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-jasper",
+   "path": "/resources/customer-case-study-jasper",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-maestroqa",
+   "path": "/resources/customer-case-study-maestroqa",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-moises-ai",
+   "path": "/resources/customer-case-study-moises-ai",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-notion",
+   "path": "/resources/customer-case-study-notion",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-nutiliti",
+   "path": "/resources/customer-case-study-nutiliti",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-pave",
+   "path": "/resources/customer-case-study-pave",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-prodigal",
+   "path": "/resources/customer-case-study-prodigal",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-sense",
+   "path": "/resources/customer-case-study-sense",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-shiphawk",
+   "path": "/resources/customer-case-study-shiphawk",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-sourcegraph",
+   "path": "/resources/customer-case-study-sourcegraph",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-statsig",
+   "path": "/resources/customer-case-study-statsig",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-tekmetric",
+   "path": "/resources/customer-case-study-tekmetric",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-case-study-trainual",
+   "path": "/resources/customer-case-study-trainual",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/customer-story-second-front-systems",
+   "path": "/resources/customer-story-second-front-systems",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/fexa-customer-story",
+   "path": "/resources/fexa-customer-story",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/partner-case-study-burkland",
+   "path": "/resources/partner-case-study-burkland",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/partner-case-study-gorham-consulting",
+   "path": "/resources/partner-case-study-gorham-consulting",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/partner-case-study-phin-security",
+   "path": "/resources/partner-case-study-phin-security",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/best-practices-for-switching-sales-tax-platforms",
+   "path": "/resources/best-practices-for-switching-sales-tax-platforms",
+   "type": "switch",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/solutions/switching-tax-software",
+   "path": "/solutions/switching-tax-software",
+   "type": "switch",
+   "targets": []
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/compare/anrok-vs-avalara",
+   "path": "/compare/anrok-vs-avalara",
+   "type": "vs_you",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/compare/anrok-vs-kintsugi",
+   "path": "/compare/anrok-vs-kintsugi",
+   "type": "vs_you",
+   "targets": [
+    "Kintsugi"
+   ]
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/compare/anrok-vs-numeral",
+   "path": "/compare/anrok-vs-numeral",
+   "type": "vs_you",
+   "targets": [
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/compare/anrok-vs-sphere",
+   "path": "/compare/anrok-vs-sphere",
+   "type": "vs_you",
+   "targets": [
+    "Sphere"
+   ]
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/compare/anrok-vs-vertex",
+   "path": "/compare/anrok-vs-vertex",
+   "type": "vs_you",
+   "targets": [
+    "Vertex"
+   ]
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/compare/vs-fonoa",
+   "path": "/compare/vs-fonoa",
+   "type": "vs_you",
+   "targets": [
+    "Fonoa"
+   ]
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/anrok-vs-numeral-sales-tax-compliance",
+   "path": "/resources/anrok-vs-numeral-sales-tax-compliance",
+   "type": "vs_you",
+   "targets": [
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/anrok-vs-vertex-a-comprehensive-comparison-guide-for-modern-businesses",
+   "path": "/resources/anrok-vs-vertex-a-comprehensive-comparison-guide-for-modern-businesses",
+   "type": "vs_you",
+   "targets": [
+    "Vertex"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/anrok-alternative",
+   "path": "/anrok-alternative",
+   "type": "alt",
+   "targets": [
+    "Anrok"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/avalara-alternative",
+   "path": "/avalara-alternative",
+   "type": "alt",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/anrok-alternatives",
+   "path": "/blog/anrok-alternatives",
+   "type": "alt",
+   "targets": [
+    "Anrok"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/kintsugi-alternative",
+   "path": "/kintsugi-alternative",
+   "type": "alt",
+   "targets": [
+    "Kintsugi"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/sovos-alternative",
+   "path": "/sovos-alternative",
+   "type": "alt",
+   "targets": [
+    "Sovos"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/sphere-alternative",
+   "path": "/sphere-alternative",
+   "type": "alt",
+   "targets": [
+    "Sphere"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/stripe-tax-alternative",
+   "path": "/stripe-tax-alternative",
+   "type": "alt",
+   "targets": [
+    "Stripe Tax"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/taxcloud-alternative",
+   "path": "/taxcloud-alternative",
+   "type": "alt",
+   "targets": [
+    "TaxCloud"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/taxjar-alternative",
+   "path": "/taxjar-alternative",
+   "type": "alt",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/taxually-alternative",
+   "path": "/taxually-alternative",
+   "type": "alt",
+   "targets": [
+    "Taxually"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/taxvalet-alternative",
+   "path": "/taxvalet-alternative",
+   "type": "alt",
+   "targets": [
+    "TaxValet"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/taxwire-alternative",
+   "path": "/taxwire-alternative",
+   "type": "alt",
+   "targets": [
+    "Taxwire"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/vertex-alternative",
+   "path": "/vertex-alternative",
+   "type": "alt",
+   "targets": [
+    "Vertex"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/zamp-alternative",
+   "path": "/zamp-alternative",
+   "type": "alt",
+   "targets": [
+    "Zamp"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/best-sales-tax-apps-for-shopify",
+   "path": "/blog/best-sales-tax-apps-for-shopify",
+   "type": "best",
+   "targets": [],
+   "audience": "Shopify"
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/4frnt",
+   "path": "/customers/4frnt",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/amberjack",
+   "path": "/customers/amberjack",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/boomboom",
+   "path": "/customers/boomboom",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/brex",
+   "path": "/customers/brex",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/bro-glo",
+   "path": "/customers/bro-glo",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/bytem",
+   "path": "/customers/bytem",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/character-ai",
+   "path": "/customers/character-ai",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/culprit-underwear",
+   "path": "/customers/culprit-underwear",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/doe-beauty",
+   "path": "/customers/doe-beauty",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/explorer",
+   "path": "/customers/explorer",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/fishwife",
+   "path": "/customers/fishwife",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/fresh-sends",
+   "path": "/customers/fresh-sends",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/immi",
+   "path": "/customers/immi",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/kitsch",
+   "path": "/customers/kitsch",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/luma-nutrition",
+   "path": "/customers/luma-nutrition",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/nomad-goods",
+   "path": "/customers/nomad-goods",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/obvi",
+   "path": "/customers/obvi",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/rejuvia",
+   "path": "/customers/rejuvia",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/spacepanda",
+   "path": "/customers/spacepanda",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/terminal49",
+   "path": "/customers/terminal49",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/the-woobles",
+   "path": "/customers/the-woobles",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/avalara-pricing",
+   "path": "/blog/avalara-pricing",
+   "type": "pricing",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/anrok-vs-sphere",
+   "path": "/blog/anrok-vs-sphere",
+   "type": "vs_rivals",
+   "targets": [
+    "Anrok",
+    "Sphere"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/anrok-vs-taxjar",
+   "path": "/blog/anrok-vs-taxjar",
+   "type": "vs_rivals",
+   "targets": [
+    "TaxJar",
+    "Anrok"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/avalara-vs-anrok",
+   "path": "/blog/avalara-vs-anrok",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "Anrok"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/avalara-vs-shopify-tax",
+   "path": "/blog/avalara-vs-shopify-tax",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "Shopify Tax"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/avalara-vs-sovos",
+   "path": "/blog/avalara-vs-sovos",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "Sovos"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/avalara-vs-stripe-tax",
+   "path": "/blog/avalara-vs-stripe-tax",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "Stripe Tax"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/avalara-vs-thomson-reuters-onesource",
+   "path": "/blog/avalara-vs-thomson-reuters-onesource",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "Thomson Reuters"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/avalara-vs-vertex",
+   "path": "/blog/avalara-vs-vertex",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "Vertex"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/taxjar-vs-avalara",
+   "path": "/blog/taxjar-vs-avalara",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/taxjar-vs-vertex",
+   "path": "/blog/taxjar-vs-vertex",
+   "type": "vs_rivals",
+   "targets": [
+    "TaxJar",
+    "Vertex"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/taxjar-vs-zamp",
+   "path": "/blog/taxjar-vs-zamp",
+   "type": "vs_rivals",
+   "targets": [
+    "TaxJar",
+    "Zamp"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/numeral-vs-anrok",
+   "path": "/blog/numeral-vs-anrok",
+   "type": "vs_you",
+   "targets": [
+    "Anrok"
+   ]
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/numeral-vs-avalara",
+   "path": "/blog/numeral-vs-avalara",
+   "type": "vs_you",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/9-best-avalara-alternatives-and-competitors-for-2026",
+   "path": "/blog/9-best-avalara-alternatives-and-competitors-for-2026",
+   "type": "alt",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/9-best-taxjar-alternatives-for-2026",
+   "path": "/blog/9-best-taxjar-alternatives-for-2026",
+   "type": "alt",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/anrok-alternatives",
+   "path": "/blog/anrok-alternatives",
+   "type": "alt",
+   "targets": [
+    "Anrok"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/host-alternatives",
+   "path": "/blog/host-alternatives",
+   "type": "alt",
+   "targets": [
+    "Host"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/kintsugi-alternatives",
+   "path": "/blog/kintsugi-alternatives",
+   "type": "alt",
+   "targets": [
+    "Kintsugi"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/numeral-alternative",
+   "path": "/blog/numeral-alternative",
+   "type": "alt",
+   "targets": [
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/sovos-alternatives",
+   "path": "/blog/sovos-alternatives",
+   "type": "alt",
+   "targets": [
+    "Sovos"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/sphere-alternatives",
+   "path": "/blog/sphere-alternatives",
+   "type": "alt",
+   "targets": [
+    "Sphere"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxcloud-alternatives",
+   "path": "/blog/taxcloud-alternatives",
+   "type": "alt",
+   "targets": [
+    "TaxCloud"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/vertex-alternatives",
+   "path": "/blog/vertex-alternatives",
+   "type": "alt",
+   "targets": [
+    "Vertex"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/8-best-sales-tax-apps-for-shopify",
+   "path": "/blog/8-best-sales-tax-apps-for-shopify",
+   "type": "best",
+   "targets": [],
+   "audience": "Shopify"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-shopify",
+   "path": "/blog/best-sales-tax-automation-shopify",
+   "type": "best",
+   "targets": [],
+   "audience": "Shopify"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software",
+   "path": "/blog/best-sales-tax-automation-software",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-adobe-commerce",
+   "path": "/blog/best-sales-tax-automation-software-adobe-commerce",
+   "type": "best",
+   "targets": [],
+   "audience": "Adobe Commerce and Magento"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-amazon-fba",
+   "path": "/blog/best-sales-tax-automation-software-amazon-fba",
+   "type": "best",
+   "targets": [],
+   "audience": "Amazon FBA"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-b2b-wholesalers",
+   "path": "/blog/best-sales-tax-automation-software-b2b-wholesalers",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-bigcommerce",
+   "path": "/blog/best-sales-tax-automation-software-bigcommerce",
+   "type": "best",
+   "targets": [],
+   "audience": "BigCommerce"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-chargebee",
+   "path": "/blog/best-sales-tax-automation-software-chargebee",
+   "type": "best",
+   "targets": [],
+   "audience": "Chargebee"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-digital-services-companies",
+   "path": "/blog/best-sales-tax-automation-software-digital-services-companies",
+   "type": "best",
+   "targets": [],
+   "audience": "Digital services"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-dtc-brands",
+   "path": "/blog/best-sales-tax-automation-software-dtc-brands",
+   "type": "best",
+   "targets": [],
+   "audience": "DTC brands"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-etsy",
+   "path": "/blog/best-sales-tax-automation-software-etsy",
+   "type": "best",
+   "targets": [],
+   "audience": "Etsy"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-food-beverage",
+   "path": "/blog/best-sales-tax-automation-software-food-beverage",
+   "type": "best",
+   "targets": [],
+   "audience": "Food and beverage"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-ms-business-central",
+   "path": "/blog/best-sales-tax-automation-software-ms-business-central",
+   "type": "best",
+   "targets": [],
+   "audience": "Microsoft Business Central"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-netsuite",
+   "path": "/blog/best-sales-tax-automation-software-netsuite",
+   "type": "best",
+   "targets": [],
+   "audience": "NetSuite"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-quickbooks-online",
+   "path": "/blog/best-sales-tax-automation-software-quickbooks-online",
+   "type": "best",
+   "targets": [],
+   "audience": "QuickBooks"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-saas",
+   "path": "/blog/best-sales-tax-automation-software-saas",
+   "type": "best",
+   "targets": [],
+   "audience": "SaaS"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-stripe",
+   "path": "/blog/best-sales-tax-automation-software-stripe",
+   "type": "best",
+   "targets": [],
+   "audience": "Stripe"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-woocommerce",
+   "path": "/blog/best-sales-tax-automation-software-woocommerce",
+   "type": "best",
+   "targets": [],
+   "audience": "WooCommerce"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-automation-software-xero",
+   "path": "/blog/best-sales-tax-automation-software-xero",
+   "type": "best",
+   "targets": [],
+   "audience": "Xero"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-platforms-b2b-wholesalers",
+   "path": "/blog/best-sales-tax-platforms-b2b-wholesalers",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-platforms-bigcommerce",
+   "path": "/blog/best-sales-tax-platforms-bigcommerce",
+   "type": "best",
+   "targets": [],
+   "audience": "BigCommerce"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-platforms-digital-services-companies",
+   "path": "/blog/best-sales-tax-platforms-digital-services-companies",
+   "type": "best",
+   "targets": [],
+   "audience": "Digital services"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-platforms-dtc-brands",
+   "path": "/blog/best-sales-tax-platforms-dtc-brands",
+   "type": "best",
+   "targets": [],
+   "audience": "DTC brands"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-platforms-marketplace-sellers",
+   "path": "/blog/best-sales-tax-platforms-marketplace-sellers",
+   "type": "best",
+   "targets": [],
+   "audience": "Marketplace sellers"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-platforms-multi-channel-retailers",
+   "path": "/blog/best-sales-tax-platforms-multi-channel-retailers",
+   "type": "best",
+   "targets": [],
+   "audience": "Multi-channel retailers"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-platforms-quickbooks-online",
+   "path": "/blog/best-sales-tax-platforms-quickbooks-online",
+   "type": "best",
+   "targets": [],
+   "audience": "QuickBooks"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-platforms-saas-companies",
+   "path": "/blog/best-sales-tax-platforms-saas-companies",
+   "type": "best",
+   "targets": [],
+   "audience": "SaaS"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-platforms-stripe",
+   "path": "/blog/best-sales-tax-platforms-stripe",
+   "type": "best",
+   "targets": [],
+   "audience": "Stripe"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-platforms-subscription-businesses",
+   "path": "/blog/best-sales-tax-platforms-subscription-businesses",
+   "type": "best",
+   "targets": [],
+   "audience": "Subscription businesses"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-platforms-woocommerce",
+   "path": "/blog/best-sales-tax-platforms-woocommerce",
+   "type": "best",
+   "targets": [],
+   "audience": "WooCommerce"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-platforms-xero",
+   "path": "/blog/best-sales-tax-platforms-xero",
+   "type": "best",
+   "targets": [],
+   "audience": "Xero"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-software-and-how-to-choose",
+   "path": "/blog/best-sales-tax-software-and-how-to-choose",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-software-for-accountants",
+   "path": "/blog/best-sales-tax-software-for-accountants",
+   "type": "best",
+   "targets": [],
+   "audience": "Accountants"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-software-for-small-business",
+   "path": "/blog/best-sales-tax-software-for-small-business",
+   "type": "best",
+   "targets": [],
+   "audience": "Small business"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/best-sales-tax-software-for-small-businesses",
+   "path": "/blog/best-sales-tax-software-for-small-businesses",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/ecommerce-sales-tax-software-comparison-guide",
+   "path": "/blog/ecommerce-sales-tax-software-comparison-guide",
+   "type": "best",
+   "targets": [],
+   "audience": "Ecommerce"
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/annmarie-skin-care",
+   "path": "/customers/annmarie-skin-care",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/beeya",
+   "path": "/customers/beeya",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/david",
+   "path": "/customers/david",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/foodsocial",
+   "path": "/customers/foodsocial",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/glamnetic-inh-hair",
+   "path": "/customers/glamnetic-inh-hair",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/gravity-grabber",
+   "path": "/customers/gravity-grabber",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/handwrytten",
+   "path": "/customers/handwrytten",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/hay-chix",
+   "path": "/customers/hay-chix",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/kaf-home",
+   "path": "/customers/kaf-home",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/left-on-friday",
+   "path": "/customers/left-on-friday",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/little-hunter",
+   "path": "/customers/little-hunter",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/moonbrew",
+   "path": "/customers/moonbrew",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/puzzle",
+   "path": "/customers/puzzle",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/solace-bands",
+   "path": "/customers/solace-bands",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/teal",
+   "path": "/customers/teal",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/the-hedgehog-company",
+   "path": "/customers/the-hedgehog-company",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/tushy",
+   "path": "/customers/tushy",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/customers/yumwoof",
+   "path": "/customers/yumwoof",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/article/avalara-pricing",
+   "path": "/article/avalara-pricing",
+   "type": "pricing",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/article/taxjar-pricing",
+   "path": "/article/taxjar-pricing",
+   "type": "pricing",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/migrating-avalara-api",
+   "path": "/blog/migrating-avalara-api",
+   "type": "switch",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/migrating-taxjar-api",
+   "path": "/blog/migrating-taxjar-api",
+   "type": "switch",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/guides/how-to-migrate-from-avalara-to-zamp",
+   "path": "/guides/how-to-migrate-from-avalara-to-zamp",
+   "type": "switch",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/guides/how-to-migrate-from-taxjar-to-zamp",
+   "path": "/guides/how-to-migrate-from-taxjar-to-zamp",
+   "type": "switch",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/switch",
+   "path": "/switch",
+   "type": "switch",
+   "targets": []
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/anrok-vs-stripe-tax-vs-taxjar-api",
+   "path": "/blog/anrok-vs-stripe-tax-vs-taxjar-api",
+   "type": "vs_rivals",
+   "targets": [
+    "TaxJar",
+    "Anrok",
+    "Stripe Tax"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/avalara-vs-vertex-api",
+   "path": "/blog/avalara-vs-vertex-api",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "Vertex"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/numeral-vs-taxjar-api",
+   "path": "/blog/numeral-vs-taxjar-api",
+   "type": "vs_rivals",
+   "targets": [
+    "TaxJar",
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/stripe-tax-vs-taxjar-api",
+   "path": "/blog/stripe-tax-vs-taxjar-api",
+   "type": "vs_rivals",
+   "targets": [
+    "TaxJar",
+    "Stripe Tax"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxcloud-api-vs-taxjar-api",
+   "path": "/blog/taxcloud-api-vs-taxjar-api",
+   "type": "vs_rivals",
+   "targets": [
+    "TaxJar",
+    "TaxCloud"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxjar-vs-avalara-api",
+   "path": "/blog/taxjar-vs-avalara-api",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxjar-vs-avalara-vs-stripe",
+   "path": "/blog/taxjar-vs-avalara-vs-stripe",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "TaxJar",
+    "Stripe Tax"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxjar-vs-anrok-vs-zamp",
+   "path": "/blog/taxjar-vs-anrok-vs-zamp",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar",
+    "Anrok"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxjar-vs-host-vs-zamp",
+   "path": "/blog/taxjar-vs-host-vs-zamp",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar",
+    "Host"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxjar-vs-kintsugi-vs-zamp",
+   "path": "/blog/taxjar-vs-kintsugi-vs-zamp",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar",
+    "Kintsugi"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxjar-vs-numeral-vs-zamp",
+   "path": "/blog/taxjar-vs-numeral-vs-zamp",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar",
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxjar-vs-sovos-vs-zamp",
+   "path": "/blog/taxjar-vs-sovos-vs-zamp",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar",
+    "Sovos"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxjar-vs-sphere-vs-zamp",
+   "path": "/blog/taxjar-vs-sphere-vs-zamp",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar",
+    "Sphere"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxjar-vs-taxcloud-vs-zamp",
+   "path": "/blog/taxjar-vs-taxcloud-vs-zamp",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar",
+    "TaxCloud"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxjar-vs-vertex-vs-zamp",
+   "path": "/blog/taxjar-vs-vertex-vs-zamp",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar",
+    "Vertex"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-anrok",
+   "path": "/blog/zamp-vs-anrok",
+   "type": "vs_you",
+   "targets": [
+    "Anrok"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-anrok-vs-numeral",
+   "path": "/blog/zamp-vs-anrok-vs-numeral",
+   "type": "vs_you",
+   "targets": [
+    "Anrok",
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-avalara",
+   "path": "/blog/zamp-vs-avalara",
+   "type": "vs_you",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-avalara-vs-taxjar",
+   "path": "/blog/zamp-vs-avalara-vs-taxjar",
+   "type": "vs_you",
+   "targets": [
+    "Avalara",
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-host",
+   "path": "/blog/zamp-vs-host",
+   "type": "vs_you",
+   "targets": [
+    "Host"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-kintsugi",
+   "path": "/blog/zamp-vs-kintsugi",
+   "type": "vs_you",
+   "targets": [
+    "Kintsugi"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-numeral",
+   "path": "/blog/zamp-vs-numeral",
+   "type": "vs_you",
+   "targets": [
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-sovos",
+   "path": "/blog/zamp-vs-sovos",
+   "type": "vs_you",
+   "targets": [
+    "Sovos"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-sphere",
+   "path": "/blog/zamp-vs-sphere",
+   "type": "vs_you",
+   "targets": [
+    "Sphere"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-sphere-vs-kintsugi",
+   "path": "/blog/zamp-vs-sphere-vs-kintsugi",
+   "type": "vs_you",
+   "targets": [
+    "Kintsugi",
+    "Sphere"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-taxcloud",
+   "path": "/blog/zamp-vs-taxcloud",
+   "type": "vs_you",
+   "targets": [
+    "TaxCloud"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-taxcloud-vs-host",
+   "path": "/blog/zamp-vs-taxcloud-vs-host",
+   "type": "vs_you",
+   "targets": [
+    "TaxCloud",
+    "Host"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-taxjar",
+   "path": "/blog/zamp-vs-taxjar",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-vertex",
+   "path": "/blog/zamp-vs-vertex",
+   "type": "vs_you",
+   "targets": [
+    "Vertex"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/zamp-vs-vertex-vs-sovos",
+   "path": "/blog/zamp-vs-vertex-vs-sovos",
+   "type": "vs_you",
+   "targets": [
+    "Vertex",
+    "Sovos"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/compare/zamp-vs-avalara",
+   "path": "/compare/zamp-vs-avalara",
+   "type": "vs_you",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/compare/zamp-vs-kintsugi",
+   "path": "/compare/zamp-vs-kintsugi",
+   "type": "vs_you",
+   "targets": [
+    "Kintsugi"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/compare/zamp-vs-numeral",
+   "path": "/compare/zamp-vs-numeral",
+   "type": "vs_you",
+   "targets": [
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/compare/zamp-vs-taxjar",
+   "path": "/compare/zamp-vs-taxjar",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/compare/zamp-vs-yonda",
+   "path": "/compare/zamp-vs-yonda",
+   "type": "vs_you",
+   "targets": [
+    "Yonda"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/anrok-alternatives",
+   "path": "/blog/anrok-alternatives",
+   "type": "alt",
+   "targets": [
+    "Anrok"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/avalara-alternatives",
+   "path": "/blog/avalara-alternatives",
+   "type": "alt",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-alternatives-to-netsuite-sales-tax-automation",
+   "path": "/blog/best-alternatives-to-netsuite-sales-tax-automation",
+   "type": "alt",
+   "targets": [
+    "NetSuite"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/numeral-alternatives",
+   "path": "/blog/numeral-alternatives",
+   "type": "alt",
+   "targets": [
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/sovos-alternatives",
+   "path": "/blog/sovos-alternatives",
+   "type": "alt",
+   "targets": [
+    "Sovos"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/sphere-alternatives-sales-tax-automation",
+   "path": "/blog/sphere-alternatives-sales-tax-automation",
+   "type": "alt",
+   "targets": [
+    "Sphere"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/taxdoo-ends-vat-compliance-services-in-2026—why-kintsugi-is-the-best-alternative",
+   "path": "/blog/taxdoo-ends-vat-compliance-services-in-2026—why-kintsugi-is-the-best-alternative",
+   "type": "alt",
+   "targets": [
+    "Taxdoo"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/top-10-taxcloud-alternatives",
+   "path": "/blog/top-10-taxcloud-alternatives",
+   "type": "alt",
+   "targets": [
+    "TaxCloud"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/top-10-taxjar-alternatives",
+   "path": "/blog/top-10-taxjar-alternatives",
+   "type": "alt",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/vertex-alternatives",
+   "path": "/blog/vertex-alternatives",
+   "type": "alt",
+   "targets": [
+    "Vertex"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/zamp-alternatives",
+   "path": "/blog/zamp-alternatives",
+   "type": "alt",
+   "targets": [
+    "Zamp"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-accounting-software-for-vat-returns",
+   "path": "/blog/best-accounting-software-for-vat-returns",
+   "type": "best",
+   "targets": [],
+   "audience": "Global VAT and GST"
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-ai-tax-software",
+   "path": "/blog/best-ai-tax-software",
+   "type": "best",
+   "targets": [],
+   "audience": "AI"
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-cross-border-vat-compliance-software",
+   "path": "/blog/best-cross-border-vat-compliance-software",
+   "type": "best",
+   "targets": [],
+   "audience": "Global VAT and GST"
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-global-tax-compliance-software",
+   "path": "/blog/best-global-tax-compliance-software",
+   "type": "best",
+   "targets": [],
+   "audience": "Global VAT and GST"
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-gst-compliance-software-businesses",
+   "path": "/blog/best-gst-compliance-software-businesses",
+   "type": "best",
+   "targets": [],
+   "audience": "Global VAT and GST"
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-indirect-tax-software",
+   "path": "/blog/best-indirect-tax-software",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-multi-state-sales-tax-software",
+   "path": "/blog/best-multi-state-sales-tax-software",
+   "type": "best",
+   "targets": [],
+   "audience": "Multi-state"
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-sales-tax-software",
+   "path": "/blog/best-sales-tax-software",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-sales-tax-software-for-saas-companies-2026-guide",
+   "path": "/blog/best-sales-tax-software-for-saas-companies-2026-guide",
+   "type": "best",
+   "targets": [],
+   "audience": "SaaS"
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-sales-tax-software-quickbooks",
+   "path": "/blog/best-sales-tax-software-quickbooks",
+   "type": "best",
+   "targets": [],
+   "audience": "QuickBooks"
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/best-shopify-sales-tax-software-multi-state",
+   "path": "/blog/best-shopify-sales-tax-software-multi-state",
+   "type": "best",
+   "targets": [],
+   "audience": "Shopify"
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/top-7-vat-compliance-solutions-for-global-expansion-in-2026",
+   "path": "/blog/top-7-vat-compliance-solutions-for-global-expansion-in-2026",
+   "type": "best",
+   "targets": [],
+   "audience": "Global VAT and GST"
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/and-collar",
+   "path": "/customers/and-collar",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/blossom-lux",
+   "path": "/customers/blossom-lux",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/capay-valley-lavender",
+   "path": "/customers/capay-valley-lavender",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/control-plane",
+   "path": "/customers/control-plane",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/copenhagen-sleep-company",
+   "path": "/customers/copenhagen-sleep-company",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/e-mart",
+   "path": "/customers/e-mart",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/fashion-aura",
+   "path": "/customers/fashion-aura",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/flywheel",
+   "path": "/customers/flywheel",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/free-to-grow-cfo",
+   "path": "/customers/free-to-grow-cfo",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/gwella",
+   "path": "/customers/gwella",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/hutty-walla",
+   "path": "/customers/hutty-walla",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/idea-shop",
+   "path": "/customers/idea-shop",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/incendico",
+   "path": "/customers/incendico",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/inspired-results",
+   "path": "/customers/inspired-results",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/jmxi",
+   "path": "/customers/jmxi",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/jns-bros",
+   "path": "/customers/jns-bros",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/keto-brick",
+   "path": "/customers/keto-brick",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/livease",
+   "path": "/customers/livease",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/mindy-maes-market",
+   "path": "/customers/mindy-maes-market",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/muzzi",
+   "path": "/customers/muzzi",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/my-yard",
+   "path": "/customers/my-yard",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/nowadays",
+   "path": "/customers/nowadays",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/obvi",
+   "path": "/customers/obvi",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/one-click",
+   "path": "/customers/one-click",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/otc-shop",
+   "path": "/customers/otc-shop",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/pearl-shop",
+   "path": "/customers/pearl-shop",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/picksmart",
+   "path": "/customers/picksmart",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/pins-and-aces",
+   "path": "/customers/pins-and-aces",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/plufl",
+   "path": "/customers/plufl",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/resonance",
+   "path": "/customers/resonance",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/simply-j4-boutique",
+   "path": "/customers/simply-j4-boutique",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/smartlabels",
+   "path": "/customers/smartlabels",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/superjoin",
+   "path": "/customers/superjoin",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/superkeen",
+   "path": "/customers/superkeen",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/symbiome",
+   "path": "/customers/symbiome",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/talha-reviews-store",
+   "path": "/customers/talha-reviews-store",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/the-attire-glow",
+   "path": "/customers/the-attire-glow",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/the-forbidden-fruit",
+   "path": "/customers/the-forbidden-fruit",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/thegrint",
+   "path": "/customers/thegrint",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/toyseepk",
+   "path": "/customers/toyseepk",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/vincero",
+   "path": "/customers/vincero",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/customers/whatashort",
+   "path": "/customers/whatashort",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/avalara-pricing",
+   "path": "/blog/avalara-pricing",
+   "type": "pricing",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/blog/legacy-avatax-shopify-deprecation-switch-to-kintsugi",
+   "path": "/blog/legacy-avatax-shopify-deprecation-switch-to-kintsugi",
+   "type": "switch",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/anrok",
+   "path": "/compare/anrok",
+   "type": "vs_you",
+   "targets": [
+    "Anrok"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/avalara",
+   "path": "/compare/avalara",
+   "type": "vs_you",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/avalara-netsuite",
+   "path": "/compare/avalara-netsuite",
+   "type": "vs_you",
+   "targets": [
+    "Avalara",
+    "NetSuite"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/avalara-shopify",
+   "path": "/compare/avalara-shopify",
+   "type": "vs_you",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/avalara-vs-anrok-vs-kintsugi",
+   "path": "/compare/avalara-vs-anrok-vs-kintsugi",
+   "type": "vs_you",
+   "targets": [
+    "Avalara",
+    "Anrok"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/avalara-vs-taxjar-vs-kintsugi",
+   "path": "/compare/avalara-vs-taxjar-vs-kintsugi",
+   "type": "vs_you",
+   "targets": [
+    "Avalara",
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/numeral",
+   "path": "/compare/numeral",
+   "type": "vs_you",
+   "targets": [
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/numeral-vs-avalara-vs-kintsugi",
+   "path": "/compare/numeral-vs-avalara-vs-kintsugi",
+   "type": "vs_you",
+   "targets": [
+    "Avalara",
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/stripe",
+   "path": "/compare/stripe",
+   "type": "vs_you",
+   "targets": [
+    "Stripe Tax"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/taxcloud",
+   "path": "/compare/taxcloud",
+   "type": "vs_you",
+   "targets": [
+    "TaxCloud"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/taxjar",
+   "path": "/compare/taxjar",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/taxjar-shopify",
+   "path": "/compare/taxjar-shopify",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/taxjar-vs-vertex-vs-kintsugi",
+   "path": "/compare/taxjar-vs-vertex-vs-kintsugi",
+   "type": "vs_you",
+   "targets": [
+    "TaxJar",
+    "Vertex"
+   ]
+  },
+  {
+   "site": "Kintsugi",
+   "url": "https://trykintsugi.com/compare/zamp",
+   "path": "/compare/zamp",
+   "type": "vs_you",
+   "targets": [
+    "Zamp"
+   ]
+  }
+ ]
+}

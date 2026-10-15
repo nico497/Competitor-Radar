@@ -1,0 +1,142 @@
+{
+  "title": "Bottom-of-funnel content tracker",
+  "niche": "US sales tax compliance software for mid-market ecommerce and SaaS brands",
+  "you": "TaxCloud",
+  "competitors": [
+    "Avalara",
+    "TaxJar",
+    "Anrok",
+    "Numeral",
+    "Zamp",
+    "Kintsugi"
+  ],
+  "vendors": {
+    "Avalara": "avalara|avatax",
+    "TaxJar": "taxjar",
+    "Anrok": "anrok",
+    "Numeral": "numeral(?:hq)?",
+    "Zamp": "zamp",
+    "Kintsugi": "kintsugi|trykintsugi",
+    "TaxCloud": "taxcloud",
+    "Vertex": "vertex",
+    "Sovos": "sovos",
+    "Stripe Tax": "stripe tax|stripe(?! (?:invoicing|payments|payment|billing|connect))",
+    "Shopify Tax": "shopify tax",
+    "Sphere": "sphere",
+    "Yonda": "yonda",
+    "Host": "host",
+    "Taxually": "taxually",
+    "TaxValet": "taxvalet",
+    "Taxwire": "taxwire",
+    "Taxdoo": "taxdoo",
+    "Fonoa": "fonoa",
+    "Thomson Reuters": "thomson reuters|onesource",
+    "NetSuite": "netsuite"
+  },
+  "audiences": [
+    [
+      "Shopify",
+      "shopify"
+    ],
+    [
+      "WooCommerce",
+      "woocommerce"
+    ],
+    [
+      "BigCommerce",
+      "bigcommerce"
+    ],
+    [
+      "Adobe Commerce and Magento",
+      "adobe commerce|magento"
+    ],
+    [
+      "Amazon FBA",
+      "amazon"
+    ],
+    [
+      "Etsy",
+      "etsy"
+    ],
+    [
+      "QuickBooks",
+      "quickbooks"
+    ],
+    [
+      "Xero",
+      "xero"
+    ],
+    [
+      "NetSuite",
+      "netsuite"
+    ],
+    [
+      "Chargebee",
+      "chargebee"
+    ],
+    [
+      "Stripe",
+      "stripe"
+    ],
+    [
+      "Microsoft Business Central",
+      "business central"
+    ],
+    [
+      "SaaS",
+      "saas"
+    ],
+    [
+      "DTC brands",
+      "dtc"
+    ],
+    [
+      "B2B wholesalers",
+      "wholesal"
+    ],
+    [
+      "Marketplace sellers",
+      "marketplace"
+    ],
+    [
+      "Multi-channel retailers",
+      "multi channel|multichannel"
+    ],
+    [
+      "Subscription businesses",
+      "subscription"
+    ],
+    [
+      "Digital services",
+      "digital services"
+    ],
+    [
+      "Food and beverage",
+      "food"
+    ],
+    [
+      "Accountants",
+      "accountants?"
+    ],
+    [
+      "Small business",
+      "small business"
+    ],
+    [
+      "Ecommerce",
+      "e ?commerce"
+    ],
+    [
+      "Global VAT and GST",
+      "vat|gst|global|cross border"
+    ],
+    [
+      "Multi-state",
+      "multi state"
+    ],
+    [
+      "AI",
+      "\\bai\\b"
+    ]
+  ]
+}

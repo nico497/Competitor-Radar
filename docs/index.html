@@ -51,6 +51,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px 88px; }
 .mast { display: flex; justify-content: space-between; align-items: center; gap: 8px 16px; flex-wrap: wrap; padding: 24px 0 48px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--navy); text-decoration: none; font: 800 18px/1 var(--sans); font-stretch: 112%; }
+.nav { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.nav svg { margin-right: 4px; }
+.nav a { padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--navy); font: 700 15px/1.2 var(--sans); text-decoration: none; }
+.nav a:hover { border-color: var(--navy); }
+.nav a[aria-current="page"] { background: var(--btn-bg); border-color: var(--btn-bg); color: var(--btn-ink); }
 .stamp { font-size: 14px; color: var(--ink-3); }
 #alerts:empty { display: none; }
 #alerts { margin: 0 0 28px; display: grid; gap: 8px; }
@@ -191,10 +196,7 @@ details.health summary .sub2 { margin-left: 8px; font-weight: 400; color: var(--
 
 <main class="wrap" id="top">
   <div class="mast">
-    <a class="brand" href="#top">
-      <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="17" width="7" height="11" rx="2" fill="#3a547a"/><rect x="12.5" y="10" width="7" height="18" rx="2" fill="#3a547a"/><rect x="21" y="3" width="7" height="25" rx="2" fill="#0aa8bf"/></svg>
-      Competitor Radar
-    </a>
+    <nav class="nav" aria-label="Tools"><svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="17" width="7" height="11" rx="2" fill="#3a547a"/><rect x="12.5" y="10" width="7" height="18" rx="2" fill="#3a547a"/><rect x="21" y="3" width="7" height="25" rx="2" fill="#0aa8bf"/></svg><a href="./" aria-current="page">Competitor Radar</a><a href="funnel.html">Funnel Gap Radar</a></nav>
     <span class="stamp" id="stamp"></span>
   </div>
   <div id="alerts"></div>
