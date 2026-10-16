@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Head-to-Head Radar</title>
+<style>
+
+@font-face {
+  font-family: "Archivo"; font-style: normal; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap;
+  src: url(fonts/archivo-latin-wdth-normal.woff2) format("woff2");
+}
+:root {
+  --paper: #ffffff; --surface: #ffffff; --panel: #f0f6fe; --mark: #e8f0fe;
+  --navy: #3a547a; --ink: #394150; --ink-2: #566073; --ink-3: #697384; --line: #dfe6f1;
+  --cyan: #67e0e1; --you: #0aa8bf; --you-wash: #dff6f9;
+  --rival: #3a547a; --btn-bg: #3a547a; --btn-ink: #67e0e1; --focus: #3a547a;
+  --shadow: 0 4px 18px rgba(58,84,122,.10);
+  --up: #127a45; --down: #b42318;
+  --t1: #3a547a; --t2: #0aa8bf; --t3: #67e0e1; --t4: #7b93b8; --t5: #a9bfe0; --t6: #2c7da0; --t7: #c3ccd9; --t8: #1f2d44;
+  --sans: "Archivo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1623; --surface: #161f30; --panel: #1b2740; --mark: #243452;
+    --navy: #a9c1e6; --ink: #dfe6f2; --ink-2: #b2bccd; --ink-3: #8c97aa; --line: #2a3750;
+    --you: #67e0e1; --you-wash: #17353b; --rival: #8fa9d1;
+    --btn-bg: #67e0e1; --btn-ink: #0f1623; --focus: #67e0e1; --shadow: none; --up: #4ade80; --down: #f87171;
+    --t1: #a9c1e6; --t2: #2fb8cf; --t3: #67e0e1; --t4: #7b93b8; --t5: #dbe6f7; --t6: #3f8fb3; --t7: #596a85; --t8: #8aa0c4;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1623; --surface: #161f30; --panel: #1b2740; --mark: #243452;
+  --navy: #a9c1e6; --ink: #dfe6f2; --ink-2: #b2bccd; --ink-3: #8c97aa; --line: #2a3750;
+  --you: #67e0e1; --you-wash: #17353b; --rival: #8fa9d1;
+  --btn-bg: #67e0e1; --btn-ink: #0f1623; --focus: #67e0e1; --shadow: none; --up: #4ade80; --down: #f87171;
+  --t1: #a9c1e6; --t2: #2fb8cf; --t3: #67e0e1; --t4: #7b93b8; --t5: #dbe6f7; --t6: #3f8fb3; --t7: #596a85; --t8: #8aa0c4;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.55 var(--sans); font-stretch: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+.hide { display: none !important; }
+
+/* ---------- Top of page ---------- */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px 88px; }
+.mast { display: flex; justify-content: space-between; align-items: center; gap: 8px 16px; flex-wrap: wrap; padding: 24px 0 48px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--navy); text-decoration: none; font: 800 18px/1 var(--sans); font-stretch: 112%; }
+.stamp { font-size: 14px; color: var(--ink-3); }
+#alerts:empty { display: none; }
+#alerts { margin: 0 0 28px; display: grid; gap: 8px; }
+.alert { background: #fdecec; color: #8a1c1c; border-radius: 10px; padding: 10px 14px; font-size: 14px; }
+mark.hl { background: var(--mark); color: inherit; border-radius: 6px; padding: 0 .14em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+mark.hl.you { background: var(--you-wash); }
+.lead { margin: 0 0 28px; max-width: 44em; color: var(--navy); font-size: clamp(19px, 2vw, 24px); line-height: 1.5; font-weight: 600; letter-spacing: -.005em; }
+
+.tag, .youtag { display: inline-block; margin-left: 8px; padding: 3px 8px; border-radius: 5px; background: var(--btn-bg); color: var(--btn-ink); font: 700 12px/1 var(--sans); vertical-align: 3px; }
+
+/* ---------- Key points ---------- */
+.points { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; }
+.points:empty { display: none; }
+.points li { background: var(--panel); border-radius: 14px; padding: 24px; box-shadow: var(--shadow); }
+.points p { margin: 0 0 16px; font-size: 18px; line-height: 1.5; font-weight: 500; color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-block; padding: 3px 10px; border-radius: 6px; background: var(--surface); border: 1px solid var(--line); color: var(--navy); font-size: 14px; font-weight: 600; }
+.chip.you { background: var(--btn-bg); border-color: var(--btn-bg); color: var(--btn-ink); }
+
+/* ---------- Sections ---------- */
+.sec { margin-top: 88px; }
+.sechead { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px 24px; flex-wrap: wrap; margin: 0 0 24px; }
+.title { margin: 0; color: var(--navy); font: 800 clamp(26px, 3vw, 34px)/1.1 var(--sans); font-stretch: 110%; letter-spacing: -.015em; }
+.facts { margin: 20px 0 0; max-width: 44em; color: var(--ink-2); font-size: clamp(17px, 1.6vw, 20px); line-height: 1.55; }
+.facts:empty { display: none; }
+#headline h1 { max-width: 20em; text-wrap: balance; }
+h1.title { font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -.02em; }
+.sub { margin: 8px 0 0; color: var(--ink-2); font-size: 16px; }
+.toggle { display: inline-flex; padding: 3px; gap: 2px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.toggle button { border: 0; background: transparent; border-radius: 7px; padding: 8px 14px; font-size: 15px; font-weight: 600; color: var(--ink-2); }
+.toggle button[aria-pressed="true"] { background: var(--btn-bg); color: var(--btn-ink); }
+
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 0 0 18px; font-size: 14px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; flex: none; }
+
+.h2h { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 20px; }
+.col { background: var(--surface); border: 1px solid var(--line); border-top: 6px solid var(--rival); border-radius: 12px; padding: 24px; min-width: 0; box-shadow: var(--shadow); }
+.col.you { border-top-color: var(--you); }
+.colhead { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.cname { margin: 0; color: var(--navy); font: 800 26px/1.1 var(--sans); font-stretch: 108%; letter-spacing: -.01em; }
+.cname a { text-decoration: none; }
+.cname a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.tabs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 22px; }
+.tabs:empty { display: none; }
+.tabslabel { margin-right: 4px; font-size: 15px; color: var(--ink-2); }
+.tabs button { padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--navy); font-size: 15px; font-weight: 600; }
+.tabs button:hover { border-color: var(--navy); }
+.tabs button[aria-pressed="true"] { background: var(--btn-bg); border-color: var(--btn-bg); color: var(--btn-ink); }
+.figs { display: flex; flex-wrap: wrap; gap: 8px 36px; margin: 22px 0 6px; }
+.fig b { display: block; color: var(--navy); font: 800 42px/1 var(--sans); font-stretch: 116%; font-variant-numeric: tabular-nums; }
+.fig span { display: block; margin-top: 6px; font-size: 14px; color: var(--ink-2); }
+.d.up { color: var(--up); font-weight: 700; } .d.down { color: var(--down); font-weight: 700; }
+.sitepages { margin: 0 0 20px; font-size: 14px; color: var(--ink-3); }
+.mix { display: flex; gap: 2px; height: 24px; margin: 0 0 8px; }
+.mix i { display: block; height: 100%; min-width: 3px; }
+.mix i:first-child { border-radius: 6px 0 0 6px; } .mix i:last-child { border-radius: 0 6px 6px 0; } .mix i:only-child { border-radius: 6px; }
+.mix.empty { background: var(--panel); border: 1px dashed var(--line); border-radius: 6px; }
+.mixline { margin: 0 0 18px; font-size: 14px; color: var(--ink-2); }
+.playline { margin: 0 0 8px; font-size: 16px; }
+.playline b { font-weight: 700; color: var(--navy); }
+.meta { margin-top: 6px; font-size: 14px; color: var(--ink-3); }
+.fail { color: var(--down); font-size: 15px; margin: 16px 0 0; }
+.trend { display: flex; align-items: flex-end; gap: 10px; margin-top: 18px; }
+.trend svg { fill: var(--rival); } .trend span { font-size: 14px; color: var(--ink-3); }
+.col.you .trend svg { fill: var(--you); }
+.versus { margin: 20px 0 0; padding: 20px 24px; border-radius: 12px; border-left: 6px solid var(--you); background: var(--panel); font-size: 17px; line-height: 1.5; box-shadow: var(--shadow); }
+.versus b { font-weight: 700; color: var(--navy); }
+.note { max-width: 62em; margin: 18px 0 0; font-size: 14px; color: var(--ink-3); }
+.empty-note { color: var(--ink-3); font-size: 15px; background: var(--panel); border-radius: 12px; padding: 16px 20px; margin: 0; }
+
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+table.nums { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+table.nums th, table.nums td { padding: 12px 14px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.nums tr:last-child td { border-bottom: 0; }
+table.nums th { font-size: 13px; font-weight: 600; color: var(--ink-2); background: var(--surface); }
+table.nums th:first-child, table.nums td:first-child { text-align: left; position: sticky; left: 0; background: var(--surface); font-weight: 700; color: var(--navy); }
+table.nums td.h { background: color-mix(in srgb, var(--rival) calc(var(--v, 0) * 26%), transparent); }
+table.nums tr.you td { background: var(--you-wash); }
+table.nums tr.you td.h { background: color-mix(in srgb, var(--rival) calc(var(--v, 0) * 26%), var(--you-wash)); }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; box-shadow: var(--shadow); }
+.card h3 { margin: 14px 0 8px; color: var(--navy); font: 700 20px/1.25 var(--sans); font-stretch: 106%; }
+.card p { margin: 0 0 14px; color: var(--ink-2); }
+.meter { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink-2); }
+.cells { display: flex; gap: 3px; }
+.cells i { width: 16px; height: 8px; border-radius: 2px; background: var(--line); }
+.cells i.on { background: var(--navy); }
+.card.gap { background: var(--panel); border: 2px dashed color-mix(in srgb, var(--navy) 35%, transparent); box-shadow: none; }
+.card.gap h3 { margin-top: 0; font-size: 22px; }
+.card.gap p { color: var(--ink); margin: 0; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 14px; margin: 0 0 16px; background: var(--panel); border-radius: 12px; }
+.filters select { max-width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); font: inherit; font-size: 15px; }
+.go { padding: 11px 24px; border: 0; border-radius: 8px; background: var(--btn-bg); color: var(--btn-ink); font: 700 15px/1 var(--sans); }
+.go:hover { opacity: .92; }
+.posts { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.post { padding: 18px 22px 18px 20px; border-top: 1px solid var(--line); border-left: 6px solid var(--tc, var(--line)); }
+.post:first-child { border-top: 0; }
+.pmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; font-size: 14px; color: var(--ink-3); }
+.pmeta .who { color: var(--navy); font-weight: 700; }
+.type { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-2); }
+.kind { padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+.kind.new { background: var(--btn-bg); color: var(--btn-ink); }
+.nav { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.nav svg { margin-right: 4px; }
+.nav a { padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--navy); font: 700 15px/1.2 var(--sans); text-decoration: none; }
+.nav a:hover { border-color: var(--navy); }
+.nav a[aria-current="page"] { background: var(--btn-bg); border-color: var(--btn-bg); color: var(--btn-ink); }
+
+.mx { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+.mx th, .mx td { padding: 0; text-align: center; border-bottom: 1px solid var(--line); }
+.mx thead th { padding: 12px 8px; font-size: 13px; font-weight: 700; color: var(--ink-2); white-space: nowrap; }
+.mx th.rl, .mx td.rl { text-align: left; padding: 12px 14px; position: sticky; left: 0; background: var(--surface); font-weight: 700; color: var(--navy); min-width: 190px; z-index: 1; }
+.mx tr:last-child td { border-bottom: 0; }
+.mx td.c button { display: block; width: 100%; min-width: 64px; padding: 14px 8px; border: 0; background: color-mix(in srgb, var(--navy) calc(var(--v, 0) * 30%), transparent); font: 700 16px/1 var(--sans); color: var(--navy); }
+.mx td.c button:hover { outline: 2px solid var(--navy); outline-offset: -2px; }
+.mx td.c.you button { background: color-mix(in srgb, var(--you) calc(var(--v, 0) * 34% + 10%), var(--you-wash)); }
+.mx td.c.zero button { color: var(--ink-3); font-weight: 600; }
+.mx td.st { padding: 0 14px; text-align: left; white-space: nowrap; }
+.pill { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+.pill.behind { background: #fdecec; color: #9b1c1c; } .pill.par { background: var(--mark); color: var(--navy); } .pill.ahead { background: #e3f6ea; color: #14633a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pill.behind { background: #3a1d22; color: #fca5a5; } :root:not([data-theme="light"]) .pill.ahead { background: #153a28; color: #86efac; } }
+.mx td.c.sel button { box-shadow: inset 0 0 0 3px var(--btn-bg); }
+.gaps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; counter-reset: g; }
+.gaps li { background: var(--panel); border-radius: 14px; padding: 24px; box-shadow: var(--shadow); counter-increment: g; }
+.gaps li::before { content: counter(g); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--btn-bg); color: var(--btn-ink); font: 800 15px/1 var(--sans); margin-bottom: 14px; }
+.gaps h3 { margin: 0 0 8px; color: var(--navy); font: 800 22px/1.2 var(--sans); font-stretch: 106%; }
+.gaps p { margin: 0 0 14px; color: var(--ink); font-size: 17px; line-height: 1.5; }
+.chip.no { border-style: dashed; }
+.chip small { font-weight: 500; color: var(--ink-3); margin-left: 4px; }
+.vg td.c, .vg th.c { padding: 10px 8px; }
+.vg .y { color: var(--up); font-weight: 800; } .vg .n { color: var(--down); font-weight: 800; }
+.vg .cnt { display: block; font-size: 12px; font-weight: 600; color: var(--ink-3); }
+.vg td.c.gapcell { background: var(--panel); }
+.tg { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; }
+.tg .card h3 { margin-top: 0; }
+.tg ul { margin: 0; padding: 0; list-style: none; font-size: 14px; }
+.tg li { padding: 3px 0; overflow-wrap: anywhere; }
+.pl { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.tip { position: fixed; z-index: 20; max-width: 280px; padding: 10px 12px; border-radius: 10px; background: var(--btn-bg); color: var(--btn-ink); font-size: 13px; line-height: 1.45; pointer-events: none; box-shadow: var(--shadow); }
+.tip b { display: block; margin-bottom: 2px; color: #fff; }
+.cplay { margin: 0 0 12px; font-size: 16px; color: var(--ink); } .cplay b { color: var(--navy); }
+.ctypes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.ctypes button { padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--navy); font-size: 14px; font-weight: 600; }
+.ctypes button:hover { border-color: var(--navy); }
+.cp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+.cp > div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 24px; box-shadow: var(--shadow); }
+.cp .cn { background: var(--panel); border-color: transparent; }
+.cp .cn h3 { margin: 0 0 12px; color: var(--navy); font: 700 20px/1.25 var(--sans); font-stretch: 106%; }
+.cp ul { margin: 0; padding: 0; list-style: none; font-size: 15px; } .cp li { padding: 5px 0; overflow-wrap: anywhere; } .cp .ty { font-size: 13px; color: var(--ink-3); }
+@media (max-width: 720px) { .cp { grid-template-columns: 1fr; } }
+.pl.hide { display: none; }
+.pr { display: grid; grid-template-columns: 110px 1fr auto; gap: 4px 16px; align-items: baseline; padding: 12px 18px; border-top: 1px solid var(--line); font-size: 15px; }
+.pr:first-child { border-top: 0; }
+.pr .who { color: var(--navy); font-weight: 700; }
+.pr a { overflow-wrap: anywhere; }
+.pr .ty { font-size: 13px; color: var(--ink-3); }
+.pr.you { border-left: 6px solid var(--you); padding-left: 12px; }
+.more { padding: 12px 18px; border-top: 1px solid var(--line); background: var(--panel); }
+.more button { border: 0; background: none; color: var(--navy); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+ul.how { margin: 0; padding-left: 20px; color: var(--ink-2); max-width: 62em; } ul.how li { margin: 6px 0; }
+@media (max-width: 720px) { .wrap { padding: 0 16px 64px; } .sec { margin-top: 64px; } .pr { grid-template-columns: 1fr; } .mx th.rl, .mx td.rl { min-width: 140px; } }
+
+.mockbar { margin: -24px 0 36px; padding: 10px 14px; border-radius: 10px; background: #fff6e0; color: #6b4a00; font-size: 14px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mockbar { background: #3a2f12; color: #f5d98a; } }
+.sb { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+.sb th, .sb td { padding: 0; border-bottom: 1px solid var(--line); text-align: center; }
+.sb thead th { padding: 12px 8px; font-size: 13px; font-weight: 700; color: var(--ink-2); white-space: nowrap; }
+.sb thead th.pick { color: var(--navy); }
+.sb th.rl, .sb td.rl { text-align: left; padding: 12px 14px; position: sticky; left: 0; background: var(--surface); font-weight: 700; color: var(--navy); min-width: 130px; z-index: 1; }
+.sb tr:last-child td { border-bottom: 0; }
+.sb td.v button { display: block; width: 100%; min-width: 96px; padding: 12px 8px; border: 0; background: transparent; line-height: 1.2; cursor: pointer; }
+.sb td.v button:hover { outline: 2px solid var(--navy); outline-offset: -2px; }
+.sb td.v b { display: block; font: 800 15px/1.2 var(--sans); }
+.sb td.v small { display: block; margin-top: 3px; font-size: 12px; color: var(--ink-3); }
+.sb td.v.win { background: var(--you-wash); } .sb td.v.win b { color: #087a8c; }
+.sb td.v.lose { background: #fdecec; } .sb td.v.lose b { color: #9b1c1c; }
+.sb td.v.split { background: var(--mark); } .sb td.v.split b { color: var(--navy); }
+.sb td.v.pick { border-right: 2px solid var(--line); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .sb td.v.lose { background: #3a1d22; } :root:not([data-theme="light"]) .sb td.v.lose b { color: #fca5a5; } :root:not([data-theme="light"]) .sb td.v.win b { color: #67e0e1; } }
+.verdict { margin: 0 0 16px; color: var(--navy); font: 800 24px/1.25 var(--sans); font-stretch: 106%; }
+.ord { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 18px; }
+.ord span { padding: 6px 12px; border-radius: 8px; background: var(--panel); font-size: 14px; color: var(--ink-2); }
+.ord b { color: var(--navy); }
+.reasons { list-style: none; margin: 0; padding: 0; }
+.reasons li { padding: 10px 0; border-top: 1px solid var(--line); font-size: 15px; }
+.reasons li:first-child { border-top: 0; }
+.reasons .dim { display: flex; justify-content: space-between; gap: 8px; font-weight: 700; color: var(--navy); }
+.reasons q { display: block; margin-top: 4px; color: var(--ink-2); quotes: "C" "D"; }
+.src { list-style: none; margin: 0 0 14px; padding: 0; }
+.src li { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 9px 0; border-top: 1px solid color-mix(in srgb, var(--navy) 12%, transparent); font-size: 14px; }
+.src li:first-child { border-top: 0; }
+.src a { overflow-wrap: anywhere; color: var(--ink); }
+.src .own { font-size: 12px; color: var(--ink-3); }
+.src .n { font-weight: 800; color: var(--navy); align-self: center; }
+.insight { margin: 0; padding: 14px 16px; border-radius: 10px; background: var(--surface); border-left: 5px solid var(--you); font-size: 15px; }
+.fc { width: 100%; border-collapse: collapse; font-size: 15px; }
+.fc th { font-size: 13px; font-weight: 700; color: var(--ink-2); text-align: left; border-bottom: 1px solid var(--line); }
+.fc td:first-child { font-weight: 700; color: var(--navy); }
+.fc tr:last-child td { border-bottom: 0; }
+.fc td, .fc th { text-align: left; white-space: normal; }
+.fc td { padding: 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.fc th { padding: 12px 14px; }
+.ans { padding: 16px 20px; border-top: 1px solid var(--line); }
+.ans:first-child { border-top: 0; }
+.ans .q { font-weight: 700; color: var(--navy); }
+.ans .m { font-size: 13px; color: var(--ink-3); margin: 2px 0 6px; }
+.ans p { margin: 0; color: var(--ink-2); font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="tip hide" id="tip" role="tooltip"></div>
+<div class="wrap">
+  <header class="mast">
+    <nav class="nav" aria-label="Tools"><svg width="24" height="24" viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="7" fill="#3a547a"/><path d="M8 8h4v10H8zM14 12h4v6h-4z" fill="#67e0e1"/></svg><a href="./">Competitor Radar</a><a href="funnel.html">Funnel Gap Radar</a><a href="headtohead.html" aria-current="page">Head-to-Head Radar</a></nav>
+    <span class="stamp">ChatGPT (logged out) · Oct 2026</span>
+  </header>
+  <p class="mockbar"><b>Real data, limited scope.</b> The "Forced pick" numbers are 60 live ChatGPT answers (6 rivals × 2 name orders × 5 runs each) collected this session. The reasoning notes under each matchup come from one open-ended comparison run per order — not repeated, so treat them as a single data point, not a trend.</p>
+
+  <section id="headline"></section>
+
+  <section class="sec">
+    <div class="sechead"><div><h2 class="title">Scoreboard</h2><p class="sub">Who ChatGPT picks when forced to choose, out of 10 live runs (5 per name order).</p></div></div>
+    <div class="legend"><span><i class="sw" style="background:var(--you-wash);border:1px solid var(--you)"></i>TaxCloud picked more often</span><span><i class="sw" style="background:#fdecec;border:1px solid #e9a5a5"></i>Rival picked more often</span></div>
+    <div class="tablewrap"><table class="sb" id="sb"></table></div>
+    <p class="note">Each cell is clickable for the order breakdown and the single-run reasoning behind it. "Stable" means every one of the 10 runs agreed; "Split" means the result varied run to run, including within one name order.</p>
+  </section>
+
+  <section class="sec" id="comp">
+    <div class="sechead"><div><h2 class="title">Inside each matchup</h2><p class="sub">The forced-pick record, plus what ChatGPT said in one open-ended "which should I choose" run per order.</p></div></div>
+    <div class="tabs" id="ctabs"></div>
+    <div id="cpanel"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><div><h2 class="title">Worth checking</h2><p class="sub">Claims ChatGPT made in the open-comparison runs that are specific enough to verify against your own pricing and docs.</p></div></div>
+    <div class="tablewrap"><table class="fc" id="fc"></table></div>
+    <p class="note">These are unverified — pulled straight from ChatGPT's answers, not checked against a fact sheet yet.</p>
+  </section>
+
+  <section class="sec" id="find">
+    <div class="sechead"><div><h2 class="title">Read the source answers</h2><p class="sub" id="findsub">The open-ended comparison run for each rival and order — the raw material behind "Inside each matchup."</p></div></div>
+    <div class="filters">
+      <select id="fr" aria-label="Rival"></select><select id="fo" aria-label="Order"></select>
+      <button class="go" id="go" type="button">Search</button>
+    </div>
+    <div class="pl hide" id="pl"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sechead"><h2 class="title">How this works, and what it doesn't cover yet</h2></div>
+    <ul class="how">
+      <li>Forced-pick question: "If you had to pick one for a mid-market ecommerce brand, TaxCloud or {rival}?" Asked in both name orders, 5 fresh runs each (60 answers total), logged out of ChatGPT so there's no memory or personalization.</li>
+      <li>Open comparison question: "TaxCloud vs. {rival}: which should I choose?" Asked once per order (12 answers) — this is where the qualitative reasoning and citations below come from. It is <b>not</b> repeated, so a single odd answer could be noise.</li>
+      <li>Both orders are asked because ChatGPT can lean toward whichever brand is named first. For Avalara, TaxJar and Anrok it doesn't matter — the result is unanimous either way. For Numeral, Zamp and Kintsugi, the result varies run to run regardless of order — that's instability, not a clean order bias.</li>
+      <li>Not yet covered: pricing, integrations, filing, setup and support as separate scored dimensions (the first mockup of this page showed those; they'd need their own repeated, structured prompts to be real rather than invented). Also not covered: any engine besides ChatGPT, and any run while logged in.</li>
+    </ul>
+  </section>
+</div>
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const YOU = "TaxCloud";
+
+// Real forced-pick tallies: 5 runs per order, from live ChatGPT (logged out), Oct 2026.
+// you: TaxCloud named first. them: rival named first. Each is {taxcloud, rival} out of 5.
+const H2H = {
+  Avalara: {
+    you: { taxcloud: 0, rival: 5 }, them: { taxcloud: 0, rival: 5 },
+    openPoints: [
+      "Framed as “it depends,” not a winner: TaxCloud for simple, US-only, cost-conscious sellers; Avalara for multichannel, international, or complex-integration needs.",
+      "Avalara's case rests on integration breadth — 1,400+ ERP/partner integrations — plus broader exemption-certificate and reporting features.",
+      "No hedge survives into the forced pick: Avalara wins all 10 runs, both orders.",
+    ],
+    openCites: "Cites TaxCloud's and Avalara's own comparison pages, plus a third-party G2 comparison.",
+  },
+  TaxJar: {
+    you: { taxcloud: 0, rival: 5 }, them: { taxcloud: 0, rival: 5 },
+    openPoints: [
+      "Leans TaxCloud explicitly — “I'd start by evaluating TaxCloud” — on its Streamlined Sales Tax (SST) free-filing benefit.",
+      "TaxJar is recommended only as a fallback, if its workflow happens to fit an existing stack better.",
+      "The forced pick flatly contradicts that: TaxJar wins unanimously in both orders. The SST argument doesn't survive into the short answer.",
+    ],
+    openCites: "Cites taxjar.com, taxcloud.com, TaxJar's own support docs, and streamlinedsalestax.org.",
+  },
+  Anrok: {
+    you: { taxcloud: 5, rival: 0 }, them: { taxcloud: 4, rival: 1 },
+    openPoints: [
+      "Splits by use case: TaxCloud for physical-goods ecommerce, Anrok for SaaS and global VAT/GST — favorable to TaxCloud for its actual customer base.",
+      "Forced pick agrees almost unanimously: TaxCloud wins 9 of 10 runs.",
+      "The one exception opened “My pick: Anrok” but reversed mid-answer to TaxCloud for a typical physical-goods brand — logged as a hedge, not a clean Anrok win.",
+    ],
+    openCites: "Cites TaxCloud's own comparison page and Anrok's compare page.",
+  },
+  Numeral: {
+    you: { taxcloud: 3, rival: 2 }, them: { taxcloud: 5, rival: 0 },
+    openPoints: [
+      "Leans TaxCloud on price — “likely better for eligible US multi-state sellers” — with a worked example showing Numeral's per-filing fees adding up fast (~$9,000/yr across 10 states).",
+      "Numeral is positioned as the premium, hands-off alternative instead.",
+      "Forced pick agrees overall (TaxCloud 8 of 10) but hides a real split: with TaxCloud named first, it's close to a coin flip (3 of 5).",
+    ],
+    openCites: "Cites TaxCloud's pricing page, Numeral's Shopify App Store listing, Numeral's own comparison page, and streamlinedsalestax.org.",
+  },
+  Zamp: {
+    you: { taxcloud: 1, rival: 4 }, them: { taxcloud: 2, rival: 3 },
+    openPoints: [
+      "Clean “it depends”: TaxCloud for DIY/cost-conscious teams, Zamp for fully managed, hands-off compliance.",
+      "Zamp's case includes covering penalties and interest on its own filing errors — a real differentiator, not just price.",
+      "That hedge hides a clear lean: the forced pick goes to Zamp 7 of 10 times, in both orders.",
+    ],
+    openCites: "Cites TaxCloud's and Zamp's own pricing/plan pages.",
+  },
+  Kintsugi: {
+    you: { taxcloud: 2, rival: 3 }, them: { taxcloud: 4, rival: 1 },
+    openPoints: [
+      "Splits by use case: TaxCloud wins on US filing economics via SST; Kintsugi wins on free monitoring and international coverage.",
+      "Reads TaxCloud-favorable for a US mid-market brand specifically.",
+      "Closest forced-pick result of all six rivals: TaxCloud takes it 6 of 10, but Kintsugi actually wins more often when TaxCloud is named first (3 of 5) — the only rival where that happens.",
+    ],
+    openCites: "Cites TaxCloud's own site and Kintsugi's “Sales Tax Automation from $0/month” page.",
+  },
+};
+const RIV = Object.keys(H2H);
+
+// Claims worth checking, pulled verbatim from the single-run open comparisons.
+const FACTS = [
+  ["Avalara pricing", "“$699+ per state/year” for Core Compliance, or “$79/state/month”", "Avalara"],
+  ["TaxCloud pricing (per Avalara run)", "“$20+ per filing”, filing subscriptions “starting at $39/month”", "TaxCloud"],
+  ["TaxJar pricing", "“$39/mo Starter, $99/mo Professional at 200 orders”, extra AutoFile credits cost more", "TaxJar"],
+  ["Numeral pricing", "“$75/filing, $150/registration” — illustrative example given: ~$9,000/yr in filing fees alone across 10 states", "Numeral"],
+  ["Zamp differentiator", "Covers penalties/interest on its own filing errors as part of the managed service", "Zamp"],
+  ["Kintsugi pricing", "“$0 to start” for monitoring; filing “from $75/filing,” registration “from $75”", "Kintsugi"],
+];
+
+function pct(obj) { const t = obj.taxcloud + obj.rival; return t ? Math.round((obj.taxcloud / t) * 100) : 0; }
+function total(r) { const m = H2H[r]; return { taxcloud: m.you.taxcloud + m.them.taxcloud, rival: m.you.rival + m.them.rival }; }
+function stability(r) {
+  const m = H2H[r];
+  const youUnanimous = m.you.taxcloud === 0 || m.you.rival === 0;
+  const themUnanimous = m.them.taxcloud === 0 || m.them.rival === 0;
+  const sameWinnerBothOrders = (m.you.taxcloud > m.you.rival) === (m.them.taxcloud > m.them.rival);
+  if (youUnanimous && themUnanimous) return "Stable";
+  return sameWinnerBothOrders ? "Split" : "Split";
+}
+
+function renderHead() {
+  const wins = RIV.filter((r) => total(r).taxcloud > total(r).rival);
+  const losses = RIV.filter((r) => total(r).taxcloud < total(r).rival);
+  const unstable = RIV.filter((r) => stability(r) === "Split");
+  $("#headline").innerHTML = `<h1 class="title">ChatGPT picks ${YOU} in <mark class="hl you">${wins.length} of ${RIV.length}</mark> forced-pick head-to-heads.</h1>
+  <p class="facts">Clear, unanimous losses to ${losses.filter((r) => stability(r) === "Stable").map(esc).join(" and ") || "none"}. ${YOU} wins outright against ${wins.filter((r) => stability(r) === "Stable").map(esc).join(", ") || "none"}. The rest — ${esc(unstable.join(", "))} — don't settle on one winner even at 10 runs each: the answer varies run to run, not just by which brand is named first.</p>`;
+}
+
+function renderBoard() {
+  let h = `<thead><tr><th class="rl">${YOU} vs.</th><th>Named first</th><th>Named second</th><th>Overall (of 10)</th><th>Consistency</th></tr></thead><tbody>`;
+  for (const r of RIV) {
+    const t = total(r);
+    const v = t.taxcloud > t.rival ? "win" : t.taxcloud < t.rival ? "lose" : "split";
+    const st = stability(r);
+    h += `<tr><td class="rl">${esc(r)}</td>
+      <td class="v"><button type="button" data-r="${esc(r)}" data-o="you">${H2H[r].you.taxcloud} – ${H2H[r].you.rival}</button></td>
+      <td class="v"><button type="button" data-r="${esc(r)}" data-o="them">${H2H[r].them.taxcloud} – ${H2H[r].them.rival}</button></td>
+      <td class="v ${v} pick"><button type="button" data-r="${esc(r)}" data-o="all"><b>${t.taxcloud > t.rival ? YOU : esc(r)}</b><small>${t.taxcloud} – ${t.rival}</small></button></td>
+      <td class="v"><button type="button" data-r="${esc(r)}" data-o="all">${st}</button></td></tr>`;
+  }
+  $("#sb").innerHTML = h + "</tbody>";
+  $("#sb").querySelectorAll("button").forEach((b) => {
+    b.addEventListener("click", () => { CS = b.dataset.r; renderComp(); $("#comp").scrollIntoView({ behavior: "smooth", block: "start" }); });
+  });
+}
+
+let CS = "Zamp";
+function renderComp() {
+  $("#ctabs").innerHTML = `<span class="tabslabel">${YOU} vs.</span>` + RIV.map((r) => `<button type="button" data-r="${esc(r)}" aria-pressed="${r === CS}">${esc(r)}</button>`).join("");
+  $("#ctabs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { CS = b.dataset.r; renderComp(); }));
+  const m = H2H[CS], t = total(CS);
+  const vtxt = t.taxcloud > t.rival ? `ChatGPT picks ${YOU} in ${t.taxcloud} of 10 forced-pick runs.` : t.taxcloud < t.rival ? `ChatGPT picks ${esc(CS)} in ${t.rival} of 10 forced-pick runs.` : `Dead even across 10 runs.`;
+  $("#cpanel").innerHTML = `<div class="cp"><div>
+      <p class="verdict">${vtxt}</p>
+      <div class="ord"><span>${YOU} named first: <b>${m.you.taxcloud} of 5</b> for ${YOU}</span><span>${esc(CS)} named first: <b>${m.them.taxcloud} of 5</b> for ${YOU}</span></div>
+      <p class="dim" style="margin:0 0 6px;font-weight:700;color:var(--navy)">Open comparison (single run, not repeated)</p>
+      <ul class="how">${m.openPoints.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>
+    </div><div class="cn"><h3>What the open comparison cited</h3>
+      <p class="insight">${esc(m.openCites)}</p>
+      <p class="insight">This is from one run per order (2 total), not the 10 forced-pick runs above — treat it as a data point, not a trend.</p>
+    </div></div>`;
+}
+
+function renderFacts() {
+  $("#fc").innerHTML = `<thead><tr><th>Claim</th><th>What ChatGPT said</th><th>Source rival</th></tr></thead><tbody>` +
+    FACTS.map(([c, said, src]) => `<tr><td>${esc(c)}</td><td>${esc(said)}</td><td>${esc(src)}</td></tr>`).join("") + "</tbody>";
+}
+
+// Real source answers (from the single open-comparison run per rival/order).
+const RAW = {
+  "Avalara|you": "Default recommendation: choose TaxCloud if you run a U.S.-focused ecommerce business and want a cost-conscious solution. Choose Avalara if you have a more complex tax operation, multiple sales channels, or international compliance needs. TaxCloud is positioned as “best for simplicity” (SMBs, lean teams, US-focused). Avalara is “best for complexity” (growing businesses, multichannel sellers, larger finance teams), with a wider integration ecosystem (1,400+ partners). No single forced pick — presented as “it depends.”",
+  "Avalara|them": "Same “it depends” framing in reverse order: TaxCloud for straightforward US ecommerce / affordable, Avalara for complex / multi-channel / broader platform needs. The comparison table is symmetric regardless of which name comes first. Ends with a caution that both vendors' own comparison pages are biased.",
+  "TaxJar|you": "Short answer: TaxJar for a streamlined ecommerce workflow; TaxCloud for cost-conscious compliance, citing its Streamlined Sales Tax (SST) certification as a real cost advantage (free filing in eligible states). Final recommendation: “I'd start by evaluating TaxCloud… strong case if your priority is reducing ongoing compliance costs, getting hands-on support, and taking advantage of eligible SST benefits.” TaxJar recommended only if its workflow fits an existing stack better.",
+  "Anrok|you": "Recommendation: TaxCloud for affordable US ecommerce sales tax; Anrok for SaaS/digital businesses selling across multiple countries. “Choose TaxCloud if you sell physical products online, mainly serve U.S. customers… Choose Anrok if you sell SaaS, software licenses or digital subscriptions across the U.S. and internationally.” Segmented rather than a single winner, but favorable to TaxCloud for its actual customer base.",
+  "Numeral|you": "Initial recommendation: TaxCloud if you want calculation plus compliance integrated with existing systems; Numeral for hands-off, fully managed registrations/filings/remittances across 70+ countries. On price: “TaxCloud — likely better for eligible US multi-state sellers” ($20/return, SST certified) vs. “Numeral — potentially better for outsourced compliance” ($75/filing, $150/registration per its Shopify App Store listing; an illustrative example put 10 states' monthly filing at ~$9,000/yr in Numeral fees alone).",
+  "Zamp|you": "Short answer: TaxCloud for affordability / DIY / software-led; Zamp for outsourced, managed-service, hands-off compliance. Zamp is positioned as best for “businesses wanting sales tax handled end to end” with quote-based pricing, vs. TaxCloud's published plans starting at $19/mo. Notable: Zamp covers penalties and interest on its own filing errors — a real differentiator. No forced pick in this open question; balanced “it depends.”",
+  "Kintsugi|you": "Initial recommendation: TaxCloud for predictable US compliance costs and human support; Kintsugi for free tax-exposure monitoring, AI automation, and broader international coverage. Explicit subheads: “TaxCloud wins on U.S. filing economics” (SST benefits) and “Kintsugi wins on free monitoring and global coverage.” Pricing: TaxCloud $19/mo Starter, filing from $39/return; Kintsugi $0 to start, filing from $75/filing, registration from $75.",
+  "Kintsugi|them": "Same split-by-use-case framing: TaxCloud explicitly “wins” on US filing economics and SST savings; Kintsugi wins on free monitoring plus international/SaaS coverage. For TaxCloud's actual segment (mid-market US ecommerce), this reads TaxCloud-favorable.",
+};
+const F = { r: "", o: "", run: false };
+function renderFind() {
+  if (!F.run) return;
+  const rows = [];
+  for (const r of RIV) for (const o of ["you", "them"]) {
+    if (F.r && r !== F.r) continue;
+    if (F.o && o !== F.o) continue;
+    const key = r + "|" + o;
+    if (RAW[key]) rows.push({ r, o, text: RAW[key] });
+  }
+  $("#findsub").textContent = `${rows.length} answer${rows.length === 1 ? "" : "s"} on file (one open-comparison run exists per rival/order; some orders weren't re-run).`;
+  $("#pl").classList.remove("hide");
+  $("#pl").innerHTML = rows.map((a) => `<div class="ans"><div class="q">${a.o === "you" ? `${YOU} vs. ${esc(a.r)}` : `${esc(a.r)} vs. ${YOU}`}</div><div class="m">Single run · Open comparison</div><p>${esc(a.text)}</p></div>`).join("") || `<div class="ans"><p>No saved answer for this rival/order.</p></div>`;
+}
+function renderFilters() {
+  const opt = (v, l) => `<option value="${esc(v)}">${esc(l)}</option>`;
+  $("#fr").innerHTML = opt("", "All rivals") + RIV.map((r) => opt(r, r)).join("");
+  $("#fo").innerHTML = opt("", "Both orders") + opt("you", `${YOU} named first`) + opt("them", "Rival named first");
+  for (const [id, k] of [["#fr", "r"], ["#fo", "o"]]) $(id).addEventListener("change", (e) => (F[k] = e.target.value));
+  $("#go").addEventListener("click", () => { F.run = true; renderFind(); });
+}
+renderHead(); renderBoard(); renderComp(); renderFacts(); renderFilters();
+</script>
+</html>
