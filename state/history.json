@@ -191,6 +191,54 @@
      "pages": 1063
     }
    }
+  },
+  {
+   "week": "2026-W44",
+   "date": "2026-10-26T12:57:52+00:00",
+   "sites": {
+    "TaxCloud": {
+     "new": 2,
+     "updated": 42,
+     "removed": 1,
+     "pages": 343
+    },
+    "Avalara": {
+     "new": 18,
+     "updated": 5,
+     "removed": 1,
+     "pages": 712
+    },
+    "TaxJar": {
+     "new": 2,
+     "updated": 13,
+     "removed": 0,
+     "pages": 872
+    },
+    "Anrok": {
+     "new": 2,
+     "updated": 164,
+     "removed": 7,
+     "pages": 554
+    },
+    "Numeral": {
+     "new": 12,
+     "updated": 100,
+     "removed": 0,
+     "pages": 416
+    },
+    "Zamp": {
+     "new": 1,
+     "updated": 1,
+     "removed": 0,
+     "pages": 508
+    },
+    "Kintsugi": {
+     "new": 213,
+     "updated": 11,
+     "removed": 2,
+     "pages": 1075
+    }
+   }
   }
  ]
 }
