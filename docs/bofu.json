@@ -3,7 +3,7 @@
   "title": "Bottom-of-funnel content tracker",
   "niche": "US sales tax compliance software for mid-market ecommerce and SaaS brands",
   "you": "TaxCloud",
-  "generated": "2026-10-26T13:06:18+00:00",
+  "generated": "2026-11-02T15:50:38+00:00",
   "state_updated": "2026-09-30T04:27:42+00:00",
   "repo": "nico497/Competitor-Radar"
  },
@@ -40,8 +40,8 @@
  "sites": [
   {
    "name": "TaxCloud",
-   "tracked": 449,
-   "considered": 343,
+   "tracked": 450,
+   "considered": 344,
    "own_pricing": "https://taxcloud.com/taxcloud-pricing/",
    "hubs": [
     "https://taxcloud.com/alternatives/",
@@ -50,15 +50,15 @@
   },
   {
    "name": "Avalara",
-   "tracked": 728,
-   "considered": 390,
+   "tracked": 731,
+   "considered": 391,
    "own_pricing": "https://www.avalara.com/us/en/products/pricing.html",
    "hubs": []
   },
   {
    "name": "TaxJar",
-   "tracked": 872,
-   "considered": 872,
+   "tracked": 873,
+   "considered": 873,
    "own_pricing": "https://www.taxjar.com/pricing",
    "hubs": [
     "https://www.taxjar.com/customers"
@@ -66,8 +66,8 @@
   },
   {
    "name": "Anrok",
-   "tracked": 674,
-   "considered": 525,
+   "tracked": 685,
+   "considered": 536,
    "own_pricing": "https://www.anrok.com/pricing",
    "hubs": [
     "https://www.anrok.com/type/customer-stories"
@@ -75,8 +75,8 @@
   },
   {
    "name": "Numeral",
-   "tracked": 416,
-   "considered": 416,
+   "tracked": 428,
+   "considered": 428,
    "own_pricing": "https://www.numeral.com/pricing",
    "hubs": [
     "https://www.numeral.com/reviews",
@@ -85,8 +85,8 @@
   },
   {
    "name": "Zamp",
-   "tracked": 4440,
-   "considered": 479,
+   "tracked": 4599,
+   "considered": 492,
    "own_pricing": "https://zamp.com/pricing",
    "hubs": [
     "https://zamp.com/customers",
@@ -95,8 +95,8 @@
   },
   {
    "name": "Kintsugi",
-   "tracked": 2668,
-   "considered": 698,
+   "tracked": 2670,
+   "considered": 700,
    "own_pricing": "https://trykintsugi.com/pricing",
    "hubs": [
     "https://trykintsugi.com/compare"
@@ -127,8 +127,8 @@
   "NetSuite"
  ],
  "excluded": {
-  "templated pages": 5741,
-  "webinars, glossary, events and category pages": 444,
+  "templated pages": 5886,
+  "webinars, glossary, events and category pages": 447,
   "translated pages": 339
  },
  "pages": [
@@ -1279,6 +1279,14 @@
   },
   {
    "site": "Numeral",
+   "url": "https://www.numeral.com/blog/best-sales-tax-software",
+   "path": "/blog/best-sales-tax-software",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "Numeral",
    "url": "https://www.numeral.com/customers/4frnt",
    "path": "/customers/4frnt",
    "type": "case",
@@ -1386,6 +1394,13 @@
    "site": "Numeral",
    "url": "https://www.numeral.com/customers/nomad-goods",
    "path": "/customers/nomad-goods",
+   "type": "case",
+   "targets": []
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/customers/nudient",
+   "path": "/customers/nudient",
    "type": "case",
    "targets": []
   },
