@@ -3,7 +3,7 @@
   "title": "Bottom-of-funnel content tracker",
   "niche": "US sales tax compliance software for mid-market ecommerce and SaaS brands",
   "you": "TaxCloud",
-  "generated": "2026-11-02T15:50:38+00:00",
+  "generated": "2026-11-09T16:18:25+00:00",
   "state_updated": "2026-09-30T04:27:42+00:00",
   "repo": "nico497/Competitor-Radar"
  },
@@ -50,15 +50,15 @@
   },
   {
    "name": "Avalara",
-   "tracked": 731,
+   "tracked": 737,
    "considered": 391,
    "own_pricing": "https://www.avalara.com/us/en/products/pricing.html",
    "hubs": []
   },
   {
    "name": "TaxJar",
-   "tracked": 873,
-   "considered": 873,
+   "tracked": 874,
+   "considered": 874,
    "own_pricing": "https://www.taxjar.com/pricing",
    "hubs": [
     "https://www.taxjar.com/customers"
@@ -75,8 +75,8 @@
   },
   {
    "name": "Numeral",
-   "tracked": 428,
-   "considered": 428,
+   "tracked": 440,
+   "considered": 439,
    "own_pricing": "https://www.numeral.com/pricing",
    "hubs": [
     "https://www.numeral.com/reviews",
@@ -85,8 +85,8 @@
   },
   {
    "name": "Zamp",
-   "tracked": 4599,
-   "considered": 492,
+   "tracked": 4605,
+   "considered": 494,
    "own_pricing": "https://zamp.com/pricing",
    "hubs": [
     "https://zamp.com/customers",
@@ -95,8 +95,8 @@
   },
   {
    "name": "Kintsugi",
-   "tracked": 2670,
-   "considered": 700,
+   "tracked": 2676,
+   "considered": 706,
    "own_pricing": "https://trykintsugi.com/pricing",
    "hubs": [
     "https://trykintsugi.com/compare"
@@ -127,8 +127,8 @@
   "NetSuite"
  ],
  "excluded": {
-  "templated pages": 5886,
-  "webinars, glossary, events and category pages": 447,
+  "templated pages": 5887,
+  "webinars, glossary, events and category pages": 457,
   "translated pages": 339
  },
  "pages": [
@@ -1281,6 +1281,14 @@
    "site": "Numeral",
    "url": "https://www.numeral.com/blog/best-sales-tax-software",
    "path": "/blog/best-sales-tax-software",
+   "type": "best",
+   "targets": [],
+   "audience": "General (no segment)"
+  },
+  {
+   "site": "Numeral",
+   "url": "https://www.numeral.com/blog/best-sales-tax-software-for-startups",
+   "path": "/blog/best-sales-tax-software-for-startups",
    "type": "best",
    "targets": [],
    "audience": "General (no segment)"
