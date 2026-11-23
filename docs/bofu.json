@@ -3,7 +3,7 @@
   "title": "Bottom-of-funnel content tracker",
   "niche": "US sales tax compliance software for mid-market ecommerce and SaaS brands",
   "you": "TaxCloud",
-  "generated": "2026-11-16T15:47:22+00:00",
+  "generated": "2026-11-23T18:08:13+00:00",
   "state_updated": "2026-09-30T04:27:42+00:00",
   "repo": "nico497/Competitor-Radar"
  },
@@ -40,8 +40,8 @@
  "sites": [
   {
    "name": "TaxCloud",
-   "tracked": 452,
-   "considered": 346,
+   "tracked": 453,
+   "considered": 347,
    "own_pricing": "https://taxcloud.com/taxcloud-pricing/",
    "hubs": [
     "https://taxcloud.com/alternatives/",
@@ -50,15 +50,15 @@
   },
   {
    "name": "Avalara",
-   "tracked": 752,
+   "tracked": 759,
    "considered": 391,
    "own_pricing": "https://www.avalara.com/us/en/products/pricing.html",
    "hubs": []
   },
   {
    "name": "TaxJar",
-   "tracked": 875,
-   "considered": 875,
+   "tracked": 904,
+   "considered": 904,
    "own_pricing": "https://www.taxjar.com/pricing",
    "hubs": [
     "https://www.taxjar.com/customers"
@@ -66,8 +66,8 @@
   },
   {
    "name": "Anrok",
-   "tracked": 698,
-   "considered": 549,
+   "tracked": 705,
+   "considered": 556,
    "own_pricing": "https://www.anrok.com/pricing",
    "hubs": [
     "https://www.anrok.com/type/customer-stories"
@@ -75,8 +75,8 @@
   },
   {
    "name": "Numeral",
-   "tracked": 451,
-   "considered": 450,
+   "tracked": 468,
+   "considered": 467,
    "own_pricing": "https://www.numeral.com/pricing",
    "hubs": [
     "https://www.numeral.com/reviews",
@@ -85,8 +85,8 @@
   },
   {
    "name": "Zamp",
-   "tracked": 4662,
-   "considered": 502,
+   "tracked": 4757,
+   "considered": 516,
    "own_pricing": "https://zamp.com/pricing",
    "hubs": [
     "https://zamp.com/customers",
@@ -95,8 +95,8 @@
   },
   {
    "name": "Kintsugi",
-   "tracked": 2679,
-   "considered": 709,
+   "tracked": 2681,
+   "considered": 711,
    "own_pricing": "https://trykintsugi.com/pricing",
    "hubs": [
     "https://trykintsugi.com/compare"
@@ -127,8 +127,8 @@
   "NetSuite"
  ],
  "excluded": {
-  "templated pages": 5936,
-  "webinars, glossary, events and category pages": 472,
+  "templated pages": 6016,
+  "webinars, glossary, events and category pages": 480,
   "translated pages": 339
  },
  "pages": [
@@ -854,6 +854,15 @@
    "type": "vs_you",
    "targets": [
     "Numeral"
+   ]
+  },
+  {
+   "site": "Anrok",
+   "url": "https://www.anrok.com/resources/avalara-alternatives-ecommerce",
+   "path": "/resources/avalara-alternatives-ecommerce",
+   "type": "alt",
+   "targets": [
+    "Avalara"
    ]
   },
   {
@@ -2124,6 +2133,33 @@
   },
   {
    "site": "Zamp",
+   "url": "https://zamp.com/blog/avalara-pricing",
+   "path": "/blog/avalara-pricing",
+   "type": "pricing",
+   "targets": [
+    "Avalara"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/numeral-pricing",
+   "path": "/blog/numeral-pricing",
+   "type": "pricing",
+   "targets": [
+    "Numeral"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxjar-pricing",
+   "path": "/blog/taxjar-pricing",
+   "type": "pricing",
+   "targets": [
+    "TaxJar"
+   ]
+  },
+  {
+   "site": "Zamp",
    "url": "https://zamp.com/blog/migrating-avalara-api",
    "path": "/blog/migrating-avalara-api",
    "type": "switch",
@@ -2176,6 +2212,16 @@
   },
   {
    "site": "Zamp",
+   "url": "https://zamp.com/blog/anrok-vs-avalara",
+   "path": "/blog/anrok-vs-avalara",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "Anrok"
+   ]
+  },
+  {
+   "site": "Zamp",
    "url": "https://zamp.com/blog/anrok-vs-stripe-tax-vs-taxjar-api",
    "path": "/blog/anrok-vs-stripe-tax-vs-taxjar-api",
    "type": "vs_rivals",
@@ -2217,6 +2263,16 @@
   },
   {
    "site": "Zamp",
+   "url": "https://zamp.com/blog/sovos-vs-avalara",
+   "path": "/blog/sovos-vs-avalara",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "Sovos"
+   ]
+  },
+  {
+   "site": "Zamp",
    "url": "https://zamp.com/blog/stripe-tax-vs-avalara",
    "path": "/blog/stripe-tax-vs-avalara",
    "type": "vs_rivals",
@@ -2247,6 +2303,16 @@
   },
   {
    "site": "Zamp",
+   "url": "https://zamp.com/blog/taxcloud-vs-avalara",
+   "path": "/blog/taxcloud-vs-avalara",
+   "type": "vs_rivals",
+   "targets": [
+    "Avalara",
+    "TaxCloud"
+   ]
+  },
+  {
+   "site": "Zamp",
    "url": "https://zamp.com/blog/taxjar-vs-avalara-api",
    "path": "/blog/taxjar-vs-avalara-api",
    "type": "vs_rivals",
@@ -2264,6 +2330,16 @@
     "Avalara",
     "TaxJar",
     "Stripe Tax"
+   ]
+  },
+  {
+   "site": "Zamp",
+   "url": "https://zamp.com/blog/taxwire-vs-taxjar",
+   "path": "/blog/taxwire-vs-taxjar",
+   "type": "vs_rivals",
+   "targets": [
+    "TaxJar",
+    "Taxwire"
    ]
   },
   {
